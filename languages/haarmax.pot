@@ -1,0 +1,2164 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Haarino Core\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-19 13:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.2; wp-6.0.1\n"
+"X-Domain: haarmax"
+
+#. 1: Plugin name 2: Elementor
+#: addons/addons.php:156
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" to be installed and activated."
+msgstr ""
+
+#. 1: Plugin name 2: Elementor 3: Required Elementor version
+#. 1: Plugin name 2: PHP 3: Required PHP version
+#: addons/addons.php:180 addons/addons.php:204
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
+msgstr ""
+
+#: addons/widgets/haarmax-gallery.php:80
+#: addons/widgets/haarmax-logo-carousel.php:60
+#: addons/widgets/haarmax-salon-infobox.php:87
+#: addons/widgets/haarmax-working-process.php:64
+msgid "#"
+msgstr ""
+
+#: addons/header/header.php:99 addons/widgets/haarmax-team.php:157
+msgid "020 7388 5619"
+msgstr ""
+
+#: inc/widgets/about-us-widget.php:152
+msgid "1 star"
+msgstr ""
+
+#: addons/widgets/haarmax-counter.php:97
+msgid "130k"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:75
+msgid "16"
+msgstr ""
+
+#: inc/widgets/about-us-widget.php:153
+msgid "2 star"
+msgstr ""
+
+#: addons/widgets/haarmax-counter.php:87
+msgid "200"
+msgstr ""
+
+#: addons/widgets/haarmax-history.php:49
+msgid "2020"
+msgstr ""
+
+#: inc/widgets/about-us-widget.php:154
+msgid "3 star"
+msgstr ""
+
+#: addons/widgets/haarmax-counter.php:60 addons/widgets/haarmax-counter.php:82
+msgid "3116"
+msgstr ""
+
+#: addons/widgets/haarmax-counter.php:92
+msgid "350"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:57
+msgid "4"
+msgstr ""
+
+#: inc/widgets/about-us-widget.php:155
+msgid "4 star"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:66
+msgid "5"
+msgstr ""
+
+#: inc/widgets/about-us-widget.php:156
+msgid "5 star"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:63
+msgid "766 Walker Road, Suite D, Great Virginia 22066"
+msgstr ""
+
+#: addons/widgets/haarmax-about-us.php:77
+#: addons/widgets/haarmax-about-us.php:79
+msgid "About Description"
+msgstr ""
+
+#: addons/widgets/haarmax-about-us.php:45
+msgid "About Image"
+msgstr ""
+
+#: addons/widgets/haarmax-about-us.php:56
+msgid "About Subtitle"
+msgstr ""
+
+#: addons/widgets/haarmax-about-us.php:67
+msgid "About Title"
+msgstr ""
+
+#: addons/widgets/haarmax-about-us.php:37
+msgid "About Us"
+msgstr ""
+
+#: addons/widgets/haarmax-about-us.php:59
+msgid "About Us Subtitle"
+msgstr ""
+
+#: addons/widgets/haarmax-about-us.php:70
+msgid "About Us Title"
+msgstr ""
+
+#: inc/widgets/about-us-widget.php:30
+msgid "Add About Us Widget"
+msgstr ""
+
+#: inc/widgets/contact-info-widget.php:24
+msgid "Add Contact Info"
+msgstr ""
+
+#: inc/widgets/gallery-widget.php:81
+msgid "Add Gallery Image"
+msgstr ""
+
+#: inc/widgets/gallery-widget.php:30
+msgid "Add Gallery Widget"
+msgstr ""
+
+#: inc/builder/builder.php:139 inc/builder/builder.php:171
+msgid "Add New"
+msgstr ""
+
+#: inc/builder/builder.php:140
+msgid "Add New Footer"
+msgstr ""
+
+#: inc/builder/builder.php:172
+msgid "Add New Header"
+msgstr ""
+
+#: inc/widgets/recent-post-widget.php:34
+msgid "Add Recent Posts Widget"
+msgstr ""
+
+#: addons/widgets/social-media.php:86
+msgid "Add Social Icon"
+msgstr ""
+
+#: inc/widgets/video-intro-widget.php:29
+msgid "Add Video Intro Widget"
+msgstr ""
+
+#: inc/widgets/contact-info-widget.php:128
+msgid "Address :"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:214
+msgid "Address Color"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:234
+msgid "Address Margin"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:246
+msgid "Address Padding"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:206
+msgid "Address Styling"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:226
+msgid "Address Typography"
+msgstr ""
+
+#: addons/widgets/section-title.php:132
+msgid "Alignment"
+msgstr ""
+
+#: inc/builder/builder.php:144
+msgid "All Footer"
+msgstr ""
+
+#: inc/builder/builder.php:176
+msgid "All Header"
+msgstr ""
+
+#: addons/widgets/features-box.php:199
+#: addons/widgets/haarmax-offer-cart.php:282
+#: addons/widgets/haarmax-package.php:473
+msgid "Animation Control"
+msgstr ""
+
+#: inc/haarmaxajax.php:59
+msgid "Apikey Or Listid Missing."
+msgstr ""
+
+#: addons/widgets/haarmax-instagram-gallery.php:147
+#: addons/widgets/haarmax-price-list.php:674
+#: addons/widgets/haarmax-testimonial.php:415
+msgid "Arrow Color"
+msgstr ""
+
+#: addons/widgets/haarmax-instagram-gallery.php:158
+#: addons/widgets/haarmax-price-list.php:685
+#: addons/widgets/haarmax-testimonial.php:426
+msgid "Arrow Hover Color"
+msgstr ""
+
+#: addons/widgets/haarmax-instagram-gallery.php:139
+#: addons/widgets/haarmax-price-list.php:665
+#: addons/widgets/haarmax-testimonial.php:406
+msgid "Arrow Styling"
+msgstr ""
+
+#: addons/widgets/haarmax-instagram-gallery.php:57
+#: addons/widgets/haarmax-testimonial.php:157
+msgid "Arrows"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:85
+msgid "ASC"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:99
+msgid "Author"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:169
+msgid "Autoplay"
+msgstr ""
+
+#: addons/widgets/haarmax-logo-carousel.php:66
+msgid "Awards Title"
+msgstr ""
+
+#: addons/header/header.php:237
+msgid "Background Color"
+msgstr ""
+
+#: addons/widgets/haarmax-newsletter.php:57
+msgid "Background Image"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:18 addons/widgets/haarmax-blog.php:34
+msgid "Blog Post"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:42
+msgid "Blog Style"
+msgstr ""
+
+#: addons/widgets/haarmax-about-us.php:261
+#: addons/widgets/haarmax-package.php:418 addons/widgets/section-title.php:226
+msgid "Border"
+msgstr ""
+
+#: addons/widgets/haarmax-newsletter.php:277
+msgid "Box Color"
+msgstr ""
+
+#: addons/widgets/haarmax-price-list.php:343
+msgid "Box Radious"
+msgstr ""
+
+#: addons/widgets/haarmax-price-list.php:335
+#: addons/widgets/haarmax-testimonial.php:218
+msgid "Box Shadow"
+msgstr ""
+
+#: addons/widgets/haarmax-about-us.php:96 addons/widgets/haarmax-button.php:36
+#: addons/widgets/haarmax-salon-infobox.php:261
+msgid "Button"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:279
+msgid "Button Bg Color"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:289
+msgid "Button Bg Hover Color"
+msgstr ""
+
+#: addons/header/header.php:624 addons/widgets/haarmax-about-us.php:289
+#: addons/widgets/haarmax-button.php:114
+#: addons/widgets/haarmax-offer-cart.php:226
+#: addons/widgets/haarmax-package.php:340
+#: addons/widgets/haarmax-price-list.php:609
+#: addons/widgets/haarmax-right-choice.php:345
+#: addons/widgets/haarmax-salon-infobox.php:269
+#: addons/widgets/haarmax-single-price-cart.php:190
+#: addons/widgets/haarmax-trends-product.php:334
+msgid "Button Color"
+msgstr ""
+
+#: addons/header/header.php:636 addons/widgets/haarmax-about-us.php:300
+#: addons/widgets/haarmax-button.php:125
+#: addons/widgets/haarmax-offer-cart.php:237
+#: addons/widgets/haarmax-package.php:350
+#: addons/widgets/haarmax-price-list.php:620
+#: addons/widgets/haarmax-right-choice.php:356
+#: addons/widgets/haarmax-single-price-cart.php:201
+msgid "Button Hover Color"
+msgstr ""
+
+#: addons/widgets/haarmax-trends-product.php:354
+msgid "Button hover Color"
+msgstr ""
+
+#: addons/widgets/haarmax-trends-product.php:344
+msgid "Button Icon Color"
+msgstr ""
+
+#: addons/widgets/haarmax-trends-product.php:364
+msgid "Button Icon hover Color"
+msgstr ""
+
+#: addons/widgets/haarmax-trends-product.php:71
+msgid "Button Link"
+msgstr ""
+
+#: addons/widgets/haarmax-package.php:370
+msgid "Button Margin"
+msgstr ""
+
+#: addons/widgets/haarmax-package.php:382
+msgid "Button Padding"
+msgstr ""
+
+#: addons/header/header.php:616 addons/widgets/haarmax-about-us.php:281
+#: addons/widgets/haarmax-button.php:106
+#: addons/widgets/haarmax-offer-cart.php:218
+#: addons/widgets/haarmax-price-list.php:601
+#: addons/widgets/haarmax-right-choice.php:337
+#: addons/widgets/haarmax-single-price-cart.php:182
+msgid "Button Shadow"
+msgstr ""
+
+#: addons/header/header.php:607 addons/widgets/haarmax-about-us.php:272
+#: addons/widgets/haarmax-button.php:97
+#: addons/widgets/haarmax-offer-cart.php:209
+#: addons/widgets/haarmax-package.php:331
+#: addons/widgets/haarmax-price-list.php:591
+#: addons/widgets/haarmax-right-choice.php:328
+#: addons/widgets/haarmax-single-price-cart.php:173
+#: addons/widgets/haarmax-trends-product.php:326
+msgid "Button Styling"
+msgstr ""
+
+#: addons/header/header.php:190 addons/widgets/haarmax-about-us.php:103
+#: addons/widgets/haarmax-about-us.php:105 addons/widgets/haarmax-button.php:43
+#: addons/widgets/haarmax-button.php:45
+#: addons/widgets/haarmax-offer-cart.php:71
+#: addons/widgets/haarmax-offer-cart.php:73
+#: addons/widgets/haarmax-package.php:77 addons/widgets/haarmax-package.php:80
+#: addons/widgets/haarmax-price-list.php:92
+#: addons/widgets/haarmax-price-list.php:94
+#: addons/widgets/haarmax-price-list.php:271
+#: addons/widgets/haarmax-price-list.php:273
+#: addons/widgets/haarmax-right-choice.php:66
+#: addons/widgets/haarmax-right-choice.php:68
+#: addons/widgets/haarmax-salon-infobox.php:77
+#: addons/widgets/haarmax-single-price-cart.php:89
+#: addons/widgets/haarmax-single-price-cart.php:91
+msgid "Button Text"
+msgstr ""
+
+#: addons/widgets/haarmax-package.php:362
+#: addons/widgets/haarmax-salon-infobox.php:300
+msgid "Button Typography"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:85
+msgid "Button Url"
+msgstr ""
+
+#: addons/widgets/haarmax-single-price-cart.php:71
+msgid "Cart Features"
+msgstr ""
+
+#: addons/widgets/haarmax-single-price-cart.php:43
+msgid "Cart Reverse Style?"
+msgstr ""
+
+#: addons/header/header.php:540
+msgid "Cart Styling"
+msgstr ""
+
+#: addons/widgets/haarmax-single-price-cart.php:53
+msgid "Cart Title"
+msgstr ""
+
+#: addons/widgets/section-title.php:140
+msgid "Center"
+msgstr ""
+
+#: addons/widgets/haarmax-history.php:73
+msgid "CEO"
+msgstr ""
+
+#: inc/widgets/video-intro-widget.php:122
+msgid "Change Image"
+msgstr ""
+
+#: addons/widgets/haarmax-history.php:57
+#: addons/widgets/haarmax-testimonial.php:90
+msgid "Chef Leader"
+msgstr ""
+
+#: addons/widgets/haarmax-newsletter.php:108
+#: addons/widgets/image-with-video.php:63
+msgid "Choose Image"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:88
+msgid "Client Designation"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:358
+msgid "Client Designation Color"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:378
+msgid "Client Designation Margin"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:390
+msgid "Client Designation Padding"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:370
+msgid "Client Designation Typography"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:96
+#: addons/widgets/haarmax-testimonial.php:295
+msgid "Client Feedback"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:303
+msgid "Client Feedback Color"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:323
+msgid "Client Feedback Margin"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:335
+msgid "Client Feedback Padding"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:315
+msgid "Client Feedback Typography"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:61
+msgid "Client Image"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:80
+#: addons/widgets/haarmax-testimonial.php:241
+msgid "Client Name"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:249
+msgid "Client Name Color"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:269
+msgid "Client Name Margin"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:281
+msgid "Client Name Padding"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:261
+msgid "Client Name Typography"
+msgstr ""
+
+#: addons/header/header.php:87
+msgid "Contact Email"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:76 addons/widgets/haarmax-team.php:155
+msgid "Contact Number"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:411
+msgid "Contact Number Color"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:421
+msgid "Contact Number Hover Color"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:442
+msgid "Contact Number Margin"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:454
+msgid "Contact Number Padding"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:403
+msgid "Contact Number Styling"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:434
+msgid "Contact Number Typography"
+msgstr ""
+
+#: addons/header/header.php:97
+msgid "Contact Phone"
+msgstr ""
+
+#: addons/widgets/haarmax-history.php:55
+#: addons/widgets/haarmax-offer-cart.php:52
+#: addons/widgets/haarmax-package.php:67 addons/widgets/haarmax-package.php:69
+#: addons/widgets/haarmax-right-choice.php:50
+#: addons/widgets/haarmax-service.php:128
+#: addons/widgets/haarmax-trends-product.php:54
+msgid "Content"
+msgstr ""
+
+#: addons/widgets/features-box.php:152
+#: addons/widgets/haarmax-newsletter.php:220
+#: addons/widgets/haarmax-offer-cart.php:162
+#: addons/widgets/haarmax-price-list.php:488
+#: addons/widgets/haarmax-right-choice.php:222
+#: addons/widgets/haarmax-trends-product.php:220
+msgid "Content Color"
+msgstr ""
+
+#: addons/widgets/haarmax-price-list.php:262
+msgid "Content Description"
+msgstr ""
+
+#: addons/widgets/haarmax-package.php:181
+msgid "Content List"
+msgstr ""
+
+#: addons/widgets/features-box.php:172
+#: addons/widgets/haarmax-newsletter.php:241
+#: addons/widgets/haarmax-offer-cart.php:182
+#: addons/widgets/haarmax-price-list.php:508
+#: addons/widgets/haarmax-right-choice.php:244
+#: addons/widgets/haarmax-trends-product.php:242
+msgid "Content Margin"
+msgstr ""
+
+#: addons/widgets/features-box.php:184
+#: addons/widgets/haarmax-newsletter.php:253
+#: addons/widgets/haarmax-offer-cart.php:194
+#: addons/widgets/haarmax-right-choice.php:256
+#: addons/widgets/haarmax-trends-product.php:254
+msgid "Content Padding"
+msgstr ""
+
+#: addons/widgets/features-box.php:144
+#: addons/widgets/haarmax-newsletter.php:211
+#: addons/widgets/haarmax-offer-cart.php:154
+#: addons/widgets/haarmax-price-list.php:479
+#: addons/widgets/haarmax-right-choice.php:214
+#: addons/widgets/haarmax-trends-product.php:212
+msgid "Content Styling"
+msgstr ""
+
+#: addons/widgets/haarmax-price-list.php:253
+msgid "Content Title"
+msgstr ""
+
+#: addons/header/header.php:264 addons/widgets/features-box.php:164
+#: addons/widgets/haarmax-newsletter.php:233
+#: addons/widgets/haarmax-offer-cart.php:174
+#: addons/widgets/haarmax-price-list.php:500
+#: addons/widgets/haarmax-right-choice.php:234
+#: addons/widgets/haarmax-trends-product.php:232
+msgid "Content Typography"
+msgstr ""
+
+#: addons/widgets/haarmax-counter.php:22 addons/widgets/haarmax-counter.php:38
+msgid "Counter"
+msgstr ""
+
+#: addons/widgets/haarmax-counter.php:48
+msgid "Counter image"
+msgstr ""
+
+#: addons/widgets/haarmax-counter.php:58
+msgid "Counter Number"
+msgstr ""
+
+#: addons/widgets/haarmax-counter.php:172
+msgid "Counter Number Color"
+msgstr ""
+
+#: addons/widgets/haarmax-counter.php:192
+msgid "Counter Number Margin"
+msgstr ""
+
+#: addons/widgets/haarmax-counter.php:204
+msgid "Counter Number Padding"
+msgstr ""
+
+#: addons/widgets/haarmax-counter.php:164
+msgid "Counter Number Styling"
+msgstr ""
+
+#: addons/widgets/haarmax-counter.php:184
+msgid "Counter Number Typography"
+msgstr ""
+
+#: addons/widgets/haarmax-counter.php:66
+msgid "Counter Title"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:70 addons/widgets/haarmax-team.php:78
+#: addons/widgets/haarmax-team.php:149
+#: addons/widgets/haarmax-testimonial.php:135
+msgid "Customer"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:101
+msgid "Date"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:54
+msgid "Davins Hair Salon"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:86
+msgid "DESC"
+msgstr ""
+
+#: inc/widgets/about-us-widget.php:141
+msgid "Description:"
+msgstr ""
+
+#: addons/widgets/haarmax-history.php:71 addons/widgets/haarmax-team.php:68
+#: addons/widgets/haarmax-team.php:147
+#: addons/widgets/haarmax-testimonial.php:349
+msgid "Designation"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:346
+msgid "Designation Color"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:356
+msgid "Designation Hover Color"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:376
+msgid "Designation Margin"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:388
+msgid "Designation Padding"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:338
+msgid "Designation Styling"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:368
+msgid "Designation Typography"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:182
+msgid "Dots"
+msgstr ""
+
+#: inc/builder/builder.php:142
+msgid "Edit Footer"
+msgstr ""
+
+#: inc/builder/builder.php:174
+msgid "Edit Header"
+msgstr ""
+
+#: addons/addons.php:158 addons/addons.php:182
+msgid "Elementor"
+msgstr ""
+
+#: inc/widgets/contact-info-widget.php:119
+msgid "Email :"
+msgstr ""
+
+#: addons/header/header.php:721 addons/header/header.php:893
+msgid "Email:"
+msgstr ""
+
+#: inc/widgets/contact-info-widget.php:59
+msgid "Email: "
+msgstr ""
+
+#: inc/builder/builder.php:74
+msgid "Enable Footer?"
+msgstr ""
+
+#: addons/widgets/haarmax-newsletter.php:91
+msgid "Enter Your Email"
+msgstr ""
+
+#: addons/header/header.php:89
+msgid "example@domain.com"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:266
+msgid "Excerpt"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:274
+msgid "Excerpt Color"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:73
+msgid "Excerpt Length"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:286
+msgid "Excerpt Typography"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:111
+msgid "Exclude Categories"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:131
+msgid "Exclude Post"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:121
+msgid "Exclude Tags"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:174
+msgid "Facebook Link"
+msgstr ""
+
+#: addons/widgets/haarmax-single-price-cart.php:61
+msgid "Feature Background Image"
+msgstr ""
+
+#: addons/widgets/features-box.php:36
+msgid "Features"
+msgstr ""
+
+#: addons/widgets/features-box.php:43
+msgid "Features Style"
+msgstr ""
+
+#: inc/builder/builder.php:135 inc/builder/builder.php:136
+#: inc/builder/builder.php:138
+msgid "Footer"
+msgstr ""
+
+#: inc/builder/builder.php:89 inc/builder/builder.php:121
+#: inc/builder/builder.php:121
+msgid "Footer Builder"
+msgstr ""
+
+#: inc/builder/builder.php:98
+msgid "Footer Name"
+msgstr ""
+
+#: inc/builder/builder.php:67
+msgid "Footer Option"
+msgstr ""
+
+#: inc/builder/builder.php:85
+msgid "Footer Style"
+msgstr ""
+
+#: addons/widgets/haarmax-right-choice.php:413
+msgid "From Only"
+msgstr ""
+
+#: addons/widgets/haarmax-gallery.php:22 addons/widgets/haarmax-gallery.php:38
+msgid "Gallery"
+msgstr ""
+
+#: addons/widgets/haarmax-instagram-gallery.php:97
+msgid "Gallery Image"
+msgstr ""
+
+#: addons/widgets/haarmax-gallery.php:61
+msgid "Gallery image"
+msgstr ""
+
+#: addons/widgets/haarmax-gallery.php:46
+msgid "Gallery Style"
+msgstr ""
+
+#: addons/widgets/haarmax-price-list.php:315
+#: addons/widgets/haarmax-right-choice.php:125
+#: addons/widgets/haarmax-team.php:250
+#: addons/widgets/haarmax-trends-product.php:119
+msgid "Genaral"
+msgstr ""
+
+#: addons/widgets/haarmax-gallery.php:111
+#: addons/widgets/haarmax-instagram-gallery.php:106
+#: addons/widgets/haarmax-testimonial.php:197
+#: addons/widgets/haarmax-working-process.php:124
+msgid "General"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:79
+msgid "Get Directions"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:202
+msgid "Google Link"
+msgstr ""
+
+#: addons/header/header.php:80
+msgid "Google Map url"
+msgstr ""
+
+#: inc/builder/builder.php:112 inc/builder/builder.php:113
+msgid "Haarino Builder"
+msgstr ""
+
+#. Name of the plugin
+msgid "Haarino Core"
+msgstr ""
+
+#: addons/addons.php:313
+msgid "Haarmax"
+msgstr ""
+
+#. Widget name will appear in UI
+#: inc/widgets/about-us-widget.php:24
+msgid "Haarmax :: About Us"
+msgstr ""
+
+#. Widget name will appear in UI
+#: inc/widgets/contact-info-widget.php:21
+msgid "Haarmax :: Contact Info"
+msgstr ""
+
+#. Widget name will appear in UI
+#: inc/widgets/gallery-widget.php:24
+msgid "Haarmax :: Gallery"
+msgstr ""
+
+#. Widget name will appear in UI
+#: inc/widgets/recent-post-widget.php:27
+msgid "Haarmax :: Recent Posts"
+msgstr ""
+
+#. Widget name will appear in UI
+#: inc/widgets/video-intro-widget.php:24
+msgid "Haarmax :: Video Intro Widget"
+msgstr ""
+
+#: addons/widgets/haarmax-about-us.php:20
+msgid "Haarmax About Us"
+msgstr ""
+
+#: addons/widgets/haarmax-button.php:20
+msgid "Haarmax Button"
+msgstr ""
+
+#: addons/addons.php:157 addons/addons.php:181 addons/addons.php:205
+msgid "Haarmax Core"
+msgstr ""
+
+#: addons/widgets/features-box.php:20
+msgid "Haarmax Features"
+msgstr ""
+
+#: inc/builder/builder.php:137
+msgid "Haarmax Footer Builder"
+msgstr ""
+
+#: addons/addons.php:321
+msgid "Haarmax Footer Elements"
+msgstr ""
+
+#: addons/header/header.php:23
+msgid "Haarmax Header"
+msgstr ""
+
+#: inc/builder/builder.php:169
+msgid "Haarmax Header Builder"
+msgstr ""
+
+#: addons/addons.php:329
+msgid "Haarmax Header Elements"
+msgstr ""
+
+#: addons/widgets/image-with-video.php:21
+msgid "Haarmax Image with Video"
+msgstr ""
+
+#: addons/widgets/haarmax-offer-cart.php:20
+msgid "Haarmax Offer Cart"
+msgstr ""
+
+#: addons/widgets/haarmax-package.php:20
+msgid "Haarmax Package"
+msgstr ""
+
+#: addons/widgets/haarmax-price-list.php:20
+msgid "Haarmax Price List"
+msgstr ""
+
+#: addons/widgets/haarmax-right-choice.php:20
+msgid "Haarmax Right Choice"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:46
+msgid "HaarMax Salon"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:20
+msgid "Haarmax Salon Info Box"
+msgstr ""
+
+#: addons/widgets/haarmax-service.php:20
+msgid "Haarmax Services"
+msgstr ""
+
+#: addons/widgets/social-media.php:23
+msgid "Haarmax Social Media"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:20
+msgid "Haarmax Team"
+msgstr ""
+
+#: addons/widgets/haarmax-trends-product.php:20
+msgid "Haarmax Trends Products"
+msgstr ""
+
+#: addons/widgets/haarmax-counter.php:68 addons/widgets/haarmax-counter.php:83
+msgid "Hair Treatments"
+msgstr ""
+
+#: addons/header/header.php:38 inc/builder/builder.php:167
+#: inc/builder/builder.php:168 inc/builder/builder.php:170
+msgid "Header"
+msgstr ""
+
+#: inc/builder/builder.php:45 inc/builder/builder.php:122
+#: inc/builder/builder.php:122
+msgid "Header Builder"
+msgstr ""
+
+#: addons/widgets/haarmax-right-choice.php:142
+#: addons/widgets/haarmax-trends-product.php:136
+msgid "Header Color"
+msgstr ""
+
+#: inc/builder/builder.php:54
+msgid "Header Name"
+msgstr ""
+
+#: inc/builder/builder.php:32 inc/builder/builder.php:41
+msgid "Header Option"
+msgstr ""
+
+#: addons/header/header.php:428
+msgid "Height"
+msgstr ""
+
+#: addons/header/header.php:215 addons/widgets/haarmax-single-price-cart.php:46
+msgid "Hide"
+msgstr ""
+
+#: addons/widgets/haarmax-history.php:38
+msgid "History Sections"
+msgstr ""
+
+#: addons/widgets/haarmax-history.php:22
+msgid "History Slider"
+msgstr ""
+
+#: addons/widgets/haarmax-right-choice.php:132
+#: addons/widgets/haarmax-team.php:257
+#: addons/widgets/haarmax-trends-product.php:126
+msgid "Hover Color"
+msgstr ""
+
+#: addons/widgets/haarmax-price-list.php:385
+msgid "Hover Effect"
+msgstr ""
+
+#: addons/widgets/haarmax-about-us.php:114 addons/widgets/haarmax-button.php:54
+#: addons/widgets/haarmax-newsletter.php:139
+#: addons/widgets/haarmax-offer-cart.php:82
+#: addons/widgets/haarmax-package.php:90
+#: addons/widgets/haarmax-price-list.php:103
+#: addons/widgets/haarmax-price-list.php:282
+#: addons/widgets/haarmax-right-choice.php:77
+#: addons/widgets/haarmax-single-price-cart.php:100
+#: addons/widgets/haarmax-team.php:87 addons/widgets/haarmax-team.php:176
+#: addons/widgets/haarmax-team.php:190 addons/widgets/haarmax-team.php:204
+#: addons/widgets/haarmax-team.php:218
+#: addons/widgets/haarmax-trends-product.php:73
+#: addons/widgets/image-with-video.php:92 addons/widgets/social-media.php:67
+msgid "https://your-link.com"
+msgstr ""
+
+#: addons/widgets/haarmax-price-list.php:170
+#: addons/widgets/section-title.php:57
+msgid "Icon"
+msgstr ""
+
+#: addons/header/header.php:350 addons/widgets/social-media.php:130
+msgid "Icon Background Color"
+msgstr ""
+
+#: addons/widgets/social-media.php:141
+msgid "Icon Background Hover Color"
+msgstr ""
+
+#: addons/widgets/haarmax-instagram-gallery.php:114
+#: addons/widgets/haarmax-newsletter.php:288
+#: addons/widgets/social-media.php:108
+msgid "Icon Color"
+msgstr ""
+
+#: addons/widgets/social-media.php:119
+msgid "Icon Hover Color"
+msgstr ""
+
+#: addons/header/header.php:361
+msgid "Icon Shake Color"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:98
+msgid "ID"
+msgstr ""
+
+#: addons/widgets/haarmax-right-choice.php:92
+#: addons/widgets/haarmax-trends-product.php:85
+#: addons/widgets/image-with-video.php:40
+msgid "Image"
+msgstr ""
+
+#: addons/widgets/haarmax-service.php:61 addons/widgets/haarmax-service.php:106
+msgid "Image icon"
+msgstr ""
+
+#: addons/widgets/image-with-video.php:48
+msgid "Image Style"
+msgstr ""
+
+#: addons/widgets/haarmax-gallery.php:70 addons/widgets/haarmax-gallery.php:72
+#: addons/widgets/haarmax-working-process.php:54
+#: addons/widgets/haarmax-working-process.php:56
+msgid "Image Title"
+msgstr ""
+
+#: addons/widgets/haarmax-newsletter.php:98
+msgid "Image With Video Options"
+msgstr ""
+
+#: addons/widgets/haarmax-instagram-gallery.php:22
+#: addons/widgets/haarmax-instagram-gallery.php:38
+msgid "Instagram Gallery"
+msgstr ""
+
+#: addons/widgets/haarmax-instagram-gallery.php:72
+msgid "Instagram Gallery Image"
+msgstr ""
+
+#: addons/widgets/haarmax-instagram-gallery.php:45
+msgid "Instagram Style"
+msgstr ""
+
+#: addons/widgets/haarmax-history.php:65
+msgid "JR Shawon"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:106
+msgid "Label Color"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:126
+msgid "Label Margin"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:138
+msgid "Label Padding"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:98
+msgid "Label Styling"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:118
+msgid "Label Typography"
+msgstr ""
+
+#: addons/widgets/section-title.php:136
+msgid "Left"
+msgstr ""
+
+#: addons/widgets/haarmax-about-us.php:112 addons/widgets/haarmax-button.php:52
+#: addons/widgets/haarmax-offer-cart.php:80
+#: addons/widgets/haarmax-package.php:88
+#: addons/widgets/haarmax-price-list.php:101
+#: addons/widgets/haarmax-price-list.php:280
+#: addons/widgets/haarmax-right-choice.php:75
+#: addons/widgets/haarmax-single-price-cart.php:98
+#: addons/widgets/haarmax-team.php:85 addons/widgets/social-media.php:65
+msgid "Link"
+msgstr ""
+
+#: addons/header/header.php:69
+msgid "Location Text"
+msgstr ""
+
+#: addons/widgets/haarmax-logo-carousel.php:22
+#: addons/widgets/haarmax-logo-carousel.php:38
+msgid "Logo Carousel"
+msgstr ""
+
+#: addons/widgets/haarmax-logo-carousel.php:48
+msgid "Logo Carousel image"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:98
+#: addons/widgets/haarmax-testimonial.php:126
+#: addons/widgets/haarmax-testimonial.php:131
+#: addons/widgets/haarmax-testimonial.php:136
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+"quis nostrud exercitation ullamco "
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:125
+msgid "Marko Polo"
+msgstr ""
+
+#: addons/header/header.php:374
+msgid "Menu Color"
+msgstr ""
+
+#: addons/header/header.php:384
+msgid "Menu Hover Color"
+msgstr ""
+
+#: addons/header/header.php:404
+msgid "Menu Margin"
+msgstr ""
+
+#: addons/header/header.php:416
+msgid "Menu Padding"
+msgstr ""
+
+#: addons/header/header.php:396
+msgid "Menu Typography"
+msgstr ""
+
+#: addons/header/header.php:296
+msgid "Menubar Styling"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:237
+msgid "Meta"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:245
+msgid "Meta Color"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:257
+msgid "Meta Typography"
+msgstr ""
+
+#: inc/widgets/contact-info-widget.php:111
+msgid "Mobile :"
+msgstr ""
+
+#: addons/widgets/haarmax-history.php:63 addons/widgets/haarmax-team.php:59
+#: addons/widgets/haarmax-team.php:128
+msgid "Name"
+msgstr ""
+
+#: inc/builder/builder.php:141
+msgid "New Footer"
+msgstr ""
+
+#: inc/builder/builder.php:173
+msgid "New Header"
+msgstr ""
+
+#: addons/widgets/haarmax-newsletter.php:20
+#: addons/widgets/haarmax-newsletter.php:36
+msgid "Newsletter"
+msgstr ""
+
+#: addons/widgets/haarmax-newsletter.php:88
+msgid "Newsletter Placeholder Text"
+msgstr ""
+
+#: addons/widgets/haarmax-newsletter.php:44
+msgid "Newsletter Style"
+msgstr ""
+
+#: addons/widgets/haarmax-instagram-gallery.php:60
+#: addons/widgets/haarmax-newsletter.php:127
+#: addons/widgets/haarmax-testimonial.php:160
+#: addons/widgets/haarmax-testimonial.php:172
+#: addons/widgets/haarmax-testimonial.php:185
+#: addons/widgets/image-with-video.php:81 inc/builder/builder.php:77
+msgid "No"
+msgstr ""
+
+#: inc/builder/builder.php:148
+msgid "No Footer found in Trash."
+msgstr ""
+
+#: inc/builder/builder.php:147
+msgid "No Footer found."
+msgstr ""
+
+#: inc/builder/builder.php:180
+msgid "No Header found in Trash."
+msgstr ""
+
+#: inc/builder/builder.php:179
+msgid "No Header found."
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:55
+msgid "No of Post to show"
+msgstr ""
+
+#: addons/header/header.php:450
+msgid "Notice Box Styling"
+msgstr ""
+
+#: inc/widgets/recent-post-widget.php:140
+msgid "Number of Posts to show:"
+msgstr ""
+
+#: addons/widgets/haarmax-offer-cart.php:36
+msgid "Offar Cart"
+msgstr ""
+
+#: addons/widgets/haarmax-about-us.php:249
+#: addons/widgets/haarmax-package.php:405
+msgid "Offer Rounded Background Color"
+msgstr ""
+
+#: addons/widgets/haarmax-about-us.php:241
+#: addons/widgets/haarmax-package.php:397
+msgid "Offer Styling"
+msgstr ""
+
+#: addons/widgets/haarmax-about-us.php:86
+#: addons/widgets/haarmax-about-us.php:88
+msgid "Offer Text"
+msgstr ""
+
+#: addons/widgets/haarmax-package.php:427
+msgid "Offer Text Color"
+msgstr ""
+
+#: addons/widgets/haarmax-package.php:439
+msgid "Offer Text Typography"
+msgstr ""
+
+#: addons/header/header.php:78
+msgid "Office Location"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:82
+msgid "Order"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:95
+msgid "Order By"
+msgstr ""
+
+#: addons/widgets/haarmax-working-process.php:132
+msgid "Overlay Background Color"
+msgstr ""
+
+#: addons/widgets/haarmax-gallery.php:119
+#: addons/widgets/haarmax-instagram-gallery.php:124
+msgid "Overlay bg Color"
+msgstr ""
+
+#: addons/widgets/haarmax-package.php:36
+msgid "Package"
+msgstr ""
+
+#: addons/widgets/haarmax-package.php:43
+msgid "Package Style"
+msgstr ""
+
+#: addons/widgets/haarmax-package.php:139
+#: addons/widgets/haarmax-package.php:200
+msgid "Packages"
+msgstr ""
+
+#: inc/builder/builder.php:146
+msgid "Parent Footer:"
+msgstr ""
+
+#: inc/builder/builder.php:178
+msgid "Parent Header:"
+msgstr ""
+
+#: addons/header/header.php:305
+msgid "Phone Color"
+msgstr ""
+
+#: addons/header/header.php:316
+msgid "Phone Hover Color"
+msgstr ""
+
+#: addons/header/header.php:338
+msgid "Phone Icon Color"
+msgstr ""
+
+#: addons/header/header.php:329
+msgid "Phone Typography"
+msgstr ""
+
+#: addons/header/header.php:718 addons/header/header.php:890
+msgid "Phone:"
+msgstr ""
+
+#: addons/addons.php:206
+msgid "PHP"
+msgstr ""
+
+#: addons/widgets/haarmax-product-search.php:44
+msgid "Placeholder Text"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:485
+msgid "Posted By "
+msgstr ""
+
+#: inc/builder/builder.php:44 inc/builder/builder.php:88
+msgid "Pre Built"
+msgstr ""
+
+#: addons/widgets/haarmax-right-choice.php:57
+#: addons/widgets/haarmax-trends-product.php:62
+msgid "Price"
+msgstr ""
+
+#: addons/widgets/haarmax-price-list.php:371
+msgid "Price Box Color"
+msgstr ""
+
+#: addons/widgets/haarmax-single-price-cart.php:20
+#: addons/widgets/haarmax-single-price-cart.php:36
+msgid "Price Cart"
+msgstr ""
+
+#: addons/widgets/haarmax-right-choice.php:279
+#: addons/widgets/haarmax-trends-product.php:277
+msgid "Price Color"
+msgstr ""
+
+#: addons/widgets/haarmax-price-list.php:36
+msgid "Price List"
+msgstr ""
+
+#: addons/widgets/haarmax-price-list.php:43
+msgid "Price List Style"
+msgstr ""
+
+#: addons/widgets/haarmax-right-choice.php:301
+#: addons/widgets/haarmax-trends-product.php:299
+msgid "Price Margin"
+msgstr ""
+
+#: addons/widgets/haarmax-right-choice.php:313
+#: addons/widgets/haarmax-trends-product.php:311
+msgid "Price Padding"
+msgstr ""
+
+#: addons/widgets/haarmax-package.php:128
+#: addons/widgets/haarmax-package.php:189
+#: addons/widgets/haarmax-price-list.php:83
+#: addons/widgets/haarmax-price-list.php:192
+#: addons/widgets/haarmax-price-list.php:244
+msgid "Price Plan"
+msgstr ""
+
+#: addons/widgets/haarmax-price-list.php:324
+msgid "Price Plan Background"
+msgstr ""
+
+#: addons/widgets/haarmax-right-choice.php:271
+#: addons/widgets/haarmax-trends-product.php:269
+msgid "Price Styling"
+msgstr ""
+
+#: addons/widgets/haarmax-price-list.php:116
+#: addons/widgets/haarmax-price-list.php:202
+#: addons/widgets/haarmax-price-list.php:295
+msgid "Price Table"
+msgstr ""
+
+#: addons/widgets/haarmax-package.php:447
+msgid "Price Text Color"
+msgstr ""
+
+#: addons/widgets/haarmax-package.php:459
+msgid "Price Text Typography"
+msgstr ""
+
+#: addons/widgets/haarmax-price-list.php:535
+msgid "Price Title Styling"
+msgstr ""
+
+#: addons/widgets/haarmax-right-choice.php:291
+#: addons/widgets/haarmax-trends-product.php:289
+msgid "Price Typography"
+msgstr ""
+
+#: addons/widgets/haarmax-package.php:119
+#: addons/widgets/haarmax-price-list.php:235
+msgid "Pricing Title"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:216
+msgid "Profile Url?"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:102
+msgid "Random"
+msgstr ""
+
+#: addons/widgets/rating.php:19 addons/widgets/rating.php:35
+msgid "Rating"
+msgstr ""
+
+#: inc/widgets/about-us-widget.php:145
+msgid "Rating Text:"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:459
+msgid "Read More"
+msgstr ""
+
+#: addons/widgets/section-title.php:144
+msgid "Right"
+msgstr ""
+
+#: addons/widgets/haarmax-right-choice.php:36
+#: addons/widgets/haarmax-right-choice.php:106
+msgid "Right Choice"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:82
+msgid "Rubaida Kanom"
+msgstr ""
+
+#: addons/widgets/haarmax-package.php:121
+#: addons/widgets/haarmax-package.php:130
+#: addons/widgets/haarmax-package.php:144
+#: addons/widgets/haarmax-package.php:174
+#: addons/widgets/haarmax-package.php:183
+#: addons/widgets/haarmax-package.php:191
+#: addons/widgets/haarmax-package.php:205
+#: addons/widgets/haarmax-price-list.php:76
+#: addons/widgets/haarmax-price-list.php:85
+#: addons/widgets/haarmax-price-list.php:121
+#: addons/widgets/haarmax-price-list.php:185
+#: addons/widgets/haarmax-price-list.php:194
+#: addons/widgets/haarmax-price-list.php:207
+#: addons/widgets/haarmax-price-list.php:237
+#: addons/widgets/haarmax-price-list.php:246
+#: addons/widgets/haarmax-price-list.php:255
+#: addons/widgets/haarmax-price-list.php:264
+#: addons/widgets/haarmax-price-list.php:300
+#: addons/widgets/haarmax-right-choice.php:111
+#: addons/widgets/haarmax-service.php:76 addons/widgets/haarmax-service.php:90
+#: addons/widgets/haarmax-service.php:121
+#: addons/widgets/haarmax-service.php:130
+#: addons/widgets/haarmax-service.php:143 addons/widgets/haarmax-team.php:61
+#: addons/widgets/haarmax-team.php:130
+#: addons/widgets/haarmax-trends-product.php:47
+#: addons/widgets/haarmax-trends-product.php:56
+#: addons/widgets/haarmax-trends-product.php:64
+#: addons/widgets/haarmax-trends-product.php:104
+msgid "Safe Cleaning Supplies"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:60
+msgid "Salon Address"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:36
+msgid "Salon Info Box"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:44
+msgid "Salon Label"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:52
+msgid "Salon name"
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:69
+msgid "Salon Phone Number"
+msgstr ""
+
+#: addons/widgets/haarmax-counter.php:88
+msgid "Salon Products"
+msgstr ""
+
+#: addons/widgets/haarmax-counter.php:98
+msgid "Satisfied Customers"
+msgstr ""
+
+#: addons/widgets/haarmax-product-search.php:17
+msgid "Search"
+msgstr ""
+
+#: inc/builder/builder.php:145
+msgid "Search Footer"
+msgstr ""
+
+#: addons/widgets/haarmax-product-search.php:36
+msgid "Search Form"
+msgstr ""
+
+#: inc/builder/builder.php:177
+msgid "Search Header"
+msgstr ""
+
+#: addons/widgets/haarmax-product-search.php:56
+msgid "Search Style"
+msgstr ""
+
+#: addons/widgets/haarmax-newsletter.php:79
+msgid "Section Content"
+msgstr ""
+
+#: addons/widgets/section-title.php:94 addons/widgets/section-title.php:96
+msgid "Section Subtitle"
+msgstr ""
+
+#: addons/widgets/section-title.php:238
+msgid "Section Subtitle Color"
+msgstr ""
+
+#: addons/widgets/section-title.php:264
+msgid "Section Subtitle Margin"
+msgstr ""
+
+#: addons/widgets/section-title.php:253
+msgid "Section Subtitle Typography"
+msgstr ""
+
+#: addons/widgets/haarmax-newsletter.php:69 addons/widgets/section-title.php:19
+#: addons/widgets/section-title.php:35 addons/widgets/section-title.php:69
+#: addons/widgets/section-title.php:71
+msgid "Section Title"
+msgstr ""
+
+#: addons/widgets/section-title.php:169
+msgid "Section Title Color"
+msgstr ""
+
+#: addons/widgets/section-title.php:195
+msgid "Section Title Margin"
+msgstr ""
+
+#: addons/widgets/section-title.php:210
+msgid "Section Title Padding"
+msgstr ""
+
+#: addons/widgets/section-title.php:161
+msgid "Section Title Style"
+msgstr ""
+
+#: addons/widgets/section-title.php:184
+msgid "Section Title Typography"
+msgstr ""
+
+#: inc/widgets/about-us-widget.php:150
+msgid "Select Rating:"
+msgstr ""
+
+#: addons/widgets/haarmax-service.php:36
+msgid "Services"
+msgstr ""
+
+#: addons/widgets/haarmax-service.php:85 addons/widgets/haarmax-service.php:138
+msgid "Services Content"
+msgstr ""
+
+#: addons/widgets/haarmax-service.php:43
+msgid "Services Style"
+msgstr ""
+
+#: addons/widgets/haarmax-counter.php:93
+msgid "Shades of colors"
+msgstr ""
+
+#: addons/widgets/features-box.php:207
+#: addons/widgets/haarmax-offer-cart.php:290
+#: addons/widgets/haarmax-package.php:482
+#: addons/widgets/haarmax-price-list.php:397
+msgid "Shape Color"
+msgstr ""
+
+#: addons/widgets/features-box.php:217
+#: addons/widgets/haarmax-offer-cart.php:300
+msgid "Shape Delay"
+msgstr ""
+
+#: addons/widgets/features-box.php:65 addons/widgets/features-box.php:68
+#: addons/widgets/haarmax-offer-cart.php:55
+msgid "Short Descriptions"
+msgstr ""
+
+#: addons/header/header.php:214 addons/widgets/haarmax-single-price-cart.php:45
+msgid "Show"
+msgstr ""
+
+#: addons/header/header.php:212
+msgid "Show Cart?"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:151
+#: addons/widgets/haarmax-logo-carousel.php:105
+#: addons/widgets/haarmax-working-process.php:103
+msgid "Slide To Show"
+msgstr ""
+
+#: addons/widgets/haarmax-price-list.php:135
+msgid "Slide to show"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:143
+#: addons/widgets/haarmax-logo-carousel.php:98
+#: addons/widgets/haarmax-testimonial.php:149
+#: addons/widgets/haarmax-working-process.php:96
+msgid "Slider Control"
+msgstr ""
+
+#: addons/widgets/haarmax-counter.php:76 addons/widgets/haarmax-gallery.php:88
+#: addons/widgets/haarmax-history.php:80
+#: addons/widgets/haarmax-instagram-gallery.php:83
+#: addons/widgets/haarmax-logo-carousel.php:75
+#: addons/widgets/haarmax-testimonial.php:120
+#: addons/widgets/haarmax-working-process.php:72
+msgid "Slides"
+msgstr ""
+
+#: addons/widgets/social-media.php:53 addons/widgets/social-media.php:81
+msgid "Social Icon"
+msgstr ""
+
+#: addons/header/header.php:272
+msgid "Social Icon Color"
+msgstr ""
+
+#: addons/header/header.php:283
+msgid "Social Icon Hover Color"
+msgstr ""
+
+#: addons/widgets/social-media.php:42
+msgid "Social Media"
+msgstr ""
+
+#: addons/widgets/social-media.php:100
+msgid "Social Media Styling"
+msgstr ""
+
+#: inc/haarmaxajax.php:56
+msgid "Sorry something went wrong."
+msgstr ""
+
+#: inc/haarmaxajax.php:117
+msgid "Sorry!!! No product found"
+msgstr ""
+
+#: addons/header/header.php:46
+msgid "Style"
+msgstr ""
+
+#: addons/widgets/image-with-video.php:56
+msgid "Style Five"
+msgstr ""
+
+#: addons/widgets/haarmax-price-list.php:50
+#: addons/widgets/image-with-video.php:55
+msgid "Style Four"
+msgstr ""
+
+#: addons/header/header.php:49 addons/widgets/features-box.php:47
+#: addons/widgets/haarmax-blog.php:46 addons/widgets/haarmax-gallery.php:50
+#: addons/widgets/haarmax-instagram-gallery.php:49
+#: addons/widgets/haarmax-newsletter.php:48
+#: addons/widgets/haarmax-package.php:47
+#: addons/widgets/haarmax-price-list.php:47
+#: addons/widgets/haarmax-service.php:47 addons/widgets/haarmax-team.php:47
+#: addons/widgets/haarmax-testimonial.php:50
+#: addons/widgets/image-with-video.php:52 addons/widgets/section-title.php:47
+msgid "Style One"
+msgstr ""
+
+#: addons/header/header.php:51 addons/widgets/haarmax-package.php:49
+#: addons/widgets/haarmax-price-list.php:49
+#: addons/widgets/haarmax-service.php:49 addons/widgets/image-with-video.php:54
+msgid "Style Three"
+msgstr ""
+
+#: addons/header/header.php:50 addons/widgets/features-box.php:48
+#: addons/widgets/haarmax-blog.php:47 addons/widgets/haarmax-gallery.php:51
+#: addons/widgets/haarmax-instagram-gallery.php:50
+#: addons/widgets/haarmax-newsletter.php:49
+#: addons/widgets/haarmax-package.php:48
+#: addons/widgets/haarmax-price-list.php:48
+#: addons/widgets/haarmax-service.php:48 addons/widgets/haarmax-team.php:48
+#: addons/widgets/haarmax-testimonial.php:51
+#: addons/widgets/image-with-video.php:53 addons/widgets/section-title.php:48
+msgid "Style Two"
+msgstr ""
+
+#: addons/widgets/section-title.php:103
+msgid "Subitle Tag"
+msgstr ""
+
+#: addons/widgets/haarmax-newsletter.php:268
+msgid "Subscribe Box Styling"
+msgstr ""
+
+#: addons/widgets/haarmax-newsletter.php:72
+msgid "SUBSCRIBE TO NEWSLETTER"
+msgstr ""
+
+#: addons/widgets/haarmax-about-us.php:139
+#: addons/widgets/haarmax-package.php:229
+msgid "Subtitle Color"
+msgstr ""
+
+#: addons/widgets/haarmax-about-us.php:159
+#: addons/widgets/haarmax-package.php:249
+msgid "Subtitle Margin"
+msgstr ""
+
+#: addons/widgets/haarmax-about-us.php:171
+#: addons/widgets/haarmax-package.php:261
+msgid "Subtitle Padding"
+msgstr ""
+
+#: addons/widgets/haarmax-about-us.php:131
+#: addons/widgets/haarmax-package.php:220
+msgid "Subtitle Styling"
+msgstr ""
+
+#: addons/widgets/haarmax-about-us.php:151
+#: addons/widgets/haarmax-package.php:241
+msgid "Subtitle Typography"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:36
+msgid "Team"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:138
+msgid "Team Icon"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:99 addons/widgets/haarmax-team.php:164
+msgid "Team Image"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:109 addons/widgets/haarmax-team.php:230
+msgid "Team Member"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:43
+msgid "Team Style"
+msgstr ""
+
+#: inc/widgets/contact-info-widget.php:62
+msgid "Tel: "
+msgstr ""
+
+#: addons/widgets/haarmax-salon-infobox.php:71
+msgid "Tel: 703-261-6660"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:205
+msgid "Testimonial Background Color"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:71
+msgid "Testimonial Image Icon"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:22
+#: addons/widgets/haarmax-testimonial.php:38
+msgid "Testimonial Slider"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:227
+msgid "Testimonial Star Color"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:46
+msgid "Testimonial Style"
+msgstr ""
+
+#: addons/header/header.php:657 addons/widgets/haarmax-about-us.php:320
+#: addons/widgets/haarmax-button.php:145
+#: addons/widgets/haarmax-offer-cart.php:257
+#: addons/widgets/haarmax-price-list.php:640
+#: addons/widgets/haarmax-right-choice.php:376
+#: addons/widgets/haarmax-single-price-cart.php:221
+msgid "Text Color"
+msgstr ""
+
+#: addons/header/header.php:668 addons/widgets/haarmax-about-us.php:330
+#: addons/widgets/haarmax-button.php:155
+#: addons/widgets/haarmax-offer-cart.php:267
+#: addons/widgets/haarmax-price-list.php:650
+#: addons/widgets/haarmax-right-choice.php:386
+#: addons/widgets/haarmax-single-price-cart.php:231
+msgid "Text Hover Color"
+msgstr ""
+
+#: inc/haarmaxajax.php:51
+msgid "Thank you, you have been added to our mailing list."
+msgstr ""
+
+#: inc/haarmaxajax.php:54
+msgid "This Email address is already exists."
+msgstr ""
+
+#. Description of the plugin
+msgid "This is a helper plugin of haarino theme"
+msgstr ""
+
+#: addons/widgets/haarmax-package.php:106
+#: addons/widgets/haarmax-package.php:159
+#: addons/widgets/haarmax-price-list.php:61
+#: addons/widgets/haarmax-price-list.php:157
+#: addons/widgets/haarmax-price-list.php:222
+#: addons/widgets/haarmax-single-price-cart.php:79
+msgid "Thumbnail Image"
+msgstr ""
+
+#: addons/widgets/features-box.php:56 addons/widgets/features-box.php:59
+#: addons/widgets/haarmax-blog.php:100 addons/widgets/haarmax-blog.php:172
+#: addons/widgets/haarmax-gallery.php:132
+#: addons/widgets/haarmax-offer-cart.php:43
+#: addons/widgets/haarmax-offer-cart.php:46
+#: addons/widgets/haarmax-package.php:57 addons/widgets/haarmax-package.php:60
+#: addons/widgets/haarmax-package.php:172
+#: addons/widgets/haarmax-price-list.php:74
+#: addons/widgets/haarmax-price-list.php:183
+#: addons/widgets/haarmax-right-choice.php:43
+#: addons/widgets/haarmax-service.php:74 addons/widgets/haarmax-service.php:119
+#: addons/widgets/haarmax-trends-product.php:45
+#: addons/widgets/haarmax-working-process.php:145
+msgid "Title"
+msgstr ""
+
+#: addons/widgets/features-box.php:97 addons/widgets/haarmax-about-us.php:194
+#: addons/widgets/haarmax-blog.php:180 addons/widgets/haarmax-counter.php:119
+#: addons/widgets/haarmax-gallery.php:141
+#: addons/widgets/haarmax-newsletter.php:163
+#: addons/widgets/haarmax-offer-cart.php:107
+#: addons/widgets/haarmax-package.php:284
+#: addons/widgets/haarmax-price-list.php:422
+#: addons/widgets/haarmax-price-list.php:544
+#: addons/widgets/haarmax-right-choice.php:165
+#: addons/widgets/haarmax-salon-infobox.php:159
+#: addons/widgets/haarmax-service.php:166
+#: addons/widgets/haarmax-single-price-cart.php:126
+#: addons/widgets/haarmax-team.php:281
+#: addons/widgets/haarmax-trends-product.php:159
+#: addons/widgets/haarmax-working-process.php:153
+msgid "Title Color"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:191
+#: addons/widgets/haarmax-working-process.php:164
+msgid "Title Color Hover"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:291
+msgid "Title Hover Color"
+msgstr ""
+
+#: addons/widgets/haarmax-blog.php:64
+msgid "Title Length"
+msgstr ""
+
+#: addons/widgets/features-box.php:117 addons/widgets/haarmax-about-us.php:214
+#: addons/widgets/haarmax-blog.php:211 addons/widgets/haarmax-counter.php:139
+#: addons/widgets/haarmax-gallery.php:161
+#: addons/widgets/haarmax-newsletter.php:184
+#: addons/widgets/haarmax-offer-cart.php:127
+#: addons/widgets/haarmax-package.php:304
+#: addons/widgets/haarmax-price-list.php:448
+#: addons/widgets/haarmax-price-list.php:564
+#: addons/widgets/haarmax-right-choice.php:187
+#: addons/widgets/haarmax-salon-infobox.php:179
+#: addons/widgets/haarmax-service.php:190
+#: addons/widgets/haarmax-single-price-cart.php:146
+#: addons/widgets/haarmax-team.php:311
+#: addons/widgets/haarmax-trends-product.php:183
+#: addons/widgets/haarmax-working-process.php:184
+msgid "Title Margin"
+msgstr ""
+
+#: addons/widgets/features-box.php:129 addons/widgets/haarmax-about-us.php:226
+#: addons/widgets/haarmax-blog.php:223 addons/widgets/haarmax-counter.php:151
+#: addons/widgets/haarmax-gallery.php:173
+#: addons/widgets/haarmax-newsletter.php:196
+#: addons/widgets/haarmax-offer-cart.php:139
+#: addons/widgets/haarmax-package.php:316
+#: addons/widgets/haarmax-price-list.php:462
+#: addons/widgets/haarmax-price-list.php:520
+#: addons/widgets/haarmax-price-list.php:576
+#: addons/widgets/haarmax-right-choice.php:199
+#: addons/widgets/haarmax-salon-infobox.php:191
+#: addons/widgets/haarmax-service.php:202
+#: addons/widgets/haarmax-single-price-cart.php:158
+#: addons/widgets/haarmax-team.php:323
+#: addons/widgets/haarmax-trends-product.php:196
+#: addons/widgets/haarmax-working-process.php:196
+msgid "Title Padding"
+msgstr ""
+
+#: addons/widgets/section-title.php:43
+msgid "Title Style"
+msgstr ""
+
+#: addons/widgets/features-box.php:89 addons/widgets/haarmax-about-us.php:186
+#: addons/widgets/haarmax-counter.php:111
+#: addons/widgets/haarmax-newsletter.php:154
+#: addons/widgets/haarmax-offer-cart.php:99
+#: addons/widgets/haarmax-package.php:276
+#: addons/widgets/haarmax-price-list.php:414
+#: addons/widgets/haarmax-right-choice.php:157
+#: addons/widgets/haarmax-salon-infobox.php:151
+#: addons/widgets/haarmax-service.php:158
+#: addons/widgets/haarmax-single-price-cart.php:118
+#: addons/widgets/haarmax-team.php:273
+#: addons/widgets/haarmax-trends-product.php:151
+msgid "Title Styling"
+msgstr ""
+
+#: addons/widgets/section-title.php:77
+msgid "Title Tag"
+msgstr ""
+
+#: addons/widgets/features-box.php:109 addons/widgets/haarmax-about-us.php:206
+#: addons/widgets/haarmax-blog.php:203 addons/widgets/haarmax-counter.php:131
+#: addons/widgets/haarmax-gallery.php:153
+#: addons/widgets/haarmax-newsletter.php:176
+#: addons/widgets/haarmax-offer-cart.php:119
+#: addons/widgets/haarmax-package.php:296
+#: addons/widgets/haarmax-price-list.php:436
+#: addons/widgets/haarmax-price-list.php:556
+#: addons/widgets/haarmax-right-choice.php:177
+#: addons/widgets/haarmax-salon-infobox.php:171
+#: addons/widgets/haarmax-service.php:179
+#: addons/widgets/haarmax-single-price-cart.php:138
+#: addons/widgets/haarmax-team.php:303
+#: addons/widgets/haarmax-trends-product.php:172
+#: addons/widgets/haarmax-working-process.php:176
+msgid "Title Typography"
+msgstr ""
+
+#: addons/widgets/haarmax-gallery.php:78
+#: addons/widgets/haarmax-logo-carousel.php:58
+#: addons/widgets/haarmax-working-process.php:62
+msgid "Title Url?"
+msgstr ""
+
+#: inc/widgets/about-us-widget.php:136 inc/widgets/contact-info-widget.php:104
+#: inc/widgets/gallery-widget.php:79 inc/widgets/recent-post-widget.php:136
+#: inc/widgets/video-intro-widget.php:105
+msgid "Title:"
+msgstr ""
+
+#: addons/header/header.php:250
+msgid "Topbar Content Color"
+msgstr ""
+
+#: addons/header/header.php:59
+msgid "Topbar Informations"
+msgstr ""
+
+#: addons/header/header.php:226
+msgid "Topbar Styling"
+msgstr ""
+
+#: addons/widgets/haarmax-trends-product.php:36
+msgid "Trends"
+msgstr ""
+
+#: addons/widgets/haarmax-trends-product.php:99
+msgid "Trends Product"
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:188
+msgid "Twitter Link"
+msgstr ""
+
+#: addons/header/header.php:649 addons/widgets/haarmax-about-us.php:312
+#: addons/widgets/haarmax-button.php:137
+#: addons/widgets/haarmax-offer-cart.php:249
+#: addons/widgets/haarmax-price-list.php:632
+#: addons/widgets/haarmax-product-search.php:65
+#: addons/widgets/haarmax-right-choice.php:368
+#: addons/widgets/haarmax-single-price-cart.php:213
+msgid "Typography"
+msgstr ""
+
+#: addons/header/header.php:71
+msgid "United State"
+msgstr ""
+
+#: addons/widgets/features-box.php:74 addons/widgets/haarmax-offer-cart.php:61
+msgid "Upload Fiture Image"
+msgstr ""
+
+#: inc/widgets/video-intro-widget.php:122
+msgid "Upload Image"
+msgstr ""
+
+#: addons/header/header.php:173
+msgid "Upload Logo"
+msgstr ""
+
+#. Author of the plugin
+msgid "Vecurosoft"
+msgstr ""
+
+#: addons/widgets/haarmax-newsletter.php:124
+#: addons/widgets/image-with-video.php:78
+msgid "Video Button"
+msgstr ""
+
+#: addons/widgets/haarmax-newsletter.php:335
+#: addons/widgets/image-with-video.php:137
+msgid "Video Button Background Color"
+msgstr ""
+
+#: addons/widgets/haarmax-newsletter.php:346
+#: addons/widgets/image-with-video.php:148
+msgid "Video Button Background Hover Color"
+msgstr ""
+
+#: addons/widgets/haarmax-newsletter.php:313
+#: addons/widgets/image-with-video.php:115
+msgid "Video Button Color"
+msgstr ""
+
+#: addons/widgets/haarmax-newsletter.php:324
+#: addons/widgets/image-with-video.php:126
+msgid "Video Button Hover Color"
+msgstr ""
+
+#: addons/widgets/haarmax-newsletter.php:357
+#: addons/widgets/image-with-video.php:159
+msgid "Video Button Ripple Effect Color"
+msgstr ""
+
+#: addons/widgets/haarmax-newsletter.php:304
+#: addons/widgets/image-with-video.php:106
+msgid "Video Button Style"
+msgstr ""
+
+#: addons/widgets/haarmax-newsletter.php:137
+#: addons/widgets/image-with-video.php:90
+msgid "Video Link"
+msgstr ""
+
+#: inc/widgets/video-intro-widget.php:109
+msgid "Video Title:"
+msgstr ""
+
+#: inc/widgets/video-intro-widget.php:113
+msgid "Video Url:"
+msgstr ""
+
+#: inc/builder/builder.php:143
+msgid "View Footer"
+msgstr ""
+
+#: inc/builder/builder.php:175
+msgid "View Header"
+msgstr ""
+
+#: addons/widgets/haarmax-testimonial.php:130
+msgid "Vivi Marian"
+msgstr ""
+
+#: inc/builder/builder.php:128
+msgid "Welcome To Header And Footer Builder Of This Theme"
+msgstr ""
+
+#: addons/widgets/haarmax-product-search.php:46
+msgid "What are you looking for?"
+msgstr ""
+
+#: addons/header/header.php:474
+msgid "Wishlist Styling"
+msgstr ""
+
+#: addons/widgets/haarmax-working-process.php:19
+#: addons/widgets/haarmax-working-process.php:35
+msgid "Working Process"
+msgstr ""
+
+#: addons/widgets/haarmax-working-process.php:45
+msgid "Working Process image"
+msgstr ""
+
+#: addons/widgets/haarmax-history.php:47
+msgid "Year"
+msgstr ""
+
+#: addons/widgets/haarmax-instagram-gallery.php:59
+#: addons/widgets/haarmax-newsletter.php:126
+#: addons/widgets/haarmax-testimonial.php:159
+#: addons/widgets/haarmax-testimonial.php:171
+#: addons/widgets/haarmax-testimonial.php:184
+#: addons/widgets/image-with-video.php:80 inc/builder/builder.php:76
+msgid "Yes"
+msgstr ""
+
+#: inc/haarmaxajax.php:39
+msgid "You are not allowed."
+msgstr ""
+
+#: addons/widgets/haarmax-team.php:114 addons/widgets/haarmax-team.php:235
+msgid "Your Name"
+msgstr ""
