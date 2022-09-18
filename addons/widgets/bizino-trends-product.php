@@ -10,14 +10,14 @@ use \Elementor\Group_Control_Image_Size;
  * Trend Products Widget .
  *
  */
-class Haarmax_Trends_Products_Widget extends Widget_Base{
+class Bizino_Trends_Products_Widget extends Widget_Base{
 
 	public function get_name() {
 		return 'haarmaxtrendproduct';
 	}
 
 	public function get_title() {
-		return __( 'Haarmax Trends Products', 'haarmax' );
+		return __( 'Bizino Trends Products', 'haarmax' );
 	}
 
 	public function get_icon() {
@@ -387,7 +387,7 @@ class Haarmax_Trends_Products_Widget extends Widget_Base{
 			                    echo '<div class="vs-trends-box">';
 			                    	if( ! empty( $data['image']['url'] ) ){
 				                        echo '<div class="trends-img">';
-				                            echo haarino_img_tag( array(
+				                            echo bizino_img_tag( array(
 								                    'url'       => esc_url( $data['image']['url'] ),
 								                    'class' 	=> 'w-100'
 								                ) );

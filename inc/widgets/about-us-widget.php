@@ -21,7 +21,7 @@ class haarmax_about_us_widget extends WP_Widget {
                 'haarmax_about_us_widget',
 
                 // Widget name will appear in UI
-                esc_html__( 'Haarmax :: About Us', 'haarmax' ),
+                esc_html__( 'Bizino :: About Us', 'haarmax' ),
 
                 // Widget description
                 array(
@@ -53,7 +53,7 @@ class haarmax_about_us_widget extends WP_Widget {
 
                 echo '<div class="vs-widget-about">';
                     if( !empty( $instance['desc'] ) ) {
-                        echo haarino_paragraph_tag( array(
+                        echo bizino_paragraph_tag( array(
                             'text'  => wp_kses_post( $instance['desc'] ),
                             'class' => 'pe-xl-5 mb-3',
                         ) );
@@ -85,7 +85,7 @@ class haarmax_about_us_widget extends WP_Widget {
                             echo '</div>';
                         }
                         if( !empty( $instance['rating_txt'] ) ) {
-                            echo haarino_paragraph_tag( array(
+                            echo bizino_paragraph_tag( array(
                                 'text'  => wp_kses_post( $instance['rating_txt'] ),
                                 'class' => 'text-uppercase text-white mb-0',
                             ) );

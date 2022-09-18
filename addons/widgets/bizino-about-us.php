@@ -10,14 +10,14 @@ use \Elementor\Group_Control_Image_Size;
  * About Us Widget .
  *
  */
-class Haarmax_AboutUs_Widget extends Widget_Base{
+class Bizino_AboutUs_Widget extends Widget_Base{
 
 	public function get_name() {
 		return 'aboutus';
 	}
 
 	public function get_title() {
-		return __( 'Haarmax About Us', 'haarmax' );
+		return __( 'Bizino About Us', 'haarmax' );
 	}
 
 	public function get_icon() {
@@ -349,7 +349,7 @@ class Haarmax_AboutUs_Widget extends Widget_Base{
 		                echo '<div class="col-lg-6 col-xl-6 mb-40 mb-lg-0">';
 		                    echo '<div class="about-image d-inline-block transform-banner position-relative">';
 		                    	if( ! empty( $settings['about_image']['url'] ) ){
-			                        echo haarino_img_tag( array(
+			                        echo bizino_img_tag( array(
 										'url'	=> esc_url( $settings['about_image']['url'] ),
 									) );
 			                    }

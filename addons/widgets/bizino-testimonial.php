@@ -12,7 +12,7 @@ use \Elementor\Group_Control_Background;
  * Testimonial Slider Widget .
  *
  */
-class Haarmax_Testimonial_Slider extends Widget_Base{
+class Bizino_Testimonial_Slider extends Widget_Base{
 
 	public function get_name() {
 		return 'haarmaxtestimonialslider';
@@ -468,7 +468,7 @@ class Haarmax_Testimonial_Slider extends Widget_Base{
 							foreach( $settings['slides'] as $singleslide ) {
 								echo '<div class="avater">';
 									if( ! empty( $singleslide['client_image']['url'] ) ){
-										echo haarino_img_tag( array(
+										echo bizino_img_tag( array(
 											'url'	=> esc_url( $singleslide['client_image']['url'] ),
 										) );
 									}
@@ -483,7 +483,7 @@ class Haarmax_Testimonial_Slider extends Widget_Base{
                                         echo '<div class="vs-testimonial">';
                                             if( ! empty( $singleslide['testimonial_image_icon']['url'] ) ){
                                                 echo '<span class="quote-icon">';
-                                                    echo haarino_img_tag( array(
+                                                    echo bizino_img_tag( array(
                                                         'url'   => esc_url( $singleslide['testimonial_image_icon']['url'] )
                                                     ) );
                                                 echo '</span>';
@@ -523,7 +523,7 @@ class Haarmax_Testimonial_Slider extends Widget_Base{
 				                    echo '<div class="vs-testimonial-box">';
 										if( ! empty( $singleslide['testimonial_image_icon']['url'] ) ){
 											echo '<div class="quote-icon">';
-												echo haarino_img_tag( array(
+												echo bizino_img_tag( array(
 													'url'   => esc_url( $singleslide['testimonial_image_icon']['url'] )
 												) );
 											echo '</div>';

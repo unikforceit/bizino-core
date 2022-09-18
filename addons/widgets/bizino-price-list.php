@@ -10,14 +10,14 @@ use \Elementor\Group_Control_Image_Size;
  * Price List Widget .
  *
  */
-class Haarmax_Price_List_Widget extends Widget_Base{
+class Bizino_Price_List_Widget extends Widget_Base{
 
 	public function get_name() {
 		return 'haarmaxpricelist';
 	}
 
 	public function get_title() {
-		return __( 'Haarmax Price List', 'haarmax' );
+		return __( 'Bizino Price List', 'haarmax' );
 	}
 
 	public function get_icon() {
@@ -740,7 +740,7 @@ class Haarmax_Price_List_Widget extends Widget_Base{
 							        echo '<div class="price-shape3"></div>';
 							        if( ! empty( $data['image_icon']['url'] ) ){
 							            echo '<div class="price-icon">';
-							            	echo haarino_img_tag( array(
+							            	echo bizino_img_tag( array(
 							                    'url'       => esc_url( $data['image_icon']['url'] ),
 							                ) );
 							            echo '</div>';
@@ -781,7 +781,7 @@ class Haarmax_Price_List_Widget extends Widget_Base{
 			                        echo '<div class="col-md-8 col-lg-auto col-xl-auto text-end  order-1 order-sm-2">';
 			                        	if( ! empty( $data['image']['url'] ) ){
 				                            echo '<div class="price-img transform-banner">';
-				                            		echo haarino_img_tag( array(
+				                            		echo bizino_img_tag( array(
 									                    'url'       => esc_url( $data['image']['url'] ),
 									                ) );
 				                            echo '</div>';
@@ -825,7 +825,7 @@ class Haarmax_Price_List_Widget extends Widget_Base{
 		                        echo '<div class="col-md-8 col-lg-auto col-xl-auto text-end  order-1 order-sm-2">';
 		                        	if( ! empty( $data['image']['url'] ) ){
 			                            echo '<div class="price-img transform-banner">';
-			                            		echo haarino_img_tag( array(
+			                            		echo bizino_img_tag( array(
 								                    'url'       => esc_url( $data['image']['url'] ),
 								                ) );
 			                            echo '</div>';

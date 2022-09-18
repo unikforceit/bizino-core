@@ -10,14 +10,14 @@ use \Elementor\Group_Control_Image_Size;
  * Features Widget .
  *
  */
-class Haarmax_Features_Widget extends Widget_Base{
+class Bizino_Features_Widget extends Widget_Base{
 
 	public function get_name() {
 		return 'haarmaxfeatures';
 	}
 
 	public function get_title() {
-		return __( 'Haarmax Features', 'haarmax' );
+		return __( 'Bizino Features', 'haarmax' );
 	}
 
 	public function get_icon() {
@@ -235,7 +235,7 @@ class Haarmax_Features_Widget extends Widget_Base{
 			echo '<div class="vs-banner-slide">';
 				if(!empty($settings['feature_image']['url'])){
 	                echo '<div class="media-img">';
-	                	echo haarino_img_tag( array(
+	                	echo bizino_img_tag( array(
                             'url'       => esc_url( $settings['feature_image']['url'] ),
                             'class' 	=> 'w-100',
                         ) );

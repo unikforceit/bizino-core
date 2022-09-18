@@ -18,7 +18,7 @@ class haarmax_contact_info_widget extends WP_Widget {
 			// Base ID of your widget
 			'haarmax_contact_info_widget',
 			// Widget name will appear in UI
-			esc_html__( 'Haarmax :: Contact Info', 'haarmax' ),
+			esc_html__( 'Bizino :: Contact Info', 'haarmax' ),
 			// Widget description
 			array(
 				'description'	 => esc_html__( 'Add Contact Info', 'haarmax' ),

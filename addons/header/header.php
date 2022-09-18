@@ -14,13 +14,13 @@ use \Elementor\Group_Control_Box_Shadow;
  * Header Widget .
  *
  */
-class Haarmax_Header extends Widget_Base {
+class Bizino_Header extends Widget_Base {
 
 	public function get_name() {
 		return 'haarmaxheader';
 	}
 	public function get_title() {
-		return __( 'Haarmax Header', 'haarmax' );
+		return __( 'Bizino Header', 'haarmax' );
 	}
 
 	public function get_icon() {
@@ -737,7 +737,7 @@ class Haarmax_Header extends Widget_Base {
 	                                	if( ! empty( $settings['logo_image']['url'] ) ){
 			                            echo '<div class="header-logo py-2 py-lg-0">';
 			                                    echo '<a href="'.esc_url( home_url( '/' ) ).'">';
-			                                    echo haarino_img_tag( array(
+			                                    echo bizino_img_tag( array(
 													'url'	=> esc_url( $settings['logo_image']['url'] ),
 													'class' => 'logo-img',
 												) );
@@ -838,7 +838,7 @@ class Haarmax_Header extends Widget_Base {
 		                    	if( ! empty( $settings['logo_image']['url'] ) ){
 		                            echo '<div class="header-logo">';
 		                                    echo '<a href="'.esc_url( home_url( '/' ) ).'">';
-		                                    echo haarino_img_tag( array(
+		                                    echo bizino_img_tag( array(
 												'url'	=> esc_url( $settings['logo_image']['url'] ),
 											) );
 		                                    echo '</a>';
@@ -908,7 +908,7 @@ class Haarmax_Header extends Widget_Base {
 		                                if( ! empty( $settings['logo_image']['url'] ) ){
 			                            echo '<div class="header-logo">';
 			                                    echo '<a href="'.esc_url( home_url( '/' ) ).'">';
-				                                    echo haarino_img_tag( array(
+				                                    echo bizino_img_tag( array(
 														'url'	=> esc_url( $settings['logo_image']['url'] ),
 														'class' => 'logo-img',
 													) );
@@ -957,7 +957,7 @@ class Haarmax_Header extends Widget_Base {
                 echo '<button class="vs-menu-toggle"><i class="fal fa-times"></i></button>';
 
                 echo '<div class="mobile-logo">';
-                    echo haarino_theme_mobile_logo();
+                    echo bizino_theme_mobile_logo();
                 echo '</div>';
                 echo '<div class="vs-mobile-menu">';
                     if( has_nav_menu('mobile-menu') ) {

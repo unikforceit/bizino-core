@@ -12,7 +12,7 @@ use \Elementor\Group_Control_Background;
  * Gallery Widget .
  *
  */
-class Haarmax_Gallery extends Widget_Base{
+class Bizino_Gallery extends Widget_Base{
 
 	public function get_name() {
 		return 'haarmaxgallery';
@@ -198,7 +198,7 @@ class Haarmax_Gallery extends Widget_Base{
                                     echo '<div class="vs-gallery-box">';
                                         if( ! empty( $single_data['gallery_image']['url'] ) ){
                                             echo '<div class="gallery-img">';
-                                                echo haarino_img_tag( array(
+                                                echo bizino_img_tag( array(
                                                     'url'   => esc_url( $single_data['gallery_image']['url'] ),
                                                     'class' => 'w-100',
                                                 ) );
@@ -223,7 +223,7 @@ class Haarmax_Gallery extends Widget_Base{
                             foreach ( $settings['slides'] as $single_data ) {
                                 echo '<div class="col-sm-6 col-lg-4 mb-30">';
                                     echo '<div class="gallery-thumb">';
-                                        echo haarino_img_tag( array(
+                                        echo bizino_img_tag( array(
                                             'url'   => esc_url( $single_data['gallery_image']['url'] ),
                                             'class' => 'w-100',
                                         ) );

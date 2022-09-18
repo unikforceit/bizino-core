@@ -10,14 +10,14 @@ use \Elementor\Group_Control_Image_Size;
  * Package Widget .
  *
  */
-class Haarmax_Packages_Widget extends Widget_Base{
+class Bizino_Packages_Widget extends Widget_Base{
 
 	public function get_name() {
 		return 'haarmaxpackage';
 	}
 
 	public function get_title() {
-		return __( 'Haarmax Package', 'haarmax' );
+		return __( 'Bizino Package', 'haarmax' );
 	}
 
 	public function get_icon() {
@@ -516,7 +516,7 @@ class Haarmax_Packages_Widget extends Widget_Base{
 				                                echo '<div class="col-xl-auto">';
 				                                    echo '<div class="package-thumb">';
 				                                        echo '<span class="thumb-icon"><i class="fas fa-plus"></i></span>';
-				                                        echo haarino_img_tag( array(
+				                                        echo bizino_img_tag( array(
 		                                                    'url'   => esc_url( $single_data['image']['url'] ),
 		                                                    'class' => 'w-100',
 		                                                ) );
@@ -540,7 +540,7 @@ class Haarmax_Packages_Widget extends Widget_Base{
 		                    	foreach ( $settings['packages'] as $single_data ) {
 			                        echo '<div class="package-banner-big">';
 			                        	if( ! empty( $single_data['image']['url'] ) ){
-				                        	echo haarino_img_tag( array(
+				                        	echo bizino_img_tag( array(
 		                                            'url'   => esc_url( $single_data['image']['url'] ),
 		                                        ) );
 				                        }
@@ -568,7 +568,7 @@ class Haarmax_Packages_Widget extends Widget_Base{
 			                    echo '<div class="offers-box" data-overlay="theme">';
 			                    	if( ! empty( $single_data['image']['url'] ) ){
 				                        echo '<div class="offers-img">';
-				                            echo haarino_img_tag( array(
+				                            echo bizino_img_tag( array(
 		                                            'url'   	=> esc_url( $single_data['image']['url'] ),
 		                                            'class'  	=> 'w-100'
 		                                        ) );
@@ -602,7 +602,7 @@ class Haarmax_Packages_Widget extends Widget_Base{
 			                    echo '<div class="offers-box" data-overlay="theme">';
 			                    	if( ! empty( $single_data['image']['url'] ) ){
 				                        echo '<div class="offers-img">';
-				                            echo haarino_img_tag( array(
+				                            echo bizino_img_tag( array(
 		                                            'url'   	=> esc_url( $single_data['image']['url'] ),
 		                                            'class'  	=> 'w-100'
 		                                        ) );

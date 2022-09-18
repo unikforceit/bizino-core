@@ -10,7 +10,7 @@ use \Elementor\Group_Control_Background;
  * Newsletter Widget .
  *
  */
-class Haarmax_Newsletter extends Widget_Base {
+class Bizino_Newsletter extends Widget_Base {
 
 	public function get_name() {
 		return 'haarmaxnewsletterform';
@@ -380,7 +380,7 @@ class Haarmax_Newsletter extends Widget_Base {
 		            	if( !empty( $settings['image']['url'] ) ) {
 			                echo '<div class="col-lg-6 col-xl-6 mb-30 mb-lg-0">';
 			                    echo '<div class="transform-banner position-relative">';
-			                    	echo haarino_img_tag( array(
+			                    	echo bizino_img_tag( array(
 											'url'	=> esc_url( $settings['image']['url'] ),
 										) );
 						            if( !empty( $settings['video_btn'] == 'yes' && !empty( $settings['video_link']['url'] ) ) ) {

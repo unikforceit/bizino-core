@@ -2,7 +2,7 @@
     /**
      * Class For Builder
      */
-    class HaarmaxBuilder{
+    class BizinoBuilder{
 
         function __construct(){
             // register admin menus
@@ -20,7 +20,7 @@
 		}
 
 		public function widget_scripts( ) {
-			wp_enqueue_script( 'haarmax-core',HAARMAX_PLUGDIRURI.'assets/js/haarmax-core.js',array( 'jquery' ),'1.0',true );
+			wp_enqueue_script( 'haarmax-core',BIZINO_PLUGDIRURI.'assets/js/haarmax-core.js',array( 'jquery' ),'1.0',true );
 		}
 
 
@@ -36,7 +36,7 @@
 
 
             $page->add_control(
-                'haarino_header_style',
+                'bizino_header_style',
                 [
                     'label'     => __( 'Header Option', 'haarmax' ),
                     'type'      => \Elementor\Controls_Manager::SELECT,
@@ -49,12 +49,12 @@
 			);
 
             $page->add_control(
-                'haarino_header_builder_option',
+                'bizino_header_builder_option',
                 [
                     'label'     => __( 'Header Name', 'haarmax' ),
                     'type'      => \Elementor\Controls_Manager::SELECT,
                     'options'   => $this->haarmax_header_choose_option(),
-                    'condition' => [ 'haarino_header_style' => 'header_builder'],
+                    'condition' => [ 'bizino_header_style' => 'header_builder'],
                     'default'	=> ''
                 ]
             );
@@ -69,7 +69,7 @@
                 ]
             );
             $page->add_control(
-    			'haarino_footer_choice',
+    			'bizino_footer_choice',
     			[
     				'label'         => __( 'Enable Footer?', 'haarmax' ),
     				'type'          => \Elementor\Controls_Manager::SWITCHER,
@@ -80,7 +80,7 @@
     			]
     		);
             $page->add_control(
-                'haarino_footer_style',
+                'bizino_footer_style',
                 [
                     'label'     => __( 'Footer Style', 'haarmax' ),
                     'type'      => \Elementor\Controls_Manager::SELECT,
@@ -89,16 +89,16 @@
     					'footer_builder'       => __( 'Footer Builder', 'haarmax' ),
     				],
                     'default'   => 'prebuilt',
-                    'condition' => [ 'haarino_footer_choice' => 'yes' ],
+                    'condition' => [ 'bizino_footer_choice' => 'yes' ],
                 ]
             );
             $page->add_control(
-                'haarino_footer_builder_option',
+                'bizino_footer_builder_option',
                 [
                     'label'     => __( 'Footer Name', 'haarmax' ),
                     'type'      => \Elementor\Controls_Manager::SELECT,
                     'options'   => $this->haarmax_footer_choose_option(),
-                    'condition' => [ 'haarino_footer_style' => 'footer_builder','haarino_footer_choice' => 'yes' ],
+                    'condition' => [ 'bizino_footer_style' => 'footer_builder','bizino_footer_choice' => 'yes' ],
                     'default'	=> ''
                 ]
             );
@@ -109,8 +109,8 @@
 
 		public function register_settings_menus(){
 			add_menu_page(
-				esc_html__( 'Haarino Builder', 'haarmax' ),
-            	esc_html__( 'Haarino Builder', 'haarmax' ),
+				esc_html__( 'Bizino Builder', 'haarmax' ),
+            	esc_html__( 'Bizino Builder', 'haarmax' ),
 				'manage_options',
 				'haarmax',
 				[$this,'register_settings_contents__settings'],
@@ -134,7 +134,7 @@
 			$labels = array(
 				'name'               => __( 'Footer', 'haarmax' ),
 				'singular_name'      => __( 'Footer', 'haarmax' ),
-				'menu_name'          => __( 'Haarmax Footer Builder', 'haarmax' ),
+				'menu_name'          => __( 'Bizino Footer Builder', 'haarmax' ),
 				'name_admin_bar'     => __( 'Footer', 'haarmax' ),
 				'add_new'            => __( 'Add New', 'haarmax' ),
 				'add_new_item'       => __( 'Add New Footer', 'haarmax' ),
@@ -166,7 +166,7 @@
 			$labels = array(
 				'name'               => __( 'Header', 'haarmax' ),
 				'singular_name'      => __( 'Header', 'haarmax' ),
-				'menu_name'          => __( 'Haarmax Header Builder', 'haarmax' ),
+				'menu_name'          => __( 'Bizino Header Builder', 'haarmax' ),
 				'name_admin_bar'     => __( 'Header', 'haarmax' ),
 				'add_new'            => __( 'Add New', 'haarmax' ),
 				'add_new_item'       => __( 'Add New Header', 'haarmax' ),
@@ -222,7 +222,7 @@
 			) );
 
 			$haarmax_builder_post_title = array();
-			$haarmax_builder_post_title[''] = __('Select a Footer','Haarmax');
+			$haarmax_builder_post_title[''] = __('Select a Footer','Bizino');
 
 			while( $haarmax_post_query->have_posts() ) {
 				$haarmax_post_query->the_post();
@@ -242,7 +242,7 @@
 			) );
 
 			$haarmax_builder_post_title = array();
-			$haarmax_builder_post_title[''] = __('Select a Header','Haarmax');
+			$haarmax_builder_post_title[''] = __('Select a Header','Bizino');
 
 			while( $haarmax_post_query->have_posts() ) {
 				$haarmax_post_query->the_post();
@@ -256,4 +256,4 @@
 
     }
 
-    $builder_execute = new HaarmaxBuilder();
+    $builder_execute = new BizinoBuilder();

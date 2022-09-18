@@ -12,7 +12,7 @@ use \Elementor\Group_Control_Background;
  * Instagram Gallery Widget .
  *
  */
-class Haarmax_Instagram_Gallery extends Widget_Base{
+class Bizino_Instagram_Gallery extends Widget_Base{
 
 	public function get_name() {
 		return 'haarmaxinstagramgallery';
@@ -181,7 +181,7 @@ class Haarmax_Instagram_Gallery extends Widget_Base{
 	                            echo '<div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-xxl-auto mb-1">';
 	                                echo '<div class="gallery-thumb">';
 	                                    if( ! empty( $single_data['instagramgallery_image']['url'] ) ){
-	                                        echo haarino_img_tag( array(
+	                                        echo bizino_img_tag( array(
 	                                            'url'   => esc_url( $single_data['instagramgallery_image']['url'] ),
 	                                            'class' => 'w-100',
 	                                        ) );

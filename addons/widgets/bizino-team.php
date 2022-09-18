@@ -10,14 +10,14 @@ use \Elementor\Group_Control_Image_Size;
  * Team Widget .
  *
  */
-class Haarmax_Team_Widget extends Widget_Base{
+class Bizino_Team_Widget extends Widget_Base{
 
 	public function get_name() {
 		return 'haarmaxteammember';
 	}
 
 	public function get_title() {
-		return __( 'Haarmax Team', 'haarmax' );
+		return __( 'Bizino Team', 'haarmax' );
 	}
 
 	public function get_icon() {
@@ -481,7 +481,7 @@ class Haarmax_Team_Widget extends Widget_Base{
 			                echo '<div class="col-sm-6 col-lg-4 team-grid mb-30">';
 			                	if( ! empty( $data['team_image']['url'] ) ){
 				                   	echo '<div class="team-img">';
-				                   		echo haarino_img_tag( array(
+				                   		echo bizino_img_tag( array(
 					                            'url'       => esc_url( $data['team_image']['url'] ),
 					                            'class'  	=> 'w-100',
 					                        ) );
@@ -519,7 +519,7 @@ class Haarmax_Team_Widget extends Widget_Base{
 			                        echo '<div class="team-header">';
 			                        	if( ! empty( $data['team_image']['url'] ) ){
 				                            echo '<div class="team-img" data-mask-src="' . esc_url( plugins_url( 'images/team-mask.png', __FILE__ ) ) . ' ">';
-				                                echo haarino_img_tag( array(
+				                                echo bizino_img_tag( array(
 						                            'url'       => esc_url( $data['team_image']['url'] ),
 						                            'class'  	=> 'w-100',
 						                        ) );

@@ -11,14 +11,14 @@ use \Elementor\Group_Control_Border;
  * Image with Video Widget .
  *
  */
-class Haarmax_Image_Widget extends Widget_Base {
+class Bizino_Image_Widget extends Widget_Base {
 
 	public function get_name() {
 		return 'haarmaximage';
 	}
 
 	public function get_title() {
-		return __( 'Haarmax Image with Video', 'haarmax' );
+		return __( 'Bizino Image with Video', 'haarmax' );
 	}
 
 
@@ -174,7 +174,7 @@ class Haarmax_Image_Widget extends Widget_Base {
         if( $settings['img_style'] == 'one' ){
 	        echo '<div class="video-box position-relative mb-10">';
 	        if( !empty( $settings['image']['url'] ) ) {
-	            echo haarino_img_tag( array(
+	            echo bizino_img_tag( array(
 						'url'	=> esc_url( $settings['image']['url'] ),
 						'class'	=> 'w-100'
 					) );
@@ -186,7 +186,7 @@ class Haarmax_Image_Widget extends Widget_Base {
 	    }elseif( $settings['img_style'] == 'two' ){
 	    	echo '<div class="transform-banner">';
                 if( !empty( $settings['image']['url'] ) ) {
-                	echo haarino_img_tag( array(
+                	echo bizino_img_tag( array(
 						'url'	=> esc_url( $settings['image']['url'] ),
 					) );
 					if( !empty( $settings['video_btn'] == 'yes' && !empty( $settings['video_link']['url'] ) ) ) {
@@ -197,7 +197,7 @@ class Haarmax_Image_Widget extends Widget_Base {
 	    }elseif( $settings['img_style'] == 'three' ){
 	    	echo '<div class="image-scale-hover">';
                 if( !empty( $settings['image']['url'] ) ) {
-                	echo haarino_img_tag( array(
+                	echo bizino_img_tag( array(
 						'url'	=> esc_url( $settings['image']['url'] ),
 						'class' => 'w-100'
 					) );
@@ -210,7 +210,7 @@ class Haarmax_Image_Widget extends Widget_Base {
 	    	echo '<div class="team-details-shape mask-cover" data-mask-src="' . esc_url( plugins_url( 'images/team-mask-2.png', __FILE__ ) ) . '"></div>';
             echo '<div class="team-img mask-cover" data-mask-src="' . esc_url( plugins_url( 'images/team-mask-2.png', __FILE__ ) ) . '">';
                 if( !empty( $settings['image']['url'] ) ) {
-                	echo haarino_img_tag( array(
+                	echo bizino_img_tag( array(
 						'url'	=> esc_url( $settings['image']['url'] ),
 						'class' => 'w-100'
 					) );

@@ -10,14 +10,14 @@ use \Elementor\Group_Control_Image_Size;
  * Salon Info Box Widget .
  *
  */
-class Haarmax_Salon_Info_Box_Widget extends Widget_Base{
+class Bizino_Salon_Info_Box_Widget extends Widget_Base{
 
 	public function get_name() {
 		return 'haarmaxsaloninfobox';
 	}
 
 	public function get_title() {
-		return __( 'Haarmax Salon Info Box', 'haarmax' );
+		return __( 'Bizino Salon Info Box', 'haarmax' );
 	}
 
 	public function get_icon() {

@@ -12,7 +12,7 @@ use \Elementor\Group_Control_Background;
  * Hostory Widget .
  *
  */
-class Haarmax_History_Slider extends Widget_Base{
+class Bizino_History_Slider extends Widget_Base{
 
 	public function get_name() {
 		return 'haarmaxhistoryslider';

@@ -9,7 +9,7 @@ use \Elementor\Utils;
  * Section Title Widget .
  *
  */
-class Haarmax_Section_Title_Widget extends Widget_Base {
+class Bizino_Section_Title_Widget extends Widget_Base {
 
 	public function get_name() {
 		return 'haarmaxsectiontitle';
@@ -328,7 +328,7 @@ class Haarmax_Section_Title_Widget extends Widget_Base {
     	if($settings['title_style'] == '2'){
         	if( ! empty( $settings['section_icon']['url'] ) ){
 				echo '<div class="sec-icon">';
-					echo haarino_img_tag( array(
+					echo bizino_img_tag( array(
 	                        'url'   => esc_url( $settings['section_icon']['url'] )
 	                    ) );
 				echo '</div>';
@@ -343,7 +343,7 @@ class Haarmax_Section_Title_Widget extends Widget_Base {
         	echo '<'.esc_attr($settings['section_title_tag']).' class="sec-title title-selector">'.wp_kses_post( $settings['section_title'] ).'</'.esc_attr($settings['section_title_tag']).'>';
 		}
 		if( ! empty( $settings['section_description'] ) ){
-				echo haarino_paragraph_tag( array(
+				echo bizino_paragraph_tag( array(
 					'text'	=> wp_kses_post( $settings['section_description'] ),
 					'class'	=> 'desc'
 				) );

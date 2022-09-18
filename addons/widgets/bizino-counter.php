@@ -12,7 +12,7 @@ use \Elementor\Group_Control_Background;
  * Counter Widget .
  *
  */
-class Haarmax_Counter extends Widget_Base{
+class Bizino_Counter extends Widget_Base{
 
 	public function get_name() {
 		return 'haarmaxcounter';
@@ -229,7 +229,7 @@ class Haarmax_Counter extends Widget_Base{
                                 echo '<div class="vs-counter text-center">';
                                     if( ! empty( $single_data['counter_image']['url'] ) ){
                                         echo '<div class="counter-icon">';
-                                            echo haarino_img_tag( array(
+                                            echo bizino_img_tag( array(
                                                 'url'   => esc_url( $single_data['counter_image']['url'] ),
                                             ) );
                                         echo '</div>';

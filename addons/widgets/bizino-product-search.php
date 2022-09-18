@@ -7,7 +7,7 @@ use \Elementor\Group_Control_Typography;
  * Search Widget .
  *
  */
-class Haarmax_Search extends Widget_Base {
+class Bizino_Search extends Widget_Base {
 
 	public function get_name() {
 		return 'haarmaxsearch';

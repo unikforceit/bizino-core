@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @Packge     : Haarmax
+ * @Packge     : Bizino
  * @Version    : 1.0
  * @Author     : Vecurosoft
  * @Author URI : https://www.vecurosoft.com/
@@ -24,7 +24,7 @@
 
 function haarmax_custom_login_logo() {
 
-    $logo = ! empty( haarino_opt( 'haarmax_admin_login_logo', 'url' ) ) ? haarino_opt( 'haarmax_admin_login_logo', 'url' ) : '' ;
+    $logo = ! empty( bizino_opt( 'haarmax_admin_login_logo', 'url' ) ) ? bizino_opt( 'haarmax_admin_login_logo', 'url' ) : '' ;
 
     if( isset( $logo ) && ! empty( $logo ) ){
 
@@ -52,7 +52,7 @@ function haarmax_admin_styles() {
 
  // share button code
 
- function haarino_social_sharing_buttons( ) {
+ function bizino_social_sharing_buttons( ) {
 
     // Get page URL
 

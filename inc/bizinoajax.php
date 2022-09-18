@@ -1,6 +1,6 @@
 <?php
 /**
- * @Packge     : Haarmax
+ * @Packge     : Bizino
  * @Version    : 1.0
  * @Author     : Vecurosoft
  * @Author URI : https://www.vecurosoft.com/
@@ -14,7 +14,7 @@ if( ! defined( 'ABSPATH' ) ) {
 }
 
 function haarmax_core_essential_scripts( ) {
-    wp_enqueue_script('haarmax-ajax',HAARMAX_PLUGDIRURI.'assets/js/haarmax.ajax.js',array( 'jquery' ),'1.0',true);
+    wp_enqueue_script('haarmax-ajax',BIZINO_PLUGDIRURI.'assets/js/haarmax.ajax.js',array( 'jquery' ),'1.0',true);
     wp_localize_script(
     'haarmax-ajax',
     'haarmaxajax',
@@ -33,8 +33,8 @@ add_action( 'wp_ajax_haarmax_subscribe_ajax', 'haarmax_subscribe_ajax' );
 add_action( 'wp_ajax_nopriv_haarmax_subscribe_ajax', 'haarmax_subscribe_ajax' );
 
 function haarmax_subscribe_ajax( ){
-  $apiKey = haarino_opt('haarino_subscribe_apikey');
-  $listid = haarino_opt('haarino_subscribe_listid');
+  $apiKey = bizino_opt('bizino_subscribe_apikey');
+  $listid = bizino_opt('bizino_subscribe_listid');
    if( ! wp_verify_nonce($_POST['security'], 'haarmax-nonce') ) {
     echo '<div class="alert alert-danger mt-2" role="alert">'.esc_html__('You are not allowed.', 'haarmax').'</div>';
    }else{

@@ -10,7 +10,7 @@ use \Elementor\Group_Control_Image_Size;
  * Price Cart Widget .
  *
  */
-class Haarmax_Single_Price_Cart extends Widget_Base{
+class Bizino_Single_Price_Cart extends Widget_Base{
 
 	public function get_name() {
 		return 'haarmaxpricecart';
@@ -250,7 +250,7 @@ class Haarmax_Single_Price_Cart extends Widget_Base{
 				if( ! empty( $settings['thumb_image']['url'] ) ){
 					echo '<div class="col-lg-6 col-xl-7 col-xxl align-self-center">';
 						echo '<div class="price-image mb-30">';
-							echo haarino_img_tag( array(
+							echo bizino_img_tag( array(
 		                            'url'       => esc_url( $settings['thumb_image']['url'] ),
 		                            'class' 	=> 'w-100'
 		                        ) );		

@@ -8,7 +8,7 @@ use \Elementor\Utils;
  * Blog Post Widget .
  *
  */
-class Haarmax_Blog_Post extends Widget_Base {
+class Bizino_Blog_Post extends Widget_Base {
 
 	public function get_name() {
 		return 'haarmaxblogpost';
@@ -447,7 +447,7 @@ class Haarmax_Blog_Post extends Widget_Base {
 				                        echo '</div>';
 				                        echo '<div class="blog-content">';
 										echo '<div class="meta-box">';
-										   echo '<a href="'.esc_url( haarino_blog_date_permalink() ).'"><i class="far fa-calendar-alt"></i><time datetime="'.esc_attr( get_the_date( DATE_W3C ) ).'">'.esc_html( get_the_date() ).'</time></a>';
+										   echo '<a href="'.esc_url( bizino_blog_date_permalink() ).'"><i class="far fa-calendar-alt"></i><time datetime="'.esc_attr( get_the_date( DATE_W3C ) ).'">'.esc_html( get_the_date() ).'</time></a>';
 										   echo '<a href="'.esc_url( get_author_posts_url( get_the_author_meta('ID') ) ).'"><i class="far fa-user"></i>'.esc_html( get_the_author() ).'</a>';
 									   echo '</div>';
 											if( get_the_title() ){
@@ -478,7 +478,7 @@ class Haarmax_Blog_Post extends Widget_Base {
 					                            echo '<a href="'.esc_url( get_permalink() ).'">';
 													the_post_thumbnail( 'home-slider-blog-image-two', array( 'class' => 'w-100' ) );
 												echo '</a>';
-					                            echo '<a href="'.esc_url( haarino_blog_date_permalink() ).'" class="blog-date">'.esc_html( get_the_date( 'd M, Y' ) ).'</a>';
+					                            echo '<a href="'.esc_url( bizino_blog_date_permalink() ).'" class="blog-date">'.esc_html( get_the_date( 'd M, Y' ) ).'</a>';
 					                        echo '</div>';
 					                        echo '<div class="blog-content">';
 					                            echo '<div class="post-author">';

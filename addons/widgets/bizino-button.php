@@ -10,14 +10,14 @@ use \Elementor\Group_Control_Image_Size;
  * Button Widget .
  *
  */
-class Haarmax_Button_Widget extends Widget_Base{
+class Bizino_Button_Widget extends Widget_Base{
 
 	public function get_name() {
 		return 'haarmaxbutton';
 	}
 
 	public function get_title() {
-		return __( 'Haarmax Button', 'haarmax' );
+		return __( 'Bizino Button', 'haarmax' );
 	}
 
 	public function get_icon() {

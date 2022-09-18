@@ -1,7 +1,7 @@
 <?php
 /**
 * @version  1.0
-* @package  Haarmax
+* @package  Bizino
 * @author   Vecurosoft <support@vecurosoft.com>
 *
 * Websites: http://www.vecurosoft.com
@@ -21,7 +21,7 @@ class haarmax_gallery_widget extends WP_Widget {
                 'haarmax_gallery_widget',
 
                 // Widget name will appear in UI
-                esc_html__( 'Haarmax :: Gallery', 'haarmax' ),
+                esc_html__( 'Bizino :: Gallery', 'haarmax' ),
 
                 // Widget description
                 array(
@@ -45,12 +45,12 @@ class haarmax_gallery_widget extends WP_Widget {
                         echo esc_html( $title );
                     echo $args['after_title'];
                 }
-				$haarmax_gallery_image = haarino_opt( 'haarino_gallery_image_widget' );
+				$haarmax_gallery_image = bizino_opt( 'bizino_gallery_image_widget' );
 				if( !empty( $haarmax_gallery_image ) && isset( $haarmax_gallery_image ) ){
 					echo '<div class="sidebar-gallery">';
 						foreach( $haarmax_gallery_image as $single_image ){
                             echo '<div class="gallery-thumb">';
-                                echo haarino_img_tag( array(
+                                echo bizino_img_tag( array(
                                     'url'   => esc_url( $single_image['image'] ),
                                     'class' => 'w-100'
                                 ) );
@@ -78,7 +78,7 @@ class haarmax_gallery_widget extends WP_Widget {
             <p>
                 <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ,'haarmax'); ?></label>
                 <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
-				<a href="<?php echo esc_url( home_url('/').'wp-admin/admin.php?page=Haarino&tab=15' );?>"><?php _e( 'Add Gallery Image', 'haarmax' )?></a>
+				<a href="<?php echo esc_url( home_url('/').'wp-admin/admin.php?page=Bizino&tab=15' );?>"><?php _e( 'Add Gallery Image', 'haarmax' )?></a>
             </p>
 
             <?php

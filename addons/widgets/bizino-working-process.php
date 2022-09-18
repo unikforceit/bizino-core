@@ -9,7 +9,7 @@ use \Elementor\Repeater;
  * Working Process Widget .
  *
  */
-class Haarmax_Working_Process extends Widget_Base {
+class Bizino_Working_Process extends Widget_Base {
 
 	public function get_name() {
 		return 'haarmaxworkingprocess';
@@ -228,7 +228,7 @@ class Haarmax_Working_Process extends Widget_Base {
                                     echo '<div class="process-img">';
                                         echo '<span class="process-border"></span>';
                                         echo '<span class="process-border border2"></span>';
-                                        echo haarino_img_tag( array(
+                                        echo bizino_img_tag( array(
                                             'url'   => esc_url( $single_data['workingprocess_image']['url'] ),
                                             'class' => 'w-100',
                                         ) );

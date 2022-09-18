@@ -10,14 +10,14 @@ use \Elementor\Group_Control_Image_Size;
  * Right Choice Widget .
  *
  */
-class Haarmax_Right_Choice_Widget extends Widget_Base{
+class Bizino_Right_Choice_Widget extends Widget_Base{
 
 	public function get_name() {
 		return 'haarmaxrightchoice';
 	}
 
 	public function get_title() {
-		return __( 'Haarmax Right Choice', 'haarmax' );
+		return __( 'Bizino Right Choice', 'haarmax' );
 	}
 
 	public function get_icon() {
@@ -422,7 +422,7 @@ class Haarmax_Right_Choice_Widget extends Widget_Base{
 		                    	foreach( $settings['choice'] as $data ) {
 		                    		if( ! empty( $data['image']['url'] ) ){
 				                        echo '<div class="transform-banner">';
-				                            echo haarino_img_tag( array(
+				                            echo bizino_img_tag( array(
 								                    'url'       => esc_url( $data['image']['url'] ),
 								                ) );
 				                        echo '</div>';
@@ -434,7 +434,7 @@ class Haarmax_Right_Choice_Widget extends Widget_Base{
 		                        	if( ! empty( $data['image']['url'] ) ){
 				                        echo '<div>';
 				                            echo '<div class="naved-thumb">';
-				                                echo haarino_img_tag( array(
+				                                echo bizino_img_tag( array(
 								                    'url'       => esc_url( $data['image']['url'] ),
 								                ) );
 				                            echo '</div>';

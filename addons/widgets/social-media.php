@@ -13,14 +13,14 @@ use \Elementor\Group_Control_Box_Shadow;
  * Contact Information Widget .
  *
  */
-class Haarmax_Social_Media_Widget extends Widget_Base {
+class Bizino_Social_Media_Widget extends Widget_Base {
 
 	public function get_name() {
 		return 'haarmaxsocialmedia';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Haarmax Social Media', 'haarmax' );
+		return esc_html__( 'Bizino Social Media', 'haarmax' );
 	}
 
 

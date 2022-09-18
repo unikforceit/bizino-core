@@ -10,14 +10,14 @@ use \Elementor\Group_Control_Image_Size;
  * Offer Cart Widget .
  *
  */
-class Haarmax_Offer_Cart_Widget extends Widget_Base{
+class Bizino_Offer_Cart_Widget extends Widget_Base{
 
 	public function get_name() {
 		return 'haarmaxoffercart';
 	}
 
 	public function get_title() {
-		return __( 'Haarmax Offer Cart', 'haarmax' );
+		return __( 'Bizino Offer Cart', 'haarmax' );
 	}
 
 	public function get_icon() {

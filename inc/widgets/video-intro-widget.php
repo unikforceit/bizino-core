@@ -21,7 +21,7 @@ class haarmax_vido_intro_widget extends WP_Widget {
                 'haarmax_vido_intro_widget',
 
                 // Widget name will appear in UI
-                esc_html__( 'Haarmax :: Video Intro Widget', 'haarmax' ),
+                esc_html__( 'Bizino :: Video Intro Widget', 'haarmax' ),
 
                 // Widget description
                 array(

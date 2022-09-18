@@ -9,7 +9,7 @@ use \Elementor\Utils;
  * Rating Widget .
  *
  */
-class Haarmax_Rating_Widget extends Widget_Base {
+class Bizino_Rating_Widget extends Widget_Base {
 
 	public function get_name() {
 		return 'haarmaxrating';

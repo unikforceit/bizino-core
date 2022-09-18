@@ -12,7 +12,7 @@ use \Elementor\Group_Control_Background;
  * Logo Carousel Widget .
  *
  */
-class Haarmax_Logo_Carousel extends Widget_Base{
+class Bizino_Logo_Carousel extends Widget_Base{
 
 	public function get_name() {
 		return 'haarmaxlogocarousel';
@@ -141,7 +141,7 @@ class Haarmax_Logo_Carousel extends Widget_Base{
                                 echo '<div class="awards-box">';
 	                                echo '<div class="awards-img">';
 	                                    echo '<a href="'.esc_url( esc_url( $single_data['image_url'] ) ).'" class="icon-thumb">';
-	                                        echo haarino_img_tag( array(
+	                                        echo bizino_img_tag( array(
 	                                            'url'   => esc_url( $single_data['logocarousel_image']['url'] ),
 	                                        ) );
 	                                    echo '</a>';

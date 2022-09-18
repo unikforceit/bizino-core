@@ -2,7 +2,7 @@
 
 [Main Script]
 
-Project: Haarmax
+Project: Bizino
 Version: 1.0
 Author : vecurosoft.com
 

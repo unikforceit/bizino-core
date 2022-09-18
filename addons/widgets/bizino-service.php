@@ -10,14 +10,14 @@ use \Elementor\Group_Control_Image_Size;
  * Services Widget .
  *
  */
-class Haarmax_Service_Widget extends Widget_Base{
+class Bizino_Service_Widget extends Widget_Base{
 
 	public function get_name() {
 		return 'haarmaxservices';
 	}
 
 	public function get_title() {
-		return __( 'Haarmax Services', 'haarmax' );
+		return __( 'Bizino Services', 'haarmax' );
 	}
 
 	public function get_icon() {
@@ -221,7 +221,7 @@ class Haarmax_Service_Widget extends Widget_Base{
 					foreach( $settings['features'] as $data ) {
 						echo '<div class="col-6 col-sm-4 thumb-about">';
 							if( ! empty( $data['image_icon']['url'] ) ){
-				                echo haarino_img_tag( array(
+				                echo bizino_img_tag( array(
 									'url'	=> esc_url( $data['image_icon']['url'] ),
 								) );
 				            }
@@ -237,7 +237,7 @@ class Haarmax_Service_Widget extends Widget_Base{
 	                    echo '<div class="d-md-flex gap-4 about-media text-center text-md-start">';
 	                    	if( ! empty( $data['image_icon']['url'] ) ){
 		                        echo '<div class="media-img mb-30 mb-md-0">';
-		                            echo haarino_img_tag( array(
+		                            echo bizino_img_tag( array(
 										'url'	=> esc_url( $data['image_icon']['url'] ),
 									) );
 		                        echo '</div>';
@@ -259,7 +259,7 @@ class Haarmax_Service_Widget extends Widget_Base{
 					    echo '<div class="col-6 col-sm-4 col-lg">';
 						    echo '<div class="thumb-about-style2">';
 						    	if( ! empty( $data['image_icon']['url'] ) ){
-		                            echo haarino_img_tag( array(
+		                            echo bizino_img_tag( array(
 										'url'	=> esc_url( $data['image_icon']['url'] ),
 									) );
 			                    }

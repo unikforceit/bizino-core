@@ -2,7 +2,7 @@
 
 /**
 * @version  1.0
-* @package  Haarmax
+* @package  Bizino
 * @author   Vecurosoft <support@vecurosoft.com>
 *
 * Websites: http://www.vecurosoft.com
@@ -24,7 +24,7 @@ class haarmax_recent_posts_widget extends WP_Widget {
 
                 // Widget name will appear in UI
 
-                esc_html__( 'Haarmax :: Recent Posts', 'haarmax' ),
+                esc_html__( 'Bizino :: Recent Posts', 'haarmax' ),
 
                 // Widget description
 
@@ -83,7 +83,7 @@ class haarmax_recent_posts_widget extends WP_Widget {
                                     if( has_post_thumbnail() ){
                                         echo '<div class="media-img">';
                                         echo '<a href="'.get_the_permalink().'">';
-                                            echo haarino_img_tag( array(
+                                            echo bizino_img_tag( array(
                                             "url"   => esc_url( get_the_post_thumbnail_url( null, 'haarmax_90X80' ) ),
                                             ) );
                                         echo '</a>';
