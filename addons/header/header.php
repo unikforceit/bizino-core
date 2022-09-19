@@ -17,10 +17,10 @@ use \Elementor\Group_Control_Box_Shadow;
 class Bizino_Header extends Widget_Base {
 
 	public function get_name() {
-		return 'haarmaxheader';
+		return 'bizinoheader';
 	}
 	public function get_title() {
-		return __( 'Bizino Header', 'haarmax' );
+		return __( 'Bizino Header', 'bizino' );
 	}
 
 	public function get_icon() {
@@ -28,14 +28,14 @@ class Bizino_Header extends Widget_Base {
     }
 
 	public function get_categories() {
-		return [ 'haarmax_header_elements' ];
+		return [ 'bizino_header_elements' ];
 	}
 	protected function register_controls() {
 
 		$this->start_controls_section(
 			'header_section',
 			[
-				'label' 	=> __( 'Header', 'haarmax' ),
+				'label' 	=> __( 'Header', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_CONTENT,
 			]
         );
@@ -43,12 +43,12 @@ class Bizino_Header extends Widget_Base {
         $this->add_control(
 			'header_style',
 			[
-				'label' 	=> __( 'Style', 'haarmax' ),
+				'label' 	=> __( 'Style', 'bizino' ),
 				'type' 		=> Controls_Manager::SELECT,
 				'options' 	=> [
-					'1' => __( 'Style One', 'haarmax' ),
-					'2' => __( 'Style Two', 'haarmax' ),
-					'3' => __( 'Style Three', 'haarmax' ),
+					'1' => __( 'Style One', 'bizino' ),
+					'2' => __( 'Style Two', 'bizino' ),
+					'3' => __( 'Style Three', 'bizino' ),
 				],
 				'default' => '1',
 			]
@@ -56,7 +56,7 @@ class Bizino_Header extends Widget_Base {
         $this->add_control(
 			'topbar_options',
 			[
-				'label' => __( 'Topbar Informations', 'haarmax' ),
+				'label' => __( 'Topbar Informations', 'bizino' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -66,27 +66,27 @@ class Bizino_Header extends Widget_Base {
 			'location_text',
 
 			[
-				'label' 		=> __( 'Location Text', 'haarmax' ),
+				'label' 		=> __( 'Location Text', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'placeholder' 	=> __( 'United State', 'haarmax' ),
+				'placeholder' 	=> __( 'United State', 'bizino' ),
 			]
 		);
 		$this->add_control(
 			'location',
 
 			[
-				'label' 		=> __( 'Office Location', 'haarmax' ),
+				'label' 		=> __( 'Office Location', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'placeholder' 	=> __( 'Google Map url', 'haarmax' ),
+				'placeholder' 	=> __( 'Google Map url', 'bizino' ),
 			]
 		);
 
 		$this->add_control(
 			'contact_email',
 			[
-				'label' 		=> __( 'Contact Email', 'haarmax' ),
+				'label' 		=> __( 'Contact Email', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( 'example@domain.com', 'haarmax' ),
+				'default' 		=> __( 'example@domain.com', 'bizino' ),
 				'condition'		=> [ 'header_style' => [ '1', '3' ] ],
 				'rows' 			=> 2,
 			]
@@ -94,9 +94,9 @@ class Bizino_Header extends Widget_Base {
 		$this->add_control(
 			'contact_phone',
 			[
-				'label' 		=> __( 'Contact Phone', 'haarmax' ),
+				'label' 		=> __( 'Contact Phone', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( '020 7388 5619', 'haarmax' ),
+				'default' 		=> __( '020 7388 5619', 'bizino' ),
 				'rows' 			=> 2,
 				'condition'		=> [ 'header_style' => [ '1', '3' ] ],
 			]
@@ -170,7 +170,7 @@ class Bizino_Header extends Widget_Base {
 			'logo_image',
 
 			[
-				'label' 		=> __( 'Upload Logo', 'haarmax' ),
+				'label' 		=> __( 'Upload Logo', 'bizino' ),
 				'type' 			=> Controls_Manager::MEDIA,
 				'default' 		=> [
 					'url' => Utils::get_placeholder_image_src(),
@@ -187,7 +187,7 @@ class Bizino_Header extends Widget_Base {
 		$this->add_control(
 			'button_text',
 			[
-				'label' 		=> __( 'Button Text', 'haarmax' ),
+				'label' 		=> __( 'Button Text', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXT,
 			]
 		);
@@ -209,10 +209,10 @@ class Bizino_Header extends Widget_Base {
 		$this->add_control(
 			'show_cart_count',
 			[
-				'label' 		=> __( 'Show Cart?', 'haarmax' ),
+				'label' 		=> __( 'Show Cart?', 'bizino' ),
 				'type' 			=> Controls_Manager::SWITCHER,
-				'label_on' 		=> __( 'Show', 'haarmax' ),
-				'label_off' 	=> __( 'Hide', 'haarmax' ),
+				'label_on' 		=> __( 'Show', 'bizino' ),
+				'label_off' 	=> __( 'Hide', 'bizino' ),
 				'return_value' 	=> 'yes',
 				'default' 		=> 'yes',
 			]
@@ -223,7 +223,7 @@ class Bizino_Header extends Widget_Base {
         $this->start_controls_section(
 			'topbar_styling',
 			[
-				'label'     => __( 'Topbar Styling', 'haarmax' ),
+				'label'     => __( 'Topbar Styling', 'bizino' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition'		=> [ 'show_top_bar' => [ 'yes'] ],
 			]
@@ -234,7 +234,7 @@ class Bizino_Header extends Widget_Base {
 			'topbar_background_color',
 			[
 
-				'label'     => __( 'Background Color', 'haarmax' ),
+				'label'     => __( 'Background Color', 'bizino' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .header-wrapper .bg-title' => 'background-color: {{VALUE}}!important',
@@ -247,7 +247,7 @@ class Bizino_Header extends Widget_Base {
 			'topbar_content_color',
 			[
 
-				'label'     => __( 'Topbar Content Color', 'haarmax' ),
+				'label'     => __( 'Topbar Content Color', 'bizino' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .header-top-info li' => 'color: {{VALUE}}!important;',
@@ -261,7 +261,7 @@ class Bizino_Header extends Widget_Base {
 
 			[
 				'name'      => 'topbar_content_typography',
-				'label'     => __( 'Content Typography', 'haarmax' ),
+				'label'     => __( 'Content Typography', 'bizino' ),
                 'selector'  => '{{WRAPPER}} .header-top-info li',
 			]
         );
@@ -269,7 +269,7 @@ class Bizino_Header extends Widget_Base {
         $this->add_control(
 			'topbar_icon_color',
 			[
-				'label'     => __( 'Social Icon Color', 'haarmax' ),
+				'label'     => __( 'Social Icon Color', 'bizino' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .header-social a' => 'color: {{VALUE}}',
@@ -280,7 +280,7 @@ class Bizino_Header extends Widget_Base {
         $this->add_control(
 			'topbar_icon_hover_color',
 			[
-				'label'     => __( 'Social Icon Hover Color', 'haarmax' ),
+				'label'     => __( 'Social Icon Hover Color', 'bizino' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .header-social a:hover' => 'color: {{VALUE}}',
@@ -293,7 +293,7 @@ class Bizino_Header extends Widget_Base {
         $this->start_controls_section(
 			'menubar_styling',
 			[
-				'label'     => __( 'Menubar Styling', 'haarmax' ),
+				'label'     => __( 'Menubar Styling', 'bizino' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition'		=> [ 'show_top_bar' => [ 'yes'] ],
 			]
@@ -302,7 +302,7 @@ class Bizino_Header extends Widget_Base {
         $this->add_control(
 			'phone_color',
 			[
-				'label'     => __( 'Phone Color', 'haarmax' ),
+				'label'     => __( 'Phone Color', 'bizino' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .media-body a' => 'color: {{VALUE}}!important',
@@ -313,7 +313,7 @@ class Bizino_Header extends Widget_Base {
         $this->add_control(
 			'phone_hvr_color',
 			[
-				'label'     => __( 'Phone Hover Color', 'haarmax' ),
+				'label'     => __( 'Phone Hover Color', 'bizino' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .media-body a:hover' => 'color: {{VALUE}}!important',
@@ -326,7 +326,7 @@ class Bizino_Header extends Widget_Base {
 
 			[
 				'name'      => 'phone_typography',
-				'label'     => __( 'Phone Typography', 'haarmax' ),
+				'label'     => __( 'Phone Typography', 'bizino' ),
                 'selector'  => '{{WRAPPER}} .media-body a',
                 'condition'		=> [ 'header_style' =>  ['two' ]  ],
 			]
@@ -335,7 +335,7 @@ class Bizino_Header extends Widget_Base {
         $this->add_control(
 			'phone_icon_color',
 			[
-				'label'     => __( 'Phone Icon Color', 'haarmax' ),
+				'label'     => __( 'Phone Icon Color', 'bizino' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .phone-box .box-icon' => 'color: {{VALUE}}!important',
@@ -347,7 +347,7 @@ class Bizino_Header extends Widget_Base {
         $this->add_control(
 			'icon_bg_color',
 			[
-				'label'     => __( 'Icon Background Color', 'haarmax' ),
+				'label'     => __( 'Icon Background Color', 'bizino' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .phone-box .box-icon' => 'background-color: {{VALUE}}!important',
@@ -358,7 +358,7 @@ class Bizino_Header extends Widget_Base {
         $this->add_control(
 			'icon_shake_color',
 			[
-				'label'     => __( 'Icon Shake Color', 'haarmax' ),
+				'label'     => __( 'Icon Shake Color', 'bizino' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .phone-box .box-icon::after,
@@ -371,7 +371,7 @@ class Bizino_Header extends Widget_Base {
         $this->add_control(
 			'top_level_menu_color',
 			[
-				'label' 		=> __( 'Menu Color', 'haarmax' ),
+				'label' 		=> __( 'Menu Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .main-menu ul > li > a' => 'color: {{VALUE}} !important;',
@@ -381,7 +381,7 @@ class Bizino_Header extends Widget_Base {
         $this->add_control(
 			'top_level_menu_hover_color',
 			[
-				'label' 			=> __( 'Menu Hover Color', 'haarmax' ),
+				'label' 			=> __( 'Menu Hover Color', 'bizino' ),
 				'type' 				=> Controls_Manager::COLOR,
 				'selectors' 		=> [
 					'{{WRAPPER}} .main-menu ul > li > a:hover' => 'color: {{VALUE}} !important;',
@@ -393,7 +393,7 @@ class Bizino_Header extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' 			=> 'top_level_menu_typography',
-				'label' 		=> __( 'Menu Typography', 'haarmax' ),
+				'label' 		=> __( 'Menu Typography', 'bizino' ),
                 'selector' 		=> '{{WRAPPER}} .main-menu ul > li > a',
 			]
 		);
@@ -401,7 +401,7 @@ class Bizino_Header extends Widget_Base {
         $this->add_responsive_control(
 			'top_level_menu_margin',
 			[
-				'label' 		=> __( 'Menu Margin', 'haarmax' ),
+				'label' 		=> __( 'Menu Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -413,7 +413,7 @@ class Bizino_Header extends Widget_Base {
         $this->add_responsive_control(
 			'top_level_menu_padding',
 			[
-				'label' 		=> __( 'Menu Padding', 'haarmax' ),
+				'label' 		=> __( 'Menu Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -425,7 +425,7 @@ class Bizino_Header extends Widget_Base {
 		$this->add_control(
 			'top_level_menu_height',
 			[
-				'label' 		=> __( 'Height', 'haarmax' ),
+				'label' 		=> __( 'Height', 'bizino' ),
 				'type' 			=> Controls_Manager::SLIDER,
 				'size_units' 	=> [ 'px' ],
 				'range' 	=> [
@@ -447,7 +447,7 @@ class Bizino_Header extends Widget_Base {
         $this->start_controls_section(
 			'notice_styling',
 			[
-				'label'     => __( 'Notice Box Styling', 'haarmax' ),
+				'label'     => __( 'Notice Box Styling', 'bizino' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition'		=> [ 'show_header_notice' => [ 'yes'] ],
 			]
@@ -471,7 +471,7 @@ class Bizino_Header extends Widget_Base {
         $this->start_controls_section(
 			'wishlist_styling',
 			[
-				'label'     => __( 'Wishlist Styling', 'haarmax' ),
+				'label'     => __( 'Wishlist Styling', 'bizino' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 			]
         );
@@ -537,7 +537,7 @@ class Bizino_Header extends Widget_Base {
         $this->start_controls_section(
 			'cart_styling',
 			[
-				'label'     => __( 'Cart Styling', 'haarmax' ),
+				'label'     => __( 'Cart Styling', 'bizino' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 			]
         );
@@ -604,7 +604,7 @@ class Bizino_Header extends Widget_Base {
 		$this->start_controls_section(
 			'button_styling',
 			[
-				'label' 	=> __( 'Button Styling', 'haarmax' ),
+				'label' 	=> __( 'Button Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -613,7 +613,7 @@ class Bizino_Header extends Widget_Base {
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name' 		=> 'btn_shadow',
-				'label' 	=> __( 'Button Shadow', 'haarmax' ),
+				'label' 	=> __( 'Button Shadow', 'bizino' ),
 				'selector' 	=> '{{WRAPPER}} .vs-btn.style2',
 			]
 		);
@@ -621,7 +621,7 @@ class Bizino_Header extends Widget_Base {
         $this->add_control(
 			'btn_color',
 			[
-				'label' 		=> __( 'Button Color', 'haarmax' ),
+				'label' 		=> __( 'Button Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-btn.style2'	=> 'background-color: {{VALUE}}!important;',
@@ -633,7 +633,7 @@ class Bizino_Header extends Widget_Base {
         $this->add_control(
 			'btn_hvr_color',
 			[
-				'label' 		=> __( 'Button Hover Color', 'haarmax' ),
+				'label' 		=> __( 'Button Hover Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-btn.style2:hover'	=> 'background-color: {{VALUE}}!important;',
@@ -646,7 +646,7 @@ class Bizino_Header extends Widget_Base {
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'button_typography',
-		 		'label' 		=> __( 'Typography', 'haarmax' ),
+		 		'label' 		=> __( 'Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .vs-btn.style2'
 			]
 		);
@@ -654,7 +654,7 @@ class Bizino_Header extends Widget_Base {
 		$this->add_control(
 			'btn_text_color',
 			[
-				'label' 		=> __( 'Text Color', 'haarmax' ),
+				'label' 		=> __( 'Text Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-btn.style2'	=> 'color: {{VALUE}}!important;',
@@ -665,7 +665,7 @@ class Bizino_Header extends Widget_Base {
         $this->add_control(
 			'btn_text_hvr_color',
 			[
-				'label' 		=> __( 'Text Hover Color', 'haarmax' ),
+				'label' 		=> __( 'Text Hover Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-btn.style2:hover'	=> 'color: {{VALUE}}!important;',
@@ -715,10 +715,10 @@ class Bizino_Header extends Widget_Base {
                                     echo '<ul>';
                                         if( ! empty( $mobile ) ){
 
-                                            echo '<li><i class="fas fa-phone-alt"></i>'.esc_html__('Phone:', 'haarmax').' <a class="text-reset" href="'.esc_attr( 'tel:'.$mobileurl ).'">'.esc_html( $mobile ).'</a></li>';
+                                            echo '<li><i class="fas fa-phone-alt"></i>'.esc_html__('Phone:', 'bizino').' <a class="text-reset" href="'.esc_attr( 'tel:'.$mobileurl ).'">'.esc_html( $mobile ).'</a></li>';
                                         }
                                         if( ! empty( $email ) ){
-                                            echo '<li><i class="fal fa-envelope"></i>'.esc_html__('Email:', 'haarmax').' <a class="text-reset" href="'.esc_attr( 'mailto:'.$emailurl ).'">'.esc_html( $email ).'</a></li>';
+                                            echo '<li><i class="fal fa-envelope"></i>'.esc_html__('Email:', 'bizino').' <a class="text-reset" href="'.esc_attr( 'mailto:'.$emailurl ).'">'.esc_html( $email ).'</a></li>';
                                         }
 
                                     echo '</ul>';
@@ -887,10 +887,10 @@ class Bizino_Header extends Widget_Base {
 		                        echo '<div class="header-info-list text-white">';
 		                            echo '<ul>';
 										if( ! empty( $mobile ) ){
-										echo '<li><i class="fas fa-phone-alt"></i>'.esc_html__('Phone:', 'haarmax').' <a class="text-reset" href="'.esc_attr( 'tel:'.$mobileurl ).'">'.esc_html( $mobile ).'</a></li>';
+										echo '<li><i class="fas fa-phone-alt"></i>'.esc_html__('Phone:', 'bizino').' <a class="text-reset" href="'.esc_attr( 'tel:'.$mobileurl ).'">'.esc_html( $mobile ).'</a></li>';
 										}
 										if( ! empty( $email ) ){
-										echo '<li><i class="fal fa-envelope"></i>'.esc_html__('Email:', 'haarmax').' <a class="text-reset" href="'.esc_attr( 'mailto:'.$emailurl ).'">'.esc_html( $email ).'</a></li>';
+										echo '<li><i class="fal fa-envelope"></i>'.esc_html__('Email:', 'bizino').' <a class="text-reset" href="'.esc_attr( 'mailto:'.$emailurl ).'">'.esc_html( $email ).'</a></li>';
 										}
 		                            echo '</ul>';
 		                        echo '</div>';

@@ -12,11 +12,11 @@ use \Elementor\Repeater;
 class Bizino_Working_Process extends Widget_Base {
 
 	public function get_name() {
-		return 'haarmaxworkingprocess';
+		return 'bizinoworkingprocess';
 	}
 
 	public function get_title() {
-		return __( 'Working Process', 'haarmax' );
+		return __( 'Working Process', 'bizino' );
 	}
 
 	public function get_icon() {
@@ -24,7 +24,7 @@ class Bizino_Working_Process extends Widget_Base {
     }
 
 	public function get_categories() {
-		return [ 'haarmax' ];
+		return [ 'bizino' ];
 	}
 
 	protected function register_controls() {
@@ -32,7 +32,7 @@ class Bizino_Working_Process extends Widget_Base {
 		$this->start_controls_section(
 			'working_process_section',
 			[
-				'label'     => __( 'Working Process', 'haarmax' ),
+				'label'     => __( 'Working Process', 'bizino' ),
 				'tab'       => Controls_Manager::TAB_CONTENT,
 			]
         );
@@ -42,7 +42,7 @@ class Bizino_Working_Process extends Widget_Base {
 		$repeater->add_control(
 			'workingprocess_image',
 			[
-				'label' 		=> __( 'Working Process image', 'haarmax' ),
+				'label' 		=> __( 'Working Process image', 'bizino' ),
 				'type' 			=> Controls_Manager::MEDIA,
 				'default' 		=> [
 					'url' => Utils::get_placeholder_image_src(),
@@ -51,17 +51,17 @@ class Bizino_Working_Process extends Widget_Base {
 		);
 		$repeater->add_control(
 			'image_title', [
-				'label' 		=> __( 'Image Title', 'haarmax' ),
+				'label' 		=> __( 'Image Title', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( 'Image Title' , 'haarmax' ),
+				'default' 		=> __( 'Image Title' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
 		$repeater->add_control(
 			'title_url', [
-				'label' 		=> __( 'Title Url?', 'haarmax' ),
+				'label' 		=> __( 'Title Url?', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( '#' , 'haarmax' ),
+				'default' 		=> __( '#' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
@@ -69,7 +69,7 @@ class Bizino_Working_Process extends Widget_Base {
 		$this->add_control(
 			'slides',
 			[
-				'label' 		=> __( 'Slides', 'haarmax' ),
+				'label' 		=> __( 'Slides', 'bizino' ),
 				'type' 			=> Controls_Manager::REPEATER,
 				'fields' 		=> $repeater->get_controls(),
 				'default' 		=> [
@@ -93,14 +93,14 @@ class Bizino_Working_Process extends Widget_Base {
 		$this->start_controls_section(
 			'slider_control_section',
 			[
-				'label' 		=> __( 'Slider Control', 'haarmax' ),
+				'label' 		=> __( 'Slider Control', 'bizino' ),
 				'tab' 			=> Controls_Manager::TAB_CONTENT,
 			]
 		);
 		$this->add_control(
 			'slide_to_show',
 			[
-				'label' 		=> __( 'Slide To Show', 'haarmax' ),
+				'label' 		=> __( 'Slide To Show', 'bizino' ),
 				'type' 			=> Controls_Manager::SLIDER,
 				'size_units' 	=> [ 'px' ],
 				'range' 		=> [
@@ -121,7 +121,7 @@ class Bizino_Working_Process extends Widget_Base {
         $this->start_controls_section(
 			'general_style',
 			[
-				'label' 	=> __( 'General', 'haarmax' ),
+				'label' 	=> __( 'General', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -129,7 +129,7 @@ class Bizino_Working_Process extends Widget_Base {
 		$this->add_control(
 			'overlay_bg_color',
 			[
-				'label' 		=> __( 'Overlay Background Color', 'haarmax' ),
+				'label' 		=> __( 'Overlay Background Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .process-box:hover .process-img:before' => 'background-color: {{VALUE}}',
@@ -142,7 +142,7 @@ class Bizino_Working_Process extends Widget_Base {
         $this->start_controls_section(
 			'post_title_style_section',
 			[
-				'label' 	=> __( 'Title', 'haarmax' ),
+				'label' 	=> __( 'Title', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -150,7 +150,7 @@ class Bizino_Working_Process extends Widget_Base {
         $this->add_control(
 			'post_title_color',
 			[
-				'label' 		=> __( 'Title Color', 'haarmax' ),
+				'label' 		=> __( 'Title Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .process-box .process-title a' => 'color: {{VALUE}}!important',
@@ -161,7 +161,7 @@ class Bizino_Working_Process extends Widget_Base {
         $this->add_control(
 			'post_title_color_hover',
 			[
-				'label' 		=> __( 'Title Color Hover', 'haarmax' ),
+				'label' 		=> __( 'Title Color Hover', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .process-box .process-title a:hover' => 'color: {{VALUE}}!important',
@@ -173,7 +173,7 @@ class Bizino_Working_Process extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' 		=> 'post_title_typography',
-				'label' 	=> __( 'Title Typography', 'haarmax' ),
+				'label' 	=> __( 'Title Typography', 'bizino' ),
 				'selector' 	=> '{{WRAPPER}} .process-box .process-title',
 			]
         );
@@ -181,7 +181,7 @@ class Bizino_Working_Process extends Widget_Base {
         $this->add_responsive_control(
 			'post_title_margin',
 			[
-				'label' 		=> __( 'Title Margin', 'haarmax' ),
+				'label' 		=> __( 'Title Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -193,7 +193,7 @@ class Bizino_Working_Process extends Widget_Base {
         $this->add_responsive_control(
 			'post_title_padding',
 			[
-				'label' 		=> __( 'Title Padding', 'haarmax' ),
+				'label' 		=> __( 'Title Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [

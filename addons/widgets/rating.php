@@ -12,11 +12,11 @@ use \Elementor\Utils;
 class Bizino_Rating_Widget extends Widget_Base {
 
 	public function get_name() {
-		return 'haarmaxrating';
+		return 'bizinorating';
 	}
 
 	public function get_title() {
-		return __( 'Rating', 'haarmax' );
+		return __( 'Rating', 'bizino' );
 	}
 
 	public function get_icon() {
@@ -24,7 +24,7 @@ class Bizino_Rating_Widget extends Widget_Base {
     }
 
 	public function get_categories() {
-		return [ 'haarmax' ];
+		return [ 'bizino' ];
 	}
 
 	protected function register_controls() {
@@ -32,7 +32,7 @@ class Bizino_Rating_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'rating_section',
 			[
-				'label'		 	=> __( 'Rating', 'haarmax' ),
+				'label'		 	=> __( 'Rating', 'bizino' ),
 				'tab' 			=> Controls_Manager::TAB_CONTENT,
 			]
         );

@@ -15,11 +15,11 @@ use \Elementor\Group_Control_Background;
 class Bizino_Testimonial_Slider extends Widget_Base{
 
 	public function get_name() {
-		return 'haarmaxtestimonialslider';
+		return 'bizinotestimonialslider';
 	}
 
 	public function get_title() {
-		return __( 'Testimonial Slider', 'haarmax' );
+		return __( 'Testimonial Slider', 'bizino' );
 	}
 
 	public function get_icon() {
@@ -27,7 +27,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
     }
 
 	public function get_categories() {
-		return [ 'haarmax' ];
+		return [ 'bizino' ];
 	}
 
 	protected function register_controls() {
@@ -35,7 +35,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
 		$this->start_controls_section(
 			'testimonial_slider_section',
 			[
-				'label' 	=> __( 'Testimonial Slider', 'haarmax' ),
+				'label' 	=> __( 'Testimonial Slider', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -43,12 +43,12 @@ class Bizino_Testimonial_Slider extends Widget_Base{
 		$this->add_control(
 			'testimonial_style',
 			[
-				'label' 		=> __( 'Testimonial Style', 'haarmax' ),
+				'label' 		=> __( 'Testimonial Style', 'bizino' ),
 				'type' 			=> Controls_Manager::SELECT,
 				'default' 		=> '1',
 				'options' 		=> [
-					'1'  			=> __( 'Style One', 'haarmax' ),
-					'2' 			=> __( 'Style Two', 'haarmax' ),
+					'1'  			=> __( 'Style One', 'bizino' ),
+					'2' 			=> __( 'Style Two', 'bizino' ),
 				],
 			]
 		);
@@ -58,7 +58,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
 		$repeater->add_control(
 			'client_image',
 			[
-				'label' 		=> __( 'Client Image', 'haarmax' ),
+				'label' 		=> __( 'Client Image', 'bizino' ),
 				'type' 			=> Controls_Manager::MEDIA,
 				'default' 		=> [
 					'url' => Utils::get_placeholder_image_src(),
@@ -68,7 +68,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
 		$repeater->add_control(
 			'testimonial_image_icon',
 			[
-				'label' 		=> __( 'Testimonial Image Icon', 'haarmax' ),
+				'label' 		=> __( 'Testimonial Image Icon', 'bizino' ),
 				'type' 			=> Controls_Manager::MEDIA,
 				'default' 		=> [
 					'url' => Utils::get_placeholder_image_src(),
@@ -77,25 +77,25 @@ class Bizino_Testimonial_Slider extends Widget_Base{
 		);
 		$repeater->add_control(
 			'client_name', [
-				'label' 		=> __( 'Client Name', 'haarmax' ),
+				'label' 		=> __( 'Client Name', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( 'Rubaida Kanom' , 'haarmax' ),
+				'default' 		=> __( 'Rubaida Kanom' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
 		$repeater->add_control(
 			'client_designation', [
-				'label' 		=> __( 'Client Designation', 'haarmax' ),
+				'label' 		=> __( 'Client Designation', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( 'Chef Leader' , 'haarmax' ),
+				'default' 		=> __( 'Chef Leader' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
         $repeater->add_control(
 			'client_feedback', [
-				'label' 		=> __( 'Client Feedback', 'haarmax' ),
+				'label' 		=> __( 'Client Feedback', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ' , 'haarmax' ),
+				'default' 		=> __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ' , 'bizino' ),
 				'label_block' 	=> true,
 			]
 		);
@@ -117,23 +117,23 @@ class Bizino_Testimonial_Slider extends Widget_Base{
 		$this->add_control(
 			'slides',
 			[
-				'label' 		=> __( 'Slides', 'haarmax' ),
+				'label' 		=> __( 'Slides', 'bizino' ),
 				'type' 			=> Controls_Manager::REPEATER,
 				'fields' 		=> $repeater->get_controls(),
 				'default' 		=> [
 					[
-						'client_name' 		=> __( 'Marko Polo', 'haarmax' ),
-						'client_feedback' 	=> __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ', 'haarmax' ),
+						'client_name' 		=> __( 'Marko Polo', 'bizino' ),
+						'client_feedback' 	=> __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ', 'bizino' ),
 						'client_image' 		=> Utils::get_placeholder_image_src(),
 					],
 					[
-						'client_name' 		=> __( 'Vivi Marian', 'haarmax' ),
-						'client_feedback' 	=> __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ', 'haarmax' ),
+						'client_name' 		=> __( 'Vivi Marian', 'bizino' ),
+						'client_feedback' 	=> __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ', 'bizino' ),
 						'client_image' 		=> Utils::get_placeholder_image_src(),
 					],
 					[
-						'client_name' 		=> __( 'Customer', 'haarmax' ),
-						'client_feedback' 	=> __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ', 'haarmax' ),
+						'client_name' 		=> __( 'Customer', 'bizino' ),
+						'client_feedback' 	=> __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ', 'bizino' ),
 						'client_image' 		=> Utils::get_placeholder_image_src(),
 					],
 				],
@@ -146,7 +146,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
 		$this->start_controls_section(
 			'slider_control_section',
 			[
-				'label' 		=> __( 'Slider Control', 'haarmax' ),
+				'label' 		=> __( 'Slider Control', 'bizino' ),
 				'tab' 			=> Controls_Manager::TAB_CONTENT,
 			]
         );
@@ -154,10 +154,10 @@ class Bizino_Testimonial_Slider extends Widget_Base{
 		$this->add_control(
 			'slider_arrows',
 			[
-				'label' 		=> __( 'Arrows', 'haarmax' ),
+				'label' 		=> __( 'Arrows', 'bizino' ),
 				'type' 			=> Controls_Manager::SWITCHER,
-				'label_on' 		=> __( 'Yes', 'haarmax' ),
-				'label_off' 	=> __( 'No', 'haarmax' ),
+				'label_on' 		=> __( 'Yes', 'bizino' ),
+				'label_off' 	=> __( 'No', 'bizino' ),
 				'return_value' 	=> 'yes',
 				'default' 		=> 'yes',
 			]
@@ -166,10 +166,10 @@ class Bizino_Testimonial_Slider extends Widget_Base{
 		$this->add_control(
 			'slider_autoplay',
 			[
-				'label' 		=> __( 'Autoplay', 'haarmax' ),
+				'label' 		=> __( 'Autoplay', 'bizino' ),
 				'type' 			=> Controls_Manager::SWITCHER,
-				'label_on' 		=> __( 'Yes', 'haarmax' ),
-				'label_off' 	=> __( 'No', 'haarmax' ),
+				'label_on' 		=> __( 'Yes', 'bizino' ),
+				'label_off' 	=> __( 'No', 'bizino' ),
 				'return_value' 	=> 'yes',
 				'default' 		=> 'yes',
 				'condition'		=> [ 'testimonial_style'	=> '1' ]
@@ -179,10 +179,10 @@ class Bizino_Testimonial_Slider extends Widget_Base{
 		$this->add_control(
 			'slider_dots',
 			[
-				'label' 		=> __( 'Dots', 'haarmax' ),
+				'label' 		=> __( 'Dots', 'bizino' ),
 				'type' 			=> Controls_Manager::SWITCHER,
-				'label_on' 		=> __( 'Yes', 'haarmax' ),
-				'label_off' 	=> __( 'No', 'haarmax' ),
+				'label_on' 		=> __( 'Yes', 'bizino' ),
+				'label_off' 	=> __( 'No', 'bizino' ),
 				'return_value' 	=> 'yes',
 				'default' 		=> 'yes',
 				'condition'		=> [ 'testimonial_style'	=> '1' ]
@@ -194,7 +194,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
 		$this->start_controls_section(
 			'testimonial_general',
 			[
-				'label' 	=> __( 'General', 'haarmax' ),
+				'label' 	=> __( 'General', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -202,7 +202,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
 		$this->add_control(
 			'testimonial_bg_color',
 			[
-				'label' 		=> __( 'Testimonial Background Color', 'haarmax' ),
+				'label' 		=> __( 'Testimonial Background Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-testimonial-box' => 'background-color: {{VALUE}}',
@@ -215,7 +215,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' 		=> 'box_shadow',
-				'label' 	=> __( 'Box Shadow', 'haarmax' ),
+				'label' 	=> __( 'Box Shadow', 'bizino' ),
 				'selector' 	=> '{{WRAPPER}} .vs-testimonial-box',
 				'condition'		=> [ 'testimonial_style'	=> '2' ]
 			]
@@ -224,7 +224,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
 		$this->add_control(
 			'testimonial_rating_color',
 			[
-				'label' 		=> __( 'Testimonial Star Color', 'haarmax' ),
+				'label' 		=> __( 'Testimonial Star Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .star-rating span:before' => 'color: {{VALUE}}',
@@ -238,7 +238,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
         $this->start_controls_section(
 			'testimonial_slider_client_name_style_section',
 			[
-				'label' 	=> __( 'Client Name', 'haarmax' ),
+				'label' 	=> __( 'Client Name', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -246,7 +246,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
         $this->add_control(
 			'testimonial_slider_client_name_color',
 			[
-				'label' 		=> __( 'Client Name Color', 'haarmax' ),
+				'label' 		=> __( 'Client Name Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-testimonial-box .author-name,{{WRAPPER}} .vs-testimonial .author-name' => 'color: {{VALUE}}!important',
@@ -258,7 +258,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
 			Group_Control_Typography::get_type(),
 			[
 				'name' 		=> 'testimonial_slider_client_name_typography',
-				'label' 	=> __( 'Client Name Typography', 'haarmax' ),
+				'label' 	=> __( 'Client Name Typography', 'bizino' ),
 				'selector' 	=> '{{WRAPPER}} .vs-testimonial-box .author-name,{{WRAPPER}} .vs-testimonial .author-name',
 			]
         );
@@ -266,7 +266,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
         $this->add_responsive_control(
 			'testimonial_slider_client_name_margin',
 			[
-				'label' 		=> __( 'Client Name Margin', 'haarmax' ),
+				'label' 		=> __( 'Client Name Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -278,7 +278,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
         $this->add_responsive_control(
 			'testimonial_slider_client_name_padding',
 			[
-				'label' 		=> __( 'Client Name Padding', 'haarmax' ),
+				'label' 		=> __( 'Client Name Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -292,7 +292,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
         $this->start_controls_section(
 			'testimonial_slider_client_feedback_style_section',
 			[
-				'label' 	=> __( 'Client Feedback', 'haarmax' ),
+				'label' 	=> __( 'Client Feedback', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -300,7 +300,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
         $this->add_control(
 			'testimonial_slider_client_feedback_color',
 			[
-				'label' 	=> __( 'Client Feedback Color', 'haarmax' ),
+				'label' 	=> __( 'Client Feedback Color', 'bizino' ),
 				'type' 		=> Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .vs-testimonial .testimonial-desc p,{{WRAPPER}} .vs-testimonial-box .testimonial-text' => 'color: {{VALUE}} !important',
@@ -312,7 +312,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
 			Group_Control_Typography::get_type(),
 			[
 				'name' 		=> 'testimonial_slider_client_feedback_typography',
-				'label' 	=> __( 'Client Feedback Typography', 'haarmax' ),
+				'label' 	=> __( 'Client Feedback Typography', 'bizino' ),
 				'selector' 	=> '{{WRAPPER}} .vs-testimonial .testimonial-desc p,{{WRAPPER}} .vs-testimonial-box .testimonial-text',
 			]
         );
@@ -320,7 +320,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
         $this->add_responsive_control(
 			'testimonial_slider_client_feedback_margin',
 			[
-				'label' 		=> __( 'Client Feedback Margin', 'haarmax' ),
+				'label' 		=> __( 'Client Feedback Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -332,7 +332,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
         $this->add_responsive_control(
 			'testimonial_slider_client_feedback_padding',
 			[
-				'label' 		=> __( 'Client Feedback Padding', 'haarmax' ),
+				'label' 		=> __( 'Client Feedback Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -346,7 +346,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
         $this->start_controls_section(
 			'testimonial_slider_designation_style_section',
 			[
-				'label' 		=> __( 'Designation', 'haarmax' ),
+				'label' 		=> __( 'Designation', 'bizino' ),
 				'tab' 			=> Controls_Manager::TAB_STYLE,
 				'condition'		=> [ 'testimonial_style'	=> '1' ]
 			]
@@ -355,7 +355,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
         $this->add_control(
 			'testimonial_slider_designation_color',
 			[
-				'label' 	=> __( 'Client Designation Color', 'haarmax' ),
+				'label' 	=> __( 'Client Designation Color', 'bizino' ),
 				'type' 		=> Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .vs-testimonial .author-degi' => 'color: {{VALUE}}!important',
@@ -367,7 +367,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
 			Group_Control_Typography::get_type(),
 			[
 				'name' 		=> 'testimonial_slider_designation_typography',
-				'label' 	=> __( 'Client Designation Typography', 'haarmax' ),
+				'label' 	=> __( 'Client Designation Typography', 'bizino' ),
 				'selector' 	=> '{{WRAPPER}} .vs-testimonial .author-degi',
 			]
         );
@@ -375,7 +375,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
         $this->add_responsive_control(
 			'testimonial_slider_designation_margin',
 			[
-				'label' 		=> __( 'Client Designation Margin', 'haarmax' ),
+				'label' 		=> __( 'Client Designation Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -387,7 +387,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
         $this->add_responsive_control(
 			'testimonial_slider_designation_padding',
 			[
-				'label' 		=> __( 'Client Designation Padding', 'haarmax' ),
+				'label' 		=> __( 'Client Designation Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -403,7 +403,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
 		$this->start_controls_section(
 			'arrow_styling',
 			[
-				'label' 	=> __( 'Arrow Styling', 'haarmax' ),
+				'label' 	=> __( 'Arrow Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 				'condition'		=> [ 'testimonial_style'	=> '1' ]
 			]
@@ -412,7 +412,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
         $this->add_control(
 			'arrow_color',
 			[
-				'label' 		=> __( 'Arrow Color', 'haarmax' ),
+				'label' 		=> __( 'Arrow Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .slick-arrow'	=> '--title-color: {{VALUE}};',
@@ -423,7 +423,7 @@ class Bizino_Testimonial_Slider extends Widget_Base{
         $this->add_control(
 			'arrow_hvr_color',
 			[
-				'label' 		=> __( 'Arrow Hover Color', 'haarmax' ),
+				'label' 		=> __( 'Arrow Hover Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .slick-arrow:hover'	=> '--theme-color: {{VALUE}};',

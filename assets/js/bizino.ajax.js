@@ -4,7 +4,7 @@
 
 Project: Vecurosoft
 Version: 1.0
-Author : haarmax.com
+Author : bizino.com
 
 */
 ;(function($){
@@ -22,11 +22,11 @@ Author : haarmax.com
         let $emailAdd = $(this).find('input[type="email"]').val();
         $.ajax({
             type: 'POST',
-            url: haarmaxajax.action_url,
+            url: bizinoajax.action_url,
             data:{
                 sectsubscribe_email: $emailAdd,
-                security: haarmaxajax.nonce,
-                action: 'haarmax_subscribe_ajax'
+                security: bizinoajax.nonce,
+                action: 'bizino_subscribe_ajax'
             },
 
             success: function(data){

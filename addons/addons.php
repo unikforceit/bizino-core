@@ -135,7 +135,7 @@ final class Bizino_Extension {
 		add_action( 'elementor/frontend/after_enqueue_scripts', [ $this, 'widget_scripts' ]);
 
 
-		add_action( 'elementor/elements/categories_registered',[ $this, 'haarmax_elementor_widget_categories' ] );
+		add_action( 'elementor/elements/categories_registered',[ $this, 'bizino_elementor_widget_categories' ] );
 	}
 
 	/**
@@ -153,9 +153,9 @@ final class Bizino_Extension {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor */
-			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'haarmax' ),
-			'<strong>' . esc_html__( 'Bizino Core', 'haarmax' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'haarmax' ) . '</strong>'
+			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'bizino' ),
+			'<strong>' . esc_html__( 'Bizino Core', 'bizino' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'bizino' ) . '</strong>'
 		);
 
 		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
@@ -177,9 +177,9 @@ final class Bizino_Extension {
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
 
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'haarmax' ),
-			'<strong>' . esc_html__( 'Bizino Core', 'haarmax' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'haarmax' ) . '</strong>',
+			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'bizino' ),
+			'<strong>' . esc_html__( 'Bizino Core', 'bizino' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'bizino' ) . '</strong>',
 			 self::MINIMUM_ELEMENTOR_VERSION
 		);
 
@@ -201,9 +201,9 @@ final class Bizino_Extension {
 		$message = sprintf(
 
 			/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'haarmax' ),
-			'<strong>' . esc_html__( 'Bizino Core', 'haarmax' ) . '</strong>',
-			'<strong>' . esc_html__( 'PHP', 'haarmax' ) . '</strong>',
+			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'bizino' ),
+			'<strong>' . esc_html__( 'Bizino Core', 'bizino' ) . '</strong>',
+			'<strong>' . esc_html__( 'PHP', 'bizino' ) . '</strong>',
 			 self::MINIMUM_PHP_VERSION
 		);
 
@@ -228,28 +228,28 @@ final class Bizino_Extension {
 		require_once( BIZINO_ADDONS . '/widgets/features-box.php' );
 		require_once( BIZINO_ADDONS . '/widgets/section-title.php' );
 		require_once( BIZINO_ADDONS . '/widgets/image-with-video.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-service.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-price-list.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-testimonial.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-single-price-cart.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-gallery.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-team.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-newsletter.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-salon-infobox.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-blog.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-package.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-working-process.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-product-search.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-logo-carousel.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-offer-cart.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-counter.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-instagram-gallery.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-service.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-price-list.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-testimonial.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-single-price-cart.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-gallery.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-team.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-newsletter.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-salon-infobox.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-blog.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-package.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-working-process.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-product-search.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-logo-carousel.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-offer-cart.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-counter.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-instagram-gallery.php' );
 		require_once( BIZINO_ADDONS . '/widgets/social-media.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-trends-product.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-right-choice.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-button.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-about-us.php' );
-		require_once( BIZINO_ADDONS . '/widgets/haarmax-history.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-trends-product.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-right-choice.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-button.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-about-us.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-history.php' );
 
 
 		// Header Elements
@@ -296,8 +296,8 @@ final class Bizino_Extension {
     public function widget_scripts() {
 
         wp_enqueue_script(
-            'haarmax-frontend-script',
-            BIZINO_PLUGDIRURI . 'assets/js/haarmax-frontend.js',
+            'bizino-frontend-script',
+            BIZINO_PLUGDIRURI . 'assets/js/bizino-frontend.js',
             array('jquery'),
             false,
             true
@@ -305,28 +305,28 @@ final class Bizino_Extension {
 	}
 
 
-    function haarmax_elementor_widget_categories( $elements_manager ) {
+    function bizino_elementor_widget_categories( $elements_manager ) {
 
         $elements_manager->add_category(
-            'haarmax',
+            'bizino',
             [
-                'title' => __( 'Bizino', 'haarmax' ),
+                'title' => __( 'Bizino', 'bizino' ),
                 'icon' 	=> 'fa fa-plug',
             ]
         );
 
         $elements_manager->add_category(
-            'haarmax_footer_elements',
+            'bizino_footer_elements',
             [
-                'title' => __( 'Bizino Footer Elements', 'haarmax' ),
+                'title' => __( 'Bizino Footer Elements', 'bizino' ),
                 'icon' 	=> 'fa fa-plug',
             ]
 		);
 
 		$elements_manager->add_category(
-            'haarmax_header_elements',
+            'bizino_header_elements',
             [
-                'title' => __( 'Bizino Header Elements', 'haarmax' ),
+                'title' => __( 'Bizino Header Elements', 'bizino' ),
                 'icon' 	=> 'fa fa-plug',
             ]
         );

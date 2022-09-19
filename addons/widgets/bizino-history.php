@@ -15,11 +15,11 @@ use \Elementor\Group_Control_Background;
 class Bizino_History_Slider extends Widget_Base{
 
 	public function get_name() {
-		return 'haarmaxhistoryslider';
+		return 'bizinohistoryslider';
 	}
 
 	public function get_title() {
-		return __( 'History Slider', 'haarmax' );
+		return __( 'History Slider', 'bizino' );
 	}
 
 	public function get_icon() {
@@ -27,7 +27,7 @@ class Bizino_History_Slider extends Widget_Base{
     }
 
 	public function get_categories() {
-		return [ 'haarmax' ];
+		return [ 'bizino' ];
 	}
 
 	protected function register_controls() {
@@ -35,7 +35,7 @@ class Bizino_History_Slider extends Widget_Base{
 		$this->start_controls_section(
 			'history_section',
 			[
-				'label' 	=> __( 'History Sections', 'haarmax' ),
+				'label' 	=> __( 'History Sections', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -44,40 +44,40 @@ class Bizino_History_Slider extends Widget_Base{
 
 		$repeater->add_control(
 			'year', [
-				'label' 		=> __( 'Year', 'haarmax' ),
+				'label' 		=> __( 'Year', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXT,
-				'default' 		=> __( '2020', 'haarmax' ),
+				'default' 		=> __( '2020', 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
 		$repeater->add_control(
 			'content', [
-				'label' 		=> __( 'Content', 'haarmax' ),
+				'label' 		=> __( 'Content', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( 'Chef Leader' , 'haarmax' ),
+				'default' 		=> __( 'Chef Leader' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
         $repeater->add_control(
 			'name', [
-				'label' 		=> __( 'Name', 'haarmax' ),
+				'label' 		=> __( 'Name', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXT,
-				'default' 		=> __( 'JR Shawon' , 'haarmax' ),
+				'default' 		=> __( 'JR Shawon' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
         $repeater->add_control(
 			'designations', [
-				'label' 		=> __( 'Designation', 'haarmax' ),
+				'label' 		=> __( 'Designation', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXT,
-				'default' 		=> __( 'CEO' , 'haarmax' ),
+				'default' 		=> __( 'CEO' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
 		$this->add_control(
 			'slides',
 			[
-				'label' 		=> __( 'Slides', 'haarmax' ),
+				'label' 		=> __( 'Slides', 'bizino' ),
 				'type' 			=> Controls_Manager::REPEATER,
 				'fields' 		=> $repeater->get_controls(),
 				'title_field' 	=> '{{{ name }}}',

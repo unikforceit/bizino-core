@@ -1,7 +1,7 @@
 <?php
 /**
  * @version  1.0
- * @package  haarmax
+ * @package  bizino
  * @author   Vecurosoft <support@vecurosoft.com>
  *
  * Websites: http://www.vecurosoft.com
@@ -12,16 +12,16 @@
 *Creating Contact Information Widget
 ***************************************/
 
-class haarmax_contact_info_widget extends WP_Widget {
+class bizino_contact_info_widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			// Base ID of your widget
-			'haarmax_contact_info_widget',
+			'bizino_contact_info_widget',
 			// Widget name will appear in UI
-			esc_html__( 'Bizino :: Contact Info', 'haarmax' ),
+			esc_html__( 'Bizino :: Contact Info', 'bizino' ),
 			// Widget description
 			array(
-				'description'	 => esc_html__( 'Add Contact Info', 'haarmax' ),
+				'description'	 => esc_html__( 'Add Contact Info', 'bizino' ),
 				'classname'		 => 'widget_contact',
 			)
 		);
@@ -52,15 +52,15 @@ public function widget( $args, $instance ) {
         }
 
 		echo '<div class="vs-widget-about">';
-			if( !empty( $address ) ){
-		    	echo '<p class="footer-info"><i class="fas fa-map-marker-alt"></i>'.esc_html( $address ).'</p>';
-		    }
+            if( !empty( $mobile ) ){
+                echo '<p class="footer-info"><i class="fal fa-map-marker-alt"></i>'.esc_html( $mobile ).'</p>';
+            }
 		    if( !empty( $email ) ){
-		        echo '<p class="footer-info"><i class="fas fa-envelope"></i>'.esc_html__('Email: ', 'haarmax').'<a class="text-inherit" href="'.esc_attr( 'mailto:'.$emailurl ).'">'.esc_html( $email ).'</a></p>';
+		        echo '<p class="footer-info"><i class="fal fa-envelope"></i><a class="text-inherit" href="'.esc_attr( 'mailto:'.$emailurl ).'">'.esc_html( $email ).'</a></p>';
 		    }
-		    if( !empty( $mobile ) ){
-		        echo '<p class="footer-info"><i class="fas fa-phone-alt"></i>'.esc_html__('Tel: ', 'haarmax').'<a class="text-inherit" href="'.esc_attr( 'tel:'.$mobileurl ).'">'.esc_html( $mobile ).'</a></p>';
-		    }          
+            if( !empty( $address ) ){
+                echo '<p class="footer-info"><i class="fal fa-phone-alt"></i><a class="text-inherit" href="'.esc_attr( 'tel:'.$address ).'">'.esc_html( $address ).'</a></p>';
+            }
         echo '</div>';
 	echo $args['after_widget'];
     echo '<!-- Contact Info Widget End -->';
@@ -101,14 +101,14 @@ public function form( $instance ) {
 ?>
 
 	<p>
-        <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ,'haarmax'); ?></label> 
+        <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ,'bizino'); ?></label> 
         <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
     </p>
 	
 	<p>
 		<label for="<?php echo $this->get_field_id( 'mobile' ); ?>">
 			<?php
-				_e( 'Mobile :' ,'haarmax');
+				_e( 'Mobile :' ,'bizino');
 			?>
 		</label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'mobile' ); ?>" name="<?php echo $this->get_field_name( 'mobile' ); ?>" type="text" value="<?php echo esc_attr( $mobile ); ?>" />
@@ -116,7 +116,7 @@ public function form( $instance ) {
 	<p>
 		<label for="<?php echo $this->get_field_id( 'email' ); ?>">
 			<?php
-				_e( 'Email :' ,'haarmax');
+				_e( 'Email :' ,'bizino');
 			?>
 		</label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'email' ); ?>" name="<?php echo $this->get_field_name( 'email' ); ?>" type="text" value="<?php echo esc_attr( $email ); ?>" />
@@ -125,7 +125,7 @@ public function form( $instance ) {
 	<p>
 		<label for="<?php echo $this->get_field_id( 'address' ); ?>">
 			<?php
-				_e( 'Address :' ,'haarmax');
+				_e( 'Address :' ,'bizino');
 			?>
 		</label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'address' ); ?>" name="<?php echo $this->get_field_name( 'address' ); ?>" type="text" value="<?php echo esc_attr( $address ); ?>" />
@@ -149,10 +149,10 @@ public function update( $new_instance, $old_instance ) {
 	return $instance;
 }
 }
-// Class haarmax_subscribe_widget ends here
+// Class bizino_subscribe_widget ends here
 
 // Register and load the widget
-function haarmax_contact_info_load_widget() {
-	register_widget( 'haarmax_contact_info_widget' );
+function bizino_contact_info_load_widget() {
+	register_widget( 'bizino_contact_info_widget' );
 }
-add_action( 'widgets_init', 'haarmax_contact_info_load_widget' );
+add_action( 'widgets_init', 'bizino_contact_info_load_widget' );

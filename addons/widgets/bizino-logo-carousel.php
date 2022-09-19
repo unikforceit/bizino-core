@@ -15,11 +15,11 @@ use \Elementor\Group_Control_Background;
 class Bizino_Logo_Carousel extends Widget_Base{
 
 	public function get_name() {
-		return 'haarmaxlogocarousel';
+		return 'bizinologocarousel';
 	}
 
 	public function get_title() {
-		return __( 'Logo Carousel', 'haarmax' );
+		return __( 'Logo Carousel', 'bizino' );
 	}
 
 	public function get_icon() {
@@ -27,7 +27,7 @@ class Bizino_Logo_Carousel extends Widget_Base{
     }
 
 	public function get_categories() {
-		return [ 'haarmax' ];
+		return [ 'bizino' ];
 	}
 
 	protected function register_controls() {
@@ -35,7 +35,7 @@ class Bizino_Logo_Carousel extends Widget_Base{
 		$this->start_controls_section(
 			'logocarousel_section',
 			[
-				'label' 	=> __( 'Logo Carousel', 'haarmax' ),
+				'label' 	=> __( 'Logo Carousel', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -45,7 +45,7 @@ class Bizino_Logo_Carousel extends Widget_Base{
 		$repeater->add_control(
 			'logocarousel_image',
 			[
-				'label' 		=> __( 'Logo Carousel image', 'haarmax' ),
+				'label' 		=> __( 'Logo Carousel image', 'bizino' ),
 				'type' 			=> Controls_Manager::MEDIA,
 				'default' 		=> [
 					'url' => Utils::get_placeholder_image_src(),
@@ -55,15 +55,15 @@ class Bizino_Logo_Carousel extends Widget_Base{
 
 		$repeater->add_control(
 			'image_url', [
-				'label' 		=> __( 'Title Url?', 'haarmax' ),
+				'label' 		=> __( 'Title Url?', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( '#' , 'haarmax' ),
+				'default' 		=> __( '#' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
 		$repeater->add_control(
 			'awards_title', [
-				'label' 		=> __( 'Awards Title', 'haarmax' ),
+				'label' 		=> __( 'Awards Title', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
 				'label_block' 	=> true,
 			]
@@ -72,7 +72,7 @@ class Bizino_Logo_Carousel extends Widget_Base{
 		$this->add_control(
 			'slides',
 			[
-				'label' 		=> __( 'Slides', 'haarmax' ),
+				'label' 		=> __( 'Slides', 'bizino' ),
 				'type' 			=> Controls_Manager::REPEATER,
 				'fields' 		=> $repeater->get_controls(),
 				'default' 		=> [
@@ -95,14 +95,14 @@ class Bizino_Logo_Carousel extends Widget_Base{
         $this->start_controls_section(
 			'slider_control_section',
 			[
-				'label' 		=> __( 'Slider Control', 'haarmax' ),
+				'label' 		=> __( 'Slider Control', 'bizino' ),
 				'tab' 			=> Controls_Manager::TAB_CONTENT,
 			]
 		);
 		$this->add_control(
 			'slide_to_show',
 			[
-				'label' 		=> __( 'Slide To Show', 'haarmax' ),
+				'label' 		=> __( 'Slide To Show', 'bizino' ),
 				'type' 			=> Controls_Manager::SLIDER,
 				'size_units' 	=> [ 'px' ],
 				'range' 		=> [

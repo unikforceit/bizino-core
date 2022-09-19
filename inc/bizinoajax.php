@@ -13,30 +13,30 @@ if( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-function haarmax_core_essential_scripts( ) {
-    wp_enqueue_script('haarmax-ajax',BIZINO_PLUGDIRURI.'assets/js/haarmax.ajax.js',array( 'jquery' ),'1.0',true);
+function bizino_core_essential_scripts( ) {
+    wp_enqueue_script('bizino-ajax',BIZINO_PLUGDIRURI.'assets/js/bizino.ajax.js',array( 'jquery' ),'1.0',true);
     wp_localize_script(
-    'haarmax-ajax',
-    'haarmaxajax',
+    'bizino-ajax',
+    'bizinoajax',
         array(
             'action_url' => admin_url( 'admin-ajax.php' ),
-            'nonce'	     => wp_create_nonce( 'haarmax-nonce' ),
+            'nonce'	     => wp_create_nonce( 'bizino-nonce' ),
         )
     );
 }
 
-add_action('wp_enqueue_scripts','haarmax_core_essential_scripts');
+add_action('wp_enqueue_scripts','bizino_core_essential_scripts');
 
 
-// haarmax Section subscribe ajax callback function
-add_action( 'wp_ajax_haarmax_subscribe_ajax', 'haarmax_subscribe_ajax' );
-add_action( 'wp_ajax_nopriv_haarmax_subscribe_ajax', 'haarmax_subscribe_ajax' );
+// bizino Section subscribe ajax callback function
+add_action( 'wp_ajax_bizino_subscribe_ajax', 'bizino_subscribe_ajax' );
+add_action( 'wp_ajax_nopriv_bizino_subscribe_ajax', 'bizino_subscribe_ajax' );
 
-function haarmax_subscribe_ajax( ){
+function bizino_subscribe_ajax( ){
   $apiKey = bizino_opt('bizino_subscribe_apikey');
   $listid = bizino_opt('bizino_subscribe_listid');
-   if( ! wp_verify_nonce($_POST['security'], 'haarmax-nonce') ) {
-    echo '<div class="alert alert-danger mt-2" role="alert">'.esc_html__('You are not allowed.', 'haarmax').'</div>';
+   if( ! wp_verify_nonce($_POST['security'], 'bizino-nonce') ) {
+    echo '<div class="alert alert-danger mt-2" role="alert">'.esc_html__('You are not allowed.', 'bizino').'</div>';
    }else{
        if( !empty( $apiKey ) && !empty( $listid )  ){
            $MailChimp = new DrewM\MailChimp\MailChimp( $apiKey );
@@ -48,15 +48,15 @@ function haarmax_subscribe_ajax( ){
 
            if ($MailChimp->success()) {
                if( $result['status'] == 'subscribed' ){
-                   echo '<div class="alert alert-success mt-2" role="alert">'.esc_html__('Thank you, you have been added to our mailing list.', 'haarmax').'</div>';
+                   echo '<div class="alert alert-success mt-2" role="alert">'.esc_html__('Thank you, you have been added to our mailing list.', 'bizino').'</div>';
                }
            }elseif( $result['status'] == '400' ) {
-               echo '<div class="alert alert-danger mt-2" role="alert">'.esc_html__('This Email address is already exists.', 'haarmax').'</div>';
+               echo '<div class="alert alert-danger mt-2" role="alert">'.esc_html__('This Email address is already exists.', 'bizino').'</div>';
            }else{
-               echo '<div class="alert alert-danger mt-2" role="alert">'.esc_html__('Sorry something went wrong.', 'haarmax').'</div>';
+               echo '<div class="alert alert-danger mt-2" role="alert">'.esc_html__('Sorry something went wrong.', 'bizino').'</div>';
            }
         }else{
-           echo '<div class="alert alert-danger mt-2" role="alert">'.esc_html__('Apikey Or Listid Missing.', 'haarmax').'</div>';
+           echo '<div class="alert alert-danger mt-2" role="alert">'.esc_html__('Apikey Or Listid Missing.', 'bizino').'</div>';
         }
    }
 
@@ -66,10 +66,10 @@ function haarmax_subscribe_ajax( ){
 
 
 // ajax product search
-add_action('wp_ajax_haarmax_ajax_search','haarmax_ajax_search');
-add_action('wp_ajax_nopriv_haarmax_ajax_search','haarmax_ajax_search');
+add_action('wp_ajax_bizino_ajax_search','bizino_ajax_search');
+add_action('wp_ajax_nopriv_bizino_ajax_search','bizino_ajax_search');
 
-function haarmax_ajax_search( ) {
+function bizino_ajax_search( ) {
     $_products = new WP_Query( array(
         'post_type' => $_POST['posttype'],
         'posts_per_page'  => '5',
@@ -114,7 +114,7 @@ function haarmax_ajax_search( ) {
         wp_reset_postdata();
     } else {
         echo '<div class="search-item-wrap">';
-            echo '<p class="text-danger mb-0">'.esc_html__('Sorry!!! No product found','haarmax').'</p>';
+            echo '<p class="text-danger mb-0">'.esc_html__('Sorry!!! No product found','bizino').'</p>';
         echo '</div>';
     }
     wp_die();

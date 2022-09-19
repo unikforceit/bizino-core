@@ -10,11 +10,11 @@ use \Elementor\Group_Control_Typography;
 class Bizino_Search extends Widget_Base {
 
 	public function get_name() {
-		return 'haarmaxsearch';
+		return 'bizinosearch';
 	}
 
 	public function get_title() {
-		return __( 'Search', 'haarmax' );
+		return __( 'Search', 'bizino' );
 	}
 
 
@@ -24,7 +24,7 @@ class Bizino_Search extends Widget_Base {
 
 
 	public function get_categories() {
-		return [ 'haarmax' ];
+		return [ 'bizino' ];
 	}
 
 
@@ -33,7 +33,7 @@ class Bizino_Search extends Widget_Base {
 		$this->start_controls_section(
 			'search_section',
 			[
-				'label' => __( 'Search Form', 'haarmax' ),
+				'label' => __( 'Search Form', 'bizino' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
         );
@@ -41,9 +41,9 @@ class Bizino_Search extends Widget_Base {
 		$this->add_control(
 			'placeholder_text',
 			[
-				'label' 		=> __( 'Placeholder Text', 'haarmax' ),
+				'label' 		=> __( 'Placeholder Text', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXT,
-				'default' 		=> __( 'What are you looking for?', 'haarmax' ),
+				'default' 		=> __( 'What are you looking for?', 'bizino' ),
 			]
 		);
 
@@ -53,7 +53,7 @@ class Bizino_Search extends Widget_Base {
         $this->start_controls_section(
 			'search_style_section',
 			[
-				'label' => __( 'Search Style', 'haarmax' ),
+				'label' => __( 'Search Style', 'bizino' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -62,7 +62,7 @@ class Bizino_Search extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 					'name' => 'input_typography',
-					'label' => __( 'Typography', 'haarmax' ),
+					'label' => __( 'Typography', 'bizino' ),
 					'selector' => '{{WRAPPER}} .search-form-wrapper .search-form input',
 			]
 		);

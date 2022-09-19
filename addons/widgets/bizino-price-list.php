@@ -13,11 +13,11 @@ use \Elementor\Group_Control_Image_Size;
 class Bizino_Price_List_Widget extends Widget_Base{
 
 	public function get_name() {
-		return 'haarmaxpricelist';
+		return 'bizinopricelist';
 	}
 
 	public function get_title() {
-		return __( 'Bizino Price List', 'haarmax' );
+		return __( 'Bizino Price List', 'bizino' );
 	}
 
 	public function get_icon() {
@@ -25,7 +25,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
     }
 
 	public function get_categories() {
-		return [ 'haarmax' ];
+		return [ 'bizino' ];
 	}
 
 	protected function register_controls() {
@@ -33,21 +33,21 @@ class Bizino_Price_List_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'chose_us_content',
 			[
-				'label'		=> __( 'Price List','haarmax' ),
+				'label'		=> __( 'Price List','bizino' ),
 				'tab'		=> Controls_Manager::TAB_CONTENT,
 			]
 		);
 		$this->add_control(
 			'pricing_style',
 			[
-				'label' 		=> __( 'Price List Style', 'haarmax' ),
+				'label' 		=> __( 'Price List Style', 'bizino' ),
 				'type' 			=> Controls_Manager::SELECT,
 				'default' 		=> 'one',
 				'options'		=> [
-					'one'  			=> __( 'Style One', 'haarmax' ),
-					'two' 			=> __( 'Style Two', 'haarmax' ),
-					'three' 		=> __( 'Style Three', 'haarmax' ),
-					'four' 			=> __( 'Style Four', 'haarmax' ),
+					'one'  			=> __( 'Style One', 'bizino' ),
+					'two' 			=> __( 'Style Two', 'bizino' ),
+					'three' 		=> __( 'Style Three', 'bizino' ),
+					'four' 			=> __( 'Style Four', 'bizino' ),
 				],
 			]
 		);
@@ -58,7 +58,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
         $repeater->add_control(
             'image',
             [
-                'label'     => __( 'Thumbnail Image', 'haarmax' ),
+                'label'     => __( 'Thumbnail Image', 'bizino' ),
                 'type'      => Controls_Manager::MEDIA,
                 'dynamic' 		=> [
 					'active' 		=> true,
@@ -71,36 +71,36 @@ class Bizino_Price_List_Widget extends Widget_Base{
 
         $repeater->add_control(
 			'title', [
-				'label' 		=> __( 'Title', 'haarmax' ),
+				'label' 		=> __( 'Title', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( 'Safe Cleaning Supplies' , 'haarmax' ),
+				'default' 		=> __( 'Safe Cleaning Supplies' , 'bizino' ),
 				'rows' 		=> 2,
 				'label_block' 	=> true,
 			]
         );
         $repeater->add_control(
 			'desc', [
-				'label' 		=> __( 'Price Plan', 'haarmax' ),
+				'label' 		=> __( 'Price Plan', 'bizino' ),
 				'type' 			=> Controls_Manager::WYSIWYG,
-				'default' 		=> __( 'Safe Cleaning Supplies' , 'haarmax' ),
+				'default' 		=> __( 'Safe Cleaning Supplies' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
         $repeater->add_control(
 			'button_text',
 			[
-				'label' 	=> esc_html__( 'Button Text', 'haarmax' ),
+				'label' 	=> esc_html__( 'Button Text', 'bizino' ),
                 'type' 		=> Controls_Manager::TEXT,
-                'default'  	=> esc_html__( 'Button Text', 'haarmax' ),
+                'default'  	=> esc_html__( 'Button Text', 'bizino' ),
 			]
         );
 
         $repeater->add_control(
 			'button_link',
 			[
-				'label' 		=> esc_html__( 'Link', 'haarmax' ),
+				'label' 		=> esc_html__( 'Link', 'bizino' ),
 				'type' 			=> Controls_Manager::URL,
-				'placeholder' 	=> esc_html__( 'https://your-link.com', 'haarmax' ),
+				'placeholder' 	=> esc_html__( 'https://your-link.com', 'bizino' ),
 				'show_external' => true,
 				'default' 		=> [
 					'url' 			=> '#',
@@ -113,12 +113,12 @@ class Bizino_Price_List_Widget extends Widget_Base{
 		$this->add_control(
 			'pricing_table',
 			[
-				'label' 		=> __( 'Price Table', 'haarmax' ),
+				'label' 		=> __( 'Price Table', 'bizino' ),
 				'type' 			=> Controls_Manager::REPEATER,
 				'fields' 		=> $repeater->get_controls(),
 				'default' 		=> [
 					[
-						'title' 		=> __( 'Safe Cleaning Supplies', 'haarmax' ),
+						'title' 		=> __( 'Safe Cleaning Supplies', 'bizino' ),
 					],
 				],
 				'title_field' 	=> '{{{ title }}}',
@@ -132,7 +132,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
 		$this->add_control(
 			'posts_per_page',
 			[
-				'label' 		=> esc_html__( 'Slide to show', 'haarmax' ),
+				'label' 		=> esc_html__( 'Slide to show', 'bizino' ),
 				'type' 			=> Controls_Manager::SLIDER,
 				'size_units' 	=> [ 'px' ],
 				'range' 		=> [
@@ -154,7 +154,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
         $repeater->add_control(
             'image',
             [
-                'label'     => __( 'Thumbnail Image', 'haarmax' ),
+                'label'     => __( 'Thumbnail Image', 'bizino' ),
                 'type'      => Controls_Manager::MEDIA,
                 'dynamic' 		=> [
 					'active' 		=> true,
@@ -167,7 +167,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
         $repeater->add_control(
             'image_icon',
             [
-                'label'     => __( 'Icon', 'haarmax' ),
+                'label'     => __( 'Icon', 'bizino' ),
                 'type'      => Controls_Manager::MEDIA,
                 'dynamic' 		=> [
 					'active' 		=> true,
@@ -180,18 +180,18 @@ class Bizino_Price_List_Widget extends Widget_Base{
 
         $repeater->add_control(
 			'title', [
-				'label' 		=> __( 'Title', 'haarmax' ),
+				'label' 		=> __( 'Title', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( 'Safe Cleaning Supplies' , 'haarmax' ),
+				'default' 		=> __( 'Safe Cleaning Supplies' , 'bizino' ),
 				'rows' 		=> 2,
 				'label_block' 	=> true,
 			]
         );
         $repeater->add_control(
 			'desc', [
-				'label' 		=> __( 'Price Plan', 'haarmax' ),
+				'label' 		=> __( 'Price Plan', 'bizino' ),
 				'type' 			=> Controls_Manager::WYSIWYG,
-				'default' 		=> __( 'Safe Cleaning Supplies' , 'haarmax' ),
+				'default' 		=> __( 'Safe Cleaning Supplies' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
@@ -199,12 +199,12 @@ class Bizino_Price_List_Widget extends Widget_Base{
 		$this->add_control(
 			'pricing_table_v2',
 			[
-				'label' 		=> __( 'Price Table', 'haarmax' ),
+				'label' 		=> __( 'Price Table', 'bizino' ),
 				'type' 			=> Controls_Manager::REPEATER,
 				'fields' 		=> $repeater->get_controls(),
 				'default' 		=> [
 					[
-						'title' 		=> __( 'Safe Cleaning Supplies', 'haarmax' ),
+						'title' 		=> __( 'Safe Cleaning Supplies', 'bizino' ),
 					],
 				],
 				'title_field' 	=> '{{{ title }}}',
@@ -219,7 +219,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
         $repeater->add_control(
             'image',
             [
-                'label'     => __( 'Thumbnail Image', 'haarmax' ),
+                'label'     => __( 'Thumbnail Image', 'bizino' ),
                 'type'      => Controls_Manager::MEDIA,
                 'dynamic' 		=> [
 					'active' 		=> true,
@@ -232,54 +232,54 @@ class Bizino_Price_List_Widget extends Widget_Base{
 
         $repeater->add_control(
 			'price_title', [
-				'label' 		=> __( 'Pricing Title', 'haarmax' ),
+				'label' 		=> __( 'Pricing Title', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( 'Safe Cleaning Supplies' , 'haarmax' ),
+				'default' 		=> __( 'Safe Cleaning Supplies' , 'bizino' ),
 				'rows' 		=> 2,
 				'label_block' 	=> true,
 			]
         );
         $repeater->add_control(
 			'price_desc', [
-				'label' 		=> __( 'Price Plan', 'haarmax' ),
+				'label' 		=> __( 'Price Plan', 'bizino' ),
 				'type' 			=> Controls_Manager::WYSIWYG,
-				'default' 		=> __( 'Safe Cleaning Supplies' , 'haarmax' ),
+				'default' 		=> __( 'Safe Cleaning Supplies' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
 
         $repeater->add_control(
 			'content_title', [
-				'label' 		=> __( 'Content Title', 'haarmax' ),
+				'label' 		=> __( 'Content Title', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( 'Safe Cleaning Supplies' , 'haarmax' ),
+				'default' 		=> __( 'Safe Cleaning Supplies' , 'bizino' ),
 				'rows' 		=> 2,
 				'label_block' 	=> true,
 			]
         );
         $repeater->add_control(
 			'content_desc', [
-				'label' 		=> __( 'Content Description', 'haarmax' ),
+				'label' 		=> __( 'Content Description', 'bizino' ),
 				'type' 			=> Controls_Manager::WYSIWYG,
-				'default' 		=> __( 'Safe Cleaning Supplies' , 'haarmax' ),
+				'default' 		=> __( 'Safe Cleaning Supplies' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
         $repeater->add_control(
 			'button_text',
 			[
-				'label' 	=> esc_html__( 'Button Text', 'haarmax' ),
+				'label' 	=> esc_html__( 'Button Text', 'bizino' ),
                 'type' 		=> Controls_Manager::TEXT,
-                'default'  	=> esc_html__( 'Button Text', 'haarmax' ),
+                'default'  	=> esc_html__( 'Button Text', 'bizino' ),
 			]
         );
 
         $repeater->add_control(
 			'button_link',
 			[
-				'label' 		=> esc_html__( 'Link', 'haarmax' ),
+				'label' 		=> esc_html__( 'Link', 'bizino' ),
 				'type' 			=> Controls_Manager::URL,
-				'placeholder' 	=> esc_html__( 'https://your-link.com', 'haarmax' ),
+				'placeholder' 	=> esc_html__( 'https://your-link.com', 'bizino' ),
 				'show_external' => true,
 				'default' 		=> [
 					'url' 			=> '#',
@@ -292,12 +292,12 @@ class Bizino_Price_List_Widget extends Widget_Base{
 		$this->add_control(
 			'pricing_table_v3',
 			[
-				'label' 		=> __( 'Price Table', 'haarmax' ),
+				'label' 		=> __( 'Price Table', 'bizino' ),
 				'type' 			=> Controls_Manager::REPEATER,
 				'fields' 		=> $repeater->get_controls(),
 				'default' 		=> [
 					[
-						'title' 		=> __( 'Safe Cleaning Supplies', 'haarmax' ),
+						'title' 		=> __( 'Safe Cleaning Supplies', 'bizino' ),
 					],
 				],
 				'title_field' 	=> '{{{ price_title }}}',
@@ -312,7 +312,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'general_styling',
 			[
-				'label' 	=> __( 'Genaral', 'haarmax' ),
+				'label' 	=> __( 'Genaral', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 				'condition'		=> [ 'pricing_style' =>  ['one','two']  ],
 			]
@@ -321,7 +321,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
 			\Elementor\Group_Control_Background::get_type(),
 			[
 				'name' 			=> 'background',
-				'label' 		=> __( 'Price Plan Background', 'haarmax' ),
+				'label' 		=> __( 'Price Plan Background', 'bizino' ),
 				'types' 		=> [ 'classic', 'gradient', 'video' ],
 				'selector' 		=> '{{WRAPPER}} .price-list-box .price-content',
 				'condition'		=> [ 'pricing_style' => 'one' ],
@@ -332,7 +332,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name' 		=> 'box_shadow',
-				'label' 	=> __( 'Box Shadow', 'haarmax' ),
+				'label' 	=> __( 'Box Shadow', 'bizino' ),
 				'selector' 	=> '{{WRAPPER}} .price-list-box .price-content',
 				'condition'	=> [ 'pricing_style' => 'one' ],
 			]
@@ -340,7 +340,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
 		$this->add_control(
 			'width',
 			[
-				'label' 	=> __( 'Box Radious', 'haarmax' ),
+				'label' 	=> __( 'Box Radious', 'bizino' ),
 				'type' 		=> Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range' => [
@@ -368,7 +368,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
 		$this->add_control(
 			'body_color',
 			[
-				'label' 		=> __( 'Price Box Color', 'haarmax' ),
+				'label' 		=> __( 'Price Box Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .price-grid .price-shape2:before '	=> 'background-color: {{VALUE}}!important;',
@@ -382,7 +382,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
 			\Elementor\Group_Control_Background::get_type(),
 			[
 				'name' 			=> 'background_control',
-				'label' 		=> __( 'Hover Effect', 'haarmax' ),
+				'label' 		=> __( 'Hover Effect', 'bizino' ),
 				'types' 		=> [ 'classic', 'gradient', 'video' ],
 				'selector' 		=> '{{WRAPPER}} .price-grid:before',
 				'condition'		=> [ 'pricing_style' => 'two' ],
@@ -394,7 +394,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
 		$this->add_control(
 			'shape_color',
 			[
-				'label' 		=> __( 'Shape Color', 'haarmax' ),
+				'label' 		=> __( 'Shape Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .price-grid .price-shape:before'	=> 'background-color: {{VALUE}}!important;',
@@ -411,7 +411,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'title_styling',
 			[
-				'label' 	=> __( 'Title Styling', 'haarmax' ),
+				'label' 	=> __( 'Title Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -419,7 +419,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
         $this->add_control(
 			'features_title_color',
 			[
-				'label' 		=> __( 'Title Color', 'haarmax' ),
+				'label' 		=> __( 'Title Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-pricing-wrapper .price-title'	=> 'color: {{VALUE}}!important;',
@@ -433,7 +433,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'features_title_typography',
-		 		'label' 		=> __( 'Title Typography', 'haarmax' ),
+		 		'label' 		=> __( 'Title Typography', 'bizino' ),
 		 		'selectors' 	=> [
 					'{{WRAPPER}} .vs-pricing-wrapper .price-title',
 					'{{WRAPPER}} .price-plan-wrapper .package-name',
@@ -445,7 +445,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'features_title_margin',
 			[
-				'label' 		=> __( 'Title Margin', 'haarmax' ),
+				'label' 		=> __( 'Title Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -459,7 +459,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'features_title_padding',
 			[
-				'label' 		=> __( 'Title Padding', 'haarmax' ),
+				'label' 		=> __( 'Title Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -476,7 +476,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'content_styling',
 			[
-				'label' 	=> __( 'Content Styling', 'haarmax' ),
+				'label' 	=> __( 'Content Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 				'condition'		=> [ 'pricing_style' =>  ['three', 'four']  ],
 			]
@@ -485,7 +485,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
         $this->add_control(
 			'content_color',
 			[
-				'label' 		=> __( 'Content Color', 'haarmax' ),
+				'label' 		=> __( 'Content Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .price-text'	=> 'color: {{VALUE}}!important;',
@@ -497,7 +497,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'content_typography',
-		 		'label' 		=> __( 'Content Typography', 'haarmax' ),
+		 		'label' 		=> __( 'Content Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .price-text',
 			]
 		);
@@ -505,7 +505,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'content_margin',
 			[
-				'label' 		=> __( 'Content Margin', 'haarmax' ),
+				'label' 		=> __( 'Content Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -517,7 +517,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'content_padding',
 			[
-				'label' 		=> __( 'Title Padding', 'haarmax' ),
+				'label' 		=> __( 'Title Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -532,7 +532,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'price_title_styling',
 			[
-				'label' 	=> __( 'Price Title Styling', 'haarmax' ),
+				'label' 	=> __( 'Price Title Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 				'condition'		=> [ 'pricing_style' =>  ['three', 'four']  ],
 			]
@@ -541,7 +541,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
         $this->add_control(
 			'price_title_color',
 			[
-				'label' 		=> __( 'Title Color', 'haarmax' ),
+				'label' 		=> __( 'Title Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .pack-title'	=> 'color: {{VALUE}}!important;',
@@ -553,7 +553,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'price_title_typography',
-		 		'label' 		=> __( 'Title Typography', 'haarmax' ),
+		 		'label' 		=> __( 'Title Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .pack-title',
 			]
 		);
@@ -561,7 +561,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'price_title_margin',
 			[
-				'label' 		=> __( 'Title Margin', 'haarmax' ),
+				'label' 		=> __( 'Title Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -573,7 +573,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'price_title_padding',
 			[
-				'label' 		=> __( 'Title Padding', 'haarmax' ),
+				'label' 		=> __( 'Title Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -588,7 +588,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'button_styling',
 			[
-				'label' 	=> __( 'Button Styling', 'haarmax' ),
+				'label' 	=> __( 'Button Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 				'condition'		=> [ 'pricing_style' =>  ['one', 'three', 'four']  ],
 			]
@@ -598,7 +598,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name' 		=> 'btn_shadow',
-				'label' 	=> __( 'Button Shadow', 'haarmax' ),
+				'label' 	=> __( 'Button Shadow', 'bizino' ),
 				'selector' 	=> '{{WRAPPER}} .vs-btn',
 			]
 		);
@@ -606,7 +606,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
         $this->add_control(
 			'btn_color',
 			[
-				'label' 		=> __( 'Button Color', 'haarmax' ),
+				'label' 		=> __( 'Button Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-btn'	=> 'background-color: {{VALUE}}!important;',
@@ -617,7 +617,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
         $this->add_control(
 			'btn_hvr_color',
 			[
-				'label' 		=> __( 'Button Hover Color', 'haarmax' ),
+				'label' 		=> __( 'Button Hover Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-btn::after'	=> 'background-color: {{VALUE}}!important;',
@@ -629,7 +629,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'button_typography',
-		 		'label' 		=> __( 'Typography', 'haarmax' ),
+		 		'label' 		=> __( 'Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .vs-btn'
 			]
 		);
@@ -637,7 +637,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
 		$this->add_control(
 			'btn_text_color',
 			[
-				'label' 		=> __( 'Text Color', 'haarmax' ),
+				'label' 		=> __( 'Text Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-btn'	=> 'color: {{VALUE}}!important;',
@@ -647,7 +647,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
         $this->add_control(
 			'btn_text_hvr_color',
 			[
-				'label' 		=> __( 'Text Hover Color', 'haarmax' ),
+				'label' 		=> __( 'Text Hover Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-btn::after'	=> 'color: {{VALUE}}!important;',
@@ -662,7 +662,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'arrow_styling',
 			[
-				'label' 	=> __( 'Arrow Styling', 'haarmax' ),
+				'label' 	=> __( 'Arrow Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 				'condition'		=> [ 'pricing_style' =>  ['one', 'three', 'four']  ],
 			]
@@ -671,7 +671,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
         $this->add_control(
 			'arrow_color',
 			[
-				'label' 		=> __( 'Arrow Color', 'haarmax' ),
+				'label' 		=> __( 'Arrow Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .slick-arrow'	=> '--title-color: {{VALUE}};',
@@ -682,7 +682,7 @@ class Bizino_Price_List_Widget extends Widget_Base{
         $this->add_control(
 			'arrow_hvr_color',
 			[
-				'label' 		=> __( 'Arrow Hover Color', 'haarmax' ),
+				'label' 		=> __( 'Arrow Hover Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .slick-arrow:hover'	=> '--theme-color: {{VALUE}};',

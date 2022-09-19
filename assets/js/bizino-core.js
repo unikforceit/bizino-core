@@ -14,7 +14,7 @@ Author : vecurosoft.com
         // console.log( elementorFrontend);
         if( typeof elementor != "undefined" && typeof elementor.settings.page != "undefined" ) {
 
-            elementor.settings.page.addChangeCallback( 'haarmax_header_style', function ( newValue ) {
+            elementor.settings.page.addChangeCallback( 'bizino_header_style', function ( newValue ) {
                 if( newValue == 'prebuilt'  ) {
                     elementor.saver.update({
                         onSuccess: function() {
@@ -28,7 +28,7 @@ Author : vecurosoft.com
             } );
             
 
-            elementor.settings.page.addChangeCallback( 'haarmax_header_builder_option', function ( newValue ) {
+            elementor.settings.page.addChangeCallback( 'bizino_header_builder_option', function ( newValue ) {
                 elementor.saver.update({
                     onSuccess: function() {
                         elementor.reloadPreview();
@@ -39,8 +39,8 @@ Author : vecurosoft.com
                 });
             } );
             
-            elementor.settings.page.addChangeCallback( 'haarmax_footer_style', haarmaxFooterStyle );
-            function haarmaxFooterStyle ( newValue ) {
+            elementor.settings.page.addChangeCallback( 'bizino_footer_style', bizinoFooterStyle );
+            function bizinoFooterStyle ( newValue ) {
                 elementor.saver.update({
                     onSuccess: function() {
                         elementor.reloadPreview();
@@ -50,8 +50,8 @@ Author : vecurosoft.com
                     }
                 });
             }
-            elementor.settings.page.addChangeCallback( 'haarmax_footer_choice', haarmaxFooterChoice );
-            function haarmaxFooterChoice ( newValue ) {
+            elementor.settings.page.addChangeCallback( 'bizino_footer_choice', bizinoFooterChoice );
+            function bizinoFooterChoice ( newValue ) {
                 elementor.saver.update({
                     onSuccess: function() {
                         elementor.reloadPreview();

@@ -4,7 +4,7 @@
         $(".img_show").css({"margin":"0 auto","display":"block","max-width":"80%"});
         $(document).on('widget-updated',function(event,widget){
             var widget_id = $(widget).attr('id');
-            if(widget_id.indexOf('haarmax_vido_intro_widget')!=-1){
+            if(widget_id.indexOf('bizino_vido_intro_widget')!=-1){
                 $imgval = $(".img_val").val();
                 $(".img_show").attr("src",$imgval);
                 $(".img_show").css({"margin":"0 auto","display":"block","max-width":"80%"});

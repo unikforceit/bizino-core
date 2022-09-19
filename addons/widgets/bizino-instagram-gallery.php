@@ -15,11 +15,11 @@ use \Elementor\Group_Control_Background;
 class Bizino_Instagram_Gallery extends Widget_Base{
 
 	public function get_name() {
-		return 'haarmaxinstagramgallery';
+		return 'bizinoinstagramgallery';
 	}
 
 	public function get_title() {
-		return __( 'Instagram Gallery', 'haarmax' );
+		return __( 'Instagram Gallery', 'bizino' );
 	}
 
 	public function get_icon() {
@@ -27,7 +27,7 @@ class Bizino_Instagram_Gallery extends Widget_Base{
     }
 
 	public function get_categories() {
-		return [ 'haarmax' ];
+		return [ 'bizino' ];
 	}
 
 	protected function register_controls() {
@@ -35,29 +35,29 @@ class Bizino_Instagram_Gallery extends Widget_Base{
 		$this->start_controls_section(
 			'instagramgallery_section',
 			[
-				'label' 	=> __( 'Instagram Gallery', 'haarmax' ),
+				'label' 	=> __( 'Instagram Gallery', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_CONTENT,
 			]
 		);
 		$this->add_control(
 			'instagram_style',
 			[
-				'label' 		=> __( 'Instagram Style', 'haarmax' ),
+				'label' 		=> __( 'Instagram Style', 'bizino' ),
 				'type' 			=> Controls_Manager::SELECT,
 				'default' 		=> 'one',
 				'options'		=> [
-					'one'  			=> __( 'Style One', 'haarmax' ),
-					'two' 			=> __( 'Style Two', 'haarmax' ),
+					'one'  			=> __( 'Style One', 'bizino' ),
+					'two' 			=> __( 'Style Two', 'bizino' ),
 				],
 			]
 		);
 		$this->add_control(
 			'slider_arrows',
 			[
-				'label' 		=> __( 'Arrows', 'haarmax' ),
+				'label' 		=> __( 'Arrows', 'bizino' ),
 				'type' 			=> Controls_Manager::SWITCHER,
-				'label_on' 		=> __( 'Yes', 'haarmax' ),
-				'label_off' 	=> __( 'No', 'haarmax' ),
+				'label_on' 		=> __( 'Yes', 'bizino' ),
+				'label_off' 	=> __( 'No', 'bizino' ),
 				'return_value' 	=> 'yes',
 				'default' 		=> 'yes',
 				'condition'		=> [ 'instagram_style'	=> 'two' ]
@@ -69,7 +69,7 @@ class Bizino_Instagram_Gallery extends Widget_Base{
 		$repeater->add_control(
 			'instagramgallery_image',
 			[
-				'label' 		=> __( 'Instagram Gallery Image', 'haarmax' ),
+				'label' 		=> __( 'Instagram Gallery Image', 'bizino' ),
 				'type' 			=> Controls_Manager::MEDIA,
 				'default' 		=> [
 					'url' => Utils::get_placeholder_image_src(),
@@ -80,7 +80,7 @@ class Bizino_Instagram_Gallery extends Widget_Base{
 		$this->add_control(
 			'slides',
 			[
-				'label' 		=> __( 'Slides', 'haarmax' ),
+				'label' 		=> __( 'Slides', 'bizino' ),
 				'type' 			=> Controls_Manager::REPEATER,
 				'fields' 		=> $repeater->get_controls(),
 				'default' 		=> [
@@ -94,7 +94,7 @@ class Bizino_Instagram_Gallery extends Widget_Base{
 						'instagramgallery_image' 		=> Utils::get_placeholder_image_src(),
 					],
 				],
-				'title_field' 	=> __( 'Gallery Image', 'haarmax' ),
+				'title_field' 	=> __( 'Gallery Image', 'bizino' ),
 			]
 		);
 
@@ -103,7 +103,7 @@ class Bizino_Instagram_Gallery extends Widget_Base{
 		$this->start_controls_section(
 			'instagramgallery_general',
 			[
-				'label' 	=> __( 'General', 'haarmax' ),
+				'label' 	=> __( 'General', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -111,7 +111,7 @@ class Bizino_Instagram_Gallery extends Widget_Base{
 		$this->add_control(
 			'instagram_icon_color',
 			[
-				'label' 		=> __( 'Icon Color', 'haarmax' ),
+				'label' 		=> __( 'Icon Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .gallery-thumb .icon-thumb i' => 'color: {{VALUE}}',
@@ -121,7 +121,7 @@ class Bizino_Instagram_Gallery extends Widget_Base{
 		$this->add_control(
 			'overlay_bg_color',
 			[
-				'label' 		=> __( 'Overlay bg Color', 'haarmax' ),
+				'label' 		=> __( 'Overlay bg Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .gallery-thumb:after,{{WRAPPER}} .gallery-thumb:before' => 'background-color: {{VALUE}}',
@@ -136,7 +136,7 @@ class Bizino_Instagram_Gallery extends Widget_Base{
 		$this->start_controls_section(
 			'arrow_styling',
 			[
-				'label' 	=> __( 'Arrow Styling', 'haarmax' ),
+				'label' 	=> __( 'Arrow Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -144,7 +144,7 @@ class Bizino_Instagram_Gallery extends Widget_Base{
         $this->add_control(
 			'arrow_color',
 			[
-				'label' 		=> __( 'Arrow Color', 'haarmax' ),
+				'label' 		=> __( 'Arrow Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .slick-arrow'	=> '--title-color: {{VALUE}};',
@@ -155,7 +155,7 @@ class Bizino_Instagram_Gallery extends Widget_Base{
         $this->add_control(
 			'arrow_hvr_color',
 			[
-				'label' 		=> __( 'Arrow Hover Color', 'haarmax' ),
+				'label' 		=> __( 'Arrow Hover Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .slick-arrow:hover'	=> '--theme-color: {{VALUE}};',

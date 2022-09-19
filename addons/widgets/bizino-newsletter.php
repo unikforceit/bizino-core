@@ -13,11 +13,11 @@ use \Elementor\Group_Control_Background;
 class Bizino_Newsletter extends Widget_Base {
 
 	public function get_name() {
-		return 'haarmaxnewsletterform';
+		return 'bizinonewsletterform';
 	}
 
 	public function get_title() {
-		return __( 'Newsletter', 'haarmax' );
+		return __( 'Newsletter', 'bizino' );
 	}
 
 	public function get_icon() {
@@ -25,7 +25,7 @@ class Bizino_Newsletter extends Widget_Base {
     }
 
 	public function get_categories() {
-		return [ 'haarmax' ];
+		return [ 'bizino' ];
 	}
 	
 	protected function register_controls() {
@@ -33,7 +33,7 @@ class Bizino_Newsletter extends Widget_Base {
 		$this->start_controls_section(
 			'newsletter_content',
 			[
-				'label' 	=> __( 'Newsletter', 'haarmax' ),
+				'label' 	=> __( 'Newsletter', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_CONTENT,
 			]
         );
@@ -41,12 +41,12 @@ class Bizino_Newsletter extends Widget_Base {
 		$this->add_control(
 			'newsletter_style',
 			[
-				'label' 		=> __( 'Newsletter Style', 'haarmax' ),
+				'label' 		=> __( 'Newsletter Style', 'bizino' ),
 				'type' 			=> Controls_Manager::SELECT,
 				'default' 		=> 'one',
 				'options' 		=> [
-					'one'  			=> __( 'Style One', 'haarmax' ),
-					'two' 			=> __( 'Style Two', 'haarmax' ),
+					'one'  			=> __( 'Style One', 'bizino' ),
+					'two' 			=> __( 'Style Two', 'bizino' ),
 				],
 			]
 		);
@@ -54,7 +54,7 @@ class Bizino_Newsletter extends Widget_Base {
 		$this->add_control(
 			'bg_image',
 			[
-				'label' 		=> __( 'Background Image', 'haarmax' ),
+				'label' 		=> __( 'Background Image', 'bizino' ),
 				'type' 			=> Controls_Manager::MEDIA,
 				'default' 		=> [
 					'url' 		=> Utils::get_placeholder_image_src(),
@@ -66,17 +66,17 @@ class Bizino_Newsletter extends Widget_Base {
 		$this->add_control(
 			'section_title',
 			[
-				'label' 		=> __( 'Section Title', 'haarmax' ),
+				'label' 		=> __( 'Section Title', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
 				'rows' 			=> 2,
-				'default' 		=> __( 'SUBSCRIBE TO NEWSLETTER', 'haarmax' ),
+				'default' 		=> __( 'SUBSCRIBE TO NEWSLETTER', 'bizino' ),
 				'condition'	=> [ 'newsletter_style'	=> 'one' ]
 			]
 		);
 		$this->add_control(
 			'section_content',
 			[
-				'label' 		=> __( 'Section Content', 'haarmax' ),
+				'label' 		=> __( 'Section Content', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
 				'condition'	=> [ 'newsletter_style'	=> 'one' ]
 			]
@@ -85,17 +85,17 @@ class Bizino_Newsletter extends Widget_Base {
 		$this->add_control(
 			'newsletter_placeholder',
 			[
-				'label' 		=> __( 'Newsletter Placeholder Text', 'haarmax' ),
+				'label' 		=> __( 'Newsletter Placeholder Text', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
 				'rows' 			=> 2,
-				'default' 		=> __( 'Enter Your Email', 'haarmax' ),
+				'default' 		=> __( 'Enter Your Email', 'bizino' ),
 			]
 		);
 
 		$this->add_control(
 			'more_options',
 			[
-				'label' 		=> __( 'Image With Video Options', 'haarmax' ),
+				'label' 		=> __( 'Image With Video Options', 'bizino' ),
 				'type' 			=> \Elementor\Controls_Manager::HEADING,
 				'separator' 	=> 'before',
 				'condition'	=> [ 'newsletter_style'	=> 'one' ]
@@ -105,7 +105,7 @@ class Bizino_Newsletter extends Widget_Base {
 		$this->add_control(
 			'image',
 			[
-				'label' 		=> __( 'Choose Image', 'haarmax' ),
+				'label' 		=> __( 'Choose Image', 'bizino' ),
 				'type' 			=> Controls_Manager::MEDIA,
 				'dynamic' 		=> [
 					'active' 	=> true,
@@ -121,10 +121,10 @@ class Bizino_Newsletter extends Widget_Base {
 		$this->add_control(
 			'video_btn',
 			[
-				'label' 		=> __( 'Video Button', 'haarmax' ),
+				'label' 		=> __( 'Video Button', 'bizino' ),
 				'type' 			=> Controls_Manager::SWITCHER,
-                'label_on' 		=> __( 'Yes', 'haarmax' ),
-				'label_off' 	=> __( 'No', 'haarmax' ),
+                'label_on' 		=> __( 'Yes', 'bizino' ),
+				'label_off' 	=> __( 'No', 'bizino' ),
 				'return_value' 	=> 'yes',
 				'default' 		=> 'no',
 				'condition'	=> [ 'newsletter_style'	=> 'one' ]
@@ -134,9 +134,9 @@ class Bizino_Newsletter extends Widget_Base {
 		$this->add_control(
 			'video_link',
 			[
-				'label' 		=> __( 'Video Link', 'haarmax' ),
+				'label' 		=> __( 'Video Link', 'bizino' ),
 				'type' 			=> Controls_Manager::URL,
-                'placeholder' 	=> __( 'https://your-link.com', 'haarmax' ),
+                'placeholder' 	=> __( 'https://your-link.com', 'bizino' ),
 				'default' 		=> [
 					'url' => '#',
 				],
@@ -151,7 +151,7 @@ class Bizino_Newsletter extends Widget_Base {
 		$this->start_controls_section(
 			'title_styling',
 			[
-				'label' 	=> __( 'Title Styling', 'haarmax' ),
+				'label' 	=> __( 'Title Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 				'condition'	=> [ 'newsletter_style'	=> 'one' ]
 			]
@@ -160,7 +160,7 @@ class Bizino_Newsletter extends Widget_Base {
         $this->add_control(
 			'newsletter_title_color',
 			[
-				'label' 		=> __( 'Title Color', 'haarmax' ),
+				'label' 		=> __( 'Title Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .sec-title'	=> 'color: {{VALUE}}!important;',
@@ -173,7 +173,7 @@ class Bizino_Newsletter extends Widget_Base {
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'newsletter_title_typography',
-		 		'label' 		=> __( 'Title Typography', 'haarmax' ),
+		 		'label' 		=> __( 'Title Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .sec-title',
 			]
 		);
@@ -181,7 +181,7 @@ class Bizino_Newsletter extends Widget_Base {
         $this->add_responsive_control(
 			'newsletter_title_margin',
 			[
-				'label' 		=> __( 'Title Margin', 'haarmax' ),
+				'label' 		=> __( 'Title Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -193,7 +193,7 @@ class Bizino_Newsletter extends Widget_Base {
         $this->add_responsive_control(
 			'newsletter_title_padding',
 			[
-				'label' 		=> __( 'Title Padding', 'haarmax' ),
+				'label' 		=> __( 'Title Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -208,7 +208,7 @@ class Bizino_Newsletter extends Widget_Base {
 		$this->start_controls_section(
 			'content_styling',
 			[
-				'label' 	=> __( 'Content Styling', 'haarmax' ),
+				'label' 	=> __( 'Content Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 				'condition'	=> [ 'newsletter_style'	=> 'one' ]
 			]
@@ -217,7 +217,7 @@ class Bizino_Newsletter extends Widget_Base {
         $this->add_control(
 			'newsletter_content_color',
 			[
-				'label' 		=> __( 'Content Color', 'haarmax' ),
+				'label' 		=> __( 'Content Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} p'	=> 'color: {{VALUE}}!important;',
@@ -230,7 +230,7 @@ class Bizino_Newsletter extends Widget_Base {
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'newsletter_content_typography',
-		 		'label' 		=> __( 'Content Typography', 'haarmax' ),
+		 		'label' 		=> __( 'Content Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} p',
 			]
 		);
@@ -238,7 +238,7 @@ class Bizino_Newsletter extends Widget_Base {
         $this->add_responsive_control(
 			'newsletter_content_margin',
 			[
-				'label' 		=> __( 'Content Margin', 'haarmax' ),
+				'label' 		=> __( 'Content Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -250,7 +250,7 @@ class Bizino_Newsletter extends Widget_Base {
         $this->add_responsive_control(
 			'newsletter_content_padding',
 			[
-				'label' 		=> __( 'Content Padding', 'haarmax' ),
+				'label' 		=> __( 'Content Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -265,7 +265,7 @@ class Bizino_Newsletter extends Widget_Base {
 		$this->start_controls_section(
 			'newsletter_styling',
 			[
-				'label' 	=> __( 'Subscribe Box Styling', 'haarmax' ),
+				'label' 	=> __( 'Subscribe Box Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 				'condition'	=> [ 'newsletter_style'	=> 'one' ]
 			]
@@ -274,7 +274,7 @@ class Bizino_Newsletter extends Widget_Base {
         $this->add_control(
 			'box_color',
 			[
-				'label' 		=> __( 'Box Color', 'haarmax' ),
+				'label' 		=> __( 'Box Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .subscribe-box input'	=> 'background-color: {{VALUE}}!important;',
@@ -285,7 +285,7 @@ class Bizino_Newsletter extends Widget_Base {
         $this->add_control(
 			'icon_color',
 			[
-				'label' 		=> __( 'Icon Color', 'haarmax' ),
+				'label' 		=> __( 'Icon Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .subscribe-box button'	=> '--theme-color: {{VALUE}};',
@@ -301,7 +301,7 @@ class Bizino_Newsletter extends Widget_Base {
         $this->start_controls_section(
 			'video_btn_style_section',
 			[
-				'label' 	=> __( 'Video Button Style', 'haarmax' ),
+				'label' 	=> __( 'Video Button Style', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 				'condition'	=> ['video_btn' => 'yes']
 			]
@@ -310,7 +310,7 @@ class Bizino_Newsletter extends Widget_Base {
 		$this->add_control(
 			'video_btn_color',
 			[
-				'label' 	=> __( 'Video Button Color', 'haarmax' ),
+				'label' 	=> __( 'Video Button Color', 'bizino' ),
 				'type' 		=> Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .play-btn i' => 'color: {{VALUE}}',
@@ -321,7 +321,7 @@ class Bizino_Newsletter extends Widget_Base {
 		$this->add_control(
 			'video_btn_hover_color',
 			[
-				'label' 	=> __( 'Video Button Hover Color', 'haarmax' ),
+				'label' 	=> __( 'Video Button Hover Color', 'bizino' ),
 				'type' 		=> Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .play-btn:hover i' => 'color: {{VALUE}}',
@@ -332,7 +332,7 @@ class Bizino_Newsletter extends Widget_Base {
 		$this->add_control(
 			'video_btn_background_color',
 			[
-				'label' 	=> __( 'Video Button Background Color', 'haarmax' ),
+				'label' 	=> __( 'Video Button Background Color', 'bizino' ),
 				'type' 		=> Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .play-btn i' => 'background-color: {{VALUE}}',
@@ -343,7 +343,7 @@ class Bizino_Newsletter extends Widget_Base {
 		$this->add_control(
 			'video_btn_background_hover_color',
 			[
-				'label' 	=> __( 'Video Button Background Hover Color', 'haarmax' ),
+				'label' 	=> __( 'Video Button Background Hover Color', 'bizino' ),
 				'type' 		=> Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .play-btn:hover i' => 'background-color: {{VALUE}}',
@@ -354,7 +354,7 @@ class Bizino_Newsletter extends Widget_Base {
 		$this->add_control(
 			'video_btn_ripple_effect_color',
 			[
-				'label' 		=> __( 'Video Button Ripple Effect Color', 'haarmax' ),
+				'label' 		=> __( 'Video Button Ripple Effect Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .play-btn:after,{{WRAPPER}} .play-btn:before' => 'background-color: {{VALUE}}!important;',

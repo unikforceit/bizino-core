@@ -15,11 +15,11 @@ use \Elementor\Group_Control_Background;
 class Bizino_Counter extends Widget_Base{
 
 	public function get_name() {
-		return 'haarmaxcounter';
+		return 'bizinocounter';
 	}
 
 	public function get_title() {
-		return __( 'Counter', 'haarmax' );
+		return __( 'Counter', 'bizino' );
 	}
 
 	public function get_icon() {
@@ -27,7 +27,7 @@ class Bizino_Counter extends Widget_Base{
     }
 
 	public function get_categories() {
-		return [ 'haarmax' ];
+		return [ 'bizino' ];
 	}
 
 	protected function register_controls() {
@@ -35,7 +35,7 @@ class Bizino_Counter extends Widget_Base{
 		$this->start_controls_section(
 			'counter_section',
 			[
-				'label' 	=> __( 'Counter', 'haarmax' ),
+				'label' 	=> __( 'Counter', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -45,7 +45,7 @@ class Bizino_Counter extends Widget_Base{
 		$repeater->add_control(
 			'counter_image',
 			[
-				'label' 		=> __( 'Counter image', 'haarmax' ),
+				'label' 		=> __( 'Counter image', 'bizino' ),
 				'type' 			=> Controls_Manager::MEDIA,
 				'default' 		=> [
 					'url' => Utils::get_placeholder_image_src(),
@@ -55,17 +55,17 @@ class Bizino_Counter extends Widget_Base{
 
 		$repeater->add_control(
 			'counter_number', [
-				'label' 		=> __( 'Counter Number', 'haarmax' ),
+				'label' 		=> __( 'Counter Number', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( '3116' , 'haarmax' ),
+				'default' 		=> __( '3116' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
 		$repeater->add_control(
 			'counter_title', [
-				'label' 		=> __( 'Counter Title', 'haarmax' ),
+				'label' 		=> __( 'Counter Title', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-                'default'       =>  __( 'Hair Treatments' , 'haarmax' ),
+                'default'       =>  __( 'Hair Treatments' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
@@ -73,29 +73,29 @@ class Bizino_Counter extends Widget_Base{
 		$this->add_control(
 			'slides',
 			[
-				'label' 		=> __( 'Slides', 'haarmax' ),
+				'label' 		=> __( 'Slides', 'bizino' ),
 				'type' 			=> Controls_Manager::REPEATER,
 				'fields' 		=> $repeater->get_controls(),
 				'default' 		=> [
 					[
 						'counter_image' 		=> Utils::get_placeholder_image_src(),
-						'counter_number' 		=> __( '3116' , 'haarmax' ),
-						'counter_title' 		=> __( 'Hair Treatments' , 'haarmax' ),
+						'counter_number' 		=> __( '3116' , 'bizino' ),
+						'counter_title' 		=> __( 'Hair Treatments' , 'bizino' ),
 					],
 					[
 						'counter_image' 		=> Utils::get_placeholder_image_src(),
-						'counter_number' 		=> __( '200' , 'haarmax' ),
-						'counter_title' 		=> __( 'Salon Products' , 'haarmax' ),
+						'counter_number' 		=> __( '200' , 'bizino' ),
+						'counter_title' 		=> __( 'Salon Products' , 'bizino' ),
 					],
 					[
 						'counter_image' 		=> Utils::get_placeholder_image_src(),
-						'counter_number' 		=> __( '350' , 'haarmax' ),
-						'counter_title' 		=> __( 'Shades of colors' , 'haarmax' ),
+						'counter_number' 		=> __( '350' , 'bizino' ),
+						'counter_title' 		=> __( 'Shades of colors' , 'bizino' ),
 					],
 					[
 						'counter_image' 		=> Utils::get_placeholder_image_src(),
-						'counter_number' 		=> __( '130k' , 'haarmax' ),
-						'counter_title' 		=> __( 'Satisfied Customers' , 'haarmax' ),
+						'counter_number' 		=> __( '130k' , 'bizino' ),
+						'counter_title' 		=> __( 'Satisfied Customers' , 'bizino' ),
 					],
 				],
 				'title_field' 	=> '{{{ counter_title }}}',
@@ -108,7 +108,7 @@ class Bizino_Counter extends Widget_Base{
 		$this->start_controls_section(
 			'title_styling',
 			[
-				'label' 	=> __( 'Title Styling', 'haarmax' ),
+				'label' 	=> __( 'Title Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -116,7 +116,7 @@ class Bizino_Counter extends Widget_Base{
         $this->add_control(
 			'counter_title_color',
 			[
-				'label' 		=> __( 'Title Color', 'haarmax' ),
+				'label' 		=> __( 'Title Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-counter .counter-text'	=>'color: {{VALUE}}',
@@ -128,7 +128,7 @@ class Bizino_Counter extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'counter_title_typography',
-		 		'label' 		=> __( 'Title Typography', 'haarmax' ),
+		 		'label' 		=> __( 'Title Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .vs-counter .counter-text'
 			]
 		);
@@ -136,7 +136,7 @@ class Bizino_Counter extends Widget_Base{
         $this->add_responsive_control(
 			'counter_title_margin',
 			[
-				'label' 		=> __( 'Title Margin', 'haarmax' ),
+				'label' 		=> __( 'Title Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -148,7 +148,7 @@ class Bizino_Counter extends Widget_Base{
         $this->add_responsive_control(
 			'counter_title_padding',
 			[
-				'label' 		=> __( 'Title Padding', 'haarmax' ),
+				'label' 		=> __( 'Title Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -161,7 +161,7 @@ class Bizino_Counter extends Widget_Base{
 		$this->start_controls_section(
 			'number_styling',
 			[
-				'label' 	=> __( 'Counter Number Styling', 'haarmax' ),
+				'label' 	=> __( 'Counter Number Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -169,7 +169,7 @@ class Bizino_Counter extends Widget_Base{
         $this->add_control(
 			'counter_number_color',
 			[
-				'label' 		=> __( 'Counter Number Color', 'haarmax' ),
+				'label' 		=> __( 'Counter Number Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-counter .counter-number'	=>'color: {{VALUE}}',
@@ -181,7 +181,7 @@ class Bizino_Counter extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'counter_number_typography',
-		 		'label' 		=> __( 'Counter Number Typography', 'haarmax' ),
+		 		'label' 		=> __( 'Counter Number Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .vs-counter .counter-number'
 			]
 		);
@@ -189,7 +189,7 @@ class Bizino_Counter extends Widget_Base{
         $this->add_responsive_control(
 			'counter_number_margin',
 			[
-				'label' 		=> __( 'Counter Number Margin', 'haarmax' ),
+				'label' 		=> __( 'Counter Number Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -201,7 +201,7 @@ class Bizino_Counter extends Widget_Base{
         $this->add_responsive_control(
 			'counter_number_padding',
 			[
-				'label' 		=> __( 'Counter Number Padding', 'haarmax' ),
+				'label' 		=> __( 'Counter Number Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [

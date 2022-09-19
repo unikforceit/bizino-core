@@ -16,11 +16,11 @@ use \Elementor\Group_Control_Box_Shadow;
 class Bizino_Social_Media_Widget extends Widget_Base {
 
 	public function get_name() {
-		return 'haarmaxsocialmedia';
+		return 'bizinosocialmedia';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Bizino Social Media', 'haarmax' );
+		return esc_html__( 'Bizino Social Media', 'bizino' );
 	}
 
 
@@ -30,7 +30,7 @@ class Bizino_Social_Media_Widget extends Widget_Base {
 
 
 	public function get_categories() {
-		return [ 'haarmax_footer_elements' ];
+		return [ 'bizino_footer_elements' ];
 	}
 
 
@@ -39,7 +39,7 @@ class Bizino_Social_Media_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'social_media_section',
 			[
-				'label'     => esc_html__( 'Social Media', 'haarmax' ),
+				'label'     => esc_html__( 'Social Media', 'bizino' ),
 				'tab'       => Controls_Manager::TAB_CONTENT,
 			]
         );
@@ -50,7 +50,7 @@ class Bizino_Social_Media_Widget extends Widget_Base {
         $repeater->add_control(
 			'social_icon',
 			[
-				'label' 	=> esc_html__( 'Social Icon', 'haarmax' ),
+				'label' 	=> esc_html__( 'Social Icon', 'bizino' ),
 				'type' 		=> Controls_Manager::ICONS,
 				'default' 	=> [
 					'value' 	=> 'fab fa-facebook-f',
@@ -62,9 +62,9 @@ class Bizino_Social_Media_Widget extends Widget_Base {
 		$repeater->add_control(
 			'icon_link',
 			[
-				'label' 		=> esc_html__( 'Link', 'haarmax' ),
+				'label' 		=> esc_html__( 'Link', 'bizino' ),
 				'type' 			=> Controls_Manager::URL,
-				'placeholder' 	=> esc_html__( 'https://your-link.com', 'haarmax' ),
+				'placeholder' 	=> esc_html__( 'https://your-link.com', 'bizino' ),
 				'show_external' => true,
 				'default' 		=> [
 					'url' 			=> '#',
@@ -78,12 +78,12 @@ class Bizino_Social_Media_Widget extends Widget_Base {
 
 			'social_icon_list',
 			[
-				'label' 		=> esc_html__( 'Social Icon', 'haarmax' ),
+				'label' 		=> esc_html__( 'Social Icon', 'bizino' ),
 				'type' 			=> Controls_Manager::REPEATER,
 				'fields' 		=> $repeater->get_controls(),
 				'default' 		=> [
 					[
-						'social_icon' => esc_html__( 'Add Social Icon','haarmax' ),
+						'social_icon' => esc_html__( 'Add Social Icon','bizino' ),
 					],
 				],
 			]
@@ -97,7 +97,7 @@ class Bizino_Social_Media_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'social_media_styling',
 			[
-				'label' 	=> esc_html__( 'Social Media Styling', 'haarmax' ),
+				'label' 	=> esc_html__( 'Social Media Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -105,7 +105,7 @@ class Bizino_Social_Media_Widget extends Widget_Base {
 		$this->add_control(
 			'social_media_color',
 			[
-				'label' 		=> esc_html__( 'Icon Color', 'haarmax' ),
+				'label' 		=> esc_html__( 'Icon Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-social ul li a' => 'color: {{VALUE}} !important;',
@@ -116,7 +116,7 @@ class Bizino_Social_Media_Widget extends Widget_Base {
         $this->add_control(
 			'social_media_hover_color',
 			[
-				'label' 		=> esc_html__( 'Icon Hover Color', 'haarmax' ),
+				'label' 		=> esc_html__( 'Icon Hover Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-social ul li a:hover' => 'color: {{VALUE}} !important;',
@@ -127,7 +127,7 @@ class Bizino_Social_Media_Widget extends Widget_Base {
         $this->add_control(
 			'social_media_back_color',
 			[
-				'label' 		=> esc_html__( 'Icon Background Color', 'haarmax' ),
+				'label' 		=> esc_html__( 'Icon Background Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-social ul li a' => 'background-color: {{VALUE}}',
@@ -138,7 +138,7 @@ class Bizino_Social_Media_Widget extends Widget_Base {
         $this->add_control(
 			'social_media_back_hover_color',
 			[
-				'label' 		=> esc_html__( 'Icon Background Hover Color', 'haarmax' ),
+				'label' 		=> esc_html__( 'Icon Background Hover Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-social ul li a:hover' => 'background-color: {{VALUE}}',

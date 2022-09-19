@@ -12,11 +12,11 @@ use \Elementor\Utils;
 class Bizino_Section_Title_Widget extends Widget_Base {
 
 	public function get_name() {
-		return 'haarmaxsectiontitle';
+		return 'bizinosectiontitle';
 	}
 
 	public function get_title() {
-		return __( 'Section Title', 'haarmax' );
+		return __( 'Section Title', 'bizino' );
 	}
 
 	public function get_icon() {
@@ -24,7 +24,7 @@ class Bizino_Section_Title_Widget extends Widget_Base {
     }
 
 	public function get_categories() {
-		return [ 'haarmax' ];
+		return [ 'bizino' ];
 	}
 
 	protected function register_controls() {
@@ -32,7 +32,7 @@ class Bizino_Section_Title_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'section_title_section',
 			[
-				'label'		 	=> __( 'Section Title', 'haarmax' ),
+				'label'		 	=> __( 'Section Title', 'bizino' ),
 				'tab' 			=> Controls_Manager::TAB_CONTENT,
 			]
         );
@@ -40,12 +40,12 @@ class Bizino_Section_Title_Widget extends Widget_Base {
 		$this->add_control(
 			'title_style',
 			[
-				'label' 	=> __( 'Title Style', 'haarmax' ),
+				'label' 	=> __( 'Title Style', 'bizino' ),
 				'type' 		=> Controls_Manager::SELECT,
 				'default' 	=> '1',
 				'options' 	=> [
-					'1'  		=> __( 'Style One', 'haarmax' ),
-					'2' 		=> __( 'Style Two', 'haarmax' ),
+					'1'  		=> __( 'Style One', 'bizino' ),
+					'2' 		=> __( 'Style Two', 'bizino' ),
 				],
 			]
 		);
@@ -54,7 +54,7 @@ class Bizino_Section_Title_Widget extends Widget_Base {
 		$this->add_control(
 			'section_icon',
 			[
-				'label'         => esc_html__( 'Icon', 'haarmax' ),
+				'label'         => esc_html__( 'Icon', 'bizino' ),
                 'type'          => Controls_Manager::MEDIA,
                 'default' 		=> [
                     'url' => Utils::get_placeholder_image_src(),
@@ -66,15 +66,15 @@ class Bizino_Section_Title_Widget extends Widget_Base {
         $this->add_control(
 			'section_title',
 			[
-				'label' 	=> __( 'Section Title', 'haarmax' ),
+				'label' 	=> __( 'Section Title', 'bizino' ),
                 'type' 		=> Controls_Manager::TEXTAREA,
-                'default'  	=> __( 'Section Title', 'haarmax' )
+                'default'  	=> __( 'Section Title', 'bizino' )
 			]
         );
         $this->add_control(
 			'section_title_tag',
 			[
-				'label' 	=> __( 'Title Tag', 'haarmax' ),
+				'label' 	=> __( 'Title Tag', 'bizino' ),
 				'type' 		=> Controls_Manager::SELECT,
 				'options' 	=> [
 					'h1' => 'H1',
@@ -91,16 +91,16 @@ class Bizino_Section_Title_Widget extends Widget_Base {
         $this->add_control(
 			'section_subtitle',
 			[
-				'label' 	=> __( 'Section Subtitle', 'haarmax' ),
+				'label' 	=> __( 'Section Subtitle', 'bizino' ),
                 'type' 		=> Controls_Manager::TEXTAREA,
-                'default'  	=> __( 'Section Subtitle', 'haarmax' ),
+                'default'  	=> __( 'Section Subtitle', 'bizino' ),
 			]
         );
 
         $this->add_control(
 			'section_subtitle_tag',
 			[
-				'label' 	=> __( 'Subitle Tag', 'haarmax' ),
+				'label' 	=> __( 'Subitle Tag', 'bizino' ),
 				'type' 		=> Controls_Manager::SELECT,
 				'options' 	=> [
 					'h1' => 'H1',
@@ -129,19 +129,19 @@ class Bizino_Section_Title_Widget extends Widget_Base {
         $this->add_responsive_control(
 			'section_title_align',
 			[
-				'label' 		=> __( 'Alignment', 'haarmax' ),
+				'label' 		=> __( 'Alignment', 'bizino' ),
 				'type' 			=> Controls_Manager::CHOOSE,
 				'options' 		=> [
 					'left' 	=> [
-						'title' 		=> __( 'Left', 'haarmax' ),
+						'title' 		=> __( 'Left', 'bizino' ),
 						'icon' 			=> 'eicon-text-align-left',
 					],
 					'center' 	=> [
-						'title' 		=> __( 'Center', 'haarmax' ),
+						'title' 		=> __( 'Center', 'bizino' ),
 						'icon' 			=> 'eicon-text-align-center',
 					],
 					'right' 	=> [
-						'title' 		=> __( 'Right', 'haarmax' ),
+						'title' 		=> __( 'Right', 'bizino' ),
 						'icon' 			=> 'eicon-text-align-right',
 					],
 				],
@@ -158,7 +158,7 @@ class Bizino_Section_Title_Widget extends Widget_Base {
         $this->start_controls_section(
 			'section_title_style_section',
 			[
-				'label' => __( 'Section Title Style', 'haarmax' ),
+				'label' => __( 'Section Title Style', 'bizino' ),
 				'tab' 	=> Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -166,7 +166,7 @@ class Bizino_Section_Title_Widget extends Widget_Base {
         $this->add_control(
 			'section_title_color',
 			[
-				'label' 	=> __( 'Section Title Color', 'haarmax' ),
+				'label' 	=> __( 'Section Title Color', 'bizino' ),
 				'type' 		=> Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .title-selector' => 'color: {{VALUE}}',
@@ -181,7 +181,7 @@ class Bizino_Section_Title_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' 		=> 'section_title_typography',
-				'label' 	=> __( 'Section Title Typography', 'haarmax' ),
+				'label' 	=> __( 'Section Title Typography', 'bizino' ),
                 'selector' 	=> '{{WRAPPER}} .title-selector',
                 'condition' => [
                     'section_title!'    => ''
@@ -192,7 +192,7 @@ class Bizino_Section_Title_Widget extends Widget_Base {
         $this->add_responsive_control(
 			'section_title_margin',
 			[
-				'label' 		=> __( 'Section Title Margin', 'haarmax' ),
+				'label' 		=> __( 'Section Title Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -207,7 +207,7 @@ class Bizino_Section_Title_Widget extends Widget_Base {
         $this->add_responsive_control(
 			'section_title_padding',
 			[
-				'label' 		=> __( 'Section Title Padding', 'haarmax' ),
+				'label' 		=> __( 'Section Title Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -223,7 +223,7 @@ class Bizino_Section_Title_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' 		=> 'border',
-				'label' 	=> __( 'Border', 'haarmax' ),
+				'label' 	=> __( 'Border', 'bizino' ),
 				'selector' 	=> '{{WRAPPER}} .title-selector',
 				'condition' => [
                     'section_title!'    => ''
@@ -235,7 +235,7 @@ class Bizino_Section_Title_Widget extends Widget_Base {
 		$this->add_control(
 			'section_subtitle_color',
 			[
-				'label' 		=> __( 'Section Subtitle Color', 'haarmax' ),
+				'label' 		=> __( 'Section Subtitle Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .subtitle-selector' => 'color: {{VALUE}}!important',
@@ -250,7 +250,7 @@ class Bizino_Section_Title_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' 		=> 'section_subtitle_typography',
-				'label' 	=> __( 'Section Subtitle Typography', 'haarmax' ),
+				'label' 	=> __( 'Section Subtitle Typography', 'bizino' ),
                 'selector' 	=> '{{WRAPPER}} .subtitle-selector',
                 'condition' => [
                     'section_subtitle!'    => ''
@@ -261,7 +261,7 @@ class Bizino_Section_Title_Widget extends Widget_Base {
         $this->add_responsive_control(
 			'section_subtitle_margin',
 			[
-				'label' 		=> __( 'Section Subtitle Margin', 'haarmax' ),
+				'label' 		=> __( 'Section Subtitle Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [

@@ -11,11 +11,11 @@ use \Elementor\Utils;
 class Bizino_Blog_Post extends Widget_Base {
 
 	public function get_name() {
-		return 'haarmaxblogpost';
+		return 'bizinoblogpost';
 	}
 
 	public function get_title() {
-		return __( 'Blog Post', 'haarmax' );
+		return __( 'Blog Post', 'bizino' );
 	}
 
 	public function get_icon() {
@@ -23,7 +23,7 @@ class Bizino_Blog_Post extends Widget_Base {
     }
 
 	public function get_categories() {
-		return [ 'haarmax' ];
+		return [ 'bizino' ];
 	}
 
 	protected function register_controls() {
@@ -31,7 +31,7 @@ class Bizino_Blog_Post extends Widget_Base {
 		$this->start_controls_section(
 			'blog_post_section',
 			[
-				'label' => __( 'Blog Post', 'haarmax' ),
+				'label' => __( 'Blog Post', 'bizino' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
         );
@@ -39,12 +39,12 @@ class Bizino_Blog_Post extends Widget_Base {
 		$this->add_control(
 			'blog_style',
 			[
-				'label' 	=> __( 'Blog Style', 'haarmax' ),
+				'label' 	=> __( 'Blog Style', 'bizino' ),
 				'type' 		=> Controls_Manager::SELECT,
 				'default' 	=> '1',
 				'options' 	=> [
-					'1'  		=> __( 'Style One', 'haarmax' ),
-					'2' 		=> __( 'Style Two', 'haarmax' ),
+					'1'  		=> __( 'Style One', 'bizino' ),
+					'2' 		=> __( 'Style Two', 'bizino' ),
 				],
 			]
 		);
@@ -52,38 +52,38 @@ class Bizino_Blog_Post extends Widget_Base {
         $this->add_control(
 			'blog_post_count',
 			[
-				'label' 	=> __( 'No of Post to show', 'haarmax' ),
+				'label' 	=> __( 'No of Post to show', 'bizino' ),
                 'type' 		=> Controls_Manager::TEXT,
-                'default'  	=> __( '4', 'haarmax' )
+                'default'  	=> __( '4', 'bizino' )
 			]
         );
 
 		$this->add_control(
 			'title_count',
 			[
-				'label' 	=> __( 'Title Length', 'haarmax' ),
+				'label' 	=> __( 'Title Length', 'bizino' ),
 				'type' 		=> Controls_Manager::TEXT,
-				'default'  	=> __( '5', 'haarmax' ),
+				'default'  	=> __( '5', 'bizino' ),
 			]
 		);
 
 		$this->add_control(
 			'excerpt_count',
 			[
-				'label' 	=> __( 'Excerpt Length', 'haarmax' ),
+				'label' 	=> __( 'Excerpt Length', 'bizino' ),
 				'type' 		=> Controls_Manager::TEXT,
-				'default'  	=> __( '16', 'haarmax' ),
+				'default'  	=> __( '16', 'bizino' ),
 			]
 		);
 
         $this->add_control(
 			'blog_post_order',
 			[
-				'label' 	=> __( 'Order', 'haarmax' ),
+				'label' 	=> __( 'Order', 'bizino' ),
                 'type' 		=> Controls_Manager::SELECT,
                 'options'   => [
-                    'ASC'   	=> __('ASC','haarmax'),
-                    'DESC'   	=> __('DESC','haarmax'),
+                    'ASC'   	=> __('ASC','bizino'),
+                    'DESC'   	=> __('DESC','bizino'),
                 ],
                 'default'  	=> 'DESC'
 			]
@@ -92,14 +92,14 @@ class Bizino_Blog_Post extends Widget_Base {
         $this->add_control(
 			'blog_post_order_by',
 			[
-				'label' 	=> __( 'Order By', 'haarmax' ),
+				'label' 	=> __( 'Order By', 'bizino' ),
                 'type' 		=> Controls_Manager::SELECT,
                 'options'   => [
-                    'ID'    	=> __( 'ID', 'haarmax' ),
-                    'author'    => __( 'Author', 'haarmax' ),
-                    'title'    	=> __( 'Title', 'haarmax' ),
-                    'date'    	=> __( 'Date', 'haarmax' ),
-                    'rand'    	=> __( 'Random', 'haarmax' ),
+                    'ID'    	=> __( 'ID', 'bizino' ),
+                    'author'    => __( 'Author', 'bizino' ),
+                    'title'    	=> __( 'Title', 'bizino' ),
+                    'date'    	=> __( 'Date', 'bizino' ),
+                    'rand'    	=> __( 'Random', 'bizino' ),
                 ],
                 'default'  	=> 'ID'
 			]
@@ -108,30 +108,30 @@ class Bizino_Blog_Post extends Widget_Base {
         $this->add_control(
 			'exclude_cats',
 			[
-				'label' 		=> __( 'Exclude Categories', 'haarmax' ),
+				'label' 		=> __( 'Exclude Categories', 'bizino' ),
                 'type' 			=> Controls_Manager::SELECT2,
                 'multiple' 		=> true,
-				'options' 		=> $this->haarmax_get_categories(),
+				'options' 		=> $this->bizino_get_categories(),
 			]
         );
 
         $this->add_control(
 			'exclude_tags',
 			[
-				'label' 		=> __( 'Exclude Tags', 'haarmax' ),
+				'label' 		=> __( 'Exclude Tags', 'bizino' ),
                 'type' 			=> Controls_Manager::SELECT2,
                 'multiple' 		=> true,
-				'options' 		=> $this->haarmax_get_tags(),
+				'options' 		=> $this->bizino_get_tags(),
 			]
         );
 
         $this->add_control(
 			'exclude_post_id',
 			[
-				'label'         => __( 'Exclude Post', 'haarmax' ),
+				'label'         => __( 'Exclude Post', 'bizino' ),
                 'type'          => Controls_Manager::SELECT2,
                 'multiple'      => true,
-				'options'       => $this->haarmax_post_id(),
+				'options'       => $this->bizino_post_id(),
 			]
         );
 
@@ -140,7 +140,7 @@ class Bizino_Blog_Post extends Widget_Base {
 		$this->start_controls_section(
 			'slider_control_section',
 			[
-				'label' 		=> __( 'Slider Control', 'haarmax' ),
+				'label' 		=> __( 'Slider Control', 'bizino' ),
 				'tab' 			=> Controls_Manager::TAB_CONTENT,
 				'condition' 	=> [ 'blog_style' => '1' ]
 			]
@@ -148,7 +148,7 @@ class Bizino_Blog_Post extends Widget_Base {
 		$this->add_control(
 			'slide_to_show',
 			[
-				'label' 		=> __( 'Slide To Show', 'haarmax' ),
+				'label' 		=> __( 'Slide To Show', 'bizino' ),
 				'type' 			=> Controls_Manager::SLIDER,
 				'size_units' 	=> [ 'px' ],
 				'range' 		=> [
@@ -169,7 +169,7 @@ class Bizino_Blog_Post extends Widget_Base {
         $this->start_controls_section(
 			'post_title_style_section',
 			[
-				'label' 	=> __( 'Title', 'haarmax' ),
+				'label' 	=> __( 'Title', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -177,7 +177,7 @@ class Bizino_Blog_Post extends Widget_Base {
         $this->add_control(
 			'post_title_color',
 			[
-				'label' 		=> __( 'Title Color', 'haarmax' ),
+				'label' 		=> __( 'Title Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .blog-title a' => 'color: {{VALUE}}',
@@ -188,7 +188,7 @@ class Bizino_Blog_Post extends Widget_Base {
         $this->add_control(
 			'post_title_color_hover',
 			[
-				'label' 		=> __( 'Title Color Hover', 'haarmax' ),
+				'label' 		=> __( 'Title Color Hover', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .blog-title a:hover' => 'color: {{VALUE}}',
@@ -200,7 +200,7 @@ class Bizino_Blog_Post extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' 		=> 'post_title_typography',
-				'label' 	=> __( 'Title Typography', 'haarmax' ),
+				'label' 	=> __( 'Title Typography', 'bizino' ),
 				'selector' 	=> '{{WRAPPER}} .blog-title',
 			]
         );
@@ -208,7 +208,7 @@ class Bizino_Blog_Post extends Widget_Base {
         $this->add_responsive_control(
 			'post_title_margin',
 			[
-				'label' 		=> __( 'Title Margin', 'haarmax' ),
+				'label' 		=> __( 'Title Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -220,7 +220,7 @@ class Bizino_Blog_Post extends Widget_Base {
         $this->add_responsive_control(
 			'post_title_padding',
 			[
-				'label' 		=> __( 'Title Padding', 'haarmax' ),
+				'label' 		=> __( 'Title Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -234,7 +234,7 @@ class Bizino_Blog_Post extends Widget_Base {
 		$this->start_controls_section(
 			'meta_style',
 			[
-				'label' 	=> __( 'Meta', 'haarmax' ),
+				'label' 	=> __( 'Meta', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -242,7 +242,7 @@ class Bizino_Blog_Post extends Widget_Base {
 		$this->add_control(
 			'meta_color',
 			[
-				'label' 		=> __( 'Meta Color', 'haarmax' ),
+				'label' 		=> __( 'Meta Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .meta-box a,{{WRAPPER}} .blog-steped .blog-date' => 'color: {{VALUE}}',
@@ -254,7 +254,7 @@ class Bizino_Blog_Post extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' 		=> 'meta_typography',
-				'label' 	=> __( 'Meta Typography', 'haarmax' ),
+				'label' 	=> __( 'Meta Typography', 'bizino' ),
 				'selector' 	=> '{{WRAPPER}} .meta-box a,{{WRAPPER}} .blog-steped .blog-date',
 			]
 		);
@@ -263,7 +263,7 @@ class Bizino_Blog_Post extends Widget_Base {
 		$this->start_controls_section(
 			'excerpt_style',
 			[
-				'label' 	=> __( 'Excerpt', 'haarmax' ),
+				'label' 	=> __( 'Excerpt', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -271,7 +271,7 @@ class Bizino_Blog_Post extends Widget_Base {
 		$this->add_control(
 			'excerpt_color',
 			[
-				'label' 		=> __( 'Excerpt Color', 'haarmax' ),
+				'label' 		=> __( 'Excerpt Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .blog-content .blog-text' => 'color: {{VALUE}}',
@@ -283,14 +283,14 @@ class Bizino_Blog_Post extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' 		=> 'excerpt_typography',
-				'label' 	=> __( 'Excerpt Typography', 'haarmax' ),
+				'label' 	=> __( 'Excerpt Typography', 'bizino' ),
 				'selector' 	=> '{{WRAPPER}} .blog-content .blog-text',
 			]
 		);
 		$this->end_controls_section();
     }
 
-    public function haarmax_get_categories() {
+    public function bizino_get_categories() {
         $cats = get_terms(array(
             'taxonomy' => 'category',
             'hide_empty' => true,
@@ -299,13 +299,13 @@ class Bizino_Blog_Post extends Widget_Base {
         $catarr = [];
 
         foreach( $cats as $singlecat ) {
-            $catarr[$singlecat->term_id] = __($singlecat->name,'haarmax');
+            $catarr[$singlecat->term_id] = __($singlecat->name,'bizino');
         }
 
         return $catarr;
     }
 
-    public function haarmax_get_tags() {
+    public function bizino_get_tags() {
         $cats = get_terms(array(
             'taxonomy' => 'post_tag',
             'hide_empty' => true,
@@ -314,25 +314,25 @@ class Bizino_Blog_Post extends Widget_Base {
         $catarr = [];
 
         foreach( $cats as $singlecat ) {
-            $catarr[$singlecat->term_id] = __($singlecat->name,'haarmax');
+            $catarr[$singlecat->term_id] = __($singlecat->name,'bizino');
         }
 
         return $catarr;
     }
 
     // Get Specific Post
-    public function haarmax_post_id(){
+    public function bizino_post_id(){
         $args = array(
             'post_type'         => 'post',
             'posts_per_page'    => -1,
         );
 
-        $haarmax_post = new WP_Query( $args );
+        $bizino_post = new WP_Query( $args );
 
         $postarray = [];
 
-        while( $haarmax_post->have_posts() ){
-            $haarmax_post->the_post();
+        while( $bizino_post->have_posts() ){
+            $bizino_post->the_post();
             $postarray[get_the_Id()] = get_the_title();
         }
         wp_reset_postdata();
@@ -456,7 +456,7 @@ class Bizino_Blog_Post extends Widget_Base {
 												echo '<!-- End Post Title -->';
 											}
 				                            echo '<p class="blog-text">'.esc_html( wp_trim_words( get_the_content( ), $settings['excerpt_count'], '' ) ).'</p>';
-											echo '<a href="'.esc_url( get_permalink() ).'" class="link-btn">'.esc_html__( 'Read More', 'haarmax' ).'<i class="far fa-long-arrow-right"></i></a>';
+											echo '<a href="'.esc_url( get_permalink() ).'" class="link-btn">'.esc_html__( 'Read More', 'bizino' ).'<i class="far fa-long-arrow-right"></i></a>';
 				                        echo '</div>';
 				                    echo '</div>';
 				                echo '</div>';
@@ -482,7 +482,7 @@ class Bizino_Blog_Post extends Widget_Base {
 					                        echo '</div>';
 					                        echo '<div class="blog-content">';
 					                            echo '<div class="post-author">';
-					                                echo esc_html__( 'Posted By ', 'haarmax' );
+					                                echo esc_html__( 'Posted By ', 'bizino' );
 													echo '<a href="'.esc_url( get_author_posts_url( get_the_author_meta('ID') ) ).'">'.esc_html( get_the_author() ).'</a>';
 					                            echo '</div>';
 					                            echo '<h3 class="blog-title"><a href="'.esc_url( get_permalink() ).'">'.esc_html( wp_trim_words( get_the_title( ), $settings['title_count'], '' ) ).'</a></h3>';

@@ -12,7 +12,7 @@
 * Creating Recent Post Widget
 ***************************************/
 
-class haarmax_recent_posts_widget extends WP_Widget {
+class bizino_recent_posts_widget extends WP_Widget {
 
         function __construct() {
 
@@ -20,18 +20,18 @@ class haarmax_recent_posts_widget extends WP_Widget {
 
                 // Base ID of your widget
 
-                'haarmax_recent_posts_widget',
+                'bizino_recent_posts_widget',
 
                 // Widget name will appear in UI
 
-                esc_html__( 'Bizino :: Recent Posts', 'haarmax' ),
+                esc_html__( 'Bizino :: Recent Posts', 'bizino' ),
 
                 // Widget description
 
                 array(
                     'classname'                     => 'widget_recent_entries',
                     'customize_selective_refresh'   => true,
-                    'description'                   => esc_html__( 'Add Recent Posts Widget', 'haarmax' ),
+                    'description'                   => esc_html__( 'Add Recent Posts Widget', 'bizino' ),
                 )
             );
         }
@@ -84,7 +84,7 @@ class haarmax_recent_posts_widget extends WP_Widget {
                                         echo '<div class="media-img">';
                                         echo '<a href="'.get_the_permalink().'">';
                                             echo bizino_img_tag( array(
-                                            "url"   => esc_url( get_the_post_thumbnail_url( null, 'haarmax_90X80' ) ),
+                                            "url"   => esc_url( get_the_post_thumbnail_url( null, 'bizino_90X80' ) ),
                                             ) );
                                         echo '</a>';
                                         echo '</div>';
@@ -94,7 +94,7 @@ class haarmax_recent_posts_widget extends WP_Widget {
                                         echo '<h4 class="post-title"><a class="text-inherit" href="'.esc_url( get_the_permalink() ).'">'.wp_trim_words( wp_kses_post( get_the_title() ), '5', '' ).'</a></h4>';
                                         if( $show_date ){
                                             echo '<div class="recent-post-meta">';
-                                            echo '<a href="'.esc_url( get_the_permalink() ).'"><i class="fal fa-calendar-alt"></i>'.esc_html( get_the_time( 'd M Y' ) ).'</a>';
+                                            echo '<a href="'.esc_url( get_the_permalink() ).'">'.esc_html( get_the_time( 'd M Y' ) ).'</a>';
                                             echo '</div>';
                                         }
                                     echo '</div>';
@@ -133,11 +133,11 @@ class haarmax_recent_posts_widget extends WP_Widget {
 
             ?>
             <p>
-                <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ,'haarmax'); ?></label>
+                <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ,'bizino'); ?></label>
                 <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
             </p>
             <p>
-                <label for="<?php echo $this->get_field_id( 'post_count' ); ?>"><?php _e( 'Number of Posts to show:' ,'haarmax'); ?></label>
+                <label for="<?php echo $this->get_field_id( 'post_count' ); ?>"><?php _e( 'Number of Posts to show:' ,'bizino'); ?></label>
                 <input class="widefat" id="<?php echo $this->get_field_id( 'post_count' ); ?>" name="<?php echo $this->get_field_name( 'post_count' ); ?>" type="text" value="<?php echo esc_attr( $post_count ); ?>" />
             </p>
             <p>
@@ -159,11 +159,11 @@ class haarmax_recent_posts_widget extends WP_Widget {
 
             return $instance;
         }
-    } // Class haarmax_recent_posts_widget ends here
+    } // Class bizino_recent_posts_widget ends here
 
 
     // Register and load the widget
-    function haarmax_recent_posts_load_widget() {
-        register_widget( 'haarmax_recent_posts_widget' );
+    function bizino_recent_posts_load_widget() {
+        register_widget( 'bizino_recent_posts_widget' );
     }
-    add_action( 'widgets_init', 'haarmax_recent_posts_load_widget' );
+    add_action( 'widgets_init', 'bizino_recent_posts_load_widget' );

@@ -14,11 +14,11 @@ use \Elementor\Group_Control_Border;
 class Bizino_Image_Widget extends Widget_Base {
 
 	public function get_name() {
-		return 'haarmaximage';
+		return 'bizinoimage';
 	}
 
 	public function get_title() {
-		return __( 'Bizino Image with Video', 'haarmax' );
+		return __( 'Bizino Image with Video', 'bizino' );
 	}
 
 
@@ -28,7 +28,7 @@ class Bizino_Image_Widget extends Widget_Base {
 
 
 	public function get_categories() {
-		return [ 'haarmax' ];
+		return [ 'bizino' ];
 	}
 
 
@@ -37,7 +37,7 @@ class Bizino_Image_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'image_section',
 			[
-				'label' 	=> __( 'Image', 'haarmax' ),
+				'label' 	=> __( 'Image', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_CONTENT,
 			]
         );
@@ -45,22 +45,22 @@ class Bizino_Image_Widget extends Widget_Base {
 		$this->add_control(
 			'img_style',
 			[
-				'label' 		=> __( 'Image Style', 'haarmax' ),
+				'label' 		=> __( 'Image Style', 'bizino' ),
 				'type' 			=> Controls_Manager::SELECT,
 				'default' 		=> 'one',
 				'options'		=> [
-					'one'  			=> __( 'Style One', 'haarmax' ),
-					'two' 			=> __( 'Style Two', 'haarmax' ),
-					'three' 		=> __( 'Style Three', 'haarmax' ),
-					'four' 			=> __( 'Style Four', 'haarmax' ),
-					'five' 			=> __( 'Style Five', 'haarmax' ),
+					'one'  			=> __( 'Style One', 'bizino' ),
+					'two' 			=> __( 'Style Two', 'bizino' ),
+					'three' 		=> __( 'Style Three', 'bizino' ),
+					'four' 			=> __( 'Style Four', 'bizino' ),
+					'five' 			=> __( 'Style Five', 'bizino' ),
 				],
 			]
 		);
         $this->add_control(
 			'image',
 			[
-				'label' 		=> __( 'Choose Image', 'haarmax' ),
+				'label' 		=> __( 'Choose Image', 'bizino' ),
 				'type' 			=> Controls_Manager::MEDIA,
 				'dynamic' 		=> [
 					'active' 		=> true,
@@ -75,10 +75,10 @@ class Bizino_Image_Widget extends Widget_Base {
 		$this->add_control(
 			'video_btn',
 			[
-				'label' 		=> __( 'Video Button', 'haarmax' ),
+				'label' 		=> __( 'Video Button', 'bizino' ),
 				'type' 			=> Controls_Manager::SWITCHER,
-                'label_on' 		=> __( 'Yes', 'haarmax' ),
-				'label_off' 	=> __( 'No', 'haarmax' ),
+                'label_on' 		=> __( 'Yes', 'bizino' ),
+				'label_off' 	=> __( 'No', 'bizino' ),
 				'return_value' 	=> 'yes',
 				'default' 		=> 'no',
 			]
@@ -87,9 +87,9 @@ class Bizino_Image_Widget extends Widget_Base {
 		$this->add_control(
 			'video_link',
 			[
-				'label' 		=> __( 'Video Link', 'haarmax' ),
+				'label' 		=> __( 'Video Link', 'bizino' ),
 				'type' 			=> Controls_Manager::URL,
-                'placeholder' 	=> __( 'https://your-link.com', 'haarmax' ),
+                'placeholder' 	=> __( 'https://your-link.com', 'bizino' ),
 				'default' 		=> [
 					'url' => '#',
 				],
@@ -103,7 +103,7 @@ class Bizino_Image_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'video_btn_style_section',
 			[
-				'label' 	=> __( 'Video Button Style', 'haarmax' ),
+				'label' 	=> __( 'Video Button Style', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 				'condition'	=> ['video_btn' => 'yes']
 			]
@@ -112,7 +112,7 @@ class Bizino_Image_Widget extends Widget_Base {
 		$this->add_control(
 			'video_btn_color',
 			[
-				'label' 	=> __( 'Video Button Color', 'haarmax' ),
+				'label' 	=> __( 'Video Button Color', 'bizino' ),
 				'type' 		=> Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .play-btn i' => 'color: {{VALUE}}',
@@ -123,7 +123,7 @@ class Bizino_Image_Widget extends Widget_Base {
 		$this->add_control(
 			'video_btn_hover_color',
 			[
-				'label' 	=> __( 'Video Button Hover Color', 'haarmax' ),
+				'label' 	=> __( 'Video Button Hover Color', 'bizino' ),
 				'type' 		=> Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .play-btn:hover i' => 'color: {{VALUE}}',
@@ -134,7 +134,7 @@ class Bizino_Image_Widget extends Widget_Base {
 		$this->add_control(
 			'video_btn_background_color',
 			[
-				'label' 	=> __( 'Video Button Background Color', 'haarmax' ),
+				'label' 	=> __( 'Video Button Background Color', 'bizino' ),
 				'type' 		=> Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .play-btn i' => 'background-color: {{VALUE}}',
@@ -145,7 +145,7 @@ class Bizino_Image_Widget extends Widget_Base {
 		$this->add_control(
 			'video_btn_background_hover_color',
 			[
-				'label' 	=> __( 'Video Button Background Hover Color', 'haarmax' ),
+				'label' 	=> __( 'Video Button Background Hover Color', 'bizino' ),
 				'type' 		=> Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .play-btn:hover i' => 'background-color: {{VALUE}}',
@@ -156,7 +156,7 @@ class Bizino_Image_Widget extends Widget_Base {
 		$this->add_control(
 			'video_btn_ripple_effect_color',
 			[
-				'label' 		=> __( 'Video Button Ripple Effect Color', 'haarmax' ),
+				'label' 		=> __( 'Video Button Ripple Effect Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .play-btn:after,{{WRAPPER}} .play-btn:before' => 'background-color: {{VALUE}}!important;',

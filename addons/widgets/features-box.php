@@ -13,11 +13,11 @@ use \Elementor\Group_Control_Image_Size;
 class Bizino_Features_Widget extends Widget_Base{
 
 	public function get_name() {
-		return 'haarmaxfeatures';
+		return 'bizinofeatures';
 	}
 
 	public function get_title() {
-		return __( 'Bizino Features', 'haarmax' );
+		return __( 'Bizino Features', 'bizino' );
 	}
 
 	public function get_icon() {
@@ -25,7 +25,7 @@ class Bizino_Features_Widget extends Widget_Base{
     }
 
 	public function get_categories() {
-		return [ 'haarmax' ];
+		return [ 'bizino' ];
 	}
 
 	protected function register_controls() {
@@ -33,19 +33,19 @@ class Bizino_Features_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'chose_us_content',
 			[
-				'label'		=> __( 'Features','haarmax' ),
+				'label'		=> __( 'Features','bizino' ),
 				'tab'		=> Controls_Manager::TAB_CONTENT,
 			]
 		);
 		$this->add_control(
 			'features_style',
 			[
-				'label' 		=> __( 'Features Style', 'haarmax' ),
+				'label' 		=> __( 'Features Style', 'bizino' ),
 				'type' 			=> Controls_Manager::SELECT,
 				'default' 		=> 'one',
 				'options'		=> [
-					'one'  			=> __( 'Style One', 'haarmax' ),
-					'two' 			=> __( 'Style Two', 'haarmax' ),
+					'one'  			=> __( 'Style One', 'bizino' ),
+					'two' 			=> __( 'Style Two', 'bizino' ),
 				],
 			]
 		);
@@ -53,25 +53,25 @@ class Bizino_Features_Widget extends Widget_Base{
 		$this->add_control(
 			'feature_title',
 			[
-				'label' 	=> __( 'Title', 'haarmax' ),
+				'label' 	=> __( 'Title', 'bizino' ),
                 'type' 		=> Controls_Manager::TEXTAREA,
                 'rows' 		=> 2,
-                'default'  	=> __( 'Title', 'haarmax' )
+                'default'  	=> __( 'Title', 'bizino' )
 			]
         );
         $this->add_control(
 			'feature_desc',
 			[
-				'label' 	=> __( 'Short Descriptions', 'haarmax' ),
+				'label' 	=> __( 'Short Descriptions', 'bizino' ),
                 'type' 		=> Controls_Manager::TEXTAREA,
                 'rows' 		=> 3,
-                'default'  	=> __( 'Short Descriptions', 'haarmax' )
+                'default'  	=> __( 'Short Descriptions', 'bizino' )
 			]
         );
         $this->add_control(
 			'feature_image',
 			[
-				'label'     => __( 'Upload Fiture Image', 'haarmax' ),
+				'label'     => __( 'Upload Fiture Image', 'bizino' ),
 				'type'      => Controls_Manager::MEDIA,
 				'default' 	=> [
 					'url' => Utils::get_placeholder_image_src(),
@@ -86,7 +86,7 @@ class Bizino_Features_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'title_styling',
 			[
-				'label' 	=> __( 'Title Styling', 'haarmax' ),
+				'label' 	=> __( 'Title Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -94,7 +94,7 @@ class Bizino_Features_Widget extends Widget_Base{
         $this->add_control(
 			'features_title_color',
 			[
-				'label' 		=> __( 'Title Color', 'haarmax' ),
+				'label' 		=> __( 'Title Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-banner-slide .banner-title'	=>'color: {{VALUE}}',
@@ -106,7 +106,7 @@ class Bizino_Features_Widget extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'features_title_typography',
-		 		'label' 		=> __( 'Title Typography', 'haarmax' ),
+		 		'label' 		=> __( 'Title Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .vs-banner-slide .banner-title'
 			]
 		);
@@ -114,7 +114,7 @@ class Bizino_Features_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'features_title_margin',
 			[
-				'label' 		=> __( 'Title Margin', 'haarmax' ),
+				'label' 		=> __( 'Title Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -126,7 +126,7 @@ class Bizino_Features_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'features_title_padding',
 			[
-				'label' 		=> __( 'Title Padding', 'haarmax' ),
+				'label' 		=> __( 'Title Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -141,7 +141,7 @@ class Bizino_Features_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'desc_styling',
 			[
-				'label' 	=> __( 'Content Styling', 'haarmax' ),
+				'label' 	=> __( 'Content Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -149,7 +149,7 @@ class Bizino_Features_Widget extends Widget_Base{
         $this->add_control(
 			'features_desc_color',
 			[
-				'label' 		=> __( 'Content Color', 'haarmax' ),
+				'label' 		=> __( 'Content Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-banner-slide p'	=> 'color: {{VALUE}}',
@@ -161,7 +161,7 @@ class Bizino_Features_Widget extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'features_desc_typography',
-		 		'label' 		=> __( 'Content Typography', 'haarmax' ),
+		 		'label' 		=> __( 'Content Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .vs-banner-slide p'
 			]
 		);
@@ -169,7 +169,7 @@ class Bizino_Features_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'features_desc_margin',
 			[
-				'label' 		=> __( 'Content Margin', 'haarmax' ),
+				'label' 		=> __( 'Content Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -181,7 +181,7 @@ class Bizino_Features_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'features_desc_padding',
 			[
-				'label' 		=> __( 'Content Padding', 'haarmax' ),
+				'label' 		=> __( 'Content Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -196,7 +196,7 @@ class Bizino_Features_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'animation_styling',
 			[
-				'label' 	=> __( 'Animation Control', 'haarmax' ),
+				'label' 	=> __( 'Animation Control', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -204,7 +204,7 @@ class Bizino_Features_Widget extends Widget_Base{
         $this->add_control(
 			'shape_color',
 			[
-				'label' 		=> __( 'Shape Color', 'haarmax' ),
+				'label' 		=> __( 'Shape Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-banner-slide'	=> '--morp-color: {{VALUE}}',
@@ -214,7 +214,7 @@ class Bizino_Features_Widget extends Widget_Base{
         $this->add_control(
 			'shape_delay',
 			[
-				'label' 		=> __( 'Shape Delay', 'haarmax' ),
+				'label' 		=> __( 'Shape Delay', 'bizino' ),
 				'type' 			=> \Elementor\Controls_Manager::NUMBER,
 				'min' 			=> 5,
 				'max'		 	=> 100,

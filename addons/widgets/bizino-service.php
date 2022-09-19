@@ -13,11 +13,11 @@ use \Elementor\Group_Control_Image_Size;
 class Bizino_Service_Widget extends Widget_Base{
 
 	public function get_name() {
-		return 'haarmaxservices';
+		return 'bizinoservices';
 	}
 
 	public function get_title() {
-		return __( 'Bizino Services', 'haarmax' );
+		return __( 'Bizino Services', 'bizino' );
 	}
 
 	public function get_icon() {
@@ -25,7 +25,7 @@ class Bizino_Service_Widget extends Widget_Base{
     }
 
 	public function get_categories() {
-		return [ 'haarmax' ];
+		return [ 'bizino' ];
 	}
 
 	protected function register_controls() {
@@ -33,20 +33,20 @@ class Bizino_Service_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'chose_us_content',
 			[
-				'label'		=> __( 'Services','haarmax' ),
+				'label'		=> __( 'Services','bizino' ),
 				'tab'		=> Controls_Manager::TAB_CONTENT,
 			]
 		);
 		$this->add_control(
 			'features_style',
 			[
-				'label' 		=> __( 'Services Style', 'haarmax' ),
+				'label' 		=> __( 'Services Style', 'bizino' ),
 				'type' 			=> Controls_Manager::SELECT,
 				'default' 		=> 'one',
 				'options'		=> [
-					'one'  			=> __( 'Style One', 'haarmax' ),
-					'two' 			=> __( 'Style Two', 'haarmax' ),
-					'three' 		=> __( 'Style Three', 'haarmax' ),
+					'one'  			=> __( 'Style One', 'bizino' ),
+					'two' 			=> __( 'Style Two', 'bizino' ),
+					'three' 		=> __( 'Style Three', 'bizino' ),
 				],
 			]
 		);
@@ -58,7 +58,7 @@ class Bizino_Service_Widget extends Widget_Base{
         $repeater->add_control(
             'image_icon',
             [
-                'label'     => __( 'Image icon', 'haarmax' ),
+                'label'     => __( 'Image icon', 'bizino' ),
                 'type'      => Controls_Manager::MEDIA,
                 'dynamic' 		=> [
 					'active' 		=> true,
@@ -71,9 +71,9 @@ class Bizino_Service_Widget extends Widget_Base{
 
         $repeater->add_control(
 			'title', [
-				'label' 		=> __( 'Title', 'haarmax' ),
+				'label' 		=> __( 'Title', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( 'Safe Cleaning Supplies' , 'haarmax' ),
+				'default' 		=> __( 'Safe Cleaning Supplies' , 'bizino' ),
 				'rows' 			=> 2,
 				'label_block' 	=> true,
 			]
@@ -82,12 +82,12 @@ class Bizino_Service_Widget extends Widget_Base{
 		$this->add_control(
 			'features',
 			[
-				'label' 		=> __( 'Services Content', 'haarmax' ),
+				'label' 		=> __( 'Services Content', 'bizino' ),
 				'type' 			=> Controls_Manager::REPEATER,
 				'fields' 		=> $repeater->get_controls(),
 				'default' 		=> [
 					[
-						'title' 		=> __( 'Safe Cleaning Supplies', 'haarmax' ),
+						'title' 		=> __( 'Safe Cleaning Supplies', 'bizino' ),
 					],
 				],
 				'title_field' 	=> '{{{ title }}}',
@@ -103,7 +103,7 @@ class Bizino_Service_Widget extends Widget_Base{
         $repeater->add_control(
             'image_icon',
             [
-                'label'     => __( 'Image icon', 'haarmax' ),
+                'label'     => __( 'Image icon', 'bizino' ),
                 'type'      => Controls_Manager::MEDIA,
                 'dynamic' 		=> [
 					'active' 		=> true,
@@ -116,18 +116,18 @@ class Bizino_Service_Widget extends Widget_Base{
 
         $repeater->add_control(
 			'title', [
-				'label' 		=> __( 'Title', 'haarmax' ),
+				'label' 		=> __( 'Title', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( 'Safe Cleaning Supplies' , 'haarmax' ),
+				'default' 		=> __( 'Safe Cleaning Supplies' , 'bizino' ),
 				'rows' 			=> 2,
 				'label_block' 	=> true,
 			]
         );
         $repeater->add_control(
 			'content', [
-				'label' 		=> __( 'Content', 'haarmax' ),
+				'label' 		=> __( 'Content', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( 'Safe Cleaning Supplies' , 'haarmax' ),
+				'default' 		=> __( 'Safe Cleaning Supplies' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
@@ -135,12 +135,12 @@ class Bizino_Service_Widget extends Widget_Base{
 		$this->add_control(
 			'features_v2',
 			[
-				'label' 		=> __( 'Services Content', 'haarmax' ),
+				'label' 		=> __( 'Services Content', 'bizino' ),
 				'type' 			=> Controls_Manager::REPEATER,
 				'fields' 		=> $repeater->get_controls(),
 				'default' 		=> [
 					[
-						'title' 		=> __( 'Safe Cleaning Supplies', 'haarmax' ),
+						'title' 		=> __( 'Safe Cleaning Supplies', 'bizino' ),
 					],
 				],
 				'title_field' 	=> '{{{ title }}}',
@@ -155,7 +155,7 @@ class Bizino_Service_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'title_styling',
 			[
-				'label' 	=> __( 'Title Styling', 'haarmax' ),
+				'label' 	=> __( 'Title Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -163,7 +163,7 @@ class Bizino_Service_Widget extends Widget_Base{
         $this->add_control(
 			'features_title_color',
 			[
-				'label' 		=> __( 'Title Color', 'haarmax' ),
+				'label' 		=> __( 'Title Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .service p'	=> 'color: {{VALUE}}!important;',
@@ -176,7 +176,7 @@ class Bizino_Service_Widget extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'features_title_typography',
-		 		'label' 		=> __( 'Title Typography', 'haarmax' ),
+		 		'label' 		=> __( 'Title Typography', 'bizino' ),
 		 		'selectors' 	=> [
 		 			'{{WRAPPER}} .service p',
 		 			'{{WRAPPER}} .h4'
@@ -187,7 +187,7 @@ class Bizino_Service_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'features_title_margin',
 			[
-				'label' 		=> __( 'Title Margin', 'haarmax' ),
+				'label' 		=> __( 'Title Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -199,7 +199,7 @@ class Bizino_Service_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'features_title_padding',
 			[
-				'label' 		=> __( 'Title Padding', 'haarmax' ),
+				'label' 		=> __( 'Title Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [

@@ -3,7 +3,7 @@
     $(window).on( 'elementor/frontend/init', function() {
 
         // Testimonial Slider
-        elementorFrontend.hooks.addAction('frontend/element_ready/haarmaxtestimonialslider.default',function($scope) {
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinotestimonialslider.default',function($scope) {
 
             // Function For Custom Arrow Btn
             $('[data-slick-next]').each(function () {
@@ -96,7 +96,7 @@
         });
 
         // Blog Slider
-        elementorFrontend.hooks.addAction('frontend/element_ready/haarmaxblogpost.default',function($scope) {
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinoblogpost.default',function($scope) {
 
             let $blogslickcarousel = $scope.find('.blog-vs-carousel');
             $blogslickcarousel.not('.slick-initialized').slick({
@@ -128,7 +128,7 @@
         });
 
         // Working Process Slider
-        elementorFrontend.hooks.addAction('frontend/element_ready/haarmaxworkingprocess.default',function($scope) {
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinoworkingprocess.default',function($scope) {
 
             let $working_process_slickcarousel = $scope.find('.vs-carousel');
             $working_process_slickcarousel.not('.slick-initialized').slick({
@@ -165,7 +165,7 @@
         });
 
         // Logo Carousel Slider
-        elementorFrontend.hooks.addAction('frontend/element_ready/haarmaxlogocarousel.default',function($scope) {
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinologocarousel.default',function($scope) {
 
             let $logo_slickcarousel = $scope.find('.vs-carousel');
             $logo_slickcarousel.not('.slick-initialized').slick({
@@ -203,7 +203,7 @@
 
 
         // Search Option
-        elementorFrontend.hooks.addAction('frontend/element_ready/haarmaxsearch.default',function($scope) {
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinosearch.default',function($scope) {
 
             $.fn.vsLiveSearch = function (){
               let myVar = null,
@@ -222,9 +222,9 @@
                   if (cinput.val() != '') {
                     $.ajax({
                       type: 'POST',
-                      url: haarmaxajax.action_url,
+                      url: bizinoajax.action_url,
                       data: {
-                        action: 'haarmax_ajax_search',
+                        action: 'bizino_ajax_search',
                         searchkey: cinput.val(),
                         posttype: 'product'
                       },
@@ -253,7 +253,7 @@
 
 
         // Pricing Table Slider
-        elementorFrontend.hooks.addAction('frontend/element_ready/haarmaxpricelist.default',function($scope) {
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinopricelist.default',function($scope) {
 
             let $priceplan = $scope.find('.price-plan-slide');
             $priceplan.not('.slick-initialized').slick({
@@ -439,7 +439,7 @@
         });
 
         // newsletter Image
-        elementorFrontend.hooks.addAction('frontend/element_ready/haarmaxnewsletterform.default',function($scope) {
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinonewsletterform.default',function($scope) {
             let $data_bg = $scope.find('[data-bg-src]');
             $data_bg.each(function () {
                 var src = $(this).attr('data-bg-src');
@@ -449,7 +449,7 @@
         });
 
         // offer cart Image
-        elementorFrontend.hooks.addAction('frontend/element_ready/haarmaxoffercart.default',function($scope) {
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinooffercart.default',function($scope) {
             let $offercart = $scope.find('[data-bg-src]');
             $offercart.each(function () {
                 var src = $(this).attr('data-bg-src');
@@ -459,7 +459,7 @@
         });
 
         // Package Slider
-        elementorFrontend.hooks.addAction('frontend/element_ready/haarmaxpackage.default',function($scope) {
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinopackage.default',function($scope) {
           let $slickcarousels5 = $scope.find('.vs-packages-small');
                 $slickcarousels5.not('.slick-initialized').slick({
                 dots:  false,
@@ -609,7 +609,7 @@
         });
 
         // team Slider
-        elementorFrontend.hooks.addAction('frontend/element_ready/haarmaxteammember.default',function($scope) {
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinoteammember.default',function($scope) {
 
             let $mask_bg = $scope.find('[data-mask-src');
             $mask_bg.each(function () {
@@ -651,7 +651,7 @@
         });
 
         // image with video
-        elementorFrontend.hooks.addAction('frontend/element_ready/haarmaximage.default',function($scope) {
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinoimage.default',function($scope) {
 
             let $mask_bg = $scope.find('[data-mask-src');
             $mask_bg.each(function () {
@@ -665,7 +665,7 @@
         });
 
         // trend Slider
-        elementorFrontend.hooks.addAction('frontend/element_ready/haarmaxtrendproduct.default',function($scope) {
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinotrendproduct.default',function($scope) {
             let $trendcarousel = $scope.find('.vs-carousel');
                 $trendcarousel.not('.slick-initialized').slick({
                 dots: true,
@@ -721,7 +721,7 @@
 
 
         // right choice Slider
-        elementorFrontend.hooks.addAction('frontend/element_ready/haarmaxrightchoice.default',function($scope) {
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinorightchoice.default',function($scope) {
           let $rightchoice_slider = $scope.find('.naved-img');
                 $rightchoice_slider.not('.slick-initialized').slick({
                 dots:  false,
@@ -821,7 +821,7 @@
         });
 
         // service Slider
-        elementorFrontend.hooks.addAction('frontend/element_ready/haarmaxservices.default',function($scope) {
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinoservices.default',function($scope) {
 
             let $service_slickcarousel = $scope.find('.vs-carousel');
             $service_slickcarousel.not('.slick-initialized').slick({
@@ -852,7 +852,7 @@
         });
 
         // instagram Slider
-        elementorFrontend.hooks.addAction('frontend/element_ready/haarmaxinstagramgallery.default',function($scope) {
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinoinstagramgallery.default',function($scope) {
 
             // Function For Custom Arrow Btn
             $('[data-slick-next]').each(function () {

@@ -22,9 +22,9 @@
 
  */
 
-function haarmax_custom_login_logo() {
+function bizino_custom_login_logo() {
 
-    $logo = ! empty( bizino_opt( 'haarmax_admin_login_logo', 'url' ) ) ? bizino_opt( 'haarmax_admin_login_logo', 'url' ) : '' ;
+    $logo = ! empty( bizino_opt( 'bizino_admin_login_logo', 'url' ) ) ? bizino_opt( 'bizino_admin_login_logo', 'url' ) : '' ;
 
     if( isset( $logo ) && ! empty( $logo ) ){
 
@@ -32,20 +32,20 @@ function haarmax_custom_login_logo() {
     }
 }
 
-add_action( 'login_enqueue_scripts', 'haarmax_custom_login_logo' );
+add_action( 'login_enqueue_scripts', 'bizino_custom_login_logo' );
 
 /**
 * Admin Custom css
 */
 
-add_action( 'admin_enqueue_scripts', 'haarmax_admin_styles' );
+add_action( 'admin_enqueue_scripts', 'bizino_admin_styles' );
 
-function haarmax_admin_styles() {
+function bizino_admin_styles() {
 
-  if ( ! empty( $haarmax_admin_custom_css ) ) {
-        $haarmax_admin_custom_css = str_replace(array("\r\n", "\r", "\n", "\t", '    '), '', $haarmax_admin_custom_css);
-        echo '<style rel="stylesheet" id="haarmax-admin-custom-css" >';
-            echo esc_html( $haarmax_admin_custom_css );
+  if ( ! empty( $bizino_admin_custom_css ) ) {
+        $bizino_admin_custom_css = str_replace(array("\r\n", "\r", "\n", "\t", '    '), '', $bizino_admin_custom_css);
+        echo '<style rel="stylesheet" id="bizino-admin-custom-css" >';
+            echo esc_html( $bizino_admin_custom_css );
         echo '</style>';
     }
 }
@@ -92,7 +92,7 @@ function haarmax_admin_styles() {
 
 //add SVG to allowed file uploads
 
-function haarmax_mime_types( $mimes ) {
+function bizino_mime_types( $mimes ) {
 
     $mimes['svg'] = 'image/svg+xml';
     $mimes['svgz'] = 'image/svgz+xml';
@@ -102,11 +102,11 @@ function haarmax_mime_types( $mimes ) {
 
 }
 
-add_filter('upload_mimes', 'haarmax_mime_types');
+add_filter('upload_mimes', 'bizino_mime_types');
 
 
 
-function haarmax_wp_check_filetype_and_ext( $data, $file, $filename, $mimes ) {
+function bizino_wp_check_filetype_and_ext( $data, $file, $filename, $mimes ) {
 
     $wp_filetype = wp_check_filetype( $filename, $mimes );
     $ext         = $wp_filetype['ext'];
@@ -117,20 +117,20 @@ function haarmax_wp_check_filetype_and_ext( $data, $file, $filename, $mimes ) {
 
 }
 
-add_filter( 'wp_check_filetype_and_ext', 'haarmax_wp_check_filetype_and_ext', 10, 4 );
+add_filter( 'wp_check_filetype_and_ext', 'bizino_wp_check_filetype_and_ext', 10, 4 );
 
 
 /**
 * Enqueue block editor JavaScript and CSS
 */
-function haarmax_widget_editor_scripts() {
+function bizino_widget_editor_scripts() {
 
     // Make paths variables so we don't write em twice 😉
     $blockPath = '../assets/js/blocks.js';
 
     // Enqueue the bundled block JS file
     wp_enqueue_script(
-        'haarmax-blocks-js',
+        'bizino-blocks-js',
         plugins_url( $blockPath, __FILE__ ),
         [  'wp-blocks', 'wp-element', 'wp-components', 'wp-i18n' ],
         '1.00',
@@ -139,11 +139,11 @@ function haarmax_widget_editor_scripts() {
 
 }
 // Hook scripts function into block editor hook
-add_action( 'enqueue_block_editor_assets', 'haarmax_widget_editor_scripts' );
+add_action( 'enqueue_block_editor_assets', 'bizino_widget_editor_scripts' );
 
 // Add Image Size
 
-add_image_size( 'haarmax_150X170', 150, 170, true );
-add_image_size( 'haarmax_90X80', 90, 80, true );
+add_image_size( 'bizino_150X170', 150, 170, true );
+add_image_size( 'bizino_90X80', 90, 80, true );
 add_image_size( 'home-slider-blog-image', 374, 313, true );
 add_image_size( 'home-slider-blog-image-two', 470, 270, true );

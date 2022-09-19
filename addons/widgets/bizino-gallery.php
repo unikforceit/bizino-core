@@ -15,11 +15,11 @@ use \Elementor\Group_Control_Background;
 class Bizino_Gallery extends Widget_Base{
 
 	public function get_name() {
-		return 'haarmaxgallery';
+		return 'bizinogallery';
 	}
 
 	public function get_title() {
-		return __( 'Gallery', 'haarmax' );
+		return __( 'Gallery', 'bizino' );
 	}
 
 	public function get_icon() {
@@ -27,7 +27,7 @@ class Bizino_Gallery extends Widget_Base{
     }
 
 	public function get_categories() {
-		return [ 'haarmax' ];
+		return [ 'bizino' ];
 	}
 
 	protected function register_controls() {
@@ -35,7 +35,7 @@ class Bizino_Gallery extends Widget_Base{
 		$this->start_controls_section(
 			'gallery_section',
 			[
-				'label' 	=> __( 'Gallery', 'haarmax' ),
+				'label' 	=> __( 'Gallery', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -43,12 +43,12 @@ class Bizino_Gallery extends Widget_Base{
 		$this->add_control(
 			'gallery_style',
 			[
-				'label' 		=> __( 'Gallery Style', 'haarmax' ),
+				'label' 		=> __( 'Gallery Style', 'bizino' ),
 				'type' 			=> Controls_Manager::SELECT,
 				'default' 		=> '1',
 				'options' 		=> [
-					'1'  			=> __( 'Style One', 'haarmax' ),
-					'2' 			=> __( 'Style Two', 'haarmax' ),
+					'1'  			=> __( 'Style One', 'bizino' ),
+					'2' 			=> __( 'Style Two', 'bizino' ),
 				],
 			]
 		);
@@ -58,7 +58,7 @@ class Bizino_Gallery extends Widget_Base{
 		$repeater->add_control(
 			'gallery_image',
 			[
-				'label' 		=> __( 'Gallery image', 'haarmax' ),
+				'label' 		=> __( 'Gallery image', 'bizino' ),
 				'type' 			=> Controls_Manager::MEDIA,
 				'default' 		=> [
 					'url' => Utils::get_placeholder_image_src(),
@@ -67,17 +67,17 @@ class Bizino_Gallery extends Widget_Base{
 		);
 		$repeater->add_control(
 			'image_title', [
-				'label' 		=> __( 'Image Title', 'haarmax' ),
+				'label' 		=> __( 'Image Title', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( 'Image Title' , 'haarmax' ),
+				'default' 		=> __( 'Image Title' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
 		$repeater->add_control(
 			'title_url', [
-				'label' 		=> __( 'Title Url?', 'haarmax' ),
+				'label' 		=> __( 'Title Url?', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( '#' , 'haarmax' ),
+				'default' 		=> __( '#' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
@@ -85,7 +85,7 @@ class Bizino_Gallery extends Widget_Base{
 		$this->add_control(
 			'slides',
 			[
-				'label' 		=> __( 'Slides', 'haarmax' ),
+				'label' 		=> __( 'Slides', 'bizino' ),
 				'type' 			=> Controls_Manager::REPEATER,
 				'fields' 		=> $repeater->get_controls(),
 				'default' 		=> [
@@ -108,7 +108,7 @@ class Bizino_Gallery extends Widget_Base{
 		$this->start_controls_section(
 			'gallery_general',
 			[
-				'label' 	=> __( 'General', 'haarmax' ),
+				'label' 	=> __( 'General', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -116,7 +116,7 @@ class Bizino_Gallery extends Widget_Base{
 		$this->add_control(
 			'overlay_bg_color',
 			[
-				'label' 		=> __( 'Overlay bg Color', 'haarmax' ),
+				'label' 		=> __( 'Overlay bg Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-gallery-box .gallery-img:after,{{WRAPPER}} .vs-gallery-box .gallery-img:before,{{WRAPPER}} .gallery-thumb:after,{{WRAPPER}} .gallery-thumb:before' => 'background-color: {{VALUE}}',
@@ -129,7 +129,7 @@ class Bizino_Gallery extends Widget_Base{
         $this->start_controls_section(
 			'gallery_title_style_section',
 			[
-				'label' 	=> __( 'Title', 'haarmax' ),
+				'label' 	=> __( 'Title', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
                 'condition'	=> [ 'gallery_style'	=> '1' ]
 			]
@@ -138,7 +138,7 @@ class Bizino_Gallery extends Widget_Base{
         $this->add_control(
 			'gallery_title_color',
 			[
-				'label' 		=> __( 'Title Color', 'haarmax' ),
+				'label' 		=> __( 'Title Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-gallery-box .gallery-title' => 'color: {{VALUE}}!important',
@@ -150,7 +150,7 @@ class Bizino_Gallery extends Widget_Base{
 			Group_Control_Typography::get_type(),
 			[
 				'name' 		=> 'gallery_title_typography',
-				'label' 	=> __( 'Title Typography', 'haarmax' ),
+				'label' 	=> __( 'Title Typography', 'bizino' ),
 				'selector' 	=> '{{WRAPPER}} .vs-gallery-box .gallery-title',
 			]
         );
@@ -158,7 +158,7 @@ class Bizino_Gallery extends Widget_Base{
         $this->add_responsive_control(
 			'gallery_title_margin',
 			[
-				'label' 		=> __( 'Title Margin', 'haarmax' ),
+				'label' 		=> __( 'Title Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -170,7 +170,7 @@ class Bizino_Gallery extends Widget_Base{
         $this->add_responsive_control(
 			'gallery_title_padding',
 			[
-				'label' 		=> __( 'Title Padding', 'haarmax' ),
+				'label' 		=> __( 'Title Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [

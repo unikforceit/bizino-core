@@ -13,11 +13,11 @@ use \Elementor\Group_Control_Image_Size;
 class Bizino_Single_Price_Cart extends Widget_Base{
 
 	public function get_name() {
-		return 'haarmaxpricecart';
+		return 'bizinopricecart';
 	}
 
 	public function get_title() {
-		return __( 'Price Cart', 'haarmax' );
+		return __( 'Price Cart', 'bizino' );
 	}
 
 	public function get_icon() {
@@ -25,7 +25,7 @@ class Bizino_Single_Price_Cart extends Widget_Base{
     }
 
 	public function get_categories() {
-		return [ 'haarmax' ];
+		return [ 'bizino' ];
 	}
 
 	protected function register_controls() {
@@ -33,24 +33,24 @@ class Bizino_Single_Price_Cart extends Widget_Base{
 		$this->start_controls_section(
 			'price_cart',
 			[
-				'label'		=> __( 'Price Cart','haarmax' ),
+				'label'		=> __( 'Price Cart','bizino' ),
 				'tab'		=> Controls_Manager::TAB_CONTENT,
 			]
 		);
 		$this->add_control(
 			'reverse_cart',
 			[
-				'label' 		=> __( 'Cart Reverse Style?', 'haarmax' ),
+				'label' 		=> __( 'Cart Reverse Style?', 'bizino' ),
 				'type' 			=> Controls_Manager::SWITCHER,
-				'label_on' 		=> __( 'Show', 'haarmax' ),
-				'label_off' 	=> __( 'Hide', 'haarmax' ),
+				'label_on' 		=> __( 'Show', 'bizino' ),
+				'label_off' 	=> __( 'Hide', 'bizino' ),
 				'return_value' 	=> 'yes',
 				'default' 		=> 'yes',
 			]
 		);
         $this->add_control(
 			'title', [
-				'label' 		=> __( 'Cart Title', 'haarmax' ),
+				'label' 		=> __( 'Cart Title', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXT,
 				'label_block' 	=> true,
 			]
@@ -58,7 +58,7 @@ class Bizino_Single_Price_Cart extends Widget_Base{
         $this->add_control(
 			'feature_bg_image',
 			[
-				'label'     => __( 'Feature Background Image', 'haarmax' ),
+				'label'     => __( 'Feature Background Image', 'bizino' ),
 				'type'      => Controls_Manager::MEDIA,
 				'default' 	=> [
 					'url' => Utils::get_placeholder_image_src(),
@@ -68,7 +68,7 @@ class Bizino_Single_Price_Cart extends Widget_Base{
 
         $this->add_control(
 			'features', [
-				'label' 		=> __( 'Cart Features', 'haarmax' ),
+				'label' 		=> __( 'Cart Features', 'bizino' ),
 				'type' 			=> Controls_Manager::WYSIWYG,
 				'label_block' 	=> true,
 			]
@@ -76,7 +76,7 @@ class Bizino_Single_Price_Cart extends Widget_Base{
         $this->add_control(
 			'thumb_image',
 			[
-				'label'     => __( 'Thumbnail Image', 'haarmax' ),
+				'label'     => __( 'Thumbnail Image', 'bizino' ),
 				'type'      => Controls_Manager::MEDIA,
 				'default' 	=> [
 					'url' => Utils::get_placeholder_image_src(),
@@ -86,18 +86,18 @@ class Bizino_Single_Price_Cart extends Widget_Base{
 		$this->add_control(
 			'button_text',
 			[
-				'label' 	=> __( 'Button Text', 'haarmax' ),
+				'label' 	=> __( 'Button Text', 'bizino' ),
                 'type' 		=> Controls_Manager::TEXT,
-                'default'  	=> __( 'Button Text', 'haarmax' )
+                'default'  	=> __( 'Button Text', 'bizino' )
 			]
         );
 
         $this->add_control(
 			'button_link',
 			[
-				'label' 	=> __( 'Link', 'haarmax' ),
+				'label' 	=> __( 'Link', 'bizino' ),
 				'type' 		=> Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'haarmax' ),
+				'placeholder' => __( 'https://your-link.com', 'bizino' ),
 				'show_external' => true,
 				'default' 	=> [
 					'url' 			=> '#',
@@ -115,7 +115,7 @@ class Bizino_Single_Price_Cart extends Widget_Base{
 		$this->start_controls_section(
 			'title_styling',
 			[
-				'label' 	=> __( 'Title Styling', 'haarmax' ),
+				'label' 	=> __( 'Title Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -123,7 +123,7 @@ class Bizino_Single_Price_Cart extends Widget_Base{
         $this->add_control(
 			'features_title_color',
 			[
-				'label' 		=> __( 'Title Color', 'haarmax' ),
+				'label' 		=> __( 'Title Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .price-title'	=> 'color: {{VALUE}}!important;',
@@ -135,7 +135,7 @@ class Bizino_Single_Price_Cart extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'features_title_typography',
-		 		'label' 		=> __( 'Title Typography', 'haarmax' ),
+		 		'label' 		=> __( 'Title Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .price-title',
 			]
 		);
@@ -143,7 +143,7 @@ class Bizino_Single_Price_Cart extends Widget_Base{
         $this->add_responsive_control(
 			'features_title_margin',
 			[
-				'label' 		=> __( 'Title Margin', 'haarmax' ),
+				'label' 		=> __( 'Title Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -155,7 +155,7 @@ class Bizino_Single_Price_Cart extends Widget_Base{
         $this->add_responsive_control(
 			'features_title_padding',
 			[
-				'label' 		=> __( 'Title Padding', 'haarmax' ),
+				'label' 		=> __( 'Title Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -170,7 +170,7 @@ class Bizino_Single_Price_Cart extends Widget_Base{
 		$this->start_controls_section(
 			'button_styling',
 			[
-				'label' 	=> __( 'Button Styling', 'haarmax' ),
+				'label' 	=> __( 'Button Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -179,7 +179,7 @@ class Bizino_Single_Price_Cart extends Widget_Base{
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name' 		=> 'btn_shadow',
-				'label' 	=> __( 'Button Shadow', 'haarmax' ),
+				'label' 	=> __( 'Button Shadow', 'bizino' ),
 				'selector' 	=> '{{WRAPPER}} .vs-btn',
 			]
 		);
@@ -187,7 +187,7 @@ class Bizino_Single_Price_Cart extends Widget_Base{
         $this->add_control(
 			'btn_color',
 			[
-				'label' 		=> __( 'Button Color', 'haarmax' ),
+				'label' 		=> __( 'Button Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-btn'	=> 'background-color: {{VALUE}}!important;',
@@ -198,7 +198,7 @@ class Bizino_Single_Price_Cart extends Widget_Base{
         $this->add_control(
 			'btn_hvr_color',
 			[
-				'label' 		=> __( 'Button Hover Color', 'haarmax' ),
+				'label' 		=> __( 'Button Hover Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-btn::after'	=> 'background-color: {{VALUE}}!important;',
@@ -210,7 +210,7 @@ class Bizino_Single_Price_Cart extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'button_typography',
-		 		'label' 		=> __( 'Typography', 'haarmax' ),
+		 		'label' 		=> __( 'Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .vs-btn'
 			]
 		);
@@ -218,7 +218,7 @@ class Bizino_Single_Price_Cart extends Widget_Base{
 		$this->add_control(
 			'btn_text_color',
 			[
-				'label' 		=> __( 'Text Color', 'haarmax' ),
+				'label' 		=> __( 'Text Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-btn'	=> 'color: {{VALUE}}!important;',
@@ -228,7 +228,7 @@ class Bizino_Single_Price_Cart extends Widget_Base{
         $this->add_control(
 			'btn_text_hvr_color',
 			[
-				'label' 		=> __( 'Text Hover Color', 'haarmax' ),
+				'label' 		=> __( 'Text Hover Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-btn::after'	=> 'color: {{VALUE}}!important;',

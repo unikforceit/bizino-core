@@ -13,11 +13,11 @@ use \Elementor\Group_Control_Image_Size;
 class Bizino_Team_Widget extends Widget_Base{
 
 	public function get_name() {
-		return 'haarmaxteammember';
+		return 'bizinoteammember';
 	}
 
 	public function get_title() {
-		return __( 'Bizino Team', 'haarmax' );
+		return __( 'Bizino Team', 'bizino' );
 	}
 
 	public function get_icon() {
@@ -25,7 +25,7 @@ class Bizino_Team_Widget extends Widget_Base{
     }
 
 	public function get_categories() {
-		return [ 'haarmax' ];
+		return [ 'bizino' ];
 	}
 
 	protected function register_controls() {
@@ -33,19 +33,19 @@ class Bizino_Team_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'team_content',
 			[
-				'label'		=> __( 'Team','haarmax' ),
+				'label'		=> __( 'Team','bizino' ),
 				'tab'		=> Controls_Manager::TAB_CONTENT,
 			]
 		);
 		$this->add_control(
 			'team_style',
 			[
-				'label' 	=> __( 'Team Style', 'haarmax' ),
+				'label' 	=> __( 'Team Style', 'bizino' ),
 				'type' 		=> Controls_Manager::SELECT,
 				'default' 	=> '1',
 				'options' 	=> [
-					'1'  		=> __( 'Style One', 'haarmax' ),
-					'2' 		=> __( 'Style Two', 'haarmax' ),
+					'1'  		=> __( 'Style One', 'bizino' ),
+					'2' 		=> __( 'Style Two', 'bizino' ),
 				],
 			]
 		);
@@ -56,35 +56,35 @@ class Bizino_Team_Widget extends Widget_Base{
 
         $repeater->add_control(
 			'name', [
-				'label' 		=> __( 'Name', 'haarmax' ),
+				'label' 		=> __( 'Name', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( 'Safe Cleaning Supplies' , 'haarmax' ),
+				'default' 		=> __( 'Safe Cleaning Supplies' , 'bizino' ),
 				'rows' 			=> 2,
 				'label_block' 	=> true,
 			]
         );
 		$repeater->add_control(
 			'designation', [
-				'label' 		=> __( 'Designation', 'haarmax' ),
+				'label' 		=> __( 'Designation', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXT,
-				'default' 		=> __( 'Customer' , 'haarmax' ),
+				'default' 		=> __( 'Customer' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
         $repeater->add_control(
 			'phone', [
-				'label' 		=> __( 'Contact Number', 'haarmax' ),
+				'label' 		=> __( 'Contact Number', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXT,
-				'default' 		=> __( 'Customer' , 'haarmax' ),
+				'default' 		=> __( 'Customer' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
         $repeater->add_control(
 			'profile_link',
 			[
-				'label' 		=> esc_html__( 'Link', 'haarmax' ),
+				'label' 		=> esc_html__( 'Link', 'bizino' ),
 				'type' 			=> Controls_Manager::URL,
-				'placeholder' 	=> esc_html__( 'https://your-link.com', 'haarmax' ),
+				'placeholder' 	=> esc_html__( 'https://your-link.com', 'bizino' ),
 				'show_external' => true,
 				'default' 		=> [
 					'url' 			=> '#',
@@ -96,7 +96,7 @@ class Bizino_Team_Widget extends Widget_Base{
         $repeater->add_control(
 			'team_image',
 			[
-				'label' 		=> esc_html__( 'Team Image', 'haarmax' ),
+				'label' 		=> esc_html__( 'Team Image', 'bizino' ),
 				'type' 			=> Controls_Manager::MEDIA,
 				'default' 		=> [
 					'url' => Utils::get_placeholder_image_src(),
@@ -106,12 +106,12 @@ class Bizino_Team_Widget extends Widget_Base{
 		$this->add_control(
 			'team_members',
 			[
-				'label' 		=> __( 'Team Member', 'haarmax' ),
+				'label' 		=> __( 'Team Member', 'bizino' ),
 				'type' 			=> Controls_Manager::REPEATER,
 				'fields' 		=> $repeater->get_controls(),
 				'default' 		=> [
 					[
-						'title' 		=> __( 'Your Name', 'haarmax' ),
+						'title' 		=> __( 'Your Name', 'bizino' ),
 					],
 				],
 				'title_field' 	=> '{{{ name }}}',
@@ -125,9 +125,9 @@ class Bizino_Team_Widget extends Widget_Base{
 
 		$repeater->add_control(
 			'name', [
-				'label' 		=> __( 'Name', 'haarmax' ),
+				'label' 		=> __( 'Name', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( 'Safe Cleaning Supplies' , 'haarmax' ),
+				'default' 		=> __( 'Safe Cleaning Supplies' , 'bizino' ),
 				'rows' 			=> 2,
 				'label_block' 	=> true,
 			]
@@ -135,7 +135,7 @@ class Bizino_Team_Widget extends Widget_Base{
         $repeater->add_control(
 			'team_icon',
 			[
-				'label' 		=> esc_html__( 'Team Icon', 'haarmax' ),
+				'label' 		=> esc_html__( 'Team Icon', 'bizino' ),
 				'type' 			=> Controls_Manager::MEDIA,
 				'default' => [
                     'url' => plugins_url( 'images/team-icon.png', __FILE__ )
@@ -144,24 +144,24 @@ class Bizino_Team_Widget extends Widget_Base{
         );
 		$repeater->add_control(
 			'designation', [
-				'label' 		=> __( 'Designation', 'haarmax' ),
+				'label' 		=> __( 'Designation', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXT,
-				'default' 		=> __( 'Customer' , 'haarmax' ),
+				'default' 		=> __( 'Customer' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
         $repeater->add_control(
 			'phone', [
-				'label' 		=> __( 'Contact Number', 'haarmax' ),
+				'label' 		=> __( 'Contact Number', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXT,
-				'default' 		=> __( '020 7388 5619' , 'haarmax' ),
+				'default' 		=> __( '020 7388 5619' , 'bizino' ),
 				'label_block' 	=> true,
 			]
         );
         $repeater->add_control(
 			'team_image',
 			[
-				'label' 		=> esc_html__( 'Team Image', 'haarmax' ),
+				'label' 		=> esc_html__( 'Team Image', 'bizino' ),
 				'type' 			=> Controls_Manager::MEDIA,
 				'default' 		=> [
 					'url' => Utils::get_placeholder_image_src(),
@@ -171,9 +171,9 @@ class Bizino_Team_Widget extends Widget_Base{
         $repeater->add_control(
 			'fb_link',
 			[
-				'label' 		=> esc_html__( 'Facebook Link', 'haarmax' ),
+				'label' 		=> esc_html__( 'Facebook Link', 'bizino' ),
 				'type' 			=> Controls_Manager::URL,
-				'placeholder' 	=> esc_html__( 'https://your-link.com', 'haarmax' ),
+				'placeholder' 	=> esc_html__( 'https://your-link.com', 'bizino' ),
 				'show_external' => true,
 				'default' 		=> [
 					'url' 			=> '#',
@@ -185,9 +185,9 @@ class Bizino_Team_Widget extends Widget_Base{
 		$repeater->add_control(
 			'twitter_link',
 			[
-				'label' 		=> esc_html__( 'Twitter Link', 'haarmax' ),
+				'label' 		=> esc_html__( 'Twitter Link', 'bizino' ),
 				'type' 			=> Controls_Manager::URL,
-				'placeholder' 	=> esc_html__( 'https://your-link.com', 'haarmax' ),
+				'placeholder' 	=> esc_html__( 'https://your-link.com', 'bizino' ),
 				'show_external' => true,
 				'default' 		=> [
 					'url' 			=> '#',
@@ -199,9 +199,9 @@ class Bizino_Team_Widget extends Widget_Base{
 		$repeater->add_control(
 			'google_link',
 			[
-				'label' 		=> esc_html__( 'Google Link', 'haarmax' ),
+				'label' 		=> esc_html__( 'Google Link', 'bizino' ),
 				'type' 			=> Controls_Manager::URL,
-				'placeholder' 	=> esc_html__( 'https://your-link.com', 'haarmax' ),
+				'placeholder' 	=> esc_html__( 'https://your-link.com', 'bizino' ),
 				'show_external' => true,
 				'default' 		=> [
 					'url' 			=> '#',
@@ -213,9 +213,9 @@ class Bizino_Team_Widget extends Widget_Base{
 		$repeater->add_control(
 			'profile_link',
 			[
-				'label' 		=> esc_html__( 'Profile Url?', 'haarmax' ),
+				'label' 		=> esc_html__( 'Profile Url?', 'bizino' ),
 				'type' 			=> Controls_Manager::URL,
-				'placeholder' 	=> esc_html__( 'https://your-link.com', 'haarmax' ),
+				'placeholder' 	=> esc_html__( 'https://your-link.com', 'bizino' ),
 				'show_external' => true,
 				'default' 		=> [
 					'url' 			=> '#',
@@ -227,12 +227,12 @@ class Bizino_Team_Widget extends Widget_Base{
 		$this->add_control(
 			'team_members_v2',
 			[
-				'label' 		=> __( 'Team Member', 'haarmax' ),
+				'label' 		=> __( 'Team Member', 'bizino' ),
 				'type' 			=> Controls_Manager::REPEATER,
 				'fields' 		=> $repeater->get_controls(),
 				'default' 		=> [
 					[
-						'title' 		=> __( 'Your Name', 'haarmax' ),
+						'title' 		=> __( 'Your Name', 'bizino' ),
 					],
 				],
 				'title_field' 	=> '{{{ name }}}',
@@ -247,14 +247,14 @@ class Bizino_Team_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'general_styling',
 			[
-				'label' 	=> __( 'Genaral', 'haarmax' ),
+				'label' 	=> __( 'Genaral', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
         $this->add_control(
 			'hover_effect',
 			[
-				'label' 		=> __( 'Hover Color', 'haarmax' ),
+				'label' 		=> __( 'Hover Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .team-grid::before'	=> 'background-color: {{VALUE}}!important;',
@@ -270,7 +270,7 @@ class Bizino_Team_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'title_styling',
 			[
-				'label' 	=> __( 'Title Styling', 'haarmax' ),
+				'label' 	=> __( 'Title Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -278,7 +278,7 @@ class Bizino_Team_Widget extends Widget_Base{
         $this->add_control(
 			'title_color',
 			[
-				'label' 		=> __( 'Title Color', 'haarmax' ),
+				'label' 		=> __( 'Title Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .team-name'	=> 'color: {{VALUE}}',
@@ -288,7 +288,7 @@ class Bizino_Team_Widget extends Widget_Base{
         $this->add_control(
 			'title_hvr_color',
 			[
-				'label' 		=> __( 'Title Hover Color', 'haarmax' ),
+				'label' 		=> __( 'Title Hover Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .text-inherit:hover'	=> 'color: {{VALUE}}',
@@ -300,7 +300,7 @@ class Bizino_Team_Widget extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'title_typography',
-		 		'label' 		=> __( 'Title Typography', 'haarmax' ),
+		 		'label' 		=> __( 'Title Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .text-inherit'
 			]
 		);
@@ -308,7 +308,7 @@ class Bizino_Team_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'title_margin',
 			[
-				'label' 		=> __( 'Title Margin', 'haarmax' ),
+				'label' 		=> __( 'Title Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -320,7 +320,7 @@ class Bizino_Team_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'title_padding',
 			[
-				'label' 		=> __( 'Title Padding', 'haarmax' ),
+				'label' 		=> __( 'Title Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -335,7 +335,7 @@ class Bizino_Team_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'degi_styling',
 			[
-				'label' 	=> __( 'Designation Styling', 'haarmax' ),
+				'label' 	=> __( 'Designation Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -343,7 +343,7 @@ class Bizino_Team_Widget extends Widget_Base{
         $this->add_control(
 			'degi_color',
 			[
-				'label' 		=> __( 'Designation Color', 'haarmax' ),
+				'label' 		=> __( 'Designation Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .team-degi'	=> 'color: {{VALUE}}',
@@ -353,7 +353,7 @@ class Bizino_Team_Widget extends Widget_Base{
         $this->add_control(
 			'degi_hvr_color',
 			[
-				'label' 		=> __( 'Designation Hover Color', 'haarmax' ),
+				'label' 		=> __( 'Designation Hover Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .team-degi:hover'	=> 'color: {{VALUE}}',
@@ -365,7 +365,7 @@ class Bizino_Team_Widget extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'degi_typography',
-		 		'label' 		=> __( 'Designation Typography', 'haarmax' ),
+		 		'label' 		=> __( 'Designation Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .team-degi'
 			]
 		);
@@ -373,7 +373,7 @@ class Bizino_Team_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'degi_margin',
 			[
-				'label' 		=> __( 'Designation Margin', 'haarmax' ),
+				'label' 		=> __( 'Designation Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -385,7 +385,7 @@ class Bizino_Team_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'degi_padding',
 			[
-				'label' 		=> __( 'Designation Padding', 'haarmax' ),
+				'label' 		=> __( 'Designation Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -400,7 +400,7 @@ class Bizino_Team_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'contact_styling',
 			[
-				'label' 	=> __( 'Contact Number Styling', 'haarmax' ),
+				'label' 	=> __( 'Contact Number Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -408,7 +408,7 @@ class Bizino_Team_Widget extends Widget_Base{
         $this->add_control(
 			'contact_color',
 			[
-				'label' 		=> __( 'Contact Number Color', 'haarmax' ),
+				'label' 		=> __( 'Contact Number Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .team-number'	=> 'color: {{VALUE}}',
@@ -418,7 +418,7 @@ class Bizino_Team_Widget extends Widget_Base{
         $this->add_control(
 			'contact_hvr_color',
 			[
-				'label' 		=> __( 'Contact Number Hover Color', 'haarmax' ),
+				'label' 		=> __( 'Contact Number Hover Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .team-number:hover'	=> 'color: {{VALUE}}',
@@ -431,7 +431,7 @@ class Bizino_Team_Widget extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'contact_typography',
-		 		'label' 		=> __( 'Contact Number Typography', 'haarmax' ),
+		 		'label' 		=> __( 'Contact Number Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .team-number'
 			]
 		);
@@ -439,7 +439,7 @@ class Bizino_Team_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'contact_margin',
 			[
-				'label' 		=> __( 'Contact Number Margin', 'haarmax' ),
+				'label' 		=> __( 'Contact Number Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -451,7 +451,7 @@ class Bizino_Team_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'contact_padding',
 			[
-				'label' 		=> __( 'Contact Number Padding', 'haarmax' ),
+				'label' 		=> __( 'Contact Number Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [

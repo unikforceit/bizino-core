@@ -13,11 +13,11 @@ use \Elementor\Group_Control_Image_Size;
 class Bizino_Offer_Cart_Widget extends Widget_Base{
 
 	public function get_name() {
-		return 'haarmaxoffercart';
+		return 'bizinooffercart';
 	}
 
 	public function get_title() {
-		return __( 'Bizino Offer Cart', 'haarmax' );
+		return __( 'Bizino Offer Cart', 'bizino' );
 	}
 
 	public function get_icon() {
@@ -25,7 +25,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
     }
 
 	public function get_categories() {
-		return [ 'haarmax' ];
+		return [ 'bizino' ];
 	}
 
 	protected function register_controls() {
@@ -33,32 +33,32 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'offer_content',
 			[
-				'label'		=> __( 'Offar Cart','haarmax' ),
+				'label'		=> __( 'Offar Cart','bizino' ),
 				'tab'		=> Controls_Manager::TAB_CONTENT,
 			]
 		);		
 		$this->add_control(
 			'offer_title',
 			[
-				'label' 	=> __( 'Title', 'haarmax' ),
+				'label' 	=> __( 'Title', 'bizino' ),
                 'type' 		=> Controls_Manager::TEXTAREA,
                 'rows' 		=> 2,
-                'default'  	=> __( 'Title', 'haarmax' )
+                'default'  	=> __( 'Title', 'bizino' )
 			]
         );
         $this->add_control(
 			'offer_desc',
 			[
-				'label' 	=> __( 'Content', 'haarmax' ),
+				'label' 	=> __( 'Content', 'bizino' ),
                 'type' 		=> Controls_Manager::TEXTAREA,
                 'rows' 		=> 3,
-                'default'  	=> __( 'Short Descriptions', 'haarmax' )
+                'default'  	=> __( 'Short Descriptions', 'bizino' )
 			]
         );
         $this->add_control(
 			'image',
 			[
-				'label'     => __( 'Upload Fiture Image', 'haarmax' ),
+				'label'     => __( 'Upload Fiture Image', 'bizino' ),
 				'type'      => Controls_Manager::MEDIA,
 				'default' 	=> [
 					'url' => Utils::get_placeholder_image_src(),
@@ -68,18 +68,18 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
 		$this->add_control(
 			'button_text',
 			[
-				'label' 	=> esc_html__( 'Button Text', 'haarmax' ),
+				'label' 	=> esc_html__( 'Button Text', 'bizino' ),
                 'type' 		=> Controls_Manager::TEXT,
-                'default'  	=> esc_html__( 'Button Text', 'haarmax' ),
+                'default'  	=> esc_html__( 'Button Text', 'bizino' ),
 			]
         );
 
         $this->add_control(
 			'button_link',
 			[
-				'label' 		=> esc_html__( 'Link', 'haarmax' ),
+				'label' 		=> esc_html__( 'Link', 'bizino' ),
 				'type' 			=> Controls_Manager::URL,
-				'placeholder' 	=> esc_html__( 'https://your-link.com', 'haarmax' ),
+				'placeholder' 	=> esc_html__( 'https://your-link.com', 'bizino' ),
 				'show_external' => true,
 				'default' 		=> [
 					'url' 			=> '#',
@@ -96,7 +96,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'title_styling',
 			[
-				'label' 	=> __( 'Title Styling', 'haarmax' ),
+				'label' 	=> __( 'Title Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -104,7 +104,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
         $this->add_control(
 			'features_title_color',
 			[
-				'label' 		=> __( 'Title Color', 'haarmax' ),
+				'label' 		=> __( 'Title Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .banner-title'	=>'color: {{VALUE}}',
@@ -116,7 +116,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'features_title_typography',
-		 		'label' 		=> __( 'Title Typography', 'haarmax' ),
+		 		'label' 		=> __( 'Title Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .banner-title'
 			]
 		);
@@ -124,7 +124,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'features_title_margin',
 			[
-				'label' 		=> __( 'Title Margin', 'haarmax' ),
+				'label' 		=> __( 'Title Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -136,7 +136,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'features_title_padding',
 			[
-				'label' 		=> __( 'Title Padding', 'haarmax' ),
+				'label' 		=> __( 'Title Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -151,7 +151,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'desc_styling',
 			[
-				'label' 	=> __( 'Content Styling', 'haarmax' ),
+				'label' 	=> __( 'Content Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -159,7 +159,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
         $this->add_control(
 			'features_desc_color',
 			[
-				'label' 		=> __( 'Content Color', 'haarmax' ),
+				'label' 		=> __( 'Content Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .banner-text'	=> 'color: {{VALUE}}',
@@ -171,7 +171,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'features_desc_typography',
-		 		'label' 		=> __( 'Content Typography', 'haarmax' ),
+		 		'label' 		=> __( 'Content Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .banner-text'
 			]
 		);
@@ -179,7 +179,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'features_desc_margin',
 			[
-				'label' 		=> __( 'Content Margin', 'haarmax' ),
+				'label' 		=> __( 'Content Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -191,7 +191,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
         $this->add_responsive_control(
 			'features_desc_padding',
 			[
-				'label' 		=> __( 'Content Padding', 'haarmax' ),
+				'label' 		=> __( 'Content Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -206,7 +206,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'button_styling',
 			[
-				'label' 	=> __( 'Button Styling', 'haarmax' ),
+				'label' 	=> __( 'Button Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -215,7 +215,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name' 		=> 'btn_shadow',
-				'label' 	=> __( 'Button Shadow', 'haarmax' ),
+				'label' 	=> __( 'Button Shadow', 'bizino' ),
 				'selector' 	=> '{{WRAPPER}} .vs-btn',
 			]
 		);
@@ -223,7 +223,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
         $this->add_control(
 			'btn_color',
 			[
-				'label' 		=> __( 'Button Color', 'haarmax' ),
+				'label' 		=> __( 'Button Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-btn'	=> 'background-color: {{VALUE}}!important;',
@@ -234,7 +234,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
         $this->add_control(
 			'btn_hvr_color',
 			[
-				'label' 		=> __( 'Button Hover Color', 'haarmax' ),
+				'label' 		=> __( 'Button Hover Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-btn.style-white:hover'	=> 'background-color: {{VALUE}}!important;',
@@ -246,7 +246,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'button_typography',
-		 		'label' 		=> __( 'Typography', 'haarmax' ),
+		 		'label' 		=> __( 'Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .vs-btn'
 			]
 		);
@@ -254,7 +254,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
 		$this->add_control(
 			'btn_text_color',
 			[
-				'label' 		=> __( 'Text Color', 'haarmax' ),
+				'label' 		=> __( 'Text Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-btn'	=> 'color: {{VALUE}}!important;',
@@ -264,7 +264,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
         $this->add_control(
 			'btn_text_hvr_color',
 			[
-				'label' 		=> __( 'Text Hover Color', 'haarmax' ),
+				'label' 		=> __( 'Text Hover Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .vs-btn.style-white:hover'	=> 'color: {{VALUE}}!important;',
@@ -279,7 +279,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'animation_styling',
 			[
-				'label' 	=> __( 'Animation Control', 'haarmax' ),
+				'label' 	=> __( 'Animation Control', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -287,7 +287,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
         $this->add_control(
 			'shape_color',
 			[
-				'label' 		=> __( 'Shape Color', 'haarmax' ),
+				'label' 		=> __( 'Shape Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .morp-ani::before'	=> 'background-color: {{VALUE}}',
@@ -297,7 +297,7 @@ class Bizino_Offer_Cart_Widget extends Widget_Base{
         $this->add_control(
 			'shape_delay',
 			[
-				'label' 		=> __( 'Shape Delay', 'haarmax' ),
+				'label' 		=> __( 'Shape Delay', 'bizino' ),
 				'type' 			=> \Elementor\Controls_Manager::NUMBER,
 				'min' 			=> 5,
 				'max'		 	=> 100,
