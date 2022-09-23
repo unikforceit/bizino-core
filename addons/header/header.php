@@ -68,16 +68,7 @@ class Bizino_Header extends Widget_Base {
 			[
 				'label' 		=> __( 'Location Text', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'placeholder' 	=> __( 'United State', 'bizino' ),
-			]
-		);
-		$this->add_control(
-			'location',
-
-			[
-				'label' 		=> __( 'Office Location', 'bizino' ),
-				'type' 			=> Controls_Manager::TEXTAREA,
-				'placeholder' 	=> __( 'Google Map url', 'bizino' ),
+				'default' 	=> __( '250 Main Street, 2nd Floor. USA', 'bizino' ),
 			]
 		);
 
@@ -86,30 +77,20 @@ class Bizino_Header extends Widget_Base {
 			[
 				'label' 		=> __( 'Contact Email', 'bizino' ),
 				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( 'example@domain.com', 'bizino' ),
-				'condition'		=> [ 'header_style' => [ '1', '3' ] ],
+				'default' 		=> __( 'info@domain.com', 'bizino' ),
+				'condition'		=> [ 'header_style' => [ '1', '2' ] ],
 				'rows' 			=> 2,
 			]
 		);
-		$this->add_control(
-			'contact_phone',
-			[
-				'label' 		=> __( 'Contact Phone', 'bizino' ),
-				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( '020 7388 5619', 'bizino' ),
-				'rows' 			=> 2,
-				'condition'		=> [ 'header_style' => [ '1', '3' ] ],
-			]
-		);
-
-		$this->add_control(
-			'header_notice',
-			[
-				'label' 		=> __( 'Header Notice', 'medilax' ),
-				'type' 			=> Controls_Manager::WYSIWYG,
-				'condition'		=> [ 'header_style' => [ '2' ] ],
-			]
-		);
+        $this->add_control(
+            'contact_phone',
+            [
+                'label' 		=> __( 'Contact Phone', 'haarmax' ),
+                'type' 			=> Controls_Manager::TEXTAREA,
+                'default' 		=> __( '020 7388 5619', 'haarmax' ),
+                'rows' 			=> 2,
+            ]
+        );
 
 		$repeater = new Repeater();
 
@@ -152,7 +133,6 @@ class Bizino_Header extends Widget_Base {
 						'social_icon' => __( 'Add Social Icon','medilax' ),
 					],
 				],
-				'condition'		=> [ 'header_style' => [ '2' ] ],
 			]
 		);
 
@@ -203,18 +183,6 @@ class Bizino_Header extends Widget_Base {
 					'is_external' 	=> true,
 					'nofollow' 		=> true,
 				],
-			]
-		);
-
-		$this->add_control(
-			'show_cart_count',
-			[
-				'label' 		=> __( 'Show Cart?', 'bizino' ),
-				'type' 			=> Controls_Manager::SWITCHER,
-				'label_on' 		=> __( 'Show', 'bizino' ),
-				'label_off' 	=> __( 'Hide', 'bizino' ),
-				'return_value' 	=> 'yes',
-				'default' 		=> 'yes',
 			]
 		);
 
@@ -295,7 +263,6 @@ class Bizino_Header extends Widget_Base {
 			[
 				'label'     => __( 'Menubar Styling', 'bizino' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
-				'condition'		=> [ 'show_top_bar' => [ 'yes'] ],
 			]
         );
 
@@ -307,7 +274,6 @@ class Bizino_Header extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .media-body a' => 'color: {{VALUE}}!important',
                 ],
-                'condition'		=> [ 'header_style' =>  ['two' ]  ],
 			]
         );
         $this->add_control(
@@ -318,7 +284,6 @@ class Bizino_Header extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .media-body a:hover' => 'color: {{VALUE}}!important',
                 ],
-                'condition'		=> [ 'header_style' =>  ['two' ]  ],
 			]
         );
         $this->add_group_control(
@@ -328,7 +293,6 @@ class Bizino_Header extends Widget_Base {
 				'name'      => 'phone_typography',
 				'label'     => __( 'Phone Typography', 'bizino' ),
                 'selector'  => '{{WRAPPER}} .media-body a',
-                'condition'		=> [ 'header_style' =>  ['two' ]  ],
 			]
         );
 
@@ -340,7 +304,6 @@ class Bizino_Header extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .phone-box .box-icon' => 'color: {{VALUE}}!important',
                 ],
-                'condition'		=> [ 'header_style' =>  ['two' ]  ],
 			]
         );
 
@@ -352,7 +315,6 @@ class Bizino_Header extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .phone-box .box-icon' => 'background-color: {{VALUE}}!important',
                 ],
-                'condition'		=> [ 'header_style' =>  ['two' ]  ],
 			]
         );
         $this->add_control(
@@ -364,7 +326,6 @@ class Bizino_Header extends Widget_Base {
 					'{{WRAPPER}} .phone-box .box-icon::after,
 					 {{WRAPPER}} .phone-box .box-icon::before' => 'background-color: {{VALUE}}!important',
                 ],
-                'condition'		=> [ 'header_style' =>  ['two' ]  ],
 			]
         );
 
@@ -442,163 +403,6 @@ class Bizino_Header extends Widget_Base {
 		);
 
 		$this->end_controls_section();
-
-		//-----------------------------------menu bottom notice Styling-------------------------------------//
-        $this->start_controls_section(
-			'notice_styling',
-			[
-				'label'     => __( 'Notice Box Styling', 'bizino' ),
-				'tab'       => Controls_Manager::TAB_STYLE,
-				'condition'		=> [ 'show_header_notice' => [ 'yes'] ],
-			]
-        );
-
-		$this->add_control(
-			'notice_color',
-			[
-				'label' 		=> __( 'Background Color', 'foodelio' ),
-				'type' 			=> Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .header-notice' => 'background-color: {{VALUE}}!important;',
-					'{{WRAPPER}} [data-overlay="title"]::before' => 'background-color: {{VALUE}}',
-				],
-			]
-		);
-
-        $this->end_controls_section();
-
-		//-----------------------------------wishlist Styling-------------------------------------//
-        $this->start_controls_section(
-			'wishlist_styling',
-			[
-				'label'     => __( 'Wishlist Styling', 'bizino' ),
-				'tab'       => Controls_Manager::TAB_STYLE,
-			]
-        );
-
-		$this->add_control(
-			'wishlist_icon_color',
-			[
-				'label' 		=> __( 'Wishlist Icon Color', 'foodelio' ),
-				'type' 			=> Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .wishlist_products_counter i' => 'color: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->add_control(
-			'wishlist_icon_color_hover',
-			[
-				'label' 		=> __( 'Wishlist Icon Color On Hover', 'foodelio' ),
-				'type' 			=> Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .wishlist_products_counter:hover i' => 'color: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->add_control(
-			'wishlist_icon_background_color',
-			[
-				'label' 		=> __( 'Wishlist Icon Background Color', 'foodelio' ),
-				'type' 			=> Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .wishlist_products_counter.icon-btn i' => 'background-color: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->add_control(
-			'wishlist_icon_background_color_hover',
-			[
-				'label' 		=> __( 'Wishlist Icon Background Color Hover', 'foodelio' ),
-				'type' 			=> Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .wishlist_products_counter.icon-btn:hover i' => 'background-color: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->add_control(
-			'wishlist_count_background',
-			[
-				'label' 		=> __( 'Wishlist Count Background Color', 'foodelio' ),
-				'type' 			=> Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .wishlist_products_counter .badge' => 'background-color: {{VALUE}}',
-				]
-			]
-		);
-
-		$this->end_controls_section();
-
-		//-----------------------------------wishlist Styling-------------------------------------//
-        $this->start_controls_section(
-			'cart_styling',
-			[
-				'label'     => __( 'Cart Styling', 'bizino' ),
-				'tab'       => Controls_Manager::TAB_STYLE,
-			]
-        );
-
-		$this->add_control(
-			'cart_icon_color',
-			[
-				'label' 		=> __( 'Cart Icon Color', 'foodelio' ),
-				'type' 			=> Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .cart-btn i' => 'color: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->add_control(
-			'cart_icon_hover_color',
-			[
-				'label' 		=> __( 'Cart Icon Hover Color', 'foodelio' ),
-				'type' 			=> Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .cart-btn:hover i' => 'color: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->add_control(
-			'cart_icon_backgroound_color',
-			[
-				'label' 		=> __( 'Cart Icon background Color', 'foodelio' ),
-				'type' 			=> Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .cart-btn i' => 'background-color: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->add_control(
-			'cart_icon_backgroound_hover_color',
-			[
-				'label' 		=> __( 'Cart Icon Background Hover Color', 'foodelio' ),
-				'type' 			=> Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .cart-btn:hover i' => 'background-color: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->add_control(
-			'cart_count_backgroound_color',
-			[
-				'label' 		=> __( 'Cart Count Background Color', 'foodelio' ),
-				'type' 			=> Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .cart-btn .badge' => 'background-color: {{VALUE}}',
-				],
-				'separator'		=> 'after',
-			]
-		);
-        $this->end_controls_section();
-
         /*-----------------------------------------button styling------------------------------------*/
 
 		$this->start_controls_section(
@@ -681,285 +485,29 @@ class Bizino_Header extends Widget_Base {
 
         $settings = $this->get_settings_for_display();
 
+        $location    	= $settings['location_text'];
+        $email    	= $settings['contact_email'];
+        $mobile    	= $settings['contact_phone'];
 
-        if( $settings['header_style'] == '1' ) {
-        	echo '<!--===================== Header Area =====================-->';
-	        echo '<div class="vs-header header-layout1">';
+        $email          = is_email( $email );
 
-                $mobile    	= $settings['contact_phone'];
-                $email    	= $settings['contact_email'];
+        $replace        = array(' ','-',' - ');
+        $with           = array('','','');
 
-                $email          = is_email( $email );
-
-                $replace        = array(' ','-',' - ');
-                $with           = array('','','');
-
-                $emailurl       = str_replace( $replace, $with, $email );
-                $mobileurl      = str_replace( $replace, $with, $mobile );
-
-                echo '<!-- Header Top Area -->';
-                echo '<div class="header-top py-15 d-none d-sm-block">';
-                    echo '<div class="container">';
-                        echo '<div class="row align-items-center justify-content-center justify-content-lg-between">';
-                            if( ! empty( $settings['location'] ) ){
-                                echo '<div class="col-sm-auto d-none d-lg-block">';
-									echo '<div class="header-info-list text-white">';
-	                                    echo '<ul>';
-	                                    echo '<li><i class="fal fa-map-marker-alt me-2"></i> <a href="'.esc_url( $settings['location'] ).'" class="text-reset">'.esc_html( $settings['location_text'] ).'</a></li>';
-										echo '</ul>';
-									echo '</div>';
-								echo '</div>';
-                            }
-                            echo '<div class="col-auto">';
-                                echo '<div class="header-info-list text-white">';
-                                    echo '<ul>';
-                                        if( ! empty( $mobile ) ){
-
-                                            echo '<li><i class="fas fa-phone-alt"></i>'.esc_html__('Phone:', 'bizino').' <a class="text-reset" href="'.esc_attr( 'tel:'.$mobileurl ).'">'.esc_html( $mobile ).'</a></li>';
-                                        }
-                                        if( ! empty( $email ) ){
-                                            echo '<li><i class="fal fa-envelope"></i>'.esc_html__('Email:', 'bizino').' <a class="text-reset" href="'.esc_attr( 'mailto:'.$emailurl ).'">'.esc_html( $email ).'</a></li>';
-                                        }
-
-                                    echo '</ul>';
-                                echo '</div>';
-                            echo '</div>';
-                        echo '</div>';
-                    echo '</div>';
-                echo '</div>';
-	            echo '<div class="sticky-wrapper">';
-	                echo '<div class="sticky-active">';
-	                   echo ' <!-- Main Menu Area -->';
-	                    echo '<div class="header-inner">';
-	                        echo '<div class="container">';
-	                            echo '<div class="row align-items-center justify-content-between">';
-	                                echo '<div class="col-7 col-sm-auto order-1">';
-	                                	if( ! empty( $settings['logo_image']['url'] ) ){
-			                            echo '<div class="header-logo py-2 py-lg-0">';
-			                                    echo '<a href="'.esc_url( home_url( '/' ) ).'">';
-			                                    echo bizino_img_tag( array(
-													'url'	=> esc_url( $settings['logo_image']['url'] ),
-													'class' => 'logo-img',
-												) );
-			                                    echo '</a>';
-			                             echo '</div>';
-				                        }
-	                                echo '</div>';
-	                                echo '<div class="col-auto order-3 order-sm-2">';
-	                                    echo '<nav class="main-menu menu-style1 d-none d-lg-block">';
-	                                        if( has_nav_menu('primary-menu') ) {
-	                                            wp_nav_menu( array(
-	                                            "theme_location"    => 'primary-menu',
-	                                            "container"         => '',
-	                                            "menu_class"        => ''
-	                                            ) );
-	                                        }
-	                                    echo '</nav>';
-	                                echo '</div>';
-	                                echo '<div class="col-5 col-sm-auto order-2 order-sm-3 text-end">';
-	                                    echo '<div class="header-btn">';
-	                                    	if( class_exists( 'woocommerce' ) && $settings['show_cart_count'] == 'yes' ){
-												global $woocommerce;
-												if( ! empty( $woocommerce->cart->cart_contents_count ) ){
-													$count = $woocommerce->cart->cart_contents_count;
-												}else{
-													$count = "0";
-												}
-		                                        echo '<a href="'.wc_get_cart_url().'" class="cart-icon me-4 me-lg-3 mr-xl-0 has-badge sideMenuToggler"><i class="fal fa-shopping-cart"></i><span class="badge">'.esc_html( $count ).'</span></a>';
-		                                    }
-		                                    if( ! empty( $settings['button_text'] ) ){
-		                                        echo '<a href="'.esc_url($settings['button_url']['url']).'" class="vs-btn d-none d-xl-inline-block">'.esc_html($settings['button_text']).'</a>';
-		                                    }
-	                                        echo '<button class="vs-menu-toggle d-inline-block d-lg-none"><i class="fas fa-bars"></i></button>';
-
-	                                    echo '</div>';
-	                                echo '</div>';
-	                            echo '</div>';
-	                        echo '</div>';
-	                    echo '</div>';
-	                echo '</div>';
-	            echo '</div>';
-	        echo '</div>';
-        }elseif( $settings['header_style'] == '2' ){
-        	echo '<div class="header-top-style2 bg-black d-none d-md-block">';
-		        echo '<div class="container">';
-		            echo '<div class="row justify-content-between align-items-center">';
-		                echo '<div class="col-auto">';
-		                    echo '<button type="button" class="hamburger-btn vs-menu-toggle">';
-		                        echo '<span class="bar">';
-		                            echo '<span class="inner"></span>';
-		                            echo '<span class="hidden"></span>';
-		                        echo '</span>';
-		                    echo '</button>';
-		                echo '</div>';
-		                if(!empty($settings['header_notice'])){
-			                echo '<div class="col-auto d-none d-md-block">';
-			                    echo '<p class="text-white mb-0">'.wp_kses_post( $settings['header_notice'] ).'</p>';
-			                echo '</div>';
-			            }
-
-		                if( class_exists( 'woocommerce' ) && $settings['show_cart_count'] == 'yes' ){
-							global $woocommerce;
-							if( ! empty( $woocommerce->cart->cart_contents_count ) ){
-								$count = $woocommerce->cart->cart_contents_count;
-							}else{
-								$count = "0";
-							}
-							echo '<div class="col-auto">';
-                            	echo '<a href="'.wc_get_cart_url().'" class="cart-icon text-white"><i class="fal fa-shopping-cart"></i><span class="badge bg-theme">'.esc_html( $count ).'</span></a>';
-                            echo '</div>';
-                        }
-		            echo '</div>';
-		        echo '</div>';
-		    echo '</div>';
-		    echo '<div class="vs-header header-layout2">';
-		        echo '<div class="header-transparent">';
-		            echo '<div class="container">';
-		                echo '<div class="row justify-content-between align-items-center">';
-		                    echo '<div class="col-auto d-none d-lg-block">';
-		                        echo '<div class="outline-social ">';
-		                            echo '<ul>';
-		                                foreach( $settings['social_icon_list'] as $social_icon ){
-
-											$social_target 		= $social_icon['icon_link']['is_external'] ? ' target="_blank"' : '';
-
-											$social_nofollow 	= $social_icon['icon_link']['nofollow'] ? ' rel="nofollow"' : '';
-
-			                            	echo '<li><a '.wp_kses_post( $social_target.$social_nofollow ).' href="'.esc_url( $social_icon['icon_link']['url'] ).'">';
-
-												\Elementor\Icons_Manager::render_icon( $social_icon['social_icon'], [ 'aria-hidden' => 'true' ] );
-
-											echo '</a></li>';
-										}
-		                            echo '</ul>';
-		                        echo '</div>';
-		                    echo '</div>';
-		                    echo '<div class="col-9 col-sm-auto">';
-		                    	if( ! empty( $settings['logo_image']['url'] ) ){
-		                            echo '<div class="header-logo">';
-		                                    echo '<a href="'.esc_url( home_url( '/' ) ).'">';
-		                                    echo bizino_img_tag( array(
-												'url'	=> esc_url( $settings['logo_image']['url'] ),
-											) );
-		                                    echo '</a>';
-		                             echo '</div>';
-			                        }
-		                    echo '</div>';
-		                    echo '<div class="col col-sm-auto text-end">';
-		                        echo '<button class="vs-menu-toggle d-inline-block d-md-none"><i class="fas fa-bars"></i></button>';
-		                        echo '<div class="header-btn d-none d-md-block">';
-			                        if( ! empty( $settings['button_text'] ) ){
-                                        echo '<a href="'.esc_url($settings['button_url']['url']).'" class="vs-btn outline-white">'.esc_html($settings['button_text']).'</a>';
-                                    }
-		                        echo '</div>';
-		                    echo '</div>';
-		                echo '</div>';
-		            echo '</div>';
-		        echo '</div>';
-		    echo '</div>';
-        }else{
-        	$mobile    	= $settings['contact_phone'];
-            $email    	= $settings['contact_email'];;
-
-            $email          = is_email( $email );
-
-            $replace        = array(' ','-',' - ');
-            $with           = array('','','');
-
-            $emailurl       = str_replace( $replace, $with, $email );
-            $mobileurl      = str_replace( $replace, $with, $mobile );
-
-        	echo '<div class="vs-header header-layout3">';
-		        echo '<!-- Header Top Area -->';
-		        echo '<div class="header-top py-15 d-none d-sm-block">';
-		            echo '<div class="container">';
-		                echo '<div class="row align-items-center justify-content-center justify-content-lg-between">';
-							if( ! empty( $settings['location'] ) ){
-								echo '<div class="col-sm-auto d-none d-lg-block">';
-									echo '<div class="header-info-list text-white">';
-										echo '<ul>';
-										echo '<li><i class="fal fa-map-marker-alt me-2"></i> <a href="'.esc_url( $settings['location'] ).'" class="text-reset">'.esc_html( $settings['location_text'] ).'</a></li>';
-										echo '</ul>';
-									echo '</div>';
-								echo '</div>';
-							}
-		                    echo '<div class="col-auto">';
-		                        echo '<div class="header-info-list text-white">';
-		                            echo '<ul>';
-										if( ! empty( $mobile ) ){
-										echo '<li><i class="fas fa-phone-alt"></i>'.esc_html__('Phone:', 'bizino').' <a class="text-reset" href="'.esc_attr( 'tel:'.$mobileurl ).'">'.esc_html( $mobile ).'</a></li>';
-										}
-										if( ! empty( $email ) ){
-										echo '<li><i class="fal fa-envelope"></i>'.esc_html__('Email:', 'bizino').' <a class="text-reset" href="'.esc_attr( 'mailto:'.$emailurl ).'">'.esc_html( $email ).'</a></li>';
-										}
-		                            echo '</ul>';
-		                        echo '</div>';
-		                    echo '</div>';
-		                echo '</div>';
-		            echo '</div>';
-		        echo '</div>';
-		        echo '<div class="sticky-wrapper">';
-		            echo '<div class="sticky-active">';
-		                echo '<!-- Main Menu Area -->';
-		                echo '<div class="header-inner-style2">';
-		                    echo '<div class="container py-3 py-lg-0">';
-		                        echo '<div class="row align-items-center justify-content-between">';
-		                            echo '<div class="col-9 col-sm-auto">';
-		                                if( ! empty( $settings['logo_image']['url'] ) ){
-			                            echo '<div class="header-logo">';
-			                                    echo '<a href="'.esc_url( home_url( '/' ) ).'">';
-				                                    echo bizino_img_tag( array(
-														'url'	=> esc_url( $settings['logo_image']['url'] ),
-														'class' => 'logo-img',
-													) );
-			                                    echo '</a>';
-			                             echo '</div>';
-				                        }
-		                            echo '</div>';
-		                            echo '<div class="col col-sm-auto text-end text-lg-start">';
-		                                echo '<nav class="main-menu menu-style1 d-none d-lg-block">';
-		                                   	if( has_nav_menu('primary-menu') ) {
-	                                            wp_nav_menu( array(
-	                                            "theme_location"    => 'primary-menu',
-	                                            "container"         => '',
-	                                            "menu_class"        => ''
-	                                            ) );
-	                                        }
-		                                echo '</nav>';
-		                                echo '<button class="vs-menu-toggle d-inline-block d-lg-none"><i class="fas fa-bars"></i></button>';
-		                            echo '</div>';
-		                            echo '<div class="col-auto d-none d-xl-block">';
-		                                echo '<div class="header-btn">';
-		                                    if( class_exists( 'woocommerce' ) && $settings['show_cart_count'] == 'yes' ){
-												global $woocommerce;
-												if( ! empty( $woocommerce->cart->cart_contents_count ) ){
-													$count = $woocommerce->cart->cart_contents_count;
-												}else{
-													$count = "0";
-												}
-		                                        echo '<a href="'.wc_get_cart_url().'" class="cart-icon me-4 me-lg-3 mr-xl-0 has-badge sideMenuToggler"><i class="fal fa-shopping-cart"></i><span class="badge">'.esc_html( $count ).'</span></a>';
-		                                    }
-		                                    if( ! empty( $settings['button_text'] ) ){
-		                                        echo '<a href="'.esc_url($settings['button_url']['url']).'" class="vs-btn d-none d-xl-inline-block">'.esc_html($settings['button_text']).'</a>';
-		                                    }
-		                                echo '</div>';
-		                            echo '</div>';
-		                        echo '</div>';
-		                    echo '</div>';
-		                echo '</div>';
-		            echo '</div>';
-		        echo '</div>';
-		    echo '</div>';
-        }
-        echo '<!--=======================Mobile Menu======================= -->';
-        echo '<div class="vs-menu-wrapper">';
-            echo '<div class="vs-menu-area text-center">';
-                echo '<button class="vs-menu-toggle"><i class="fal fa-times"></i></button>';
-
-                echo '<div class="mobile-logo">';
-                    echo bizino_theme_mobile_logo();
-                echo '</div>';
-                echo '<div class="vs-mobile-menu">';
+        $emailurl       = str_replace( $replace, $with, $email );
+        $mobileurl      = str_replace( $replace, $with, $mobile );
+        ?>
+        <!--==============================
+           Mobile Menu
+           ============================== -->
+        <div class="vs-menu-wrapper">
+            <div class="vs-menu-area text-center">
+                <button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
+                <div class="mobile-logo">
+                    <?php echo bizino_theme_mobile_logo();?>
+                </div>
+                <div class="vs-mobile-menu">
+                    <?php
                     if( has_nav_menu('mobile-menu') ) {
                         wp_nav_menu( array(
                             "theme_location"    => 'mobile-menu',
@@ -967,8 +515,341 @@ class Bizino_Header extends Widget_Base {
                             "menu_class"        => ''
                         ) );
                     }
-                echo '</div>';
-            echo '</div>';
-        echo '</div>';
+                    ?>
+                </div>
+            </div>
+        </div>
+        <?php
+        if( $settings['header_style'] == '1' ) {
+        ?>
+            <!--==============================
+                Header Area
+            ==============================-->
+            <header class="vs-header header-layout2">
+                <div class="header-top">
+                    <div class="container">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col d-none d-lg-block">
+                                <div class="header-links">
+                                    <ul>
+                                        <?php
+                                        if( ! empty( $email ) ){
+                                            echo '<li><i class="fal fa-envelope-open-text"></i><a class="text-reset" href="'.esc_attr( 'mailto:'.$emailurl ).'">'.esc_html( $email ).'</a></li>';
+                                        }
+                                        if( ! empty( $location ) ){
+
+                                            echo '<li><i class="far fa-map-marker-alt"></i>'.esc_html( $location ).'</li>';
+                                        }
+                                        ?>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="header-dropdown">
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i>English</a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                                        <li>
+                                            <a href="#">German</a>
+                                            <a href="#">French</a>
+                                            <a href="#">Italian</a>
+                                            <a href="#">Latvian</a>
+                                            <a href="#">Spanish</a>
+                                            <a href="#">Greek</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="header-social">
+                                    <span class="social-label">Get In Touch:</span>
+                                    <?php
+                                    foreach( $settings['social_icon_list'] as $social_icon ){
+
+                                        $social_target 		= $social_icon['icon_link']['is_external'] ? ' target="_blank"' : '';
+
+                                        $social_nofollow 	= $social_icon['icon_link']['nofollow'] ? ' rel="nofollow"' : '';
+
+                                        echo '<a '.wp_kses_post( $social_target.$social_nofollow ).' href="'.esc_url( $social_icon['icon_link']['url'] ).'">';
+
+                                        \Elementor\Icons_Manager::render_icon( $social_icon['social_icon'], [ 'aria-hidden' => 'true' ] );
+
+                                        echo '</a>';
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sticky-wrapper">
+                    <div class="sticky-active">
+                        <!-- Main Menu Area -->
+                        <div class="container">
+                            <div class="row align-items-center justify-content-between">
+                                <?php
+                                if( ! empty( $settings['logo_image']['url'] ) ){
+                                    echo '<div class="col-auto">
+                                            <div class="header-logo">';
+                                    echo '<a href="'.esc_url( home_url( '/' ) ).'">';
+                                        echo bizino_img_tag( array(
+                                            'url'	=> esc_url( $settings['logo_image']['url'] ),
+                                            'class' => 'logo-img',
+                                        ) );
+                                        echo '</a>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                }
+                                ?>
+                                <div class="col-auto col-xl text-xl-center">
+                                    <nav class="main-menu menu-style1 d-none d-lg-block">
+                                        <?php
+                                        if( has_nav_menu('primary-menu') ) {
+                                            wp_nav_menu( array(
+                                                "theme_location"    => 'primary-menu',
+                                                "container"         => '',
+                                                "menu_class"        => ''
+                                            ) );
+                                        }
+                                        ?>
+                                    </nav>
+                                    <button class="vs-menu-toggle d-inline-block d-lg-none"><i class="fal fa-bars"></i></button>
+                                </div>
+                                <?php
+                                if( ! empty( $mobile ) ){
+                                    echo '<div class="col-auto d-none d-xxl-block">
+                                           <a class="header-number" href="'.esc_attr( 'tel:'.$mobileurl ).'"><img src="assets/img/icon/phone-1-1.png" alt="Phone"> '.esc_html( $mobile ).'</a>
+                                        </div>';
+                                }
+                                ?>
+                                <?php
+                                if( ! empty( $settings['button_text'] ) ){
+                                    echo '<div class="col-auto d-none d-xl-block">
+                                            <a href="'.esc_url($settings['button_url']['url']).'" class="vs-btn">'.esc_html($settings['button_text']).'</a>
+                                          </div>';
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        <?php
+        } elseif( $settings['header_style'] == '2' ){
+        	?>
+            <!--==============================
+            Header Area
+            ==============================-->
+            <header class="vs-header header-layout3">
+                <div class="header-top">
+                    <div class="container">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col d-none d-lg-block">
+                                <div class="header-links">
+                                    <ul>
+                                        <?php
+                                        if( ! empty( $email ) ){
+                                            echo '<li><i class="fal fa-envelope-open-text"></i><a class="text-reset" href="'.esc_attr( 'mailto:'.$emailurl ).'">'.esc_html( $email ).'</a></li>';
+                                        }
+                                        if( ! empty( $location ) ){
+
+                                            echo '<li><i class="far fa-map-marker-alt"></i>'.esc_html( $location ).'</li>';
+                                        }
+                                        ?>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="header-dropdown">
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i>English</a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                                        <li>
+                                            <a href="#">German</a>
+                                            <a href="#">French</a>
+                                            <a href="#">Italian</a>
+                                            <a href="#">Latvian</a>
+                                            <a href="#">Spanish</a>
+                                            <a href="#">Greek</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="header-social">
+                                    <span class="social-label">Get In Touch:</span>
+                                    <?php
+                                    foreach( $settings['social_icon_list'] as $social_icon ){
+
+                                        $social_target 		= $social_icon['icon_link']['is_external'] ? ' target="_blank"' : '';
+
+                                        $social_nofollow 	= $social_icon['icon_link']['nofollow'] ? ' rel="nofollow"' : '';
+
+                                        echo '<a '.wp_kses_post( $social_target.$social_nofollow ).' href="'.esc_url( $social_icon['icon_link']['url'] ).'">';
+
+                                        \Elementor\Icons_Manager::render_icon( $social_icon['social_icon'], [ 'aria-hidden' => 'true' ] );
+
+                                        echo '</a>';
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sticky-wrapper">
+                    <div class="sticky-active">
+                        <div class="menu-area">
+                            <!-- Main Menu Area -->
+                            <div class="container">
+                                <div class="row align-items-center justify-content-between">
+                                    <?php
+                                    if( ! empty( $settings['logo_image']['url'] ) ){
+                                        echo '<div class="col-auto">
+                                            <div class="header-logo">';
+                                        echo '<a href="'.esc_url( home_url( '/' ) ).'">';
+                                        echo bizino_img_tag( array(
+                                            'url'	=> esc_url( $settings['logo_image']['url'] ),
+                                            'class' => 'logo-img',
+                                        ) );
+                                        echo '</a>';
+                                        echo '</div>';
+                                        echo '</div>';
+                                    }
+                                    ?>
+                                    <div class="col-auto col-xl text-xl-center">
+                                        <nav class="main-menu menu-style2 d-none d-lg-block">
+                                            <?php
+                                            if( has_nav_menu('primary-menu') ) {
+                                                wp_nav_menu( array(
+                                                    "theme_location"    => 'primary-menu',
+                                                    "container"         => '',
+                                                    "menu_class"        => ''
+                                                ) );
+                                            }
+                                            ?>
+                                        </nav>
+                                        <button class="vs-menu-toggle d-inline-block d-lg-none"><i class="fal fa-bars"></i></button>
+                                    </div>
+                                    <?php
+                                    if( ! empty( $mobile ) ){
+                                        echo '<div class="col-auto d-none d-xxl-block">
+                                           <a class="header-number" href="'.esc_attr( 'tel:'.$mobileurl ).'"><img src="assets/img/icon/phone-1-1.png" alt="Phone"> '.esc_html( $mobile ).'</a>
+                                        </div>';
+                                    }
+                                    ?>
+                                    <?php
+                                    if( ! empty( $settings['button_text'] ) ){
+                                        echo '<div class="col-auto d-none d-xl-block">
+                                            <a href="'.esc_url($settings['button_url']['url']).'" class="vs-btn">'.esc_html($settings['button_text']).'</a>
+                                          </div>';
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <?php
+        } else {
+         ?>
+            <!--==============================
+                Header Area
+            ==============================-->
+            <header class="vs-header header-layout4">
+                <div class="header-top">
+                    <div class="container">
+                        <div class="row justify-content-between justify-content-xl-end align-items-center">
+                            <div class="col-auto">
+                                <div class="header-dropdown">
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i>English</a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                                        <li>
+                                            <a href="#">German</a>
+                                            <a href="#">French</a>
+                                            <a href="#">Italian</a>
+                                            <a href="#">Latvian</a>
+                                            <a href="#">Spanish</a>
+                                            <a href="#">Greek</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="header-social">
+                                    <span class="social-label">Get In Touch:</span>
+                                    <?php
+                                    foreach( $settings['social_icon_list'] as $social_icon ){
+
+                                        $social_target 		= $social_icon['icon_link']['is_external'] ? ' target="_blank"' : '';
+
+                                        $social_nofollow 	= $social_icon['icon_link']['nofollow'] ? ' rel="nofollow"' : '';
+
+                                        echo '<a '.wp_kses_post( $social_target.$social_nofollow ).' href="'.esc_url( $social_icon['icon_link']['url'] ).'">';
+
+                                        \Elementor\Icons_Manager::render_icon( $social_icon['social_icon'], [ 'aria-hidden' => 'true' ] );
+
+                                        echo '</a>';
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sticky-wrapper">
+                    <div class="sticky-active">
+                        <div class="menu-area">
+                            <!-- Main Menu Area -->
+                            <div class="container">
+                                <div class="row align-items-center justify-content-between">
+                                    <?php
+                                    if( ! empty( $settings['logo_image']['url'] ) ){
+                                        echo '<div class="col-auto">
+                                            <div class="header-logo">';
+                                        echo '<a href="'.esc_url( home_url( '/' ) ).'">';
+                                        echo bizino_img_tag( array(
+                                            'url'	=> esc_url( $settings['logo_image']['url'] ),
+                                            'class' => 'logo-img',
+                                        ) );
+                                        echo '</a>';
+                                        echo '</div>';
+                                        echo '</div>';
+                                    }
+                                    ?>
+                                    <div class="col-auto col-xl text-xl-center">
+                                        <nav class="main-menu menu-style3 d-none d-lg-block">
+                                            <?php
+                                            if( has_nav_menu('primary-menu') ) {
+                                                wp_nav_menu( array(
+                                                    "theme_location"    => 'primary-menu',
+                                                    "container"         => '',
+                                                    "menu_class"        => ''
+                                                ) );
+                                            }
+                                            ?>
+                                        </nav>
+                                        <button class="vs-menu-toggle d-inline-block d-lg-none"><i class="fal fa-bars"></i></button>
+                                    </div>
+                                    <?php
+                                    if( ! empty( $mobile ) ){
+                                        echo '<div class="col-auto d-none d-xxl-block">
+                                           <a class="header-number" href="'.esc_attr( 'tel:'.$mobileurl ).'"><img src="assets/img/icon/phone-1-1.png" alt="Phone"> '.esc_html( $mobile ).'</a>
+                                        </div>';
+                                    }
+                                    ?>
+                                    <?php
+                                    if( ! empty( $settings['button_text'] ) ){
+                                        echo '<div class="col-auto d-none d-xl-block">
+                                            <a href="'.esc_url($settings['button_url']['url']).'" class="vs-btn">'.esc_html($settings['button_text']).'</a>
+                                          </div>';
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        <?php }
 	}
 }
