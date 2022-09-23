@@ -853,3 +853,4 @@ class Bizino_Header extends Widget_Base {
         <?php }
 	}
 }
+\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Header() );

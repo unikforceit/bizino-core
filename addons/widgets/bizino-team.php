@@ -103,6 +103,48 @@ class Bizino_Team_Widget extends Widget_Base{
 				],
 			]
         );
+        $repeater->add_control(
+            'fb_link',
+            [
+                'label' 		=> esc_html__( 'Facebook Link', 'bizino' ),
+                'type' 			=> Controls_Manager::URL,
+                'placeholder' 	=> esc_html__( 'https://your-link.com', 'bizino' ),
+                'show_external' => true,
+                'default' 		=> [
+                    'url' 			=> '#',
+                    'is_external' 	=> false,
+                    'nofollow' 		=> false,
+                ],
+            ]
+        );
+        $repeater->add_control(
+            'twitter_link',
+            [
+                'label' 		=> esc_html__( 'Twitter Link', 'bizino' ),
+                'type' 			=> Controls_Manager::URL,
+                'placeholder' 	=> esc_html__( 'https://your-link.com', 'bizino' ),
+                'show_external' => true,
+                'default' 		=> [
+                    'url' 			=> '#',
+                    'is_external' 	=> false,
+                    'nofollow' 		=> false,
+                ],
+            ]
+        );
+        $repeater->add_control(
+            'google_link',
+            [
+                'label' 		=> esc_html__( 'Google Link', 'bizino' ),
+                'type' 			=> Controls_Manager::URL,
+                'placeholder' 	=> esc_html__( 'https://your-link.com', 'bizino' ),
+                'show_external' => true,
+                'default' 		=> [
+                    'url' 			=> '#',
+                    'is_external' 	=> false,
+                    'nofollow' 		=> false,
+                ],
+            ]
+        );
 		$this->add_control(
 			'team_members',
 			[
@@ -115,128 +157,6 @@ class Bizino_Team_Widget extends Widget_Base{
 					],
 				],
 				'title_field' 	=> '{{{ name }}}',
-				'condition'		=> [ 'team_style' =>  '1' ],
-			]
-		);
-
-		/*-----------------------------------------style 2 Control ------------------------------------*/
-
-		$repeater = new Repeater();
-
-		$repeater->add_control(
-			'name', [
-				'label' 		=> __( 'Name', 'bizino' ),
-				'type' 			=> Controls_Manager::TEXTAREA,
-				'default' 		=> __( 'Safe Cleaning Supplies' , 'bizino' ),
-				'rows' 			=> 2,
-				'label_block' 	=> true,
-			]
-        );
-        $repeater->add_control(
-			'team_icon',
-			[
-				'label' 		=> esc_html__( 'Team Icon', 'bizino' ),
-				'type' 			=> Controls_Manager::MEDIA,
-				'default' => [
-                    'url' => plugins_url( 'images/team-icon.png', __FILE__ )
-                ],
-			]
-        );
-		$repeater->add_control(
-			'designation', [
-				'label' 		=> __( 'Designation', 'bizino' ),
-				'type' 			=> Controls_Manager::TEXT,
-				'default' 		=> __( 'Customer' , 'bizino' ),
-				'label_block' 	=> true,
-			]
-        );
-        $repeater->add_control(
-			'phone', [
-				'label' 		=> __( 'Contact Number', 'bizino' ),
-				'type' 			=> Controls_Manager::TEXT,
-				'default' 		=> __( '020 7388 5619' , 'bizino' ),
-				'label_block' 	=> true,
-			]
-        );
-        $repeater->add_control(
-			'team_image',
-			[
-				'label' 		=> esc_html__( 'Team Image', 'bizino' ),
-				'type' 			=> Controls_Manager::MEDIA,
-				'default' 		=> [
-					'url' => Utils::get_placeholder_image_src(),
-				],
-			]
-        );
-        $repeater->add_control(
-			'fb_link',
-			[
-				'label' 		=> esc_html__( 'Facebook Link', 'bizino' ),
-				'type' 			=> Controls_Manager::URL,
-				'placeholder' 	=> esc_html__( 'https://your-link.com', 'bizino' ),
-				'show_external' => true,
-				'default' 		=> [
-					'url' 			=> '#',
-					'is_external' 	=> false,
-					'nofollow' 		=> false,
-				],
-			]
-		);
-		$repeater->add_control(
-			'twitter_link',
-			[
-				'label' 		=> esc_html__( 'Twitter Link', 'bizino' ),
-				'type' 			=> Controls_Manager::URL,
-				'placeholder' 	=> esc_html__( 'https://your-link.com', 'bizino' ),
-				'show_external' => true,
-				'default' 		=> [
-					'url' 			=> '#',
-					'is_external' 	=> false,
-					'nofollow' 		=> false,
-				],
-			]
-		);
-		$repeater->add_control(
-			'google_link',
-			[
-				'label' 		=> esc_html__( 'Google Link', 'bizino' ),
-				'type' 			=> Controls_Manager::URL,
-				'placeholder' 	=> esc_html__( 'https://your-link.com', 'bizino' ),
-				'show_external' => true,
-				'default' 		=> [
-					'url' 			=> '#',
-					'is_external' 	=> false,
-					'nofollow' 		=> false,
-				],
-			]
-		);
-		$repeater->add_control(
-			'profile_link',
-			[
-				'label' 		=> esc_html__( 'Profile Url?', 'bizino' ),
-				'type' 			=> Controls_Manager::URL,
-				'placeholder' 	=> esc_html__( 'https://your-link.com', 'bizino' ),
-				'show_external' => true,
-				'default' 		=> [
-					'url' 			=> '#',
-					'is_external' 	=> false,
-					'nofollow' 		=> false,
-				],
-			]
-		);
-		$this->add_control(
-			'team_members_v2',
-			[
-				'label' 		=> __( 'Team Member', 'bizino' ),
-				'type' 			=> Controls_Manager::REPEATER,
-				'fields' 		=> $repeater->get_controls(),
-				'default' 		=> [
-					[
-						'title' 		=> __( 'Your Name', 'bizino' ),
-					],
-				],
-				'title_field' 	=> '{{{ name }}}',
-				'condition'		=> [ 'team_style' =>  '2' ],
 			]
 		);
 		
@@ -465,104 +385,148 @@ class Bizino_Team_Widget extends Widget_Base{
 	protected function render() {
 
 		$settings = $this->get_settings_for_display();
-		echo '<!-----------------------Start Team Area----------------------->';
-		if( $settings['team_style'] == '1' ){
-			echo '<div class="vs-team-wrapper">';
-		        echo '<div class="container">';
-		            echo '<div class="row">';
-		                foreach( $settings['team_members'] as $data ) {
-		                	$link = $data['profile_link']['url'] ? $data['profile_link']['url'] : '#';
-		                	$mobile = $data['phone'];
+        if( $settings['team_style'] == '1' ){
+        ?>
+            <!--==============================
+            Team Area
+            ==============================-->
+            <section class=" space-top space-extra-bottom">
+                <div class="container">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-xl-7">
+                            <div class="title-area">
+                                <div class="sec-pills">
+                                    <div class="pill"></div>
+                                    <div class="pill"></div>
+                                    <div class="pill"></div>
+                                </div>
+                                <span class="sec-subtitle">Team Members</span>
+                                <h2 class="sec-title">Meet Our Experts</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row team-wrap1 vs-carousel" data-slide-show="4" data-lg-slide-show="3" data-md-slide-show="2">
+                        <?php
+                            foreach( $settings['team_members'] as $data ) {
+                                $link = $data['profile_link']['url'] ? $data['profile_link']['url'] : '#';
+                                $mobile = $data['phone'];
 
-		                	$replace        = array(' ','-',' - ');
-				            $with           = array('','','');
-				            $mobileurl      = str_replace( $replace, $with, $mobile );
+                                $replace        = array(' ','-',' - ');
+                                $with           = array('','','');
+                                $mobileurl      = str_replace( $replace, $with, $mobile );
+                        ?>
+                            <div class="col-xl-3 team-zigzag">
+                                <div class="team-style1">
+                                    <?php
+                                    if( ! empty( $data['team_image']['url'] ) ){
+                                        echo '<div class="team-img">
+                                                <a class="text-inherit" href="'.esc_url($link).'">';
+                                                echo bizino_img_tag( array(
+                                                    'url'       => esc_url( $data['team_image']['url'] ),
+                                                    'class'  	=> '',
+                                                ) );
+                                        echo '</a>
+                                            </div>';
+                                    }
+                                    ?>
+                                    <div class="team-content">
+                                        <?php
+                                        if( ! empty( $data['name']) ){
+                                            echo '<h3 class="team-name h5"><a class="text-inherit" href="'.esc_url($link).'">'.esc_html($data['name']).'</a></h3>';
+                                        }
+                                        if( ! empty( $data['designation']) ){
+                                            echo '<p class="team-degi">'.esc_html($data['designation']).'</p>';
+                                        }
+                                        if( ! empty( $mobile ) ){
+                                            echo '<a href="'.esc_attr( 'tel:'.$mobileurl ).'"><img src="assets/img/icon/phone-1-2.png" alt="image">'.esc_html($mobile).'</a>';
+                                        }
+                                        ?>
+                                    </div>
+                                    <div class="team-social">
+                                        <?php
+                                        if(!empty($data['twitter_link']['url'])){
+                                            echo '<a href="'.esc_url($data['twitter_link']['url']).'"><i class="fab fa-twitter"></i></a>';
+                                        }
+                                        if(!empty($data['google_link']['url'])){
+                                            echo '<a href="'.esc_url($data['google_link']['url']).'"><i class="fab fa-google"></i></a>';
+                                        }
+                                        if(!empty($data['fb_link']['url'])){
+                                            echo '<a href="'.esc_url($data['fb_link']['url']).'"><i class="fab fa-facebook-f"></i></a>';
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
+            </section>
+        <?php
+        }else {
+            ?>
+            <!--==============================
+           Team Area
+           ==============================-->
+            <section class=" space-top space-extra-bottom" data-bg-src="assets/img/bg/team-bg-2-1.jpg">
+                <div class="container">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-lg-8">
+                            <div class="title-area">
+                                <div class="sec-pills">
+                                    <div class="pill"></div>
+                                    <div class="pill"></div>
+                                    <div class="pill"></div>
+                                </div>
+                                <span class="sec-subtitle2">Meet Our Experts</span>
+                                <h2 class="sec-title">Company Experts</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row vs-carousel" data-slide-show="3" data-md-slide-show="2">
+                    <?php
+                    foreach( $settings['team_members'] as $data ) {
+                        $link = $data['profile_link']['url'] ? $data['profile_link']['url'] : '#';
+                        $mobile = $data['phone'];
 
-			                echo '<div class="col-sm-6 col-lg-4 team-grid mb-30">';
-			                	if( ! empty( $data['team_image']['url'] ) ){
-				                   	echo '<div class="team-img">';
-				                   		echo bizino_img_tag( array(
-					                            'url'       => esc_url( $data['team_image']['url'] ),
-					                            'class'  	=> 'w-100',
-					                        ) );
-				                    echo '</div>';
-				                }
-			                    echo '<div class="team-content">';
-			                    	if( ! empty( $data['name']) ){
-				                        echo '<h3 class="team-name"><a class="text-inherit" href="'.esc_url($link).'">'.esc_html($data['name']).'</a></h3>';
-				                    }
-				                    if( ! empty( $data['designation']) ){
-				                        echo '<p class="team-degi">'.esc_html($data['designation']).'</p>';
-				                    }
-				                    if( ! empty( $mobile ) ){
-				                        echo '<span class="team-number"><i class="fal fa-phone-alt"></i> <a href="'.esc_attr( 'tel:'.$mobileurl ).'">'.esc_html($mobile).'</a></span>';
-				                    }
-			                    echo '</div>';
-			                echo '</div>';
-		                }
-		            echo '</div>';
-		        echo '</div>';
-		    echo '</div>';
-		}else{
-			echo '<section class="vs-team-wrapper">';
-		        echo '<div class="container">';
-		            echo '<div class="row gx-60 vs-carousel">';
-		            	foreach( $settings['team_members_v2'] as $data ) {
-		            		$link = $data['profile_link']['url'] ? $data['profile_link']['url'] : '#';
-		            		$mobile = $data['phone'];
-
-		                	$replace        = array(' ','-',' - ');
-				            $with           = array('','','');
-				            $mobileurl      = str_replace( $replace, $with, $mobile );
-			                echo '<div class="col-xl-4">';
-			                    echo '<div class="team-masked">';
-			                        echo '<div class="team-header">';
-			                        	if( ! empty( $data['team_image']['url'] ) ){
-				                            echo '<div class="team-img" data-mask-src="' . esc_url( plugins_url( 'images/team-mask.png', __FILE__ ) ) . ' ">';
-				                                echo bizino_img_tag( array(
-						                            'url'       => esc_url( $data['team_image']['url'] ),
-						                            'class'  	=> 'w-100',
-						                        ) );
-				                            echo '</div>';
-				                        }
-			                            echo '<div class="team-links">';
-			                                echo '<a href="'.esc_url( '#' ).'" class="team-toggler-btn">';
-			                                    echo '<span class="default">';
-			                                    	echo '<i class="fal fa-share-alt"></i>';
-			                                    echo '</span>';
-			                                    echo '<span class="hidden"><i class="far fa-times"></i></span>';
-			                                echo '</a>';
-			                                echo '<div class="team-social">';
-			                                	if(!empty($data['twitter_link']['url'])){
-			                                    	echo '<a href="'.esc_url($data['twitter_link']['url']).'"><i class="fab fa-twitter"></i></a>';
-			                                	}
-			                                	if(!empty($data['google_link']['url'])){
-			                                    	echo '<a href="'.esc_url($data['google_link']['url']).'"><i class="fab fa-google"></i></a>';
-			                                    }
-			                                    if(!empty($data['fb_link']['url'])){
-			                                    	echo '<a href="'.esc_url($data['fb_link']['url']).'"><i class="fab fa-facebook-f"></i></a>';
-			                                    }
-			                                echo '</div>';
-			                            echo '</div>';
-			                        echo '</div>';
-			                        echo '<div class="team-content">';
-			                        	if(!empty($data['name'])){
-				                            echo '<h3 class="team-name"><a class="text-inherit" href="'.esc_url($link).'">'.esc_html($data['name']).'</a></h3>';
-				                        }
-				                        if( ! empty( $data['designation']) ){
-					                        echo '<p class="team-degi">'.esc_html($data['designation']).'</p>';
-					                    }
-					                    if( ! empty( $mobile ) ){
-					                        echo '<span class="team-number"><i class="fal fa-phone-alt"></i> <a class="text-inherit" href="'.esc_attr( 'tel:'.$mobileurl ).'">'.esc_html($mobile).'</a></span>';
-					                    }
-			                        echo '</div>';
-			                    echo '</div>';
-			                echo '</div>';
-			            }
-		            echo '</div>';
-		        echo '</div>';
-		    echo '</section>';
-		}
-		echo '<!-----------------------End Team Area----------------------->';
+                        $replace        = array(' ','-',' - ');
+                        $with           = array('','','');
+                        $mobileurl      = str_replace( $replace, $with, $mobile );
+                        ?>
+                        <div class="col-xl-4">
+                            <div class="team-style2">
+                                <?php
+                                if( ! empty( $data['team_image']['url'] ) ){
+                                    echo '<div class="team-img">
+                                                <a href="'.esc_url($link).'">';
+                                                    echo bizino_img_tag( array(
+                                                        'url'       => esc_url( $data['team_image']['url'] ),
+                                                        'class'  	=> '',
+                                                    ) );
+                                            echo '</a>
+                                            </div>';
+                                }
+                                ?>
+                                <div class="team-content">
+                                    <?php
+                                    if( ! empty( $data['designation']) ){
+                                        echo '<p class="team-degi">'.esc_html($data['designation']).'</p>';
+                                    }
+                                    if( ! empty( $data['name']) ){
+                                        echo '<h3 class="team-name"><a class="text-inherit" href="'.esc_url($link).'">'.esc_html($data['name']).'</a></h3>';
+                                    }
+                                    if( ! empty( $mobile ) ){
+                                        echo '<div class="team-number"><a href="'.esc_attr( 'tel:'.$mobileurl ).'"><img src="assets/img/icon/phone-1-2.png" alt="image">'.esc_html($mobile).'</a></div>';
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
+                    </div>
+                </div>
+            </section>
+            <?php
+        }
 	}
 }
+\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Team_Widget() );
