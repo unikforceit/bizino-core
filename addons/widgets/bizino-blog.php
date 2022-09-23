@@ -45,6 +45,7 @@ class Bizino_Blog_Post extends Widget_Base {
 				'options' 	=> [
 					'1'  		=> __( 'Style One', 'bizino' ),
 					'2' 		=> __( 'Style Two', 'bizino' ),
+					'3' 		=> __( 'Style Three', 'bizino' ),
 				],
 			]
 		);
@@ -142,7 +143,6 @@ class Bizino_Blog_Post extends Widget_Base {
 			[
 				'label' 		=> __( 'Slider Control', 'bizino' ),
 				'tab' 			=> Controls_Manager::TAB_CONTENT,
-				'condition' 	=> [ 'blog_style' => '1' ]
 			]
 		);
 		$this->add_control(
@@ -433,68 +433,178 @@ class Bizino_Blog_Post extends Widget_Base {
 
         if( $blogpost->have_posts() ) {
 			if( $settings['blog_style'] == '1' ){
-				echo '<!-- blog Area -->';
-				echo '<section class="vs-blog-wrapper">';
-				  	echo '<div class="container">';
-				    	echo '<div '.$this->get_render_attribute_string('wrapper').'>';
-							while( $blogpost->have_posts() ) {
-								$blogpost->the_post();
-								echo '<div class="col-xl-4">';
-				                    echo '<div class="vs-blog blog-card">';
-				                        echo '<div class="blog-img">';
-				                            the_post_thumbnail( 'home-slider-blog-image', array( 'class' => 'w-100' ) );
-
-				                        echo '</div>';
-				                        echo '<div class="blog-content">';
-										echo '<div class="meta-box">';
-										   echo '<a href="'.esc_url( bizino_blog_date_permalink() ).'"><i class="far fa-calendar-alt"></i><time datetime="'.esc_attr( get_the_date( DATE_W3C ) ).'">'.esc_html( get_the_date() ).'</time></a>';
-										   echo '<a href="'.esc_url( get_author_posts_url( get_the_author_meta('ID') ) ).'"><i class="far fa-user"></i>'.esc_html( get_the_author() ).'</a>';
-									   echo '</div>';
-											if( get_the_title() ){
-												echo '<!-- Post Title -->';
-												echo '<h3 class="blog-title"><a href="'.esc_url( get_permalink() ).'">'.esc_html( wp_trim_words( get_the_title( ), $settings['title_count'], '' ) ).'</a></h3>';
-												echo '<!-- End Post Title -->';
-											}
-				                            echo '<p class="blog-text">'.esc_html( wp_trim_words( get_the_content( ), $settings['excerpt_count'], '' ) ).'</p>';
-											echo '<a href="'.esc_url( get_permalink() ).'" class="link-btn">'.esc_html__( 'Read More', 'bizino' ).'<i class="far fa-long-arrow-right"></i></a>';
-				                        echo '</div>';
-				                    echo '</div>';
-				                echo '</div>';
-						  	}
-							wp_reset_postdata();
-				    	echo '</div><!-- .row END -->';
-				  	echo '</div><!-- .container END -->';
-				echo '</section>';
-				echo '<!-- blog Area end -->';
-			}else{
-				echo '<section class="vs-blog-wrapper">';
-			        echo '<div class="container">';
-			            echo '<div class="row gx-lg-0 align-items-start">';
-							while( $blogpost->have_posts() ) {
-								$blogpost->the_post();
-					                echo '<div class="col-md-6 blog-steped">';
-					                    echo '<div class="vs-blog">';
-					                        echo '<div class="blog-img">';
-					                            echo '<a href="'.esc_url( get_permalink() ).'">';
-													the_post_thumbnail( 'home-slider-blog-image-two', array( 'class' => 'w-100' ) );
-												echo '</a>';
-					                            echo '<a href="'.esc_url( bizino_blog_date_permalink() ).'" class="blog-date">'.esc_html( get_the_date( 'd M, Y' ) ).'</a>';
-					                        echo '</div>';
-					                        echo '<div class="blog-content">';
-					                            echo '<div class="post-author">';
-					                                echo esc_html__( 'Posted By ', 'bizino' );
-													echo '<a href="'.esc_url( get_author_posts_url( get_the_author_meta('ID') ) ).'">'.esc_html( get_the_author() ).'</a>';
-					                            echo '</div>';
-					                            echo '<h3 class="blog-title"><a href="'.esc_url( get_permalink() ).'">'.esc_html( wp_trim_words( get_the_title( ), $settings['title_count'], '' ) ).'</a></h3>';
-					                        echo '</div>';
-					                    echo '</div>';
-					                echo '</div>';
-								}
-							wp_reset_postdata();
-			            echo '</div>';
-			        echo '</div>';
-			    echo '</section>';
-			}
+                ?>
+                <!--==============================
+                Blog Area
+                ==============================-->
+                <section class="vs-blog-wrapper space" data-bg-src="assets/img/bg/blog-bg-1-1.jpg">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-7 text-center">
+                                <div class="title-area">
+                                    <div class="sec-pills">
+                                        <div class="pill"></div>
+                                        <div class="pill"></div>
+                                        <div class="pill"></div>
+                                    </div>
+                                    <span class="sec-subtitle">Blog & News</span>
+                                    <h2 class="sec-title">Get Latest Updates</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row vs-carousel" data-slide-show="3" data-lg-slide-show="2" data-md-slide-show="2">
+                            <?php
+                                while( $blogpost->have_posts() ) {
+                                    $blogpost->the_post();
+                            ?>
+                                <div class="col-xl-4">
+                                <div class="vs-blog blog-style1">
+                                    <div class="blog-img">
+                                        <a href="<?php echo esc_url( bizino_blog_date_permalink() );?>"><?php the_post_thumbnail( 'home-slider-blog-image', array( 'class' => 'w-100' ) );?></a>
+                                    </div>
+                                    <div class="blog-content">
+                                        <div class="blog-category">
+                                            <a href="blog.html">Business</a>
+                                        </div>
+                                        <?php
+                                        if( get_the_title() ){
+                                            echo '<h3 class="blog-title h5"><a href="'.esc_url( get_permalink() ).'">'.esc_html( wp_trim_words( get_the_title( ), $settings['title_count'], '' ) ).'</a></h3>';
+                                        }
+                                        ?>
+                                        <div class="blog-bottom">
+                                            <?php echo '<div class="blog-avater">'.get_avatar(get_the_author_meta('ID'), 60).'</div>';?>
+                                            <div class="media-body">
+                                                <?php echo '<a href="'.esc_url( bizino_blog_date_permalink() ).'" class="blog-date">'.esc_html( get_the_date( 'd M, Y' ) ).'</a>'; ?>
+                                                <?php echo '<p class="blog-writter">'.esc_html( get_the_author() ).'</p>';?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php } wp_reset_postdata(); ?>
+                        </div>
+                        <div class="text-center mt-20">
+                            <a href="<?php echo esc_url( get_post_type_archive_link('post') );?>" class="vs-btn">View All News</a>
+                        </div>
+                    </div>
+                </section>
+                <?php
+			}elseif ( $settings['blog_style'] == '2' ){
+				?>
+                <!--==============================
+                   Blog Area
+                   ==============================-->
+                <section class="vs-blog-wrapper bg-smoke space" id="blog2">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-7 text-center">
+                                <div class="title-area">
+                                    <div class="sec-pills">
+                                        <div class="pill"></div>
+                                        <div class="pill"></div>
+                                        <div class="pill"></div>
+                                    </div>
+                                    <span class="sec-subtitle">Blog & News</span>
+                                    <h2 class="sec-title">Get Latest Updates</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row vs-carousel" data-slide-show="3" data-lg-slide-show="2" data-md-slide-show="2">
+                        <?php
+                        while( $blogpost->have_posts() ) {
+                            $blogpost->the_post();
+                            ?>
+                            <div class="col-xl-4">
+                                <div class="vs-blog blog-style2">
+                                    <div class="blog-img">
+                                        <a href="<?php echo esc_url( get_the_permalink() );?>"><?php the_post_thumbnail( 'home-slider-blog-image', array( 'class' => 'w-100' ) );?></a>
+                                    </div>
+                                    <div class="blog-body">
+                                        <div class="blog-date">
+                                            <?php echo '<a href="'.esc_url( bizino_blog_date_permalink() ).'">'.esc_html( get_the_date( 'd M, Y' ) ).'</a>'; ?>
+                                        </div>
+                                        <div class="blog-content">
+                                            <div class="blog-meta">
+                                                <?php echo '<a href="'.esc_url( get_author_posts_url( get_the_author_meta('ID') ) ).'"><i class="fas fa-user"></i>'.esc_html( get_the_author() ).'</a>';?>
+                                                <a href="<?php echo esc_url( get_permalink().'#respond' );?>"><i class="fad fa-comment-alt-lines"></i><?php echo esc_html( get_comments_number() );?> Comments</a>
+                                            </div>
+                                            <?php
+                                            if( get_the_title() ){
+                                                echo '<h3 class="blog-title h5"><a href="'.esc_url( get_permalink() ).'">'.esc_html( wp_trim_words( get_the_title( ), $settings['title_count'], '' ) ).'</a></h3>';
+                                            }
+                                            ?>
+                                            <?php echo '<a href="'.esc_url( get_the_permalink() ).'" class="icon-btn style4"><i class="far fa-long-arrow-right"></i></a>'; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } wp_reset_postdata(); ?>
+                        </div>
+                        <div class="text-center mt-20">
+                            <a href="<?php echo esc_url( get_post_type_archive_link('post') );?>" class="vs-btn">View All News</a>
+                        </div>
+                    </div>
+                </section>
+                <?php
+			} else {
+                ?>
+                <!--==============================
+                Blog Area
+                ==============================-->
+                <section class="vs-blog-wrapper  space-top space-bottom">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-7 text-center">
+                                <div class="title-area">
+                                    <div class="sec-pills">
+                                        <div class="pill"></div>
+                                        <div class="pill"></div>
+                                        <div class="pill"></div>
+                                    </div>
+                                    <span class="sec-subtitle">Blog & News</span>
+                                    <h2 class="sec-title">Get Latest Updates</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row vs-carousel" data-slide-show="3" data-lg-slide-show="2" data-md-slide-show="2">
+                            <?php
+                            while( $blogpost->have_posts() ) {
+                                $blogpost->the_post();
+                                ?>
+                            <div class="col-xl-4">
+                                <div class="vs-blog blog-style2 layout2">
+                                    <div class="blog-img">
+                                        <a href="<?php echo esc_url( get_permalink() );?>"><?php the_post_thumbnail( 'home-slider-blog-image', array( 'class' => 'w-100' ) );?></a>
+                                    </div>
+                                    <div class="blog-body">
+                                        <div class="blog-date">
+                                            <?php echo '<a href="'.esc_url( bizino_blog_date_permalink() ).'">'.esc_html( get_the_date( 'd M, Y' ) ).'</a>'; ?>
+                                        </div>
+                                        <div class="blog-content">
+                                            <div class="blog-meta">
+                                                <?php echo '<a href="'.esc_url( get_author_posts_url( get_the_author_meta('ID') ) ).'"><i class="fas fa-user"></i>'.esc_html( get_the_author() ).'</a>';?>
+                                                <a href="<?php echo esc_url( get_permalink().'#respond' );?>"><i class="fad fa-comment-alt-lines"></i><?php echo esc_html( get_comments_number() );?> Comments</a>
+                                            </div>
+                                            <?php
+                                            if( get_the_title() ){
+                                                echo '<h3 class="blog-title h5"><a href="'.esc_url( get_permalink() ).'">'.esc_html( wp_trim_words( get_the_title( ), $settings['title_count'], '' ) ).'</a></h3>';
+                                            }
+                                            ?>
+                                            <a href="<?php echo esc_url( get_permalink() );?>" class="icon-btn style4"><i class="far fa-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php } wp_reset_postdata(); ?>
+                        </div>
+                        <div class="text-center mt-20">
+                            <a href="<?php echo esc_url( get_post_type_archive_link('post') );?>" class="vs-btn">View All News</a>
+                        </div>
+                    </div>
+                </section>
+                <?php
+            }
         }
 	}
 }
+\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Blog_Post() );
