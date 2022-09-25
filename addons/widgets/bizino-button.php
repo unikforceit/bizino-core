@@ -63,19 +63,19 @@ class Bizino_Button_Widget extends Widget_Base{
 		$this->add_responsive_control(
 			'btn_align',
 			[
-				'label' 		=> __( 'Alignment', 'medilax' ),
+				'label' 		=> __( 'Alignment', 'bizino' ),
 				'type' 			=> Controls_Manager::CHOOSE,
 				'options' 		=> [
 					'left' 	=> [
-						'title' 		=> __( 'Left', 'medilax' ),
+						'title' 		=> __( 'Left', 'bizino' ),
 						'icon' 			=> 'eicon-text-align-left',
 					],
 					'center' 	=> [
-						'title' 		=> __( 'Center', 'medilax' ),
+						'title' 		=> __( 'Center', 'bizino' ),
 						'icon' 			=> 'eicon-text-align-center',
 					],
 					'right' 	=> [
-						'title' 		=> __( 'Right', 'medilax' ),
+						'title' 		=> __( 'Right', 'bizino' ),
 						'icon' 			=> 'eicon-text-align-right',
 					],
 				],

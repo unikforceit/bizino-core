@@ -91,7 +91,7 @@ class Bizino_History_Slider extends Widget_Base{
 		$this->start_controls_section(
 			'year_styling',
 			[
-				'label' 	=> __( 'Year Styling', 'medilax' ),
+				'label' 	=> __( 'Year Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -99,7 +99,7 @@ class Bizino_History_Slider extends Widget_Base{
         $this->add_control(
 			'about_year_color',
 			[
-				'label' 		=> __( 'Year Color', 'medilax' ),
+				'label' 		=> __( 'Year Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .story-year'	=> 'color: {{VALUE}}',
@@ -111,7 +111,7 @@ class Bizino_History_Slider extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'about_year_typography',
-		 		'label' 		=> __( 'Year Typography', 'medilax' ),
+		 		'label' 		=> __( 'Year Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .story-year'
 			]
 		);
@@ -119,7 +119,7 @@ class Bizino_History_Slider extends Widget_Base{
         $this->add_responsive_control(
 			'about_year_margin',
 			[
-				'label' 		=> __( 'Year Margin', 'medilax' ),
+				'label' 		=> __( 'Year Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -131,7 +131,7 @@ class Bizino_History_Slider extends Widget_Base{
         $this->add_responsive_control(
 			'about_year_padding',
 			[
-				'label' 		=> __( 'Year Padding', 'medilax' ),
+				'label' 		=> __( 'Year Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -146,7 +146,7 @@ class Bizino_History_Slider extends Widget_Base{
 		$this->start_controls_section(
 			'content_styling',
 			[
-				'label' 	=> __( 'Content Styling', 'medilax' ),
+				'label' 	=> __( 'Content Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -154,7 +154,7 @@ class Bizino_History_Slider extends Widget_Base{
         $this->add_control(
 			'about_content_color',
 			[
-				'label' 		=> __( 'Content Color', 'medilax' ),
+				'label' 		=> __( 'Content Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .story-text'	=> 'color: {{VALUE}}',
@@ -166,7 +166,7 @@ class Bizino_History_Slider extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'about_content_typography',
-		 		'label' 		=> __( 'Content Typography', 'medilax' ),
+		 		'label' 		=> __( 'Content Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .story-text'
 			]
 		);
@@ -174,7 +174,7 @@ class Bizino_History_Slider extends Widget_Base{
         $this->add_responsive_control(
 			'about_content_margin',
 			[
-				'label' 		=> __( 'Content Margin', 'medilax' ),
+				'label' 		=> __( 'Content Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -186,7 +186,7 @@ class Bizino_History_Slider extends Widget_Base{
         $this->add_responsive_control(
 			'about_content_padding',
 			[
-				'label' 		=> __( 'Content Padding', 'medilax' ),
+				'label' 		=> __( 'Content Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -201,7 +201,7 @@ class Bizino_History_Slider extends Widget_Base{
 		$this->start_controls_section(
 			'authore_styling',
 			[
-				'label' 	=> __( 'Authore Styling', 'medilax' ),
+				'label' 	=> __( 'Authore Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -209,7 +209,7 @@ class Bizino_History_Slider extends Widget_Base{
         $this->add_control(
 			'authore_color',
 			[
-				'label' 		=> __( 'Authore Color', 'medilax' ),
+				'label' 		=> __( 'Authore Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .story-author'	=> 'color: {{VALUE}}',
@@ -221,7 +221,7 @@ class Bizino_History_Slider extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'authore_typography',
-		 		'label' 		=> __( 'Authore Typography', 'medilax' ),
+		 		'label' 		=> __( 'Authore Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .story-author'
 			]
 		);
@@ -229,7 +229,7 @@ class Bizino_History_Slider extends Widget_Base{
         $this->add_responsive_control(
 			'authore_margin',
 			[
-				'label' 		=> __( 'Authore Margin', 'medilax' ),
+				'label' 		=> __( 'Authore Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -241,7 +241,7 @@ class Bizino_History_Slider extends Widget_Base{
         $this->add_responsive_control(
 			'authore_padding',
 			[
-				'label' 		=> __( 'Authore Padding', 'medilax' ),
+				'label' 		=> __( 'Authore Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -256,7 +256,7 @@ class Bizino_History_Slider extends Widget_Base{
 		$this->start_controls_section(
 			'degi_styling',
 			[
-				'label' 	=> __( 'Designation Styling', 'medilax' ),
+				'label' 	=> __( 'Designation Styling', 'bizino' ),
 				'tab' 		=> Controls_Manager::TAB_STYLE,
 			]
         );
@@ -264,7 +264,7 @@ class Bizino_History_Slider extends Widget_Base{
         $this->add_control(
 			'degi_color',
 			[
-				'label' 		=> __( 'Designation Color', 'medilax' ),
+				'label' 		=> __( 'Designation Color', 'bizino' ),
 				'type' 			=> Controls_Manager::COLOR,
 				'selectors' 	=> [
 					'{{WRAPPER}} .degi'	=> 'color: {{VALUE}}',
@@ -276,7 +276,7 @@ class Bizino_History_Slider extends Widget_Base{
 		Group_Control_Typography::get_type(),
 		 	[
 				'name' 			=> 'degi_typography',
-		 		'label' 		=> __( 'Designation Typography', 'medilax' ),
+		 		'label' 		=> __( 'Designation Typography', 'bizino' ),
 		 		'selector' 		=> '{{WRAPPER}} .degi'
 			]
 		);
@@ -284,7 +284,7 @@ class Bizino_History_Slider extends Widget_Base{
         $this->add_responsive_control(
 			'degi_margin',
 			[
-				'label' 		=> __( 'Designation Margin', 'medilax' ),
+				'label' 		=> __( 'Designation Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [
@@ -296,7 +296,7 @@ class Bizino_History_Slider extends Widget_Base{
         $this->add_responsive_control(
 			'degi_padding',
 			[
-				'label' 		=> __( 'Designation Padding', 'medilax' ),
+				'label' 		=> __( 'Designation Padding', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [

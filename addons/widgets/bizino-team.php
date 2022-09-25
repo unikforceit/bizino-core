@@ -182,7 +182,18 @@ class Bizino_Team_Widget extends Widget_Base{
 				],
 			]
         );
+        $this->add_control(
 
+            'contact_phone_img',
+
+            [
+                'label' => __('Phone Image', 'bizino'),
+                'type' => Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => Utils::get_placeholder_image_src(),
+                ],
+            ]
+        );
 		$this->end_controls_section();
 
 		/*-----------------------------------------title styling------------------------------------*/
@@ -438,7 +449,10 @@ class Bizino_Team_Widget extends Widget_Base{
                                             echo '<p class="team-degi">'.esc_html($data['designation']).'</p>';
                                         }
                                         if( ! empty( $mobile ) ){
-                                            echo '<a href="'.esc_attr( 'tel:'.$mobileurl ).'"><img src="assets/img/icon/phone-1-2.png" alt="image">'.esc_html($mobile).'</a>';
+                                            echo '<a href="'.esc_attr( 'tel:'.$mobileurl ).'">'.bizino_img_tag(array(
+                                                    'url' => esc_url($settings['contact_phone_img']['url']),
+                                                    'class' => '',
+                                                )).''.esc_html($mobile).'</a>';
                                         }
                                         ?>
                                     </div>
@@ -515,7 +529,10 @@ class Bizino_Team_Widget extends Widget_Base{
                                         echo '<h3 class="team-name"><a class="text-inherit" href="'.esc_url($link).'">'.esc_html($data['name']).'</a></h3>';
                                     }
                                     if( ! empty( $mobile ) ){
-                                        echo '<div class="team-number"><a href="'.esc_attr( 'tel:'.$mobileurl ).'"><img src="assets/img/icon/phone-1-2.png" alt="image">'.esc_html($mobile).'</a></div>';
+                                        echo '<div class="team-number"><a href="'.esc_attr( 'tel:'.$mobileurl ).'">'.bizino_img_tag(array(
+                                                'url' => esc_url($settings['contact_phone_img']['url']),
+                                                'class' => '',
+                                            )).''.esc_html($mobile).'</a></div>';
                                     }
                                     ?>
                                 </div>

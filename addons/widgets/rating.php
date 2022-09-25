@@ -39,15 +39,15 @@ class Bizino_Rating_Widget extends Widget_Base {
         $this->add_control(
 			'rating_qty',
 			[
-				'label' 	=> esc_html__( 'Rating', 'medilax' ),
+				'label' 	=> esc_html__( 'Rating', 'bizino' ),
                 'type' 			=> Controls_Manager::SELECT,
 				'default' 		=> 'one',
 				'options'		=> [
-					'one'  			=> esc_html__( 'One Star', 'medilax' ),
-					'two' 			=> esc_html__( 'Two Star', 'medilax' ),
-					'three' 		=> esc_html__( 'Three Star', 'medilax' ),
-					'four' 			=> esc_html__( 'Four Star', 'medilax' ),
-					'five' 			=> esc_html__( 'Five Star', 'medilax' ),
+					'one'  			=> esc_html__( 'One Star', 'bizino' ),
+					'two' 			=> esc_html__( 'Two Star', 'bizino' ),
+					'three' 		=> esc_html__( 'Three Star', 'bizino' ),
+					'four' 			=> esc_html__( 'Four Star', 'bizino' ),
+					'five' 			=> esc_html__( 'Five Star', 'bizino' ),
 				],
 			]
         );

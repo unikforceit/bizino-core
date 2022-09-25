@@ -120,9 +120,9 @@ class Bizino_Section_Title_Widget extends Widget_Base {
 		$this->add_control(
 			'section_description',
 			[
-				'label' 	=> __( 'Section Description', 'medilax' ),
+				'label' 	=> __( 'Section Description', 'bizino' ),
                 'type' 		=> Controls_Manager::TEXTAREA,
-                'default'  	=> __( 'Section Description', 'medilax' )
+                'default'  	=> __( 'Section Description', 'bizino' )
 			]
         );
 
@@ -276,7 +276,7 @@ class Bizino_Section_Title_Widget extends Widget_Base {
         $this->add_control(
 			'section_description_color',
 			[
-				'label' 	=> __( 'Section Description Color', 'medilax' ),
+				'label' 	=> __( 'Section Description Color', 'bizino' ),
 				'type' 		=> Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .section-title .desc' => 'color: {{VALUE}}',
@@ -291,7 +291,7 @@ class Bizino_Section_Title_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' 		=> 'section_description_typography',
-				'label' 	=> __( 'Section Description Typography', 'medilax' ),
+				'label' 	=> __( 'Section Description Typography', 'bizino' ),
                 'selector' 	=> '{{WRAPPER}} .section-title .desc',
                 'condition' => [
                     'section_description!'    => ''
@@ -302,7 +302,7 @@ class Bizino_Section_Title_Widget extends Widget_Base {
         $this->add_responsive_control(
 			'section_description_margin',
 			[
-				'label' 		=> __( 'Section Description Margin', 'medilax' ),
+				'label' 		=> __( 'Section Description Margin', 'bizino' ),
 				'type' 			=> Controls_Manager::DIMENSIONS,
 				'size_units' 	=> [ 'px', '%', 'em' ],
 				'selectors' 	=> [

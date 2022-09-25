@@ -255,6 +255,7 @@ final class Bizino_Extension {
 		// Header Elements
 
 		require_once( BIZINO_ADDONS . '/header/header.php' );
+		require_once( BIZINO_ADDONS . '/footer/footer.php' );
 
 		// Register widget
 
