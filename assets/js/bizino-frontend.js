@@ -165,7 +165,7 @@
         });
 
         // Logo Carousel Slider
-        elementorFrontend.hooks.addAction('frontend/element_ready/bizinologocarousel.default',function($scope) {
+        elementorFrontend.hooks.addAction('frontend/element_ready/global.default',function($scope) {
 
             let $logo_slickcarousel = $scope.find('.vs-carousel');
             $logo_slickcarousel.each(function () {

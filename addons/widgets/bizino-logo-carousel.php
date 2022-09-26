@@ -150,35 +150,30 @@ class Bizino_Logo_Carousel extends Widget_Base
         $this->add_render_attribute('wrapper', 'data-slide-to-show', $settings['slide_to_show']['size']);
         $this->add_render_attribute('wrapper', 'data-slick-arrows', 'false');
         if ($settings['logo_style'] == '1') {
-            ?>
-            <?php
             if (!empty($settings['slides'])) {
-                echo '<div class="vs-brand-wrapper">';
-                echo '<div class="container">';
-                echo '<div ' . $this->get_render_attribute_string('wrapper') . '>';
-                foreach ($settings['slides'] as $single_data) {
-                    echo '<div class="col-auto">';
-                    echo '<div class="awards-box">';
-                    echo '<div class="awards-img">';
-                    echo '<a href="' . esc_url(esc_url($single_data['image_url'])) . '" class="icon-thumb">';
-                    echo bizino_img_tag(array(
-                        'url' => esc_url($single_data['logocarousel_image']['url']),
-                    ));
-                    echo '</a>';
-                    echo '</div>';
-                    if (!empty($single_data['awards_title'])) {
-                        echo '<h3 class="awards-title">' . esc_html($single_data['awards_title']) . '</h3>';
-                    }
-                    echo '</div>';
-                    echo '</div>';
-                }
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
+                ?>
+                <div class=" space">
+                    <div class="container">
+                        <div class="row vs-carousel text-center" data-slide-show="5" data-md-slide-show="3"
+                             data-sm-slide-show="2">
+                            <?php
+                            foreach ($settings['slides'] as $single_data) {
+                                ?>
+                                <div class="col">
+                                    <?php echo bizino_img_tag(array(
+                                        'url' => esc_url($single_data['logocarousel_image']['url']),
+                                    )); ?>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </div>
+                <?php
             }
         } else {
+            if (!empty($settings['slides'])) {
             ?>
-            <div class=" space">
+            <div class=" space-bottom">
                 <div class="container">
                     <div class="row vs-carousel text-center" data-slide-show="5" data-md-slide-show="3"
                          data-sm-slide-show="2">
@@ -195,6 +190,7 @@ class Bizino_Logo_Carousel extends Widget_Base
                 </div>
             </div>
             <?php
+            }
         }
     }
 }
