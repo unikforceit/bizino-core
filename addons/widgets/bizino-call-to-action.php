@@ -59,14 +59,17 @@ class Bizino_Call_To_Action_Widget extends Widget_Base
                 'options' => [
                     '1' => __('Style One', 'bizino'),
                     '2' => __('Style Two', 'bizino'),
+                    '3' => __('Style Three', 'bizino'),
+                    '4' => __('Style Three', 'bizino'),
+                    '5' => __('Style Three', 'bizino'),
                 ],
             ]
         );
 
         $this->add_control(
-            'image',
+            'image_bg',
             [
-                'label' => __('Choose Thumb Image', 'bizino'),
+                'label' => __('Choose Background Image', 'bizino'),
                 'type' => Controls_Manager::MEDIA,
                 'dynamic' => [
                     'active' => true,
@@ -77,12 +80,40 @@ class Bizino_Call_To_Action_Widget extends Widget_Base
             ]
         );
         $this->add_control(
+            'image_bg2',
+            [
+                'label' => __('Choose Background Image 2', 'bizino'),
+                'type' => Controls_Manager::MEDIA,
+                'dynamic' => [
+                    'active' => true,
+                ],
+                'default' => [
+                    'url' => Utils::get_placeholder_image_src(),
+                ],
+                'condition' => ['layout_styles' => ['1', '2']]
+            ]
+        );
+        $this->add_control(
+            'image_bg3',
+            [
+                'label' => __('Choose Shape Image', 'bizino'),
+                'type' => Controls_Manager::MEDIA,
+                'dynamic' => [
+                    'active' => true,
+                ],
+                'default' => [
+                    'url' => Utils::get_placeholder_image_src(),
+                ],
+                'condition' => ['layout_styles' => ['1', '2']]
+            ]
+        );
+        $this->add_control(
             'subtitle',
             [
                 'label' => __('Subtitle', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 2,
-                'default' => __('Why choose us', 'bizino'),
+                'default' => __('COMPANY CORE FEATURES?', 'bizino'),
                 'condition' => ['layout_styles' => ['1']]
             ]
         );
@@ -92,7 +123,7 @@ class Bizino_Call_To_Action_Widget extends Widget_Base
                 'label' => __('Title', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 2,
-                'default' => __('We Help To Improve Customer Service', 'bizino'),
+                'default' => __('Elaborate your Company Style Grow Up Your Business', 'bizino'),
             ]
         );
         $this->add_control(
@@ -105,18 +136,79 @@ class Bizino_Call_To_Action_Widget extends Widget_Base
                 'condition' => ['layout_styles' => ['2']]
             ]
         );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-            'general_section',
+        $this->add_control(
+            'subscribe_form',
             [
-                'label' => __('General', 'bizino'),
-                'tab' => Controls_Manager::TAB_CONTENT,
+                'label' => __('Subscribe Form', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'description' => esc_html__('enter contact form shortcode.', 'bizino'),
+                'condition' => ['layout_styles' => ['2']]
             ]
         );
-        
-        
+        $this->add_control(
+            'btn',
+            [
+                'label' => __('Button', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'rows' => 2,
+                'default' => __('Start A Project', 'bizino'),
+                'condition' => ['layout_styles' => ['1']]
+            ]
+        );
+        $this->add_control(
+            'btn_link',
+            [
+                'label' => __('Button Link', 'bizino'),
+                'type' => Controls_Manager::URL,
+                'placeholder' => __('www.example.com', 'bizino'),
+                'show_external' => true,
+                'default' => [
+                    'url' => '#',
+                    'is_external' => true,
+                    'nofollow' => true,
+                ],
+                'condition' => ['layout_styles' => ['1']]
+            ]
+        );
+        $this->add_control(
+            'video_img',
+            [
+                'label' => __('Choose Video Background Image', 'bizino'),
+                'type' => Controls_Manager::MEDIA,
+                'dynamic' => [
+                    'active' => true,
+                ],
+                'default' => [
+                    'url' => Utils::get_placeholder_image_src(),
+                ],
+                'condition' => ['layout_styles' => ['1']]
+            ]
+        );
+        $this->add_control(
+            'video_btn',
+            [
+                'label' => __('Video Button', 'bizino'),
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => __('Yes', 'bizino'),
+                'label_off' => __('No', 'bizino'),
+                'return_value' => 'yes',
+                'default' => 'no',
+                'condition' => ['layout_styles' => ['1']]
+            ]
+        );
+        $this->add_control(
+            'video_link',
+            [
+                'label' => __('Video Link', 'bizino'),
+                'type' => Controls_Manager::URL,
+                'placeholder' => __('https://your-link.com', 'bizino'),
+                'default' => [
+                    'url' => '#',
+                ],
+                'condition' => ['video_btn' => 'yes']
+            ]
+        );
+
         $this->end_controls_section();
 
 
@@ -292,31 +384,10 @@ class Bizino_Call_To_Action_Widget extends Widget_Base
                 </div>
             </section>
             <?php
-        } elseif ($settings['layout_styles'] == '3') {
-            echo '<div class="image-scale-hover">';
-            if (!empty($settings['image']['url'])) {
-                echo bizino_img_tag(array(
-                    'url' => esc_url($settings['image']['url']),
-                    'class' => 'w-100'
-                ));
-                if (!empty($settings['video_btn'] == 'yes' && !empty($settings['video_link']['url']))) {
-                    echo '<a href="' . esc_url($settings['video_link']['url']) . '" class="popup-video play-btn position-center"><i class="fas fa-play"></i></a>';
-                }
-            }
-            echo '</div>';
         } else {
-            echo '<div class="team-details-shape mask-cover" data-mask-src="' . esc_url(plugins_url('images/team-mask-2.png', __FILE__)) . '"></div>';
-            echo '<div class="team-img mask-cover" data-mask-src="' . esc_url(plugins_url('images/team-mask-2.png', __FILE__)) . '">';
-            if (!empty($settings['image']['url'])) {
-                echo bizino_img_tag(array(
-                    'url' => esc_url($settings['image']['url']),
-                    'class' => 'w-100'
-                ));
-                if (!empty($settings['video_btn'] == 'yes' && !empty($settings['video_link']['url']))) {
-                    echo '<a href="' . esc_url($settings['video_link']['url']) . '" class="popup-video play-btn position-center"><i class="fas fa-play"></i></a>';
-                }
-            }
-            echo '</div>';
+            ?>
+
+            <?php
         }
     }
 }
