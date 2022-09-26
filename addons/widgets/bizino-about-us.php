@@ -171,7 +171,7 @@ class Bizino_AboutUs_Widget extends Widget_Base
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'about_list' => __('Research your niche and competitors', 'bizino'),
+                            'about_list' => __('Research your niche and competitors', 'bizino'),
                     ],
                     [
                         'about_list' => __('Create content that gets your business', 'bizino'),

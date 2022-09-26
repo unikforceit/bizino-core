@@ -209,7 +209,6 @@ class Bizino_Features_Widget extends Widget_Base
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
                 ],
-                'condition' => ['features_style' => ['2']]
             ]
         );
         $repeater2->add_control(
