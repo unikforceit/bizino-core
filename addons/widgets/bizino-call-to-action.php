@@ -114,6 +114,7 @@ class Bizino_Call_To_Action_Widget extends Widget_Base
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 2,
                 'default' => __('COMPANY CORE FEATURES?', 'bizino'),
+                'condition' => ['layout_styles' => ['1']]
             ]
         );
         $this->add_control(
@@ -132,6 +133,15 @@ class Bizino_Call_To_Action_Widget extends Widget_Base
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 2,
                 'default' => __('Once you know who your target customers are, conduct surveys and talk to people directly to gain more feedback.', 'bizino'),
+                'condition' => ['layout_styles' => ['2']]
+            ]
+        );
+        $this->add_control(
+            'subscribe_form',
+            [
+                'label' => __('Subscribe Form', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'description' => esc_html__('enter contact form shortcode.', 'bizino'),
                 'condition' => ['layout_styles' => ['2']]
             ]
         );
@@ -358,24 +368,16 @@ class Bizino_Call_To_Action_Widget extends Widget_Base
                         <div class="col-lg-6 col-xl z-index-common align-self-center">
                             <div class="newsletter-inner1">
                                 <?php
-                                if (!empty($list['title'])) {
-                                    echo '<h2 class="sec-title text-white mb-2 pb-1">' . htmlspecialchars_decode(esc_html($list['title'])) . '</h2>';
+                                if (!empty($settings['title'])) {
+                                    echo '<h2 class="sec-title text-white mb-2 pb-1">' . htmlspecialchars_decode(esc_html($settings['title'])) . '</h2>';
                                 }
                                 ?>
                                 <?php
-                                if (!empty($list['text'])) {
-
-                                    echo '<p class="fs-md text-white mb-4 pb-3">' . htmlspecialchars_decode(esc_html($list['text'])) . '</p>';
+                                if (!empty($settings['text'])) {
+                                    echo '<p class="fs-md text-white mb-4 pb-3">' . htmlspecialchars_decode(esc_html($settings['text'])) . '</p>';
                                 }
                                 ?>
-                                <form action="#" class="newsletter-style2">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Enter Your Email Address">
-                                        <button class="vs-btn style2"><i class="fal fa-envelope-open-text"></i>Subscribe
-                                            Now
-                                        </button>
-                                    </div>
-                                </form>
+                                <?php echo do_shortcode($settings['subscribe_form']); ?>
                             </div>
                         </div>
                     </div>
