@@ -364,6 +364,7 @@ class Bizino_Call_To_Action_Widget extends Widget_Base
                                 ?>
                                 <?php
                                 if (!empty($list['text'])) {
+
                                     echo '<p class="fs-md text-white mb-4 pb-3">' . htmlspecialchars_decode(esc_html($list['text'])) . '</p>';
                                 }
                                 ?>
