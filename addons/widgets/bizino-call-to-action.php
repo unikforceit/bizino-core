@@ -59,17 +59,14 @@ class Bizino_Call_To_Action_Widget extends Widget_Base
                 'options' => [
                     '1' => __('Style One', 'bizino'),
                     '2' => __('Style Two', 'bizino'),
-                    '3' => __('Style Three', 'bizino'),
-                    '4' => __('Style Four', 'bizino'),
-                    '5' => __('Style Five', 'bizino'),
                 ],
             ]
         );
 
         $this->add_control(
-            'image_bg',
+            'image',
             [
-                'label' => __('Choose Background Image', 'bizino'),
+                'label' => __('Choose Thumb Image', 'bizino'),
                 'type' => Controls_Manager::MEDIA,
                 'dynamic' => [
                     'active' => true,
@@ -77,34 +74,6 @@ class Bizino_Call_To_Action_Widget extends Widget_Base
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
                 ],
-            ]
-        );
-        $this->add_control(
-            'image_bg2',
-            [
-                'label' => __('Choose Background Image 2', 'bizino'),
-                'type' => Controls_Manager::MEDIA,
-                'dynamic' => [
-                    'active' => true,
-                ],
-                'default' => [
-                    'url' => Utils::get_placeholder_image_src(),
-                ],
-                'condition' => ['layout_styles' => ['1', '2']]
-            ]
-        );
-        $this->add_control(
-            'image_bg3',
-            [
-                'label' => __('Choose Shape Image', 'bizino'),
-                'type' => Controls_Manager::MEDIA,
-                'dynamic' => [
-                    'active' => true,
-                ],
-                'default' => [
-                    'url' => Utils::get_placeholder_image_src(),
-                ],
-                'condition' => ['layout_styles' => ['1', '2']]
             ]
         );
         $this->add_control(
@@ -113,7 +82,7 @@ class Bizino_Call_To_Action_Widget extends Widget_Base
                 'label' => __('Subtitle', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 2,
-                'default' => __('COMPANY CORE FEATURES?', 'bizino'),
+                'default' => __('Why choose us', 'bizino'),
                 'condition' => ['layout_styles' => ['1']]
             ]
         );
@@ -123,7 +92,7 @@ class Bizino_Call_To_Action_Widget extends Widget_Base
                 'label' => __('Title', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 2,
-                'default' => __('Elaborate your Company Style Grow Up Your Business', 'bizino'),
+                'default' => __('We Help To Improve Customer Service', 'bizino'),
             ]
         );
         $this->add_control(
@@ -136,79 +105,18 @@ class Bizino_Call_To_Action_Widget extends Widget_Base
                 'condition' => ['layout_styles' => ['2']]
             ]
         );
-        $this->add_control(
-            'subscribe_form',
-            [
-                'label' => __('Subscribe Form', 'bizino'),
-                'type' => Controls_Manager::TEXTAREA,
-                'description' => esc_html__('enter contact form shortcode.', 'bizino'),
-                'condition' => ['layout_styles' => ['2']]
-            ]
-        );
-        $this->add_control(
-            'btn',
-            [
-                'label' => __('Button', 'bizino'),
-                'type' => Controls_Manager::TEXTAREA,
-                'rows' => 2,
-                'default' => __('Start A Project', 'bizino'),
-                'condition' => ['layout_styles' => ['1']]
-            ]
-        );
-        $this->add_control(
-            'btn_link',
-            [
-                'label' => __('Button Link', 'bizino'),
-                'type' => Controls_Manager::URL,
-                'placeholder' => __('www.example.com', 'bizino'),
-                'show_external' => true,
-                'default' => [
-                    'url' => '#',
-                    'is_external' => true,
-                    'nofollow' => true,
-                ],
-                'condition' => ['layout_styles' => ['1']]
-            ]
-        );
-        $this->add_control(
-            'video_img',
-            [
-                'label' => __('Choose Video Background Image', 'bizino'),
-                'type' => Controls_Manager::MEDIA,
-                'dynamic' => [
-                    'active' => true,
-                ],
-                'default' => [
-                    'url' => Utils::get_placeholder_image_src(),
-                ],
-                'condition' => ['layout_styles' => ['1']]
-            ]
-        );
-        $this->add_control(
-            'video_btn',
-            [
-                'label' => __('Video Button', 'bizino'),
-                'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'bizino'),
-                'label_off' => __('No', 'bizino'),
-                'return_value' => 'yes',
-                'default' => 'no',
-                'condition' => ['layout_styles' => ['1']]
-            ]
-        );
-        $this->add_control(
-            'video_link',
-            [
-                'label' => __('Video Link', 'bizino'),
-                'type' => Controls_Manager::URL,
-                'placeholder' => __('https://your-link.com', 'bizino'),
-                'default' => [
-                    'url' => '#',
-                ],
-                'condition' => ['video_btn' => 'yes']
-            ]
-        );
 
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'general_section',
+            [
+                'label' => __('General', 'bizino'),
+                'tab' => Controls_Manager::TAB_CONTENT,
+            ]
+        );
+        
+        
         $this->end_controls_section();
 
 
@@ -305,13 +213,13 @@ class Bizino_Call_To_Action_Widget extends Widget_Base
                     <div class="row justify-content-center text-center">
                         <div class="col-md-10 col-lg-8 z-index-common">
                             <?php
-                            if (!empty($list['subtitle'])) {
-                                echo '<span class="sec-subtitle text-white">' . htmlspecialchars_decode(esc_html($list['subtitle'])) . '</span>';
+                            if (!empty($settings['subtitle'])) {
+                                echo '<span class="sec-subtitle text-white">' . htmlspecialchars_decode(esc_html($settings['subtitle'])) . '</span>';
                             }
                             ?>
                             <?php
-                            if (!empty($list['title'])) {
-                                echo '<h2 class="sec-title text-white">' . htmlspecialchars_decode(esc_html($list['title'])) . '</h2>';
+                            if (!empty($settings['title'])) {
+                                echo '<h2 class="sec-title text-white">' . htmlspecialchars_decode(esc_html($settings['title'])) . '</h2>';
                             }
                             ?>
                             <?php
