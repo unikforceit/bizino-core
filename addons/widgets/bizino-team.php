@@ -449,7 +449,7 @@ class Bizino_Team_Widget extends Widget_Base{
                                             echo '<p class="team-degi">'.esc_html($data['designation']).'</p>';
                                         }
                                         if( ! empty( $mobile ) ){
-                                            echo '<a href="'.esc_attr( 'tel:'.$mobileurl ).'">'.bizino_img_tag(array(
+                                            echo '<a href="'.esc_attr( 'tel:'.$mobileurl ).'" class="team-number">'.bizino_img_tag(array(
                                                     'url' => esc_url($settings['contact_phone_img']['url']),
                                                     'class' => '',
                                                 )).''.esc_html($mobile).'</a>';

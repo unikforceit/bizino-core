@@ -228,6 +228,7 @@ final class Bizino_Extension {
 		require_once( BIZINO_ADDONS . '/widgets/features-box.php' );
 		require_once( BIZINO_ADDONS . '/widgets/section-title.php' );
 		require_once( BIZINO_ADDONS . '/widgets/image-with-video.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-call-to-action.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-service.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-price-list.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-testimonial.php' );
