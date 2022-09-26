@@ -4,6 +4,7 @@ use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
 use \Elementor\Utils;
+use Elementor\Repeater;
 use \Elementor\Group_Control_Image_Size;
 use \Elementor\Group_Control_Box_Shadow;
 use \Elementor\Group_Control_Border;
@@ -102,7 +103,7 @@ class Bizino_Faq_Widget extends Widget_Base
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 2,
                 'default' => __('Once you know who your target customers are, conduct surveys and talk to people directly to gain more feedback.', 'bizino'),
-                'condition' => ['layout_styles' => ['2']]
+                'condition' => ['layout_styles' => ['1']]
             ]
         );
 
@@ -242,8 +243,8 @@ class Bizino_Faq_Widget extends Widget_Base
         if ($settings['layout_styles'] == '1') {
             ?>
             <!--==============================
-    FAQ Area
-    ==============================-->
+            FAQ Area
+            ==============================-->
             <section class=" space-top space-extra-bottom">
                 <div class="container">
                     <div class="row gx-50">

@@ -60,8 +60,6 @@ class Bizino_Call_To_Action_Widget extends Widget_Base
                     '1' => __('Style One', 'bizino'),
                     '2' => __('Style Two', 'bizino'),
                     '3' => __('Style Three', 'bizino'),
-                    '4' => __('Style Three', 'bizino'),
-                    '5' => __('Style Three', 'bizino'),
                 ],
             ]
         );
@@ -336,7 +334,7 @@ class Bizino_Call_To_Action_Widget extends Widget_Base
                 </div>
             </section>
             <?php
-        } elseif ($settings['layout_styles'] == '2') {
+        } else {
             ?>
             <!--==============================
             Newsleter Area
@@ -383,10 +381,6 @@ class Bizino_Call_To_Action_Widget extends Widget_Base
                     </div>
                 </div>
             </section>
-            <?php
-        } else {
-            ?>
-
             <?php
         }
     }

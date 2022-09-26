@@ -5,6 +5,7 @@ use Elementor\Group_Control_Typography;
 use Elementor\Utils;
 use Elementor\Widget_Base;
 use \Elementor\Repeater;
+
 /**
  *
  * About Us Widget .
@@ -46,6 +47,22 @@ class Bizino_AboutUs_Widget extends Widget_Base
         );
 
         $this->add_control(
+            'layout_styles',
+            [
+                'label' => __('Layout Styles', 'bizino'),
+                'type' => Controls_Manager::SELECT,
+                'default' => '1',
+                'options' => [
+                    '1' => __('Style One', 'bizino'),
+                    '2' => __('Style Two', 'bizino'),
+                    '3' => __('Style Three', 'bizino'),
+                ],
+            ]
+        );
+
+        /*----------------------------------------- Layout 1 ------------------------------------*/
+
+        $this->add_control(
             'about_image',
             [
                 'label' => __('About Image', 'bizino'),
@@ -53,6 +70,7 @@ class Bizino_AboutUs_Widget extends Widget_Base
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
                 ],
+                'condition' => ['layout_styles' => ['1']]
             ]
         );
 
@@ -64,6 +82,7 @@ class Bizino_AboutUs_Widget extends Widget_Base
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
                 ],
+                'condition' => ['layout_styles' => ['1']]
             ]
         );
 
@@ -75,7 +94,7 @@ class Bizino_AboutUs_Widget extends Widget_Base
                 'rows' => 2,
                 'default' => __('About Us Subtitle', 'bizino'),
                 'label_block' => true,
-
+                'condition' => ['layout_styles' => ['1']]
             ]
         );
         $this->add_control(
@@ -86,6 +105,7 @@ class Bizino_AboutUs_Widget extends Widget_Base
                 'rows' => 2,
                 'default' => __('About Us Title', 'bizino'),
                 'label_block' => true,
+                'condition' => ['layout_styles' => ['1']]
             ]
         );
         $this->add_control(
@@ -95,6 +115,7 @@ class Bizino_AboutUs_Widget extends Widget_Base
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => __('About Description', 'bizino'),
                 'label_block' => true,
+                'condition' => ['layout_styles' => ['1']]
             ]
         );
         $this->add_control(
@@ -105,6 +126,7 @@ class Bizino_AboutUs_Widget extends Widget_Base
                 'rows' => 2,
                 'default' => __('Alines Jakson', 'bizino'),
                 'label_block' => true,
+                'condition' => ['layout_styles' => ['1']]
             ]
         );
         $this->add_control(
@@ -114,6 +136,7 @@ class Bizino_AboutUs_Widget extends Widget_Base
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => __('Director, Company CEO', 'bizino'),
                 'label_block' => true,
+                'condition' => ['layout_styles' => ['1']]
             ]
         );
         $this->add_control(
@@ -124,6 +147,7 @@ class Bizino_AboutUs_Widget extends Widget_Base
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
                 ],
+                'condition' => ['layout_styles' => ['1']]
             ]
         );
 
@@ -135,13 +159,14 @@ class Bizino_AboutUs_Widget extends Widget_Base
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => __('Research your niche and competitors', 'bizino'),
                 'label_block' => true,
+                'condition' => ['layout_styles' => ['1']]
             ]
         );
 
         $this->add_control(
-            'lists',
+            'tab_list',
             [
-                'label' => __('Lists', 'bizino'),
+                'label' => __('Tab list', 'bizino'),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'default' => [
@@ -156,6 +181,114 @@ class Bizino_AboutUs_Widget extends Widget_Base
                     ],
                 ],
                 'title_field' => '{{{ about_list }}}',
+                'condition' => ['layout_styles' => ['1']]
+            ]
+        );
+
+        /*----------------------------------------- Layout 2 ------------------------------------*/
+        $repeater2 = new Repeater();
+
+        $repeater2->add_control(
+            'tab_title', [
+                'label' => esc_html__('Tab Title', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("Our Mission", 'bizino'),
+                'description' => esc_html__('enter tab title', 'bizino'),
+                'condition' => ['layout_styles' => ['2']]
+            ]
+        );
+        $repeater2->add_control(
+            'tab_thumb_image', [
+                'label' => esc_html__('Tab Thumb Image', 'bizino'),
+                'type' => Controls_Manager::MEDIA,
+                'show_label' => false,
+                'description' => esc_html__('upload tab thumb image', 'bizino'),
+                'default' => [
+                    'src' => Utils::get_placeholder_image_src()
+                ],
+                'condition' => ['layout_styles' => ['2']]
+            ]
+        );
+        $repeater2->add_control(
+            'tab_details_subtitle', [
+                'label' => esc_html__('Tab Details Subtitle', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("GET AND AMAZING", 'bizino'),
+                'condition' => ['layout_styles' => ['2']]
+            ]
+        );
+        $repeater2->add_control(
+            'tab_details_title', [
+                'label' => esc_html__('Tab Details Title', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("Get Right Solution for Your Business", 'bizino'),
+                'condition' => ['layout_styles' => ['2']]
+            ]
+        );
+        $repeater2->add_control(
+            'tab_details_info', [
+                'label' => esc_html__('Tab Details Info', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("You can’t build a strong business without investing time and money into it. You’ll also need to promote your business and establish...", 'bizino'),
+                'condition' => ['layout_styles' => ['2']]
+            ]
+        );
+        $repeater2->add_control(
+            'tab_details_list', [
+                'label' => esc_html__('Tab Details Info', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'condition' => ['layout_styles' => ['2']]
+            ]
+        );
+        $repeater2->add_control(
+            'tab_btn_status', [
+                'label' => esc_html__('Button Show/Hide', 'softim-core'),
+                'type' => Controls_Manager::SWITCHER,
+                'default' => 'yes',
+                'description' => esc_html__('show/hide button', 'softim-core'),
+                'condition' => ['layout_styles' => ['2']]
+            ]
+        );
+        $repeater2->add_control(
+            'tab_btn_text', [
+                'label' => esc_html__('Button Text', 'softim-core'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('Learn More', 'softim-core'),
+                'description' => esc_html__('enter button text', 'softim-core'),
+                'condition' => ['btn_status' => 'yes']
+            ]
+        );
+        $repeater2->add_control(
+            'tab_btn_link', [
+                'label' => esc_html__('Button URL', 'softim-core'),
+                'type' => Controls_Manager::URL,
+                'default' => [
+                    'url' => '#'
+                ],
+                'description' => esc_html__('enter button url', 'softim-core'),
+                'condition' => ['btn_status' => 'yes']
+            ]
+        );
+
+        $this->add_control(
+            'tab_list2',
+            [
+                'label' => __('Tab list', 'bizino'),
+                'type' => Controls_Manager::REPEATER,
+                'fields' => $repeater2->get_controls(),
+                'default' => [
+                    [
+                        'tab_title' => __('Our Mission', 'bizino'),
+                    ],
+                    [
+                        'tab_title' => __('Our Vision', 'bizino'),
+                    ],
+                    [
+                        'tab_title' => __('Our Goals', 'bizino'),
+                    ],
+                ],
+                'title_field' => '{{{ tab_title }}}',
+                'condition' => ['layout_styles' => ['2']]
             ]
         );
 
@@ -380,91 +513,189 @@ class Bizino_AboutUs_Widget extends Widget_Base
     {
 
         $settings = $this->get_settings_for_display();
-        ?>
-        <!--==============================
-        About Us
-        ==============================-->
-        <section class=" space">
-            <div class="container">
-                <div class="row">
-                    <div class=" col-lg-6 mb-40 mb-lg-0">
-                        <div class="img-box1">
-                            <div class="img-1">
-                                <?php
-                                if (!empty($settings['about_image']['url'])) {
-                                    echo bizino_img_tag(array(
-                                        'url' => esc_url($settings['about_image']['url']),
-                                    ));
-                                }
-                                ?>
-                            </div>
-                            <div class="img-2">
-                                <?php
-                                if (!empty($settings['about_image2']['url'])) {
-                                    echo bizino_img_tag(array(
-                                        'url' => esc_url($settings['about_image2']['url']),
-                                    ));
-                                }
-                                ?>
-                            </div>
-                            <div class="list-box1">
-                                <ul>
+        if ($settings['layout_styles'] == '1') {
+            ?>
+            <!--==============================
+            About Us
+            ==============================-->
+            <section class=" space">
+                <div class="container">
+                    <div class="row">
+                        <div class=" col-lg-6 mb-40 mb-lg-0">
+                            <div class="img-box1">
+                                <div class="img-1">
                                     <?php
-                                    foreach ($settings['lists'] as $list) {
-                                        ?>
+                                    if (!empty($settings['about_image']['url'])) {
+                                        echo bizino_img_tag(array(
+                                            'url' => esc_url($settings['about_image']['url']),
+                                        ));
+                                    }
+                                    ?>
+                                </div>
+                                <div class="img-2">
+                                    <?php
+                                    if (!empty($settings['about_image2']['url'])) {
+                                        echo bizino_img_tag(array(
+                                            'url' => esc_url($settings['about_image2']['url']),
+                                        ));
+                                    }
+                                    ?>
+                                </div>
+                                <div class="list-box1">
+                                    <ul>
                                         <?php
-                                        if (!empty($list['about_list'])) {
-                                            echo '<li>' . htmlspecialchars_decode(esc_html($list['about_list'])) . '</li>';
-                                        }
-                                        ?>
-                                    <?php } ?>
-                                </ul>
+                                        foreach ($settings['tab_list'] as $list) {
+                                            ?>
+                                            <?php
+                                            if (!empty($list['about_list'])) {
+                                                echo '<li>' . htmlspecialchars_decode(esc_html($list['about_list'])) . '</li>';
+                                            }
+                                            ?>
+                                        <?php } ?>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6  col-xl-5 offset-xl-1 align-self-center">
-                        <div class="sec-line"></div>
-                        <?php
-                        if (!empty($settings['about_subtitle'])) {
-                            echo '<span class="sec-subtitle">' . htmlspecialchars_decode(esc_html($settings['about_subtitle'])) . '</span>';
-                        }
-                        ?>
-                        <?php
-                        if (!empty($settings['about_title'])) {
-                            echo '<h2 class="sec-title">' . htmlspecialchars_decode(esc_html($settings['about_title'])) . '</h2>';
-                        }
-                        ?>
-                        <?php
-                        if (!empty($settings['about_description'])) {
-                            echo '<p class="mb-xl-4 pb-xl-3 pe-xxl-4">' . htmlspecialchars_decode(esc_html($settings['about_description'])) . '</p>';
-                        }
-                        ?>
-                        <?php
-                        if (!empty($settings['author_name'])) {
-                            echo '<h3 class="h5 mb-0">' . htmlspecialchars_decode(esc_html($settings['author_name'])) . '</h3>';
-                        }
-                        ?>
-                        <?php
-                        if (!empty($settings['author_designation'])) {
-                            echo '<span class="d-block mb-3">' . htmlspecialchars_decode(esc_html($settings['author_designation'])) . '</span>';
-                        }
-                        ?>
-                        <div>
+                        <div class="col-lg-6  col-xl-5 offset-xl-1 align-self-center">
+                            <div class="sec-line"></div>
                             <?php
-                            if (!empty($settings['about_sign']['url'])) {
-                                echo bizino_img_tag(array(
-                                    'url' => esc_url($settings['about_sign']['url']),
-                                ));
+                            if (!empty($settings['about_subtitle'])) {
+                                echo '<span class="sec-subtitle">' . htmlspecialchars_decode(esc_html($settings['about_subtitle'])) . '</span>';
                             }
                             ?>
+                            <?php
+                            if (!empty($settings['about_title'])) {
+                                echo '<h2 class="sec-title">' . htmlspecialchars_decode(esc_html($settings['about_title'])) . '</h2>';
+                            }
+                            ?>
+                            <?php
+                            if (!empty($settings['about_description'])) {
+                                echo '<p class="mb-xl-4 pb-xl-3 pe-xxl-4">' . htmlspecialchars_decode(esc_html($settings['about_description'])) . '</p>';
+                            }
+                            ?>
+                            <?php
+                            if (!empty($settings['author_name'])) {
+                                echo '<h3 class="h5 mb-0">' . htmlspecialchars_decode(esc_html($settings['author_name'])) . '</h3>';
+                            }
+                            ?>
+                            <?php
+                            if (!empty($settings['author_designation'])) {
+                                echo '<span class="d-block mb-3">' . htmlspecialchars_decode(esc_html($settings['author_designation'])) . '</span>';
+                            }
+                            ?>
+                            <div>
+                                <?php
+                                if (!empty($settings['about_sign']['url'])) {
+                                    echo bizino_img_tag(array(
+                                        'url' => esc_url($settings['about_sign']['url']),
+                                    ));
+                                }
+                                ?>
+                            </div>
                         </div>
+
                     </div>
-
                 </div>
-            </div>
-        </section>
-        <?php
-
+            </section>
+            <?php
+        } else {
+            ?>
+            <!--==============================
+            About Us
+            ==============================-->
+            <section class=" space">
+                <div class="container">
+                    <div class="nav about-tab" id="nav-tab" role="tablist">
+                        <?php if ($settings['tab_list2']) {
+                            $tab_btn = 0;
+                            foreach ($settings['tab_list2'] as $tab2) {
+                                $tab_btn++;
+                                if ($tab_btn == 2) {
+                                    $btn_act = 'active';
+                                    $btn_true = 'true';
+                                } else {
+                                    $btn_act = '';
+                                    $btn_true = 'false';
+                                }
+                                ?>
+                                <button class="nav-link <?php echo esc_attr($btn_act); ?>"
+                                        id="<?php echo esc_attr($tab2['_id']); ?>-tab"
+                                        data-bs-toggle="tab" data-bs-target="#about<?php echo esc_attr($tab2['_id']); ?>"
+                                        type="button" role="tab"
+                                        aria-controls="<?php echo esc_attr($tab2['_id']); ?>"
+                                        aria-selected="<?php echo esc_attr($btn_true); ?>">
+                                    <?php echo esc_html($tab2['tab_title']); ?>
+                                </button>
+                            <?php }
+                        } ?>
+                    </div>
+                    <div class="tab-content" id="nav-tabContent">
+                        <?php if ($settings['tab_list2']) {
+                            $tabs = 0;
+                            foreach ($settings['tab_list2'] as $tab2) {
+                                $tabs++;
+                                if ($tabs == 2) {
+                                    $tab_act = 'show active';
+                                } else {
+                                    $tab_act = '';
+                                }
+                                ?>
+                                <div class="tab-pane fade <?php echo esc_attr($tab_act); ?>"
+                                     id="about<?php echo esc_attr($tab2['_id']); ?>" role="tabpanel"
+                                     aria-labelledby="<?php echo esc_attr($tab2['_id']); ?>">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <!--                                            <img src="assets/img/about/ab-2-1.png" alt="about image" class="w-100">-->
+                                            <?php
+                                            if (!empty($tab2['tab_thumb_image']['url'])) {
+                                                echo bizino_img_tag(array(
+                                                    'url' => esc_url($tab2['tab_thumb_image']['url']),
+                                                    'class' => 'w-100',
+                                                ));
+                                            }
+                                            ?>
+                                        </div>
+                                        <div class="col-lg-6 align-self-center">
+                                            <div class="about-box2">
+                                                <?php
+                                                if (!empty($tab2['tab_details_subtitle'])) {
+                                                    echo '<span class="sec-subtitle">' . htmlspecialchars_decode(esc_html($tab2['tab_details_subtitle'])) . '</span>';
+                                                }
+                                                ?>
+                                                <?php
+                                                if (!empty($tab2['tab_details_title'])) {
+                                                    echo '<h2 class="sec-title">' . htmlspecialchars_decode(esc_html($tab2['tab_details_title'])) . '</h2>';
+                                                }
+                                                ?>
+                                                <?php
+                                                if (!empty($tab2['tab_details_info'])) {
+                                                    echo '<p class="fs-md mb-4 pb-2">' . htmlspecialchars_decode(esc_html($tab2['tab_details_info'])) . '</p>';
+                                                }
+                                                ?>
+                                                <div class="list-style1 ">
+                                                    <?php
+                                                    if (!empty($tab2['tab_details_list'])) {
+                                                        echo '<ul>' . htmlspecialchars_decode(esc_html($tab2['tab_details_list'])) . '</ul>';
+                                                    }
+                                                    ?>
+                                                </div>
+                                                <?php if ($tab2['tab_btn_status'] == 'yes'): ?>
+                                                    <a href="<?php echo esc_url($tab2['tab_btn_link']['url']); ?>"
+                                                       class="vs-btn">
+                                                        <?php echo esc_html($tab2['tab_btn_text']); ?>
+                                                    </a>
+                                                <?php endif; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php }
+                        } ?>
+                    </div>
+                </div>
+            </section>
+            <?php
+        }
     }
 }
 
