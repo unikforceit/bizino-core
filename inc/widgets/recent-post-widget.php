@@ -91,7 +91,7 @@ class bizino_recent_posts_widget extends WP_Widget {
 
                                     }
                                     echo '<div class="media-body">';
-                                        echo '<h4 class="post-title"><a class="text-inherit" href="'.esc_url( get_the_permalink() ).'">'.wp_trim_words( wp_kses_post( get_the_title() ), '5', '' ).'</a></h4>';
+                                        echo '<h4 class="post-title"><a class="text-inherit" href="'.esc_url( get_the_permalink() ).'">'.wp_trim_words( wp_kses_post( get_the_title() ), '3', '...' ).'</a></h4>';
                                         if( $show_date ){
                                             echo '<div class="recent-post-meta">';
                                             echo '<a href="'.esc_url( get_the_permalink() ).'">'.esc_html( get_the_time( 'd M Y' ) ).'</a>';
