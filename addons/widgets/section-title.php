@@ -5,6 +5,7 @@ use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
 use \Elementor\Group_Control_Border;
 use \Elementor\Utils;
+use \Elementor\Repeater;
 
 /**
  *
@@ -76,7 +77,8 @@ class Bizino_Section_Title_Widget extends Widget_Base
             [
                 'label' => __('Section Title', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
-                'default' => __('One Of The Best Business Advice Agency...', 'bizino')
+                'default' => __('One Of The Best Business Advice Agency...', 'bizino'),
+                'condition' => ['title_style' => ['1', '2']]
             ]
         );
         $this->add_control(
@@ -93,6 +95,7 @@ class Bizino_Section_Title_Widget extends Widget_Base
                     'h6' => 'H6',
                 ],
                 'default' => 'h2',
+                'condition' => ['title_style' => ['1', '2']]
             ]
         );
 
@@ -102,6 +105,7 @@ class Bizino_Section_Title_Widget extends Widget_Base
                 'label' => __('Section Subtitle', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => __('Best Company of the year Awarded', 'bizino'),
+                'condition' => ['title_style' => ['1', '2']]
             ]
         );
 
@@ -132,7 +136,8 @@ class Bizino_Section_Title_Widget extends Widget_Base
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => __('In today’s world, building a business also means you’ll need a strong
                 website and social media presence. These can help you learn your customers better. With them, you can
-                even request customers’ email addresses so you can reach them directly...', 'bizino')
+                even request customers’ email addresses so you can reach them directly...', 'bizino'),
+                'condition' => ['title_style' => ['1', '2']]
             ]
         );
 
@@ -376,12 +381,12 @@ class Bizino_Section_Title_Widget extends Widget_Base
             }
             ?>
             <?php
-            if( ! empty( $settings['section_description'] ) ){
-				echo bizino_paragraph_tag( array(
-					'text'	=> wp_kses_post( $settings['section_description'] ),
-					'class'	=> 'mb-xl-4 pb-xl-3 pe-xxl-4'
-				) );
-			}
+            if (!empty($settings['section_description'])) {
+                echo bizino_paragraph_tag(array(
+                    'text' => wp_kses_post($settings['section_description']),
+                    'class' => 'mb-xl-4 pb-xl-3 pe-xxl-4'
+                ));
+            }
             ?>
 
             <?php
@@ -410,4 +415,5 @@ class Bizino_Section_Title_Widget extends Widget_Base
         }
     }
 }
-\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Section_Title_Widget() );
+
+\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_Section_Title_Widget());
