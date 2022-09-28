@@ -53,6 +53,7 @@ class Bizino_Logo_Carousel extends Widget_Base
                 'options' => [
                     '1' => __('Style One', 'bizino'),
                     '2' => __('Style Two', 'bizino'),
+                    '3' => __('Style Three', 'bizino'),
                 ],
             ]
         );
@@ -83,6 +84,20 @@ class Bizino_Logo_Carousel extends Widget_Base
                 'label' => __('Awards Title', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
                 'label_block' => true,
+            ]
+        );
+        $repeater->add_control(
+            'instagram_link',
+            [
+                'label' => __('Instagram Link', 'bizino'),
+                'type' => Controls_Manager::URL,
+                'placeholder' => __('www.example.com', 'bizino'),
+                'show_external' => true,
+                'default' => [
+                    'url' => '#',
+                    'is_external' => true,
+                    'nofollow' => true,
+                ],
             ]
         );
 
@@ -170,26 +185,61 @@ class Bizino_Logo_Carousel extends Widget_Base
                 </div>
                 <?php
             }
-        } else {
+        } elseif ($settings['logo_style'] == '2') {
             if (!empty($settings['slides'])) {
-            ?>
-            <div class=" space-bottom">
-                <div class="container">
-                    <div class="row vs-carousel text-center" data-slide-show="5" data-md-slide-show="3"
-                         data-sm-slide-show="2">
-                        <?php
-                        foreach ($settings['slides'] as $single_data) {
-                            ?>
-                            <div class="col">
-                                <?php echo bizino_img_tag(array(
-                                    'url' => esc_url($single_data['logocarousel_image']['url']),
-                                )); ?>
-                            </div>
-                        <?php } ?>
+                ?>
+                <div class=" space-bottom">
+                    <div class="container">
+                        <div class="row vs-carousel text-center" data-slide-show="5" data-md-slide-show="3"
+                             data-sm-slide-show="2">
+                            <?php
+                            foreach ($settings['slides'] as $single_data) {
+                                ?>
+                                <div class="col">
+                                    <?php echo bizino_img_tag(array(
+                                        'url' => esc_url($single_data['logocarousel_image']['url']),
+                                    )); ?>
+                                </div>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <?php
+
+                <?php
+            }
+        } else {
+            if (!empty($settings['slides'])) {
+                ?>
+                <footer class="footer-wrapper footer-layout3">
+                    <!--==============================
+                Gallery Area
+                ==============================-->
+                    <div class="container  " data-sec-pos="bottom-half" data-pos-for=".copyright-wrap">
+                        <div class="row vs-carousel" data-slide-show="6" data-lg-slide-show="5" data-md-slide-show="4">
+                            <?php
+                            foreach ($settings['slides'] as $single_data) {
+                                ?>
+                                <div class="col-xl-2">
+                                    <div class="gallery-style2">
+                                        <div class="gallery-img">
+                                            <?php
+                                            echo bizino_img_tag(array(
+                                                'url' => esc_url($single_data['logocarousel_image']['url']),
+                                            ));
+                                            ?>
+                                            <div class="gallery-overlay"></div>
+                                            <a href="<?php echo esc_url($single_data['instagram_link']['url']); ?>"
+                                               class="gallery-icon popup-image">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </footer> <!-- Scroll To Top -->
+                <?php
             }
         }
     }
