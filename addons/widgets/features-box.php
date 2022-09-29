@@ -607,20 +607,20 @@ class Bizino_Features_Widget extends Widget_Base
                 <!--==============================
                 Event Area
                 ==============================-->
-                <section class=" space-bottom">
-                    <div class="container">
+<!--                <section class=" space-bottom">-->
+<!--                    <div class="container">-->
                         <div class="row justify-content-center">
-                            <div class="col-lg-7 col-xl-7 text-center">
-                                <div class="title-area">
-                                    <div class="sec-pills">
-                                        <div class="pill"></div>
-                                        <div class="pill"></div>
-                                        <div class="pill"></div>
-                                    </div>
-                                    <span class="sec-subtitle">Business Event</span>
-                                    <h2 class="sec-title">Business Events Strategists For a Experience</h2>
-                                </div>
-                            </div>
+<!--                            <div class="col-lg-7 col-xl-7 text-center">-->
+<!--                                <div class="title-area">-->
+<!--                                    <div class="sec-pills">-->
+<!--                                        <div class="pill"></div>-->
+<!--                                        <div class="pill"></div>-->
+<!--                                        <div class="pill"></div>-->
+<!--                                    </div>-->
+<!--                                    <span class="sec-subtitle">Business Event</span>-->
+<!--                                    <h2 class="sec-title">Business Events Strategists For a Experience</h2>-->
+<!--                                </div>-->
+<!--                            </div>-->
                             <div class="col-xxl-10">
                                 <div class="row">
                                     <?php
@@ -697,11 +697,11 @@ class Bizino_Features_Widget extends Widget_Base
                                 </div>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <a href="blog.html" class="vs-btn">View All Events</a>
-                        </div>
-                    </div>
-                </section>
+<!--                        <div class="text-center">-->
+<!--                            <a href="blog.html" class="vs-btn">View All Events</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </section>-->
                 <?php
             }
         } elseif ($settings['features_style'] == '2') {

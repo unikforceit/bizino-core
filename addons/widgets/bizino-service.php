@@ -392,19 +392,19 @@ class Bizino_Service_Widget extends Widget_Base
                 ==============================-->
             <section class=" space" data-bg-src="<?php echo esc_attr($settings['service4_bg_image']['url']); ?>">
                 <div class="container">
-                    <div class="row justify-content-center justify-content-lg-between align-items-center">
-                        <div class="col-md-10 col-lg-8 col-xl-7 text-center text-lg-start">
-                            <div class="title-area">
-                                <div class="sec-line mx-auto mx-lg-0"></div>
-                                <span class="sec-subtitle">Business Strategy or services</span>
-                                <h2 class="sec-title">Plan Your Business Solution strategy with us.</h2>
-                            </div>
-                        </div>
-                        <div class="col-auto d-none d-lg-block">
-                            <div class="sec-btn"><a href="service.html" class="vs-btn style4"><i
-                                            class="far fa-angle-right"></i>View All Services</a></div>
-                        </div>
-                    </div>
+<!--                    <div class="row justify-content-center justify-content-lg-between align-items-center">-->
+<!--                        <div class="col-md-10 col-lg-8 col-xl-7 text-center text-lg-start">-->
+<!--                            <div class="title-area">-->
+<!--                                <div class="sec-line mx-auto mx-lg-0"></div>-->
+<!--                                <span class="sec-subtitle">Business Strategy or services</span>-->
+<!--                                <h2 class="sec-title">Plan Your Business Solution strategy with us.</h2>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-auto d-none d-lg-block">-->
+<!--                            <div class="sec-btn"><a href="service.html" class="vs-btn style4"><i-->
+<!--                                            class="far fa-angle-right"></i>View All Services</a></div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <div class="service-wrap1">
                         <div class="service-shape1">
                             <div class="shape-img">
