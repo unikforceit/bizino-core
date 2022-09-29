@@ -449,21 +449,21 @@ class Bizino_Blog_Post extends Widget_Base
                 <!--==============================
                 Blog Area
                 ==============================-->
-                <section class="vs-blog-wrapper space" data-bg-src="assets/img/bg/blog-bg-1-1.jpg">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-xl-7 text-center">
-                                <div class="title-area">
-                                    <div class="sec-pills">
-                                        <div class="pill"></div>
-                                        <div class="pill"></div>
-                                        <div class="pill"></div>
-                                    </div>
-                                    <span class="sec-subtitle">Blog & News</span>
-                                    <h2 class="sec-title">Get Latest Updates</h2>
-                                </div>
-                            </div>
-                        </div>
+<!--                <section class="vs-blog-wrapper space" data-bg-src="assets/img/bg/blog-bg-1-1.jpg">-->
+<!--                    <div class="container">-->
+<!--                        <div class="row justify-content-center">-->
+<!--                            <div class="col-xl-7 text-center">-->
+<!--                                <div class="title-area">-->
+<!--                                    <div class="sec-pills">-->
+<!--                                        <div class="pill"></div>-->
+<!--                                        <div class="pill"></div>-->
+<!--                                        <div class="pill"></div>-->
+<!--                                    </div>-->
+<!--                                    <span class="sec-subtitle">Blog & News</span>-->
+<!--                                    <h2 class="sec-title">Get Latest Updates</h2>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
                         <div class="row vs-carousel" data-slide-show="3" data-lg-slide-show="2" data-md-slide-show="2">
                             <?php
                             while ($blogpost->have_posts()) {
@@ -496,12 +496,12 @@ class Bizino_Blog_Post extends Widget_Base
                             <?php }
                             wp_reset_postdata(); ?>
                         </div>
-                        <div class="text-center mt-20">
-                            <a href="<?php echo esc_url(get_post_type_archive_link('post')); ?>" class="vs-btn">View All
-                                News</a>
-                        </div>
-                    </div>
-                </section>
+<!--                        <div class="text-center mt-20">-->
+<!--                            <a href="--><?php //echo esc_url(get_post_type_archive_link('post')); ?><!--" class="vs-btn">View All-->
+<!--                                News</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </section>-->
                 <?php
             } elseif ($settings['blog_style'] == '2') {
                 ?>
