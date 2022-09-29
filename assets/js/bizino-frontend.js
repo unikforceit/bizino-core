@@ -5,93 +5,13 @@
         // Testimonial Slider
         elementorFrontend.hooks.addAction('frontend/element_ready/bizinotestimonialslider.default',function($scope) {
 
-            // Function For Custom Arrow Btn
-            $('[data-slick-next]').each(function () {
-              $(this).on('click', function (e) {
-                e.preventDefault()
-                $($(this).data('slick-next')).slick('slickNext');
-              })
-            })
-
-            $('[data-slick-prev]').each(function () {
-              $(this).on('click', function (e) {
-                e.preventDefault()
-                $($(this).data('slick-prev')).slick('slickPrev');
-              })
-            })
-
-
-            let $authorslickcarousels = $scope.find('.avater-fly.vs-carousel');
-            $authorslickcarousels.not('.slick-initialized').slick({
-                dots: false,
-                infinite: false,
-                arrows: false,
-                prevArrow: '<button type="button" class="slick-prev"><i class="far fa-arrow-left"></i></button>',
-                nextArrow: '<button type="button" class="slick-next"><i class="far fa-arrow-right"></i></button>',
-                autoplay: true,
-                autoplaySpeed: 6000,
-                fade: false,
-                speed: 1000,
-                asNavFor: '#testimonialslide1',
-                slidesToShow: 5,
-                slidesToScroll: 1,
-                centerMode:true,
-                variableWidth: true,
-                focusOnSelect:true,
-
-            });
-
-            let $contentslickcarousels = $scope.find('.testimonial-one.vs-carousel');
-            $contentslickcarousels.not('.slick-initialized').slick({
-                dots: false,
-                infinite: false,
-                arrows: false,
-                prevArrow: '<button type="button" class="slick-prev"><i class="far fa-arrow-left"></i></button>',
-                nextArrow: '<button type="button" class="slick-next"><i class="far fa-arrow-right"></i></button>',
-                autoplay: true,
-                autoplaySpeed: 6000,
-                fade: true,
-                speed: 1000,
-                asNavFor: '#avaterfly',
-                slidesToShow: 1,
-                slidesToScroll: 1,
-            });
-
-            let $slickcarouselstwo = $scope.find('.slider-two.vs-carousel');
-            $slickcarouselstwo.not('.slick-initialized').slick({
-                dots: $slickcarouselstwo.data('slick-dots'),
-                infinite: true,
-                arrows: $slickcarouselstwo.data('slick-arrows'),
-                prevArrow: '<button type="button" class="slick-prev"><i class="long-arrow"></i></button>',
-                nextArrow: '<button type="button" class="slick-next"><i class="long-arrow"></i></button>',
-                autoplay: $slickcarouselstwo.data('slick-sutoplay'),
-                autoplaySpeed: 6000,
-                fade: false,
-                speed: 1000,
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                responsive: [ {
-                    breakpoint: 1500,
-                    settings: {
-                        arrows: false,
-                        }
-                    },
-                    {
-                        breakpoint: 992,
-                        settings: {
-                            slidesToShow: 2,
-                            arrows: false,
-                            }
-                        },
-                    {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1,
-                        arrows: false,
-                       }
-                    }
-                ]
-            });
+            // Call On Load
+            if ($(".vs-slider-tab").length) {
+                $(".vs-slider-tab").vsTab({
+                    sliderTab: true,
+                    tabButton: ".tab-btn",
+                });
+            }
 
         });
 
