@@ -265,7 +265,6 @@ class Bizino_Features_Widget extends Widget_Base
                     'is_external' => true,
                     'nofollow' => true,
                 ],
-                'condition' => ['features_style' => ['2']]
             ]
         );
 
@@ -334,10 +333,18 @@ class Bizino_Features_Widget extends Widget_Base
                 'condition' => ['features_style' => ['1']]
             ]
         );
-
-        $repeater = new Repeater();
-
-        $repeater->add_control(
+        $this->add_control(
+            'reverse_style',
+            [
+                'label' 		=> __( 'Reverse Style?', 'bizino' ),
+                'type' 			=> Controls_Manager::SWITCHER,
+                'label_on' 		=> __( 'Show', 'bizino' ),
+                'label_off' 	=> __( 'Hide', 'bizino' ),
+                'return_value' 	=> 'event-style2',
+                'default' 		=> '',
+            ]
+        );
+        $this->add_control(
             'feature_subtitle',
             [
                 'label' => __('Subtitle', 'bizino'),
@@ -346,7 +353,7 @@ class Bizino_Features_Widget extends Widget_Base
                 'default' => __('Online Topic, Business', 'bizino')
             ]
         );
-        $repeater->add_control(
+        $this->add_control(
             'feature_title',
             [
                 'label' => __('Title', 'bizino'),
@@ -355,7 +362,7 @@ class Bizino_Features_Widget extends Widget_Base
                 'default' => __('Online Business Growth', 'bizino')
             ]
         );
-        $repeater->add_control(
+        $this->add_control(
             'feature_link',
             [
                 'label' => __('Title Link', 'bizino'),
@@ -369,7 +376,7 @@ class Bizino_Features_Widget extends Widget_Base
                 ],
             ]
         );
-        $repeater->add_control(
+        $this->add_control(
             'feature_desc',
             [
                 'label' => __('Short Descriptions', 'bizino'),
@@ -378,7 +385,7 @@ class Bizino_Features_Widget extends Widget_Base
                 'default' => __('Markets evolve compelling supply chains without virtual resources. empowered customer service for reliable.', 'bizino')
             ]
         );
-        $repeater->add_control(
+        $this->add_control(
             'feature_image',
             [
                 'label' => __('Upload Image', 'bizino'),
@@ -388,7 +395,7 @@ class Bizino_Features_Widget extends Widget_Base
                 ]
             ]
         );
-        $repeater->add_control(
+        $this->add_control(
             'event_day',
             [
                 'label' => __('Day', 'bizino'),
@@ -396,7 +403,7 @@ class Bizino_Features_Widget extends Widget_Base
                 'default' => __('21', 'bizino')
             ]
         );
-        $repeater->add_control(
+        $this->add_control(
             'event_year',
             [
                 'label' => __('Year', 'bizino'),
@@ -404,7 +411,7 @@ class Bizino_Features_Widget extends Widget_Base
                 'default' => __('Feb, 2022', 'bizino')
             ]
         );
-        $repeater->add_control(
+        $this->add_control(
             'author_image',
             [
                 'label' => __('Upload Author Image', 'bizino'),
@@ -414,7 +421,7 @@ class Bizino_Features_Widget extends Widget_Base
                 ]
             ]
         );
-        $repeater->add_control(
+        $this->add_control(
             'author_name',
             [
                 'label' => __('Author Name', 'bizino'),
@@ -423,28 +430,13 @@ class Bizino_Features_Widget extends Widget_Base
                 'default' => __('John Roselina', 'bizino')
             ]
         );
-        $repeater->add_control(
+        $this->add_control(
             'author_designation',
             [
                 'label' => __('Author Designation', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 3,
                 'default' => __('Consultant', 'bizino')
-            ]
-        );
-
-        $this->add_control(
-            'slides',
-            [
-                'label' => __('Events Items', 'bizino'),
-                'type' => Controls_Manager::REPEATER,
-                'fields' => $repeater->get_controls(),
-                'default' => [
-                    [
-                        'feature_title' => __('Online Business Growth', 'bizino'),
-                    ],
-                ],
-                'title_field' => '{{{ feature_title }}}',
             ]
         );
 
@@ -602,108 +594,80 @@ class Bizino_Features_Widget extends Widget_Base
 
         $settings = $this->get_settings_for_display();
         if ($settings['features_style'] == '1') {
-            if ($settings['slides']) {
                 ?>
                 <!--==============================
                 Event Area
                 ==============================-->
-<!--                <section class=" space-bottom">-->
-<!--                    <div class="container">-->
-                        <div class="row justify-content-center">
-<!--                            <div class="col-lg-7 col-xl-7 text-center">-->
-<!--                                <div class="title-area">-->
-<!--                                    <div class="sec-pills">-->
-<!--                                        <div class="pill"></div>-->
-<!--                                        <div class="pill"></div>-->
-<!--                                        <div class="pill"></div>-->
-<!--                                    </div>-->
-<!--                                    <span class="sec-subtitle">Business Event</span>-->
-<!--                                    <h2 class="sec-title">Business Events Strategists For a Experience</h2>-->
-<!--                                </div>-->
-<!--                            </div>-->
-                            <div class="col-xxl-10">
-                                <div class="row">
+                <section class="event-cs">
+                    <div class="event-style1 <?php echo esc_attr($settings['reverse_style']);?>">
+                        <div class="event-wrap">
+                            <div class="event-img">
+                                <?php
+                                if (!empty($settings['feature_image']['url'])) {
+                                    echo bizino_img_tag(array(
+                                        'url' => esc_url($settings['feature_image']['url']),
+                                    ));
+                                }
+                                ?>
+                            </div>
+                            <div class="event-content">
+                                <?php
+                                if (!empty($settings['feature_subtitle'])) {
+                                    echo '<span class="event-label">' . htmlspecialchars_decode(esc_html($settings['feature_subtitle'])) . '</span>';
+                                }
+                                ?>
+                                <?php
+                                if (!empty($settings['feature_title'])) {
+                                    echo '<h3 class="event-title h4">
+                                    <a class="text-inherit" href="' . esc_url($settings['feature_link']['url']) . '">' . htmlspecialchars_decode(esc_html($settings['feature_title'])) . '</a>
+                                </h3>';
+                                }
+                                ?>
+                                <?php
+                                if (!empty($settings['feature_desc'])) {
+                                    echo '<p class="event-text">' . htmlspecialchars_decode(esc_html($settings['feature_desc'])) . '</p>';
+                                }
+                                ?>
+                                <div class="event-date">
                                     <?php
-                                    foreach ($settings['slides'] as $list) {
+                                    if (!empty($settings['event_day'])) {
+                                        echo '<span class="day">' . htmlspecialchars_decode(esc_html($settings['event_day'])) . '</span>';
+                                    }
+                                    ?>
+                                    <?php
+                                    if (!empty($settings['event_year'])) {
+                                        echo '<span class="year">' . htmlspecialchars_decode(esc_html($settings['event_year'])) . '</span>';
+                                    }
+                                    ?>
+                                </div>
+                                <div class="event-author">
+                                    <div class="event-avater">
+                                        <?php
+                                        if (!empty($settings['author_image']['url'])) {
+                                            echo bizino_img_tag(array(
+                                                'url' => esc_url($settings['author_image']['url']),
+                                            ));
+                                        }
                                         ?>
-                                        <div class="col-xl-12 event-style1">
-                                            <div class="event-wrap">
-                                                <div class="event-img">
-                                                    <?php
-                                                    if (!empty($list['feature_image']['url'])) {
-                                                        echo bizino_img_tag(array(
-                                                            'url' => esc_url($list['feature_image']['url']),
-                                                        ));
-                                                    }
-                                                    ?>
-                                                </div>
-                                                <div class="event-content">
-                                                    <?php
-                                                    if (!empty($list['feature_subtitle'])) {
-                                                        echo '<span class="event-label">' . htmlspecialchars_decode(esc_html($list['feature_subtitle'])) . '</span>';
-                                                    }
-                                                    ?>
-                                                    <?php
-                                                    if (!empty($list['feature_title'])) {
-                                                        echo '<h3 class="event-title h4">
-                                                        <a class="text-inherit" href="' . esc_url($list['feature_link']['url']) . '">' . htmlspecialchars_decode(esc_html($list['feature_title'])) . '</a>
-                                                    </h3>';
-                                                    }
-                                                    ?>
-                                                    <?php
-                                                    if (!empty($list['feature_desc'])) {
-                                                        echo '<p class="event-text">' . htmlspecialchars_decode(esc_html($list['feature_desc'])) . '</p>';
-                                                    }
-                                                    ?>
-                                                    <div class="event-date">
-                                                        <?php
-                                                        if (!empty($list['event_day'])) {
-                                                            echo '<span class="day">' . htmlspecialchars_decode(esc_html($list['event_day'])) . '</span>';
-                                                        }
-                                                        ?>
-                                                        <?php
-                                                        if (!empty($list['event_year'])) {
-                                                            echo '<span class="year">' . htmlspecialchars_decode(esc_html($list['event_year'])) . '</span>';
-                                                        }
-                                                        ?>
-                                                    </div>
-                                                    <div class="event-author">
-                                                        <div class="event-avater">
-                                                            <?php
-                                                            if (!empty($list['author_image']['url'])) {
-                                                                echo bizino_img_tag(array(
-                                                                    'url' => esc_url($list['author_image']['url']),
-                                                                ));
-                                                            }
-                                                            ?>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <?php
-                                                            if (!empty($list['author_name'])) {
-                                                                echo '<h4 class="event-organizer h6">' . htmlspecialchars_decode(esc_html($list['author_name'])) . '</h4>';
-                                                            }
-                                                            ?>
-                                                            <?php
-                                                            if (!empty($list['author_designation'])) {
-                                                                echo '<p class="event-nominee">' . htmlspecialchars_decode(esc_html($list['author_designation'])) . '</p>';
-                                                            }
-                                                            ?>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <?php } ?>
+                                    </div>
+                                    <div class="media-body">
+                                        <?php
+                                        if (!empty($settings['author_name'])) {
+                                            echo '<h4 class="event-organizer h6">' . htmlspecialchars_decode(esc_html($settings['author_name'])) . '</h4>';
+                                        }
+                                        ?>
+                                        <?php
+                                        if (!empty($settings['author_designation'])) {
+                                            echo '<p class="event-nominee">' . htmlspecialchars_decode(esc_html($settings['author_designation'])) . '</p>';
+                                        }
+                                        ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-<!--                        <div class="text-center">-->
-<!--                            <a href="blog.html" class="vs-btn">View All Events</a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </section>-->
+                    </div>
+                </section>
                 <?php
-            }
         } elseif ($settings['features_style'] == '2') {
             if ($settings['feature2_list']) {
                 ?>
