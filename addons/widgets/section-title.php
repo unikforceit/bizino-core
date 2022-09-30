@@ -163,7 +163,7 @@ class Bizino_Section_Title_Widget extends Widget_Base
                 'default' => 'left',
                 'toggle' => true,
                 'selectors' => [
-                    '{{WRAPPER}} .section-title' => 'text-align: {{VALUE}};',
+                    '{{WRAPPER}} .title-area, {{WRAPPER}} .section-title-cs' => 'text-align: {{VALUE}};',
                 ]
             ]
         );
@@ -337,58 +337,32 @@ class Bizino_Section_Title_Widget extends Widget_Base
 
         $settings = $this->get_settings_for_display();
 
-//        $this->add_render_attribute( 'wrapper', 'class', 'section-title' );
-//
-//        echo '<div '.$this->get_render_attribute_string( 'wrapper' ).' >';
-//
-//    	if($settings['title_style'] == '2'){
-//        	if( ! empty( $settings['section_icon']['url'] ) ){
-//				echo '<div class="sec-icon">';
-//					echo bizino_img_tag( array(
-//	                        'url'   => esc_url( $settings['section_icon']['url'] )
-//	                    ) );
-//				echo '</div>';
-//			}
-//		}
-//
-//		if( !empty( $settings['section_subtitle'] ) ) {
-//			echo '<'.esc_attr($settings['section_subtitle_tag']).' class="sub-title subtitle-selector">'.wp_kses_post( $settings['section_subtitle'] ).'</'.esc_attr($settings['section_subtitle_tag']).'>';
-//		}
-//
-//		if( ! empty( $settings['section_title'] ) ) {
-//        	echo '<'.esc_attr($settings['section_title_tag']).' class="sec-title title-selector">'.wp_kses_post( $settings['section_title'] ).'</'.esc_attr($settings['section_title_tag']).'>';
-//		}
-//		if( ! empty( $settings['section_description'] ) ){
-//				echo bizino_paragraph_tag( array(
-//					'text'	=> wp_kses_post( $settings['section_description'] ),
-//					'class'	=> 'desc'
-//				) );
-//			}
-//		echo '</div>';
+        $this->add_render_attribute( 'wrapper', 'class', 'section-title' );
 
         if ($settings['title_style'] == '1') {
             ?>
             <!--    Title Style 1        -->
-            <div class="sec-line"></div>
-            <?php
-            if (!empty($settings['section_subtitle'])) {
-                echo '<' . esc_attr($settings['section_subtitle_tag']) . ' class="sec-subtitle">' . wp_kses_post($settings['section_subtitle']) . '</' . esc_attr($settings['section_subtitle_tag']) . '>';
-            }
-            ?>
-            <?php
-            if (!empty($settings['section_title'])) {
-                echo '<' . esc_attr($settings['section_title_tag']) . ' class="sec-title">' . wp_kses_post($settings['section_title']) . '</' . esc_attr($settings['section_title_tag']) . '>';
-            }
-            ?>
-            <?php
-            if (!empty($settings['section_description'])) {
-                echo bizino_paragraph_tag(array(
-                    'text' => wp_kses_post($settings['section_description']),
-                    'class' => 'mb-xl-4 pb-xl-3 pe-xxl-4'
-                ));
-            }
-            ?>
-
+            <div class="section-title-cs">
+                <div class="sec-line"></div>
+                <?php
+                if (!empty($settings['section_subtitle'])) {
+                    echo '<' . esc_attr($settings['section_subtitle_tag']) . ' class="sec-subtitle">' . wp_kses_post($settings['section_subtitle']) . '</' . esc_attr($settings['section_subtitle_tag']) . '>';
+                }
+                ?>
+                <?php
+                if (!empty($settings['section_title'])) {
+                    echo '<' . esc_attr($settings['section_title_tag']) . ' class="sec-title">' . wp_kses_post($settings['section_title']) . '</' . esc_attr($settings['section_title_tag']) . '>';
+                }
+                ?>
+                <?php
+                if (!empty($settings['section_description'])) {
+                    echo bizino_paragraph_tag(array(
+                        'text' => wp_kses_post($settings['section_description']),
+                        'class' => 'mb-xl-4 pb-xl-3 pe-xxl-4'
+                    ));
+                }
+                ?>
+            </div>
             <?php
         } else {
             ?>

@@ -242,7 +242,6 @@ final class Bizino_Extension {
 		require_once( BIZINO_ADDONS . '/widgets/bizino-package.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-working-process.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-product-search.php' );
-		require_once( BIZINO_ADDONS . '/widgets/bizino-logo-carousel.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-offer-cart.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-counter.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-instagram-gallery.php' );

@@ -452,110 +452,97 @@ class Bizino_Testimonial_Slider extends Widget_Base
             <!--==============================
             Testimonial Area
             ==============================-->
-            <section class=" space-bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-4 align-self-center">
-                            <div class="title-area text-center text-xl-start">
-                                <div class="sec-line mx-auto mx-xl-0"></div>
-                                <span class="sec-subtitle">customer Testimonial</span>
-                                <h2 class="sec-title">10,00+ happy Customers</h2>
-                            </div>
-                            <?php if ($settings['slider_arrows'] == 'yes') { ?>
-                                <div class="d-flex gap-2 d-none d-xl-block">
-                                    <button class="icon-btn style3" data-slick-prev="#testId"><i
-                                                class="far fa-long-arrow-left"></i></button>
-                                    <button class="icon-btn style3" data-slick-next="#testId"><i
-                                                class="far fa-long-arrow-right"></i></button>
-                                </div>
-                            <?php } ?>
-                        </div>
-                        <div class="col-xl-8">
-                            <div class="testi-style1">
-                                <div class="testi-avater vs-slider-tab" data-asnavfor="#testId">
+            <section class="testimonial-cs">
+                <?php if ($settings['slider_arrows'] == 'yes') { ?>
+                    <div class="d-flex gap-2 d-none d-xl-block testimonial-nav-cs">
+                        <button class="icon-btn style3" data-slick-prev="#testId"><i
+                                    class="far fa-long-arrow-left"></i></button>
+                        <button class="icon-btn style3" data-slick-next="#testId"><i
+                                    class="far fa-long-arrow-right"></i></button>
+                    </div>
+                <?php } ?>
+                <div class="testi-style1">
+                    <div class="testi-avater vs-slider-tab" data-asnavfor="#testId">
+                        <?php
+                        $loop = 0;
+                        foreach ($settings['slides'] as $singleslide) {
+                            $loop++;
+                            if ($loop == 1) {
+                                $active = 'active';
+                            } else {
+                                $active = '';
+                            }
+                            ?>
+                            <button class="tab-btn <?php echo esc_attr($active); ?>">
+                                <?php
+                                if (!empty($singleslide['client_image']['url'])) {
+                                    echo bizino_img_tag(array(
+                                        'url' => esc_url($singleslide['client_image']['url']),
+                                    ));
+                                }
+                                ?>
+                            </button>
+                        <?php } ?>
+                    </div>
+                    <div class="testi-shape" data-bg-src="assets/img/bg/testi-bg-1-1.jpg"></div>
+                    <div class="vs-carousel" id="testId" data-slide-show="1" data-fade="true">
+                        <?php foreach ($settings['slides'] as $singleslide) { ?>
+                            <div>
+                                <div class="testi-quote">
                                     <?php
-                                    $loop = 0;
-                                    foreach ($settings['slides'] as $singleslide) {
-                                        $loop++;
-                                        if ($loop == 1) {
-                                            $active = 'active';
-                                        } else {
-                                            $active = '';
-                                        }
-                                        ?>
-                                        <button class="tab-btn <?php echo esc_attr($active); ?>">
-                                            <?php
-                                            if (!empty($singleslide['client_image']['url'])) {
-                                                echo bizino_img_tag(array(
-                                                    'url' => esc_url($singleslide['client_image']['url']),
-                                                ));
-                                            }
-                                            ?>
-                                        </button>
-                                    <?php } ?>
+                                    echo bizino_img_tag(array(
+                                        'url' => esc_url($singleslide['testimonial_image_icon']['url'])
+                                    ));
+                                    ?>
                                 </div>
-                                <div class="testi-shape" data-bg-src="assets/img/bg/testi-bg-1-1.jpg"></div>
-                                <div class="vs-carousel" id="testId" data-slide-show="1" data-fade="true">
-                                    <?php foreach ($settings['slides'] as $singleslide) { ?>
-                                        <div>
-                                            <div class="testi-quote">
-                                                <?php
-                                                echo bizino_img_tag(array(
-                                                    'url' => esc_url($singleslide['testimonial_image_icon']['url'])
-                                                ));
-                                                ?>
-                                            </div>
-                                            <?php
-                                            if (!empty($singleslide['client_feedback'])) {
-                                                echo '<p class="testi-text">' . wp_kses_post($singleslide['client_feedback']) . '</p>';
-                                            }
-                                            if (!empty($singleslide['client_name'])) {
-                                                echo '<h3 class="testi-author h4">' . esc_html($singleslide['client_name']) . '</h3>';
-                                            }
-                                            if (!empty($singleslide['client_designation'])) {
-                                                echo '<span class="testi-degi">' . esc_html($singleslide['client_designation']) . '</span>';
-                                            }
-                                            ?>
-                                            <div class="testi-rating">
-                                                <?php
-                                                if ($singleslide['rating'] == 'one') {
-                                                    echo '<i class="fas fa-star"></i>';
-                                                    echo '<i class="far fa-star"></i>';
-                                                    echo '<i class="far fa-star"></i>';
-                                                    echo '<i class="far fa-star"></i>';
-                                                    echo '<i class="far fa-star"></i>';
-                                                } elseif ($singleslide['rating'] == 'two') {
-                                                    echo '<i class="fas fa-star"></i>';
-                                                    echo '<i class="fas fa-star"></i>';
-                                                    echo '<i class="far fa-star"></i>';
-                                                    echo '<i class="far fa-star"></i>';
-                                                    echo '<i class="far fa-star"></i>';
-                                                } elseif ($singleslide['rating'] == 'three') {
-                                                    echo '<i class="fas fa-star"></i>';
-                                                    echo '<i class="fas fa-star"></i>';
-                                                    echo '<i class="fas fa-star"></i>';
-                                                    echo '<i class="far fa-star"></i>';
-                                                    echo '<i class="far fa-star"></i>';
-                                                } elseif ($singleslide['rating'] == 'four') {
-                                                    echo '<i class="fas fa-star"></i>';
-                                                    echo '<i class="fas fa-star"></i>';
-                                                    echo '<i class="fas fa-star"></i>';
-                                                    echo '<i class="fas fa-star"></i>';
-                                                    echo '<i class="far fa-star"></i>';
-                                                } else {
-                                                    echo '<i class="fas fa-star"></i>';
-                                                    echo '<i class="fas fa-star"></i>';
-                                                    echo '<i class="fas fa-star"></i>';
-                                                    echo '<i class="fas fa-star"></i>';
-                                                    echo '<i class="fas fa-star"></i>';
-                                                }
-                                                ?>
-                                            </div>
-                                        </div>
-                                    <?php } ?>
+                                <?php
+                                if (!empty($singleslide['client_feedback'])) {
+                                    echo '<p class="testi-text">' . wp_kses_post($singleslide['client_feedback']) . '</p>';
+                                }
+                                if (!empty($singleslide['client_name'])) {
+                                    echo '<h3 class="testi-author h4">' . esc_html($singleslide['client_name']) . '</h3>';
+                                }
+                                if (!empty($singleslide['client_designation'])) {
+                                    echo '<span class="testi-degi">' . esc_html($singleslide['client_designation']) . '</span>';
+                                }
+                                ?>
+                                <div class="testi-rating">
+                                    <?php
+                                    if ($singleslide['rating'] == 'one') {
+                                        echo '<i class="fas fa-star"></i>';
+                                        echo '<i class="far fa-star"></i>';
+                                        echo '<i class="far fa-star"></i>';
+                                        echo '<i class="far fa-star"></i>';
+                                        echo '<i class="far fa-star"></i>';
+                                    } elseif ($singleslide['rating'] == 'two') {
+                                        echo '<i class="fas fa-star"></i>';
+                                        echo '<i class="fas fa-star"></i>';
+                                        echo '<i class="far fa-star"></i>';
+                                        echo '<i class="far fa-star"></i>';
+                                        echo '<i class="far fa-star"></i>';
+                                    } elseif ($singleslide['rating'] == 'three') {
+                                        echo '<i class="fas fa-star"></i>';
+                                        echo '<i class="fas fa-star"></i>';
+                                        echo '<i class="fas fa-star"></i>';
+                                        echo '<i class="far fa-star"></i>';
+                                        echo '<i class="far fa-star"></i>';
+                                    } elseif ($singleslide['rating'] == 'four') {
+                                        echo '<i class="fas fa-star"></i>';
+                                        echo '<i class="fas fa-star"></i>';
+                                        echo '<i class="fas fa-star"></i>';
+                                        echo '<i class="fas fa-star"></i>';
+                                        echo '<i class="far fa-star"></i>';
+                                    } else {
+                                        echo '<i class="fas fa-star"></i>';
+                                        echo '<i class="fas fa-star"></i>';
+                                        echo '<i class="fas fa-star"></i>';
+                                        echo '<i class="fas fa-star"></i>';
+                                        echo '<i class="fas fa-star"></i>';
+                                    }
+                                    ?>
                                 </div>
                             </div>
-                        </div>
+                        <?php } ?>
                     </div>
                 </div>
             </section>
