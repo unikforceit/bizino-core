@@ -229,6 +229,7 @@ final class Bizino_Extension {
 		require_once( BIZINO_ADDONS . '/widgets/section-title.php' );
 		require_once( BIZINO_ADDONS . '/widgets/image-with-video.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-logo-carousel.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-working-process.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-faq.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-service.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-testimonial.php' );

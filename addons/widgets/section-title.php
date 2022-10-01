@@ -59,16 +59,15 @@ class Bizino_Section_Title_Widget extends Widget_Base
             ]
         );
 
-
         $this->add_control(
-            'section_icon',
+            'line_switch',
             [
-                'label' => esc_html__('Icon', 'bizino'),
-                'type' => Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => Utils::get_placeholder_image_src(),
-                ],
-                'condition' => ['title_style' => ['2']],
+                'label' => __('Line Button', 'bizino'),
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => __('Yes', 'bizino'),
+                'label_off' => __('No', 'bizino'),
+                'return_value' => 'yes',
+                'default' => 'yes',
             ]
         );
 
@@ -169,6 +168,7 @@ class Bizino_Section_Title_Widget extends Widget_Base
         );
 
         $this->end_controls_section();
+//        Styling section
 
         $this->start_controls_section(
             'section_title_style_section',
@@ -179,12 +179,27 @@ class Bizino_Section_Title_Widget extends Widget_Base
         );
 
         $this->add_control(
+            'section_line_color',
+            [
+                'label' => __('Section Top Line Color', 'bizino'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .sec-line' => 'background-color: {{VALUE}}',
+                ],
+                'condition' => [
+                    'line_switch!' => ''
+                ],
+                'separator' => 'after'
+            ]
+        );
+
+        $this->add_control(
             'section_title_color',
             [
                 'label' => __('Section Title Color', 'bizino'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .title-selector' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .sec-title' => 'color: {{VALUE}}',
                 ],
                 'condition' => [
                     'section_title!' => ''
@@ -197,7 +212,7 @@ class Bizino_Section_Title_Widget extends Widget_Base
             [
                 'name' => 'section_title_typography',
                 'label' => __('Section Title Typography', 'bizino'),
-                'selector' => '{{WRAPPER}} .title-selector',
+                'selector' => '{{WRAPPER}} .sec-title',
                 'condition' => [
                     'section_title!' => ''
                 ]
@@ -211,7 +226,7 @@ class Bizino_Section_Title_Widget extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .title-selector' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .sec-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
                 'condition' => [
                     'section_title!' => ''
@@ -226,7 +241,7 @@ class Bizino_Section_Title_Widget extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .title-selector' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .sec-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
                 'condition' => [
                     'section_title!' => ''
@@ -239,7 +254,7 @@ class Bizino_Section_Title_Widget extends Widget_Base
             [
                 'name' => 'border',
                 'label' => __('Border', 'bizino'),
-                'selector' => '{{WRAPPER}} .title-selector',
+                'selector' => '{{WRAPPER}} .sec-title',
                 'condition' => [
                     'section_title!' => ''
                 ],
@@ -253,7 +268,7 @@ class Bizino_Section_Title_Widget extends Widget_Base
                 'label' => __('Section Subtitle Color', 'bizino'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .subtitle-selector' => 'color: {{VALUE}}!important',
+                    '{{WRAPPER}} .sec-subtitle' => 'color: {{VALUE}}!important',
                 ],
                 'condition' => [
                     'section_subtitle!' => ''
@@ -266,7 +281,7 @@ class Bizino_Section_Title_Widget extends Widget_Base
             [
                 'name' => 'section_subtitle_typography',
                 'label' => __('Section Subtitle Typography', 'bizino'),
-                'selector' => '{{WRAPPER}} .subtitle-selector',
+                'selector' => '{{WRAPPER}} .sec-subtitle',
                 'condition' => [
                     'section_subtitle!' => ''
                 ],
@@ -280,11 +295,27 @@ class Bizino_Section_Title_Widget extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .subtitle-selector' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .sec-subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
                 'condition' => [
                     'section_subtitle!' => ''
                 ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'section_subtitle_padding',
+            [
+                'label' => __('Section Subtitle Padding', 'bizino'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%', 'em'],
+                'selectors' => [
+                    '{{WRAPPER}} .sec-subtitle' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'condition' => [
+                    'section_subtitle!' => ''
+                ],
+                'separator' => 'after'
             ]
         );
 
@@ -328,6 +359,22 @@ class Bizino_Section_Title_Widget extends Widget_Base
                 ],
             ]
         );
+
+        $this->add_responsive_control(
+            'section_description_padding',
+            [
+                'label' => __('Section Description Padding', 'bizino'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%', 'em'],
+                'selectors' => [
+                    '{{WRAPPER}} .sec-subtitle' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'condition' => [
+                    'section_description!' => ''
+                ],
+                'separator' => 'after'
+            ]
+        );
         $this->end_controls_section();
 
     }
@@ -337,13 +384,18 @@ class Bizino_Section_Title_Widget extends Widget_Base
 
         $settings = $this->get_settings_for_display();
 
-        $this->add_render_attribute( 'wrapper', 'class', 'section-title' );
+        $this->add_render_attribute('wrapper', 'class', 'section-title');
 
         if ($settings['title_style'] == '1') {
             ?>
             <!--    Title Style 1        -->
             <div class="section-title-cs">
-                <div class="sec-line"></div>
+                <?php
+                if (!empty($settings['line_switch'] == 'yes')) {
+                    echo '<div class="sec-line"></div>';
+                }
+                ?>
+
                 <?php
                 if (!empty($settings['section_subtitle'])) {
                     echo '<' . esc_attr($settings['section_subtitle_tag']) . ' class="sec-subtitle">' . wp_kses_post($settings['section_subtitle']) . '</' . esc_attr($settings['section_subtitle_tag']) . '>';
@@ -368,11 +420,15 @@ class Bizino_Section_Title_Widget extends Widget_Base
             ?>
             <!--    Title Style 2        -->
             <div class="title-area">
-                <div class="sec-pills">
+                <?php
+                if (!empty($settings['line_switch'] == 'yes')) {
+                    echo '<div class="sec-pills">
                     <div class="pill"></div>
                     <div class="pill"></div>
                     <div class="pill"></div>
-                </div>
+                </div>';
+                }
+                ?>
                 <?php
                 if (!empty($settings['section_subtitle'])) {
                     echo '<' . esc_attr($settings['section_subtitle_tag']) . ' class="sec-subtitle">' . wp_kses_post($settings['section_subtitle']) . '</' . esc_attr($settings['section_subtitle_tag']) . '>';
