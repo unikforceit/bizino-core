@@ -1,13 +1,14 @@
 <?php
 
-use \Elementor\Widget_Base;
-use \Elementor\Controls_Manager;
-use \Elementor\Group_Control_Typography;
-use \Elementor\Utils;
-use \Elementor\Repeater;
-use \Elementor\Group_Control_Image_Size;
-use \Elementor\Group_Control_Box_Shadow;
-use \Elementor\Group_Control_Background;
+use Elementor\Plugin;
+use Elementor\Widget_Base;
+use Elementor\Controls_Manager;
+use Elementor\Group_Control_Typography;
+use Elementor\Utils;
+use Elementor\Repeater;
+use Elementor\Group_Control_Image_Size;
+use Elementor\Group_Control_Box_Shadow;
+use Elementor\Group_Control_Background;
 
 /**
  *
@@ -45,6 +46,23 @@ class Bizino_Gallery extends Widget_Base
             [
                 'label' => __('Gallery', 'bizino'),
                 'tab' => Controls_Manager::TAB_CONTENT,
+            ]
+        );
+
+        $this->add_control(
+            'gallery_title', [
+                'label' => __('Main Title', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => __('Effective Case Studies', 'bizino'),
+                'label_block' => true,
+            ]
+        );
+        $this->add_control(
+            'gallery_des', [
+                'label' => __('Main Description', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => __('power of choice is untrammelled and when nothing prevents', 'bizino'),
+                'label_block' => true,
             ]
         );
 
@@ -138,18 +156,28 @@ class Bizino_Gallery extends Widget_Base
                 'default' => [
                     [
                         'image_title' => __('Branding Marketing', 'bizino'),
+                        'image_title2' => __('Support', 'bizino'),
+                        'image_title3' => __('Research', 'bizino'),
                     ],
                     [
                         'image_title' => __('Creative Marketing', 'bizino'),
+                        'image_title2' => __('Branding', 'bizino'),
+                        'image_title3' => __('Creative', 'bizino'),
                     ],
                     [
                         'image_title' => __('Web Development', 'bizino'),
+                        'image_title2' => __('Latest Coding', 'bizino'),
+                        'image_title3' => __('PHP', 'bizino'),
                     ],
                     [
                         'image_title' => __('Expert Consultations', 'bizino'),
+                        'image_title2' => __('UI Research', 'bizino'),
+                        'image_title3' => __('Easy Coding', 'bizino'),
                     ],
                     [
                         'image_title' => __('SEO Optimization', 'bizino'),
+                        'image_title2' => __('Bing SEO', 'bizino'),
+                        'image_title3' => __('Google', 'bizino'),
                     ],
                 ],
                 'title_field' => '{{{ image_title }}}',
@@ -243,76 +271,76 @@ class Bizino_Gallery extends Widget_Base
         $settings = $this->get_settings_for_display();
 
         if (!empty($settings['slides'])) {
-                ?>
-                <!--==============================
-                Gallery Area
-                ==============================-->
-                <section class=" space-top space-extra-bottom">
-                    <div class="container">
-                        <div class="row justify-content-between text-center text-lg-start">
-                            <div class="col-lg-auto">
-                                <div class="title-area">
-                                    <h2 class="sec-title mb-2 pb-1">Effective Case Studies</h2>
-                                    <p class="fs-md">power of choice is untrammelled and when nothing prevents</p>
-                                </div>
+            ?>
+            <!--==============================
+            Gallery Area
+            ==============================-->
+            <section class=" space-top space-extra-bottom">
+                <div class="container">
+                    <div class="row justify-content-between text-center text-lg-start">
+                        <div class="col-lg-auto">
+                            <div class="title-area">
+                                <h2 class="sec-title mb-2 pb-1"><?php echo esc_html($settings['gallery_title']); ?></h2>
+                                <p class="fs-md"><?php echo esc_html($settings['gallery_des']); ?></p>
                             </div>
-                            <div class="col-lg-auto mb-20 mb-lg-0">
-                                <div class="sec-btn">
-                                    <button data-slick-prev="#galslide1" class="icon-btn style6"><i
-                                                class="far fa-long-arrow-left"></i></button>
-                                    <button data-slick-next="#galslide1" class="icon-btn style6"><i
-                                                class="far fa-long-arrow-right"></i></button>
-                                </div>
+                        </div>
+                        <div class="col-lg-auto mb-20 mb-lg-0">
+                            <div class="sec-btn">
+                                <button data-slick-prev="#galslide1" class="icon-btn style6"><i
+                                            class="far fa-long-arrow-left"></i></button>
+                                <button data-slick-next="#galslide1" class="icon-btn style6"><i
+                                            class="far fa-long-arrow-right"></i></button>
                             </div>
                         </div>
                     </div>
-                    <div class="container container-style1">
-                        <div class="row gx-70 vs-carousel gallery-zigzag" id="galslide1" data-slide-show="3"
-                             data-xs-slide-show="2" data-dots="true" data-variable-width="true">
-                            <?php
-                            foreach ($settings['slides'] as $item) {
-                                ?>
-                                <div class="col-auto">
-                                    <div class="gallery-style1">
-                                        <div class="gallery-img">
-                                            <a href="<?php echo esc_url($item['gallery_image_url']['url']); ?>">
-                                                <?php
-                                                if (!empty($item['gallery_image']['url'])) {
-                                                    echo bizino_img_tag(array(
-                                                        'url' => esc_url($item['gallery_image']['url']),
-                                                    ));
-                                                }
-                                                ?>
-                                            </a>
-                                        </div>
-                                        <?php
-                                        if (!empty($item['image_title'])) {
-                                            echo '<h3 class="gallery-title h5">
+                </div>
+                <div class="container container-style1">
+                    <div class="row gx-70 vs-carousel gallery-zigzag" id="galslide1" data-slide-show="3"
+                         data-xs-slide-show="2" data-dots="true" data-variable-width="true">
+                        <?php
+                        foreach ($settings['slides'] as $item) {
+                            ?>
+                            <div class="col-auto">
+                                <div class="gallery-style1">
+                                    <div class="gallery-img">
+                                        <a href="<?php echo esc_url($item['gallery_image_url']['url']); ?>">
+                                            <?php
+                                            if (!empty($item['gallery_image']['url'])) {
+                                                echo bizino_img_tag(array(
+                                                    'url' => esc_url($item['gallery_image']['url']),
+                                                ));
+                                            }
+                                            ?>
+                                        </a>
+                                    </div>
+                                    <?php
+                                    if (!empty($item['image_title'])) {
+                                        echo '<h3 class="gallery-title h5">
                                                 <a href="' . esc_url($item['image_url']['url']) . '" class="text-inherit">' . htmlspecialchars_decode(esc_html($item['image_title'])) . '</a>
                                                 </h3>';
+                                    }
+                                    ?>
+                                    <div class="gallery-category">
+                                        <?php
+                                        if (!empty($item['image_url2']['url'])) {
+                                            echo '<a href="' . esc_url($item['image_url2']['url']) . '">' . htmlspecialchars_decode(esc_html($item['image_title2'])) . '</a>';
                                         }
                                         ?>
-                                        <div class="gallery-category">
-                                            <?php
-                                            if (!empty($item['image_url2']['url'])) {
-                                                echo '<a href="' . esc_url($item['image_url2']['url']) . '">' . htmlspecialchars_decode(esc_html($item['image_title2'])) . '</a>';
-                                            }
-                                            ?>
-                                            <?php
-                                            if (!empty($item['image_url3']['url'])) {
-                                                echo '<a href="' . esc_url($item['image_url3']['url']) . '">' . htmlspecialchars_decode(esc_html($item['image_title3'])) . '</a>';
-                                            }
-                                            ?>
-                                        </div>
+                                        <?php
+                                        if (!empty($item['image_url3']['url'])) {
+                                            echo '<a href="' . esc_url($item['image_url3']['url']) . '">' . htmlspecialchars_decode(esc_html($item['image_title3'])) . '</a>';
+                                        }
+                                        ?>
                                     </div>
                                 </div>
-                            <?php } ?>
-                        </div>
+                            </div>
+                        <?php } ?>
                     </div>
-                </section>
-                <?php
+                </div>
+            </section>
+            <?php
         }
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_Gallery());
+Plugin::instance()->widgets_manager->register(new Bizino_Gallery());
