@@ -159,7 +159,6 @@ class Bizino_AboutUs_Widget extends Widget_Base
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => __('Research your niche and competitors', 'bizino'),
                 'label_block' => true,
-                'condition' => ['layout_styles' => ['1']]
             ]
         );
 
@@ -181,7 +180,6 @@ class Bizino_AboutUs_Widget extends Widget_Base
                     ],
                 ],
                 'title_field' => '{{{ about_list }}}',
-                'condition' => ['layout_styles' => ['1']]
             ]
         );
 
@@ -194,7 +192,6 @@ class Bizino_AboutUs_Widget extends Widget_Base
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => esc_html__("Our Mission", 'bizino'),
                 'description' => esc_html__('enter tab title', 'bizino'),
-                'condition' => ['layout_styles' => ['2']]
             ]
         );
         $repeater2->add_control(
@@ -206,7 +203,6 @@ class Bizino_AboutUs_Widget extends Widget_Base
                 'default' => [
                     'src' => Utils::get_placeholder_image_src()
                 ],
-                'condition' => ['layout_styles' => ['2']]
             ]
         );
         $repeater2->add_control(
@@ -214,7 +210,6 @@ class Bizino_AboutUs_Widget extends Widget_Base
                 'label' => esc_html__('Tab Details Subtitle', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => esc_html__("GET AND AMAZING", 'bizino'),
-                'condition' => ['layout_styles' => ['2']]
             ]
         );
         $repeater2->add_control(
@@ -222,7 +217,6 @@ class Bizino_AboutUs_Widget extends Widget_Base
                 'label' => esc_html__('Tab Details Title', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => esc_html__("Get Right Solution for Your Business", 'bizino'),
-                'condition' => ['layout_styles' => ['2']]
             ]
         );
         $repeater2->add_control(
@@ -230,14 +224,12 @@ class Bizino_AboutUs_Widget extends Widget_Base
                 'label' => esc_html__('Tab Details Info', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => esc_html__("You can’t build a strong business without investing time and money into it. You’ll also need to promote your business and establish...", 'bizino'),
-                'condition' => ['layout_styles' => ['2']]
             ]
         );
         $repeater2->add_control(
             'tab_details_list', [
                 'label' => esc_html__('Tab Details Info', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
-                'condition' => ['layout_styles' => ['2']]
             ]
         );
         $repeater2->add_control(
@@ -246,7 +238,6 @@ class Bizino_AboutUs_Widget extends Widget_Base
                 'type' => Controls_Manager::SWITCHER,
                 'default' => 'yes',
                 'description' => esc_html__('show/hide button', 'softim-core'),
-                'condition' => ['layout_styles' => ['2']]
             ]
         );
         $repeater2->add_control(
@@ -255,7 +246,6 @@ class Bizino_AboutUs_Widget extends Widget_Base
                 'type' => Controls_Manager::TEXT,
                 'default' => esc_html__('Learn More', 'softim-core'),
                 'description' => esc_html__('enter button text', 'softim-core'),
-                'condition' => ['btn_status' => 'yes']
             ]
         );
         $repeater2->add_control(
@@ -266,7 +256,6 @@ class Bizino_AboutUs_Widget extends Widget_Base
                     'url' => '#'
                 ],
                 'description' => esc_html__('enter button url', 'softim-core'),
-                'condition' => ['btn_status' => 'yes']
             ]
         );
 
@@ -288,7 +277,6 @@ class Bizino_AboutUs_Widget extends Widget_Base
                     ],
                 ],
                 'title_field' => '{{{ tab_title }}}',
-                'condition' => ['layout_styles' => ['2']]
             ]
         );
 

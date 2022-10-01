@@ -71,44 +71,6 @@ class Bizino_Features_Widget extends Widget_Base
             ]
         );
 
-        $this->add_control(
-            'skill_bg_image',
-            [
-                'label' => __('Upload Thumb Image', 'bizino'),
-                'type' => Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => Utils::get_placeholder_image_src(),
-                ]
-            ]
-        );
-        $this->add_control(
-            'skill_subtitle',
-            [
-                'label' => __('Subtitle', 'bizino'),
-                'type' => Controls_Manager::TEXTAREA,
-                'rows' => 2,
-                'default' => __('GREAT BUSINESS SOLUTION', 'bizino')
-            ]
-        );
-        $this->add_control(
-            'skill_title',
-            [
-                'label' => __('Title', 'bizino'),
-                'type' => Controls_Manager::TEXTAREA,
-                'rows' => 2,
-                'default' => __('One of the best ideal business solution', 'bizino')
-            ]
-        );
-        $this->add_control(
-            'skill_dec',
-            [
-                'label' => __('Description', 'bizino'),
-                'type' => Controls_Manager::TEXTAREA,
-                'rows' => 2,
-                'default' => __('Analyzing competing products or services can give you an idea of what already exists in your industry.', 'bizino')
-            ]
-        );
-
         $repeater3 = new Repeater();
 
         $repeater3->add_control(
@@ -166,39 +128,6 @@ class Bizino_Features_Widget extends Widget_Base
                 'condition' => ['features_style' => ['2', '4']]
             ]
         );
-
-        $this->add_control(
-            'feature2_bg_image',
-            [
-                'label' => __('Upload Thumb Image', 'bizino'),
-                'type' => Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => Utils::get_placeholder_image_src(),
-                ],
-                'condition' => ['features_style' => ['4']]
-            ]
-        );
-        $this->add_control(
-            'feature2_subtitle',
-            [
-                'label' => __('Subtitle', 'bizino'),
-                'type' => Controls_Manager::TEXTAREA,
-                'rows' => 2,
-                'default' => __('WHAT WE PROVIDE', 'bizino'),
-                'condition' => ['features_style' => ['4']]
-            ]
-        );
-        $this->add_control(
-            'feature2_title',
-            [
-                'label' => __('Title', 'bizino'),
-                'type' => Controls_Manager::TEXTAREA,
-                'rows' => 2,
-                'default' => __('Our Exclusive Features', 'bizino'),
-                'condition' => ['features_style' => ['4']]
-            ]
-        );
-
         $repeater2 = new Repeater();
 
         $repeater2->add_control(
@@ -674,8 +603,7 @@ class Bizino_Features_Widget extends Widget_Base
                 <!--==============================
                 Features Area
                 ==============================-->
-                <section class=" space-extra-bottom">
-                    <div class="container">
+                <section class="features-cs">
                         <div class="row gx-4 vs-carousel" data-slide-show="3" data-lg-slide-show="2"
                              data-md-slide-show="2"
                              data-center-mode="true" data-lg-center-mode="true" data-ml-center-mode="true"
@@ -724,7 +652,6 @@ class Bizino_Features_Widget extends Widget_Base
                                 </div>
                             <?php } ?>
                         </div>
-                    </div>
                 </section>
                 <?php
             }
@@ -734,61 +661,31 @@ class Bizino_Features_Widget extends Widget_Base
                 <!--==============================
                 Skill Area
                 ==============================-->
-                <section class=" space-extra-bottom">
-                    <div class="container">
-                        <div class="row gx-80 flex-row-reverse">
-                            <div class="col-lg-6 col-xxl-auto mb-30">
-                                <?php
-                                if (!empty($settings['skill_bg_image']['url'])) {
-                                    echo bizino_img_tag(array(
-                                        'url' => esc_url($settings['skill_bg_image']['url']),
-                                    ));
-                                }
+                <section class="skill-cs">
+                        <div class="progress-multi">
+                            <?php
+                            foreach ($settings['skill_list'] as $sList) {
                                 ?>
-                            </div>
-                            <div class="col-lg-6 col-xxl align-self-center">
-                                <?php
-                                if (!empty($settings['skill_subtitle'])) {
-                                    echo '<span class="sec-subtitle">' . htmlspecialchars_decode(esc_html($settings['skill_subtitle'])) . '</span>';
-                                }
-                                ?>
-                                <?php
-                                if (!empty($settings['skill_title'])) {
-                                    echo '<h2 class="sec-title">' . htmlspecialchars_decode(esc_html($settings['skill_title'])) . '</h2>';
-                                }
-                                ?>
-                                <?php
-                                if (!empty($settings['skill_dec'])) {
-                                    echo '<p class="mb-4 pb-3">' . htmlspecialchars_decode(esc_html($settings['skill_dec'])) . '</p>';
-                                }
-                                ?>
-                                <div class="progress-multi">
+                                <div class="progress-style1">
                                     <?php
-                                    foreach ($settings['skill_list'] as $sList) {
-                                        ?>
-                                        <div class="progress-style1">
-                                            <?php
-                                            if (!empty($sList['skill_item_title'])) {
-                                                echo '<h3 class="progress-title">' . htmlspecialchars_decode(esc_html($sList['skill_item_title'])) . '</h3>';
-                                            }
-                                            ?>
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar"
-                                                     style="width: <?php echo esc_attr($sList['skill_item_value']); ?>%"
-                                                     aria-valuenow="<?php echo esc_attr($sList['skill_item_value']); ?>"
-                                                     aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <?php
-                                            if (!empty($sList['skill_item_value'])) {
-                                                echo '<span class="progress-amount">' . htmlspecialchars_decode(esc_html($sList['skill_item_value'])) . '' . esc_html('%') . '</span>';
-                                            }
-                                            ?>
-                                        </div>
-                                    <?php } ?>
+                                    if (!empty($sList['skill_item_title'])) {
+                                        echo '<h3 class="progress-title">' . htmlspecialchars_decode(esc_html($sList['skill_item_title'])) . '</h3>';
+                                    }
+                                    ?>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                             style="width: <?php echo esc_attr($sList['skill_item_value']); ?>%"
+                                             aria-valuenow="<?php echo esc_attr($sList['skill_item_value']); ?>"
+                                             aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <?php
+                                    if (!empty($sList['skill_item_value'])) {
+                                        echo '<span class="progress-amount">' . htmlspecialchars_decode(esc_html($sList['skill_item_value'])) . '' . esc_html('%') . '</span>';
+                                    }
+                                    ?>
                                 </div>
-                            </div>
+                            <?php } ?>
                         </div>
-                    </div>
                 </section>
                 <?php
             }
@@ -798,29 +695,7 @@ class Bizino_Features_Widget extends Widget_Base
                 <!--==============================
                 Service Area
                 ==============================-->
-                <section class=" space" data-bg-src="<?php echo esc_attr($settings['feature2_bg_image']['url']); ?>">
-                    <div class="container">
-                        <div class="row justify-content-center text-center">
-                            <div class="col-xl-7">
-                                <div class="title-area">
-                                    <div class="sec-pills">
-                                        <div class="pill"></div>
-                                        <div class="pill"></div>
-                                        <div class="pill"></div>
-                                    </div>
-                                    <?php
-                                    if (!empty($settings['feature2_subtitle'])) {
-                                        echo '<span class="sec-subtitle">' . htmlspecialchars_decode(esc_html($settings['feature2_subtitle'])) . '</span>';
-                                    }
-                                    ?>
-                                    <?php
-                                    if (!empty($settings['feature2_title'])) {
-                                        echo '<h2 class="sec-title">' . htmlspecialchars_decode(esc_html($settings['feature2_title'])) . '</h2>';
-                                    }
-                                    ?>
-                                </div>
-                            </div>
-                        </div>
+                <section class="service-cs">
                         <div class="row gx-0 text-center text-lg-start">
                             <?php
                             foreach ($settings['feature2_list'] as $featurelist2) {
@@ -862,7 +737,6 @@ class Bizino_Features_Widget extends Widget_Base
                                 ?>
                             </div>
                         </div>
-                    </div>
                 </section>
                 <?php
             }

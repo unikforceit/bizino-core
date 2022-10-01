@@ -466,21 +466,7 @@ class Bizino_Team_Widget extends Widget_Base{
             <!--==============================
            Team Area
            ==============================-->
-            <section class=" space-top space-extra-bottom" data-bg-src="assets/img/bg/team-bg-2-1.jpg">
-                <div class="container">
-                    <div class="row justify-content-center text-center">
-                        <div class="col-lg-8">
-                            <div class="title-area">
-                                <div class="sec-pills">
-                                    <div class="pill"></div>
-                                    <div class="pill"></div>
-                                    <div class="pill"></div>
-                                </div>
-                                <span class="sec-subtitle2">Meet Our Experts</span>
-                                <h2 class="sec-title">Company Experts</h2>
-                            </div>
-                        </div>
-                    </div>
+            <section class="team2-cs">
                     <div class="row vs-carousel" data-slide-show="3" data-md-slide-show="2">
                     <?php
                     foreach( $settings['team_members'] as $data ) {
@@ -525,7 +511,6 @@ class Bizino_Team_Widget extends Widget_Base{
                         </div>
                     <?php } ?>
                     </div>
-                </div>
             </section>
             <?php
         }

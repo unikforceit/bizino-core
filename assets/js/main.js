@@ -21,6 +21,7 @@
   });
 
   $(document).ready(function (){
+    /*----------- 08. Global Slider ----------*/
     $(".vs-carousel").each(function () {
       var vsSlide = $(this);
 
