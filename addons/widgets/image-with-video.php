@@ -51,21 +51,6 @@ class Bizino_Image_Widget extends Widget_Base
         );
 
         $this->add_control(
-            'img_style',
-            [
-                'label' => __('Image Style', 'bizino'),
-                'type' => Controls_Manager::SELECT,
-                'default' => 'one',
-                'options' => [
-                    'one' => __('Style One', 'bizino'),
-                    'two' => __('Style Two', 'bizino'),
-                    'three' => __('Style Three', 'bizino'),
-                    'four' => __('Style Four', 'bizino'),
-                    'five' => __('Style Five', 'bizino'),
-                ],
-            ]
-        );
-        $this->add_control(
             'image',
             [
                 'label' => __('Choose Image', 'bizino'),
@@ -99,7 +84,7 @@ class Bizino_Image_Widget extends Widget_Base
                 'type' => Controls_Manager::URL,
                 'placeholder' => __('https://your-link.com', 'bizino'),
                 'default' => [
-                    'url' => '#',
+                    'url' => 'https://www.youtube.com/watch?v=_sI_Ps7JSEk',
                 ],
                 'condition' => ['video_btn' => 'yes']
             ]
@@ -180,55 +165,22 @@ class Bizino_Image_Widget extends Widget_Base
     {
 
         $settings = $this->get_settings_for_display();
-        if ($settings['img_style'] == 'one') {
-            echo '<div class="video-box position-relative mb-10">';
-            if (!empty($settings['image']['url'])) {
-                echo bizino_img_tag(array(
-                    'url' => esc_url($settings['image']['url']),
-                    'class' => 'w-100'
-                ));
-                if (!empty($settings['video_btn'] == 'yes' && !empty($settings['video_link']['url']))) {
-                    echo '<a href="' . esc_url($settings['video_link']['url']) . '" class="popup-video play-btn position-center"><i class="fas fa-play"></i></a>';
+            ?>
+            <div class="cta-video">
+                <?php
+                if (!empty($settings['image']['url'])) {
+                    echo bizino_img_tag(array(
+                        'url' => esc_url($settings['image']['url']),
+                        'class' => ''
+                    ));
+                    if (!empty($settings['video_btn'] == 'yes' && !empty($settings['video_link']['url']))) {
+                        echo '<a href="' . esc_url($settings['video_link']['url']) . '" class="play-btn style2 popup-video"><i class="fas fa-play"></i></a>';
+                    }
                 }
-            }
-            echo '</div>';
-        } elseif ($settings['img_style'] == 'two') {
-            echo '<div class="transform-banner">';
-            if (!empty($settings['image']['url'])) {
-                echo bizino_img_tag(array(
-                    'url' => esc_url($settings['image']['url']),
-                ));
-                if (!empty($settings['video_btn'] == 'yes' && !empty($settings['video_link']['url']))) {
-                    echo '<a href="' . esc_url($settings['video_link']['url']) . '" class="popup-video play-btn position-center"><i class="fas fa-play"></i></a>';
-                }
-            }
-            echo '</div>';
-        } elseif ($settings['img_style'] == 'three') {
-            echo '<div class="image-scale-hover">';
-            if (!empty($settings['image']['url'])) {
-                echo bizino_img_tag(array(
-                    'url' => esc_url($settings['image']['url']),
-                    'class' => 'w-100'
-                ));
-                if (!empty($settings['video_btn'] == 'yes' && !empty($settings['video_link']['url']))) {
-                    echo '<a href="' . esc_url($settings['video_link']['url']) . '" class="popup-video play-btn position-center"><i class="fas fa-play"></i></a>';
-                }
-            }
-            echo '</div>';
-        } else {
-            echo '<div class="team-details-shape mask-cover" data-mask-src="' . esc_url(plugins_url('images/team-mask-2.png', __FILE__)) . '"></div>';
-            echo '<div class="team-img mask-cover" data-mask-src="' . esc_url(plugins_url('images/team-mask-2.png', __FILE__)) . '">';
-            if (!empty($settings['image']['url'])) {
-                echo bizino_img_tag(array(
-                    'url' => esc_url($settings['image']['url']),
-                    'class' => 'w-100'
-                ));
-                if (!empty($settings['video_btn'] == 'yes' && !empty($settings['video_link']['url']))) {
-                    echo '<a href="' . esc_url($settings['video_link']['url']) . '" class="popup-video play-btn position-center"><i class="fas fa-play"></i></a>';
-                }
-            }
-            echo '</div>';
-        }
+                ?>
+            </div>
+            <?php
+
     }
 }
 

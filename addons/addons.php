@@ -228,13 +228,10 @@ final class Bizino_Extension {
 		require_once( BIZINO_ADDONS . '/widgets/features-box.php' );
 		require_once( BIZINO_ADDONS . '/widgets/section-title.php' );
 		require_once( BIZINO_ADDONS . '/widgets/image-with-video.php' );
-		require_once( BIZINO_ADDONS . '/widgets/bizino-call-to-action.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-logo-carousel.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-faq.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-service.php' );
-		require_once( BIZINO_ADDONS . '/widgets/bizino-price-list.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-testimonial.php' );
-		require_once( BIZINO_ADDONS . '/widgets/bizino-single-price-cart.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-gallery.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-team.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-newsletter.php' );
@@ -242,12 +239,9 @@ final class Bizino_Extension {
 		require_once( BIZINO_ADDONS . '/widgets/bizino-blog.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-package.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-working-process.php' );
-		require_once( BIZINO_ADDONS . '/widgets/bizino-product-search.php' );
-		require_once( BIZINO_ADDONS . '/widgets/bizino-offer-cart.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-counter.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-instagram-gallery.php' );
 		require_once( BIZINO_ADDONS . '/widgets/social-media.php' );
-		require_once( BIZINO_ADDONS . '/widgets/bizino-trends-product.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-right-choice.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-button.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-about-us.php' );
@@ -258,41 +252,6 @@ final class Bizino_Extension {
 
 		require_once( BIZINO_ADDONS . '/header/header.php' );
 
-		// Register widget
-
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Rating_Widget() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Features_Widget() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Section_Title_Widget() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Image_Widget() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Service_Widget() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Price_List_Widget() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Testimonial_Slider() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Single_Price_Cart() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Gallery() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Team_Widget() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Newsletter() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Salon_Info_Box_Widget() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Blog_Post() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Packages_Widget() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Working_Process() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Search() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Logo_Carousel() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Offer_Cart_Widget() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Counter() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Instagram_Gallery() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Social_Media_Widget() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Trends_Products_Widget() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Right_Choice_Widget() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Button_Widget() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_AboutUs_Widget() );
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_History_Slider() );
-
-
-
-
-		// Header Widget Register
-
-//		\Elementor\Plugin::instance()->widgets_manager->register( new \Bizino_Header() );
 	}
 
     public function widget_scripts() {

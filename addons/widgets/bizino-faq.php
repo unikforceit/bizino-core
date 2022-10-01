@@ -44,72 +44,6 @@ class Bizino_Faq_Widget extends Widget_Base
     {
 
         $this->start_controls_section(
-            'general_section',
-            [
-                'label' => __('General', 'bizino'),
-                'tab' => Controls_Manager::TAB_CONTENT,
-            ]
-        );
-
-        $this->add_control(
-            'layout_styles',
-            [
-                'label' => __('Layout Styles', 'bizino'),
-                'type' => Controls_Manager::SELECT,
-                'default' => '1',
-                'options' => [
-                    '1' => __('Style One', 'bizino'),
-                    '2' => __('Style Two', 'bizino'),
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'image',
-            [
-                'label' => __('Choose Thumb Image', 'bizino'),
-                'type' => Controls_Manager::MEDIA,
-                'dynamic' => [
-                    'active' => true,
-                ],
-                'default' => [
-                    'url' => Utils::get_placeholder_image_src(),
-                ],
-            ]
-        );
-        $this->add_control(
-            'subtitle',
-            [
-                'label' => __('Subtitle', 'bizino'),
-                'type' => Controls_Manager::TEXTAREA,
-                'rows' => 2,
-                'default' => __('Why choose us', 'bizino'),
-                'condition' => ['layout_styles' => ['1']]
-            ]
-        );
-        $this->add_control(
-            'title',
-            [
-                'label' => __('Title', 'bizino'),
-                'type' => Controls_Manager::TEXTAREA,
-                'rows' => 2,
-                'default' => __('We Help To Improve Customer Service', 'bizino'),
-            ]
-        );
-        $this->add_control(
-            'text',
-            [
-                'label' => __('Text', 'bizino'),
-                'type' => Controls_Manager::TEXTAREA,
-                'rows' => 2,
-                'default' => __('Once you know who your target customers are, conduct surveys and talk to people directly to gain more feedback.', 'bizino'),
-                'condition' => ['layout_styles' => ['1']]
-            ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
             'faq_section',
             [
                 'label' => __('Faq Items', 'bizino'),
@@ -239,41 +173,12 @@ class Bizino_Faq_Widget extends Widget_Base
         $settings = $this->get_settings_for_display();
         $uniq_id = uniqid('accordion');
         $uniq_item = uniqid();
-
-        if ($settings['layout_styles'] == '1') {
-            ?>
+         ?>
             <!--==============================
             FAQ Area
             ==============================-->
-            <section class=" space-top space-extra-bottom">
-                <div class="container">
-                    <div class="row gx-50">
-                        <div class="col-xl-6 mb-30 text-center text-xl-start">
-                            <?php
-                            if (!empty($settings['image']['url'])) {
-                                echo bizino_img_tag(array(
-                                    'url' => esc_url($settings['image']['url']),
-                                ));
-                            }
-                            ?>
-                        </div>
-                        <div class="col-xl-6 align-self-center text-center text-xl-start">
-                            <?php
-                            if (!empty($settings['subtitle'])) {
-                                echo '<span class="sec-subtitle">' . htmlspecialchars_decode(esc_html($settings['subtitle'])) . '</span>';
-                            }
-                            ?>
-                            <?php
-                            if (!empty($settings['title'])) {
-                                echo '<h2 class="sec-title mb-2 pb-2">' . htmlspecialchars_decode(esc_html($settings['title'])) . '</h2>';
-                            }
-                            ?>
-                            <?php
-                            if (!empty($settings['text'])) {
-                                echo '<p class="pe-xxl-5 me-xxl-5 mb-4 pb-3">' . htmlspecialchars_decode(esc_html($settings['text'])) . '</p>';
-                            }
-                            ?>
-                            <div class="accordion accordion-style1" id="accordionStyle1">
+            <section class="faq-cs">
+                      <div class="accordion accordion-style1" id="accordionStyle1">
                                 <?php if ($settings['faq_list']) {
                                     $loop = 0;
                                     foreach ($settings['faq_list'] as $faq) {
@@ -314,16 +219,8 @@ class Bizino_Faq_Widget extends Widget_Base
                                 } ?>
 
                             </div>
-                        </div>
-                    </div>
-                </div>
             </section>
             <?php
-        } else {
-            ?>
-
-            <?php
-        }
     }
 }
 

@@ -48,19 +48,6 @@ class Bizino_Gallery extends Widget_Base
             ]
         );
 
-        $this->add_control(
-            'gallery_style',
-            [
-                'label' => __('Gallery Style', 'bizino'),
-                'type' => Controls_Manager::SELECT,
-                'default' => '1',
-                'options' => [
-                    '1' => __('Style One', 'bizino'),
-                    '2' => __('Style Two', 'bizino'),
-                ],
-            ]
-        );
-
         $repeater = new Repeater();
 
         $repeater->add_control(
@@ -256,11 +243,10 @@ class Bizino_Gallery extends Widget_Base
         $settings = $this->get_settings_for_display();
 
         if (!empty($settings['slides'])) {
-            if ($settings['gallery_style'] == '1') {
                 ?>
                 <!--==============================
-    Gallery Area
-    ==============================-->
+                Gallery Area
+                ==============================-->
                 <section class=" space-top space-extra-bottom">
                     <div class="container">
                         <div class="row justify-content-between text-center text-lg-start">
@@ -325,10 +311,6 @@ class Bizino_Gallery extends Widget_Base
                     </div>
                 </section>
                 <?php
-            } else {
-                ?>
-                <?php
-            }
         }
     }
 }

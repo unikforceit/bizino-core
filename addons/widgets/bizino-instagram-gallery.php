@@ -51,18 +51,6 @@ class Bizino_Instagram_Gallery extends Widget_Base{
 				],
 			]
 		);
-		$this->add_control(
-			'slider_arrows',
-			[
-				'label' 		=> __( 'Arrows', 'bizino' ),
-				'type' 			=> Controls_Manager::SWITCHER,
-				'label_on' 		=> __( 'Yes', 'bizino' ),
-				'label_off' 	=> __( 'No', 'bizino' ),
-				'return_value' 	=> 'yes',
-				'default' 		=> 'yes',
-				'condition'		=> [ 'instagram_style'	=> 'two' ]
-			]
-		);
 
 		$repeater = new Repeater();
 
@@ -94,7 +82,6 @@ class Bizino_Instagram_Gallery extends Widget_Base{
 						'instagramgallery_image' 		=> Utils::get_placeholder_image_src(),
 					],
 				],
-				'title_field' 	=> __( 'Gallery Image', 'bizino' ),
 			]
 		);
 
@@ -171,58 +158,55 @@ class Bizino_Instagram_Gallery extends Widget_Base{
 	protected function render() {
 
 		$settings = $this->get_settings_for_display();
-		echo '<!-----------------------Start Instagram Gallery----------------------->';
 		if( $settings['instagram_style'] == 'one' ){
 			if( ! empty( $settings['slides'] ) ){
-	            echo '<div class="instagram-gallery">';
-	                echo '<div class="container">';
-	                    echo '<div class="row gx-1 mb-n1 justify-content-center">';
-	                        foreach ( $settings['slides'] as $single_data ) {
-	                            echo '<div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-xxl-auto mb-1">';
-	                                echo '<div class="gallery-thumb">';
-	                                    if( ! empty( $single_data['instagramgallery_image']['url'] ) ){
-	                                        echo bizino_img_tag( array(
-	                                            'url'   => esc_url( $single_data['instagramgallery_image']['url'] ),
-	                                            'class' => 'w-100',
-	                                        ) );
-	                                        echo '<a href="'.esc_url( $single_data['instagramgallery_image']['url'] ).'" class="icon-thumb popup-image"><i class="fab fa-instagram"></i></a>';
-	                                    }
-	                                echo '</div>';
-	                            echo '</div>';
-	                        }
-	                    echo '</div>';
-	                echo '</div>';
-	            echo '</div>';
+                ?>
+                <div class="instagram-cs" data-sec-pos="bottom-half" data-pos-for=".copyright-wrap">
+                    <div class="row vs-carousel" data-slide-show="6" data-lg-slide-show="5" data-md-slide-show="4">
+                        <?php foreach ( $settings['slides'] as $single_data ) {?>
+                            <div class="col-xl-2">
+                            <div class="gallery-style2">
+                                <div class="gallery-img">
+                                    <?php
+                                    if( ! empty( $single_data['instagramgallery_image']['url'] ) ){
+                                        echo bizino_img_tag( array(
+                                            'url'   => esc_url( $single_data['instagramgallery_image']['url'] ),
+                                            'class' => '',
+                                        ) );
+                                        echo '<div class="gallery-overlay"></div>';
+                                        echo '<a href="'.esc_url( $single_data['instagramgallery_image']['url'] ).'" class="gallery-icon popup-image"><i class="fab fa-instagram"></i></a>';
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <?php } ?>
+                    </div>
+                </div>
+                <?php
 			}
 		}else{
 			if( ! empty( $settings['slides'] ) ){
-				$this->add_render_attribute( 'wrapper', 'id', 'gallery-slide-insta' );
-				$this->add_render_attribute( 'wrapper', 'class', 'row gallery-cutted-slide' );
-
-				echo '<div class="vs-gallery-wrapper  ">';
-			        echo '<div class="container-fluid px-xxl-0 overflow-hidden">';
-			            echo '<div '.$this->get_render_attribute_string('wrapper').'>';
-			                foreach ( $settings['slides'] as $single_data ) {
-				                echo '<div class="col-auto">';
-				                	if( ! empty( $single_data['instagramgallery_image']['url'] ) ){
-					                    echo '<div class="gallery-cutted gallery-thumb">';
-					                        echo '<a href="'.esc_url($single_data['instagramgallery_image']['url']).'" class="icon-thumb popup-image"><i class="fab fa-instagram"></i></a>';
-					                        echo '<img src="'.esc_url($single_data['instagramgallery_image']['url']).'" alt="Gallery image" class="w-100">';
-					                    echo '</div>';
-					                }
-				                echo '</div>';
-			                }
-			            echo '</div>';
-			            if( $settings['slider_arrows'] == 'yes' ){
-				            echo '<div class="pt-40 d-flex justify-content-center gap-4">';
-				                echo '<button data-slick-prev="#gallery-slide-insta" class="slick-arrow slick-prev default"><span class="long-arrow"></span></button>';
-				                echo '<button data-slick-next="#gallery-slide-insta" class="slick-arrow slick-next default"><span class="long-arrow"></span></button>';
-				            echo '</div>';
-				        }
-			        echo '</div>';
-			    echo '</div>';
+				?>
+                <div class="sidebar-gallery">
+                <?php foreach ( $settings['slides'] as $single_data ) {?>
+                    <div class="gallery-thumb">
+                        <?php
+                        if( ! empty( $single_data['instagramgallery_image']['url'] ) ){
+                            echo '<a href="'.esc_url( $single_data['instagramgallery_image']['url'] ).'">';
+                            echo bizino_img_tag( array(
+                                'url'   => esc_url( $single_data['instagramgallery_image']['url'] ),
+                                'class' => 'w-100',
+                            ) );
+                            echo '</a>';
+                        }
+                        ?>
+                    </div>
+                <?php } ?>
+                </div>
+                <?php
 			}
 		}
-		echo '<!-----------------------End Instagram Gallery----------------------->';
 	}
 }
+\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_Instagram_Gallery());
