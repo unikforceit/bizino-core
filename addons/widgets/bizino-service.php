@@ -49,12 +49,10 @@ class Bizino_Service_Widget extends Widget_Base
             [
                 'label' => __('Services Style', 'bizino'),
                 'type' => Controls_Manager::SELECT,
-                'default' => 'one',
+                'default' => '1',
                 'options' => [
-                    'one' => __('Style One', 'bizino'),
-                    'two' => __('Style Two', 'bizino'),
-                    'three' => __('Style Three', 'bizino'),
-                    'four' => __('Style Four', 'bizino'),
+                    '1' => __('Style One', 'bizino'),
+                    '2' => __('Style Two', 'bizino'),
                 ],
             ]
         );
@@ -108,6 +106,100 @@ class Bizino_Service_Widget extends Widget_Base
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => __('Lorem ipm dolor amet, consectetur magm maiores.Ipsa dolor sit ilmesy magnam maores.', 'bizino'),
                 'label_block' => true,
+            ]
+        );
+
+        $this->end_controls_section();
+
+        /*-----------------------------------------Start 2------------------------------------*/
+        $this->start_controls_section(
+            'features_style2',
+            [
+                'label' => __('Service Slider', 'bizino'),
+                'tab' => Controls_Manager::TAB_CONTENT,
+                'condition' => ['features_style' => ['2']]
+            ]
+        );
+        $repeater = new Repeater();
+
+        $repeater->add_control(
+            'service2_image',
+            [
+                'label' => __('Upload Icon Image', 'bizino'),
+                'type' => Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => Utils::get_placeholder_image_src(),
+                ],
+            ]
+        );
+        $repeater->add_control(
+            'service2_title',
+            [
+                'label' => __('Title', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'rows' => 2,
+                'default' => __('Start From Scratch To Business Care', 'bizino')
+            ]
+        );
+        $repeater->add_control(
+            'service2_title_link',
+            [
+                'label' => __('Title Link', 'bizino'),
+                'type' => Controls_Manager::URL,
+                'placeholder' => __('www.example.com', 'bizino'),
+                'show_external' => true,
+                'default' => [
+                    'url' => '#',
+                    'is_external' => true,
+                    'nofollow' => true,
+                ],
+            ]
+        );
+        $repeater->add_control(
+            'service2_info',
+            [
+                'label' => __('Info', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'rows' => 2,
+                'default' => __('Plagiarize value added alignments via maintainable testing procedures. lie Energistically deploy leading.', 'bizino')
+            ]
+        );
+        $repeater->add_control(
+            'service2_link',
+            [
+                'label' => __('Service Link', 'bizino'),
+                'type' => Controls_Manager::URL,
+                'placeholder' => __('www.example.com', 'bizino'),
+                'show_external' => true,
+                'default' => [
+                    'url' => '#',
+                    'is_external' => true,
+                    'nofollow' => true,
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'service2_list',
+            [
+                'label' => __('Services List', 'bizino'),
+                'type' => Controls_Manager::REPEATER,
+                'fields' => $repeater->get_controls(),
+                'default' => [
+                    [
+                        'service2_title' => __('Start From Scratch To Business Care', 'bizino'),
+                    ],
+                    [
+                        'service2_title' => __('Financial Strategy Consultant', 'bizino'),
+                    ],
+                    [
+                        'service2_title' => __('Growth Marketing Consultant', 'bizino'),
+                    ],
+                    [
+                        'service2_title' => __('Digital Business Development', 'bizino'),
+                    ],
+                ],
+                'title_field' => '{{{ feature2_title }}}',
             ]
         );
 
@@ -179,33 +271,68 @@ class Bizino_Service_Widget extends Widget_Base
     {
 
         $settings = $this->get_settings_for_display();
+        if ($settings['features_style'] == '1') {
             ?>
 
-                <div class="service-style1">
-                    <div class="service-icon">
-                        <div class="vs-shape1"></div>
-                        <?php
-                        if (!empty($settings['service4_item_image']['url'])) {
-                            echo bizino_img_tag(array(
-                                'url' => esc_url($settings['service4_item_image']['url']),
-                            ));
-                        }
-                        ?>
-                    </div>
-                    <h3 class="service-title h5">
-                        <a class="text-inherit"
-                           href="<?php echo esc_url($settings['service4_link']['url']); ?>">
-                            <?php echo esc_html($settings['service4_title']); ?>
-                        </a>
-                    </h3>
+            <div class="service-style1">
+                <div class="service-icon">
+                    <div class="vs-shape1"></div>
                     <?php
-                    if (!empty($settings['service4_content'])) {
-                        echo '<p class="service-text">' . htmlspecialchars_decode(esc_html($settings['service4_content'])) . '</p>';
+                    if (!empty($settings['service4_item_image']['url'])) {
+                        echo bizino_img_tag(array(
+                            'url' => esc_url($settings['service4_item_image']['url']),
+                        ));
                     }
                     ?>
                 </div>
+                <h3 class="service-title h5">
+                    <a class="text-inherit"
+                       href="<?php echo esc_url($settings['service4_link']['url']); ?>">
+                        <?php echo esc_html($settings['service4_title']); ?>
+                    </a>
+                </h3>
+                <?php
+                if (!empty($settings['service4_content'])) {
+                    echo '<p class="service-text">' . htmlspecialchars_decode(esc_html($settings['service4_content'])) . '</p>';
+                }
+                ?>
+            </div>
 
             <?php
+        } else {
+            ?>
+
+            <div class="row vs-carousel" data-slide-show="3" data-md-slide-show="2">
+                <?php
+                foreach ($settings['service2_list'] as $item) {
+                    ?>
+                    <div class="col-xl-4">
+                        <div class="service-style3">
+                            <div class="service-icon">
+                                <div class="icon-shape"></div>
+                                <div class="icon-bg"></div>
+                                <?php
+                                if (!empty($item['service2_image']['url'])) {
+                                    echo bizino_img_tag(array(
+                                        'url' => esc_url($item['service2_image']['url']),
+                                    ));
+                                }
+                                ?>
+                            </div>
+                            <h3 class="service-title h5">
+                                <a class="text-inherit"
+                                   href="<?php echo esc_url($item['service2_title_link']['url']); ?>"><?php echo esc_html($item['service2_title']); ?></a>
+                            </h3>
+                            <p class="service-text"><?php echo esc_html($item['service2_info']); ?></p>
+                            <a href="<?php echo esc_url($item['service2_link']['url']); ?>" class="icon-btn style2"><i
+                                        class="fas fa-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+
+            <?php
+        }
     }
 }
 

@@ -55,6 +55,7 @@ class Bizino_Button_Widget extends Widget_Base
                 'options' => [
                     '1' => __('Style One', 'bizino'),
                     '2' => __('Style Two', 'bizino'),
+                    '3' => __('Style Three', 'bizino'),
                 ],
             ]
         );
@@ -205,8 +206,9 @@ class Bizino_Button_Widget extends Widget_Base
                 echo '<a href="' . esc_url($settings['button_link']['url']) . '" class="vs-btn">' . htmlspecialchars_decode(esc_html($settings['button_text'])) . '</a>';
             }
             ?>
+
             <?php
-        } else {
+        } elseif ($settings['button_style'] == '2') {
             ?>
             <!--    Button Style 2        -->
             <?php
@@ -214,6 +216,16 @@ class Bizino_Button_Widget extends Widget_Base
                 echo '<a href="' . esc_url($settings['button_link']['url']) . '" class="vs-btn style4"><i class="far fa-angle-right"></i>' . htmlspecialchars_decode(esc_html($settings['button_text'])) . '</a>';
             }
             ?>
+
+            <?php
+        } else {
+            ?>
+            <?php
+            if (!empty($settings['button_text'])) {
+                echo '<a href="' . esc_url($settings['button_link']['url']) . '" class="vs-btn style2 ms-xl-4">' . htmlspecialchars_decode(esc_html($settings['button_text'])) . '</a>';
+            }
+            ?>
+
             <?php
         }
     }

@@ -265,12 +265,12 @@ class Bizino_Features_Widget extends Widget_Base
         $this->add_control(
             'reverse_style',
             [
-                'label' 		=> __( 'Reverse Style?', 'bizino' ),
-                'type' 			=> Controls_Manager::SWITCHER,
-                'label_on' 		=> __( 'Show', 'bizino' ),
-                'label_off' 	=> __( 'Hide', 'bizino' ),
-                'return_value' 	=> 'event-style2',
-                'default' 		=> '',
+                'label' => __('Reverse Style?', 'bizino'),
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => __('Show', 'bizino'),
+                'label_off' => __('Hide', 'bizino'),
+                'return_value' => 'event-style2',
+                'default' => '',
             ]
         );
         $this->add_control(
@@ -523,80 +523,80 @@ class Bizino_Features_Widget extends Widget_Base
 
         $settings = $this->get_settings_for_display();
         if ($settings['features_style'] == '1') {
-                ?>
-                <!--==============================
-                Event Area
-                ==============================-->
-                <section class="event-cs">
-                    <div class="event-style1 <?php echo esc_attr($settings['reverse_style']);?>">
-                        <div class="event-wrap">
-                            <div class="event-img">
+            ?>
+            <!--==============================
+            Event Area
+            ==============================-->
+            <section class="event-cs">
+                <div class="event-style1 <?php echo esc_attr($settings['reverse_style']); ?>">
+                    <div class="event-wrap">
+                        <div class="event-img">
+                            <?php
+                            if (!empty($settings['feature_image']['url'])) {
+                                echo bizino_img_tag(array(
+                                    'url' => esc_url($settings['feature_image']['url']),
+                                ));
+                            }
+                            ?>
+                        </div>
+                        <div class="event-content">
+                            <?php
+                            if (!empty($settings['feature_subtitle'])) {
+                                echo '<span class="event-label">' . htmlspecialchars_decode(esc_html($settings['feature_subtitle'])) . '</span>';
+                            }
+                            ?>
+                            <?php
+                            if (!empty($settings['feature_title'])) {
+                                echo '<h3 class="event-title h4">
+                                    <a class="text-inherit" href="' . esc_url($settings['feature_link']['url']) . '">' . htmlspecialchars_decode(esc_html($settings['feature_title'])) . '</a>
+                                </h3>';
+                            }
+                            ?>
+                            <?php
+                            if (!empty($settings['feature_desc'])) {
+                                echo '<p class="event-text">' . htmlspecialchars_decode(esc_html($settings['feature_desc'])) . '</p>';
+                            }
+                            ?>
+                            <div class="event-date">
                                 <?php
-                                if (!empty($settings['feature_image']['url'])) {
-                                    echo bizino_img_tag(array(
-                                        'url' => esc_url($settings['feature_image']['url']),
-                                    ));
+                                if (!empty($settings['event_day'])) {
+                                    echo '<span class="day">' . htmlspecialchars_decode(esc_html($settings['event_day'])) . '</span>';
+                                }
+                                ?>
+                                <?php
+                                if (!empty($settings['event_year'])) {
+                                    echo '<span class="year">' . htmlspecialchars_decode(esc_html($settings['event_year'])) . '</span>';
                                 }
                                 ?>
                             </div>
-                            <div class="event-content">
-                                <?php
-                                if (!empty($settings['feature_subtitle'])) {
-                                    echo '<span class="event-label">' . htmlspecialchars_decode(esc_html($settings['feature_subtitle'])) . '</span>';
-                                }
-                                ?>
-                                <?php
-                                if (!empty($settings['feature_title'])) {
-                                    echo '<h3 class="event-title h4">
-                                    <a class="text-inherit" href="' . esc_url($settings['feature_link']['url']) . '">' . htmlspecialchars_decode(esc_html($settings['feature_title'])) . '</a>
-                                </h3>';
-                                }
-                                ?>
-                                <?php
-                                if (!empty($settings['feature_desc'])) {
-                                    echo '<p class="event-text">' . htmlspecialchars_decode(esc_html($settings['feature_desc'])) . '</p>';
-                                }
-                                ?>
-                                <div class="event-date">
+                            <div class="event-author">
+                                <div class="event-avater">
                                     <?php
-                                    if (!empty($settings['event_day'])) {
-                                        echo '<span class="day">' . htmlspecialchars_decode(esc_html($settings['event_day'])) . '</span>';
-                                    }
-                                    ?>
-                                    <?php
-                                    if (!empty($settings['event_year'])) {
-                                        echo '<span class="year">' . htmlspecialchars_decode(esc_html($settings['event_year'])) . '</span>';
+                                    if (!empty($settings['author_image']['url'])) {
+                                        echo bizino_img_tag(array(
+                                            'url' => esc_url($settings['author_image']['url']),
+                                        ));
                                     }
                                     ?>
                                 </div>
-                                <div class="event-author">
-                                    <div class="event-avater">
-                                        <?php
-                                        if (!empty($settings['author_image']['url'])) {
-                                            echo bizino_img_tag(array(
-                                                'url' => esc_url($settings['author_image']['url']),
-                                            ));
-                                        }
-                                        ?>
-                                    </div>
-                                    <div class="media-body">
-                                        <?php
-                                        if (!empty($settings['author_name'])) {
-                                            echo '<h4 class="event-organizer h6">' . htmlspecialchars_decode(esc_html($settings['author_name'])) . '</h4>';
-                                        }
-                                        ?>
-                                        <?php
-                                        if (!empty($settings['author_designation'])) {
-                                            echo '<p class="event-nominee">' . htmlspecialchars_decode(esc_html($settings['author_designation'])) . '</p>';
-                                        }
-                                        ?>
-                                    </div>
+                                <div class="media-body">
+                                    <?php
+                                    if (!empty($settings['author_name'])) {
+                                        echo '<h4 class="event-organizer h6">' . htmlspecialchars_decode(esc_html($settings['author_name'])) . '</h4>';
+                                    }
+                                    ?>
+                                    <?php
+                                    if (!empty($settings['author_designation'])) {
+                                        echo '<p class="event-nominee">' . htmlspecialchars_decode(esc_html($settings['author_designation'])) . '</p>';
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-                <?php
+                </div>
+            </section>
+            <?php
         } elseif ($settings['features_style'] == '2') {
             if ($settings['feature2_list']) {
                 ?>
@@ -604,54 +604,54 @@ class Bizino_Features_Widget extends Widget_Base
                 Features Area
                 ==============================-->
                 <section class="features-cs">
-                        <div class="row gx-4 vs-carousel" data-slide-show="3" data-lg-slide-show="2"
-                             data-md-slide-show="2"
-                             data-center-mode="true" data-lg-center-mode="true" data-ml-center-mode="true"
-                             data-xl-center-mode="true">
-                            <?php
-                            foreach ($settings['feature2_list'] as $feature) {
-                                ?>
-                                <div class="col-xl-4 feature-multi">
-                                    <div class="feature-style1">
-                                        <div class="feature-img">
+                    <div class="row gx-4 vs-carousel" data-slide-show="3" data-lg-slide-show="2"
+                         data-md-slide-show="2"
+                         data-center-mode="true" data-lg-center-mode="true" data-ml-center-mode="true"
+                         data-xl-center-mode="true">
+                        <?php
+                        foreach ($settings['feature2_list'] as $feature) {
+                            ?>
+                            <div class="col-xl-4 feature-multi">
+                                <div class="feature-style1">
+                                    <div class="feature-img">
+                                        <?php
+                                        if (!empty($feature['feature2_image']['url'])) {
+                                            echo bizino_img_tag(array(
+                                                'url' => esc_url($feature['feature2_image']['url']),
+                                            ));
+                                        }
+                                        ?>
+                                    </div>
+                                    <div class="feature-content">
+                                        <div class="feature-icon">
                                             <?php
-                                            if (!empty($feature['feature2_image']['url'])) {
+                                            if (!empty($feature['feature2_image2']['url'])) {
                                                 echo bizino_img_tag(array(
-                                                    'url' => esc_url($feature['feature2_image']['url']),
+                                                    'url' => esc_url($feature['feature2_image2']['url']),
                                                 ));
                                             }
                                             ?>
                                         </div>
-                                        <div class="feature-content">
-                                            <div class="feature-icon">
-                                                <?php
-                                                if (!empty($feature['feature2_image2']['url'])) {
-                                                    echo bizino_img_tag(array(
-                                                        'url' => esc_url($feature['feature2_image2']['url']),
-                                                    ));
-                                                }
-                                                ?>
-                                            </div>
-                                            <h3 class="feature-title h5">
-                                                <a class="text-inherit"
-                                                   href="<?php echo esc_url($feature['feature2_link']['url']); ?>">
-                                                    <?php echo esc_html($feature['feature2_title']); ?>
-                                                </a>
-                                            </h3>
-                                            <?php
-                                            if (!empty($feature['feature2_desc'])) {
-                                                echo '<p class="feature">' . htmlspecialchars_decode(esc_html($feature['feature2_desc'])) . '</p>';
-                                            }
-                                            ?>
-                                            <a href="<?php echo esc_url($feature['feature2_link2']['url']); ?>"
-                                               class="icon-btn style2">
-                                                <i class="far fa-long-arrow-right"></i>
+                                        <h3 class="feature-title h5">
+                                            <a class="text-inherit"
+                                               href="<?php echo esc_url($feature['feature2_link']['url']); ?>">
+                                                <?php echo esc_html($feature['feature2_title']); ?>
                                             </a>
-                                        </div>
+                                        </h3>
+                                        <?php
+                                        if (!empty($feature['feature2_desc'])) {
+                                            echo '<p class="feature">' . htmlspecialchars_decode(esc_html($feature['feature2_desc'])) . '</p>';
+                                        }
+                                        ?>
+                                        <a href="<?php echo esc_url($feature['feature2_link2']['url']); ?>"
+                                           class="icon-btn style2">
+                                            <i class="far fa-long-arrow-right"></i>
+                                        </a>
                                     </div>
                                 </div>
-                            <?php } ?>
-                        </div>
+                            </div>
+                        <?php } ?>
+                    </div>
                 </section>
                 <?php
             }
@@ -662,30 +662,30 @@ class Bizino_Features_Widget extends Widget_Base
                 Skill Area
                 ==============================-->
                 <section class="skill-cs">
-                        <div class="progress-multi">
-                            <?php
-                            foreach ($settings['skill_list'] as $sList) {
+                    <div class="progress-multi">
+                        <?php
+                        foreach ($settings['skill_list'] as $sList) {
+                            ?>
+                            <div class="progress-style1">
+                                <?php
+                                if (!empty($sList['skill_item_title'])) {
+                                    echo '<h3 class="progress-title">' . htmlspecialchars_decode(esc_html($sList['skill_item_title'])) . '</h3>';
+                                }
                                 ?>
-                                <div class="progress-style1">
-                                    <?php
-                                    if (!empty($sList['skill_item_title'])) {
-                                        echo '<h3 class="progress-title">' . htmlspecialchars_decode(esc_html($sList['skill_item_title'])) . '</h3>';
-                                    }
-                                    ?>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar"
-                                             style="width: <?php echo esc_attr($sList['skill_item_value']); ?>%"
-                                             aria-valuenow="<?php echo esc_attr($sList['skill_item_value']); ?>"
-                                             aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <?php
-                                    if (!empty($sList['skill_item_value'])) {
-                                        echo '<span class="progress-amount">' . htmlspecialchars_decode(esc_html($sList['skill_item_value'])) . '' . esc_html('%') . '</span>';
-                                    }
-                                    ?>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar"
+                                         style="width: <?php echo esc_attr($sList['skill_item_value']); ?>%"
+                                         aria-valuenow="<?php echo esc_attr($sList['skill_item_value']); ?>"
+                                         aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
-                            <?php } ?>
-                        </div>
+                                <?php
+                                if (!empty($sList['skill_item_value'])) {
+                                    echo '<span class="progress-amount">' . htmlspecialchars_decode(esc_html($sList['skill_item_value'])) . '' . esc_html('%') . '</span>';
+                                }
+                                ?>
+                            </div>
+                        <?php } ?>
+                    </div>
                 </section>
                 <?php
             }
@@ -696,47 +696,47 @@ class Bizino_Features_Widget extends Widget_Base
                 Service Area
                 ==============================-->
                 <section class="service-cs">
-                        <div class="row gx-0 text-center text-lg-start">
-                            <?php
-                            foreach ($settings['feature2_list'] as $featurelist2) {
-                                ?>
-                                <div class="col-md-6 col-lg-4 ">
-                                    <div class="service-style2">
-                                        <div class="service-icon">
-                                            <?php
-                                            if (!empty($featurelist2['feature2_image2']['url'])) {
-                                                echo bizino_img_tag(array(
-                                                    'url' => esc_url($featurelist2['feature2_image2']['url']),
-                                                ));
-                                            }
-                                            ?>
-                                        </div>
+                    <div class="row gx-0 text-center text-lg-start">
+                        <?php
+                        foreach ($settings['feature2_list'] as $featurelist2) {
+                            ?>
+                            <div class="col-md-6 col-lg-4 ">
+                                <div class="service-style2">
+                                    <div class="service-icon">
                                         <?php
-                                        if (!empty($featurelist2['feature2_title'])) {
-                                            echo '<h3 class="service-title h5">
-                                                        <a class="text-inherit" href="' . esc_url($featurelist2['feature2_link']['url']) . '">' . htmlspecialchars_decode(esc_html($featurelist2['feature2_title'])) . '</a>
-                                                    </h3>';
-                                        }
-                                        ?>
-                                        <?php
-                                        if (!empty($featurelist2['feature2_desc'])) {
-                                            echo '<p class="service-text">' . htmlspecialchars_decode(esc_html($featurelist2['feature2_desc'])) . '</p>';
+                                        if (!empty($featurelist2['feature2_image2']['url'])) {
+                                            echo bizino_img_tag(array(
+                                                'url' => esc_url($featurelist2['feature2_image2']['url']),
+                                            ));
                                         }
                                         ?>
                                     </div>
+                                    <?php
+                                    if (!empty($featurelist2['feature2_title'])) {
+                                        echo '<h3 class="service-title h5">
+                                                        <a class="text-inherit" href="' . esc_url($featurelist2['feature2_link']['url']) . '">' . htmlspecialchars_decode(esc_html($featurelist2['feature2_title'])) . '</a>
+                                                    </h3>';
+                                    }
+                                    ?>
+                                    <?php
+                                    if (!empty($featurelist2['feature2_desc'])) {
+                                        echo '<p class="service-text">' . htmlspecialchars_decode(esc_html($featurelist2['feature2_desc'])) . '</p>';
+                                    }
+                                    ?>
                                 </div>
-                            <?php } ?>
-                            <div class="col-md-6 col-lg-4 d-flex align-items-center justify-content-center mt-30 mt-md-0">
-                                <?php
-                                if (!empty($settings['feature2_all_link_text'])) {
-                                    echo '<a class="view-big-btn" href="' . esc_url($settings['feature2_all_link']['url']) . '">
+                            </div>
+                        <?php } ?>
+                        <div class="col-md-6 col-lg-4 d-flex align-items-center justify-content-center mt-30 mt-md-0">
+                            <?php
+                            if (!empty($settings['feature2_all_link_text'])) {
+                                echo '<a class="view-big-btn" href="' . esc_url($settings['feature2_all_link']['url']) . '">
                                         <i class="far fa-arrow-right"></i>
                                         <span class="btn-text">' . htmlspecialchars_decode(esc_html($settings['feature2_all_link_text'])) . '</span>
                                     </a>';
-                                }
-                                ?>
-                            </div>
+                            }
+                            ?>
                         </div>
+                    </div>
                 </section>
                 <?php
             }
