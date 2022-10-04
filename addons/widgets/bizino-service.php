@@ -56,15 +56,6 @@ class Bizino_Service_Widget extends Widget_Base
                 ],
             ]
         );
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-            'service_4_content',
-            [
-                'label' => __('Services', 'bizino'),
-                'tab' => Controls_Manager::TAB_CONTENT,
-            ]
-        );
 
         $this->add_control(
             'service4_item_image',
@@ -73,7 +64,8 @@ class Bizino_Service_Widget extends Widget_Base
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
-                ]
+                ],
+                'condition' => ['features_style' => ['1']]
             ]
         );
 
@@ -84,6 +76,7 @@ class Bizino_Service_Widget extends Widget_Base
                 'default' => __('Safe Cleaning Supplies', 'bizino'),
                 'rows' => 2,
                 'label_block' => true,
+                'condition' => ['features_style' => ['1']]
             ]
         );
         $this->add_control(
@@ -98,6 +91,7 @@ class Bizino_Service_Widget extends Widget_Base
                     'is_external' => true,
                     'nofollow' => true,
                 ],
+                'condition' => ['features_style' => ['1']]
             ]
         );
         $this->add_control(
@@ -106,23 +100,13 @@ class Bizino_Service_Widget extends Widget_Base
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => __('Lorem ipm dolor amet, consectetur magm maiores.Ipsa dolor sit ilmesy magnam maores.', 'bizino'),
                 'label_block' => true,
+                'condition' => ['features_style' => ['1']]
             ]
         );
 
-        $this->end_controls_section();
+        $repeater2 = new Repeater();
 
-        /*-----------------------------------------Start 2------------------------------------*/
-        $this->start_controls_section(
-            'features_style2',
-            [
-                'label' => __('Service Slider', 'bizino'),
-                'tab' => Controls_Manager::TAB_CONTENT,
-                'condition' => ['features_style' => ['2']]
-            ]
-        );
-        $repeater = new Repeater();
-
-        $repeater->add_control(
+        $repeater2->add_control(
             'service2_image',
             [
                 'label' => __('Upload Icon Image', 'bizino'),
@@ -132,7 +116,7 @@ class Bizino_Service_Widget extends Widget_Base
                 ],
             ]
         );
-        $repeater->add_control(
+        $repeater2->add_control(
             'service2_title',
             [
                 'label' => __('Title', 'bizino'),
@@ -141,7 +125,7 @@ class Bizino_Service_Widget extends Widget_Base
                 'default' => __('Start From Scratch To Business Care', 'bizino')
             ]
         );
-        $repeater->add_control(
+        $repeater2->add_control(
             'service2_title_link',
             [
                 'label' => __('Title Link', 'bizino'),
@@ -155,19 +139,19 @@ class Bizino_Service_Widget extends Widget_Base
                 ],
             ]
         );
-        $repeater->add_control(
+        $repeater2->add_control(
             'service2_info',
             [
-                'label' => __('Info', 'bizino'),
+                'label' => __('Short Descriptions', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
-                'rows' => 2,
-                'default' => __('Plagiarize value added alignments via maintainable testing procedures. lie Energistically deploy leading.', 'bizino')
+                'rows' => 3,
+                'default' => __('Markets evolve compelling supply chains without virtual resources. empowered customer service for reliable.', 'bizino')
             ]
         );
-        $repeater->add_control(
+        $repeater2->add_control(
             'service2_link',
             [
-                'label' => __('Service Link', 'bizino'),
+                'label' => __('Arrow Icon Link', 'bizino'),
                 'type' => Controls_Manager::URL,
                 'placeholder' => __('www.example.com', 'bizino'),
                 'show_external' => true,
@@ -184,7 +168,7 @@ class Bizino_Service_Widget extends Widget_Base
             [
                 'label' => __('Services List', 'bizino'),
                 'type' => Controls_Manager::REPEATER,
-                'fields' => $repeater->get_controls(),
+                'fields' => $repeater2->get_controls(),
                 'default' => [
                     [
                         'service2_title' => __('Start From Scratch To Business Care', 'bizino'),
@@ -199,7 +183,8 @@ class Bizino_Service_Widget extends Widget_Base
                         'service2_title' => __('Digital Business Development', 'bizino'),
                     ],
                 ],
-                'title_field' => '{{{ feature2_title }}}',
+                'title_field' => '{{{ service2_title }}}',
+                'condition' => ['features_style' => ['2']]
             ]
         );
 
