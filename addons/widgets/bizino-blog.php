@@ -564,7 +564,7 @@ class Bizino_Blog_Post extends Widget_Base
                                             }
                                             ?>
                                             <a href="<?php echo esc_url(get_permalink()); ?>" class="icon-btn style4"><i
-                                                        class="far fa-long-arrow-right"></i></a>
+                                                        class="fal fa-long-arrow-right"></i></a>
                                         </div>
                                     </div>
                                 </div>

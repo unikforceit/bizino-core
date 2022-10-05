@@ -48,7 +48,18 @@ class Bizino_Gallery extends Widget_Base
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
-
+        $this->add_control(
+            'gallery_style',
+            [
+                'label' => __('Gallery Style', 'bizino'),
+                'type' => Controls_Manager::SELECT,
+                'default' => 'one',
+                'options' => [
+                    'one' => __('Style One', 'bizino'),
+                    'two' => __('Style Two', 'bizino'),
+                ],
+            ]
+        );
         $this->add_control(
             'gallery_title', [
                 'label' => __('Main Title', 'bizino'),
@@ -65,7 +76,16 @@ class Bizino_Gallery extends Widget_Base
                 'label_block' => true,
             ]
         );
+        $this->end_controls_section();
 
+        $this->start_controls_section(
+            'gallery_1',
+            [
+                'label' => __('Gallery Item', 'bizino'),
+                'tab' => Controls_Manager::TAB_CONTENT,
+                'condition' => ['gallery_style' => ['one']]
+            ]
+        );
         $repeater = new Repeater();
 
         $repeater->add_control(
@@ -187,6 +207,122 @@ class Bizino_Gallery extends Widget_Base
         $this->end_controls_section();
 
         $this->start_controls_section(
+            'gallery_2',
+            [
+                'label' => __('Gallery Item', 'bizino'),
+                'tab' => Controls_Manager::TAB_STYLE,
+                'condition' => ['gallery_style' => ['two']]
+            ]
+        );
+        $repeater2 = new Repeater();
+
+        $repeater2->add_control(
+            'nav_title', [
+                'label' => __('Nav Title', 'bizino'),
+                'type' => Controls_Manager::TEXT,
+                'default' => __('Marketing', 'bizino'),
+                'label_block' => true,
+            ]
+        );
+        $this->add_control(
+            'navs',
+            [
+                'label' => __('Nav', 'bizino'),
+                'type' => Controls_Manager::REPEATER,
+                'fields' => $repeater2->get_controls(),
+                'default' => [
+                    [
+                        'nav_title' => __('Marketing', 'bizino'),
+                    ],
+                    [
+                        'nav_title' => __('Marketing', 'bizino'),
+                    ],
+                    [
+                        'nav_title' => __('Marketing', 'bizino'),
+                    ],
+                    [
+                        'nav_title' => __('Marketing', 'bizino'),
+                    ],
+
+                ],
+                'title_field' => '{{{ nav_title }}}',
+            ]
+        );
+
+        $repeater3 = new Repeater();
+
+        $repeater3->add_control(
+            'item_title', [
+                'label' => __('Item Title', 'bizino'),
+                'type' => Controls_Manager::TEXT,
+                'default' => __('Marketing', 'bizino'),
+                'label_block' => true,
+            ]
+        );
+        $repeater3->add_control(
+            'item_category', [
+                'label' => __('Item Category', 'bizino'),
+                'type' => Controls_Manager::TEXT,
+                'default' => __('Marketing', 'bizino'),
+                'label_block' => true,
+            ]
+        );
+        $repeater3->add_control(
+            'item_image',
+            [
+                'label' => __('Image', 'bizino'),
+                'type' => Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => Utils::get_placeholder_image_src(),
+                ],
+            ]
+        );
+        $repeater3->add_control(
+            'item_url', [
+                'label' => __('Image Url', 'bizino'),
+                'type' => Controls_Manager::URL,
+                'placeholder' => __('https://your-link.com', 'bizino'),
+                'default' => [
+                    'url' => '#',
+                ],
+                'label_block' => true,
+            ]
+        );
+        $repeater3->add_control(
+            'image_title', [
+                'label' => __('Main Title', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => __('Branding Marketing', 'bizino'),
+                'label_block' => true,
+            ]
+        );
+        $this->add_control(
+            'items',
+            [
+                'label' => __('Items', 'bizino'),
+                'type' => Controls_Manager::REPEATER,
+                'fields' => $repeater3->get_controls(),
+                'default' => [
+                    [
+                        'item_title' => __('Marketing', 'bizino'),
+                    ],
+                    [
+                        'item_title' => __('Marketing', 'bizino'),
+                    ],
+                    [
+                        'item_title' => __('Marketing', 'bizino'),
+                    ],
+                    [
+                        'item_title' => __('Marketing', 'bizino'),
+                    ],
+
+                ],
+                'title_field' => '{{{ item_title }}}',
+            ]
+        );
+        $this->end_controls_section();
+
+        $this->start_controls_section(
             'gallery_general',
             [
                 'label' => __('General', 'bizino'),
@@ -271,6 +407,7 @@ class Bizino_Gallery extends Widget_Base
         $settings = $this->get_settings_for_display();
 
         if (!empty($settings['slides'])) {
+            if ($settings['gallery_style'] == 'one') {
             ?>
             <!--==============================
             Gallery Area
@@ -339,6 +476,42 @@ class Bizino_Gallery extends Widget_Base
                 </div>
             </section>
             <?php
+                } else{
+                ?>
+                <!--==============================
+                Gallery Area
+                ==============================-->
+                <section class="gallery-cs">
+                    <?php if (!empty($settings['slides'])) {?>
+                    <div class="filter-menu1 filter-menu-active">
+                        <button data-filter="*" class="active">All</button>
+                    <?php
+                    foreach ($settings['navs'] as $navs) {
+                        ?>
+                        <button data-filter=".<?php echo esc_html($navs['nav_title']);?>"><?php echo esc_html($navs['nav_title']);?></button>
+                    <?php } ?>
+                    </div>
+                    <?php } ?>
+                    <div class="row filter-active gx-">
+                        <div class="col-md-6 col-lg-4 filter-item Business Finance">
+                            <div class="gallery-style3">
+                                <div class="gallery-img">
+                                    <div class="gallery-overlay "></div>
+                                    <img src="assets/img/gallery/gal-3-1.jpg" alt="image">
+                                </div>
+                                <div class="gallery-bottom">
+                                    <div class="media-body">
+                                        <h3 class="gallery-title h5"><a href="gallery-details.html" class="text-inherit">Web Development</a></h3>
+                                        <div class="gallery-category">Expert Opinion</div>
+                                    </div>
+                                    <a href="gallery-details.html" class="icon-btn"><i class="fas fa-long-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <?php
+            }
         }
     }
 }
