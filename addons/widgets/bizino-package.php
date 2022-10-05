@@ -100,144 +100,230 @@ class Bizino_Packages_Widget extends Widget_Base
             ]
         );
 
-        $this->add_control(
-            'button_text',
+        $this->end_controls_section();
+
+
+//      Monthly Tab Loop
+        $this->start_controls_section(
+            'monthly_section',
             [
-                'label' => __('Button Text', 'bizino'),
-                'type' => Controls_Manager::TEXT,
-
-                'default' => __('Button Text', 'bizino'),
-                'condition' => ['package_style' => 'one'],
-            ]
-        );
-
-        $this->add_control(
-            'button_link',
-            [
-                'label' => __('Link', 'bizino'),
-                'type' => Controls_Manager::URL,
-                'placeholder' => __('https://your-link.com', 'bizino'),
-                'show_external' => true,
-                'default' => [
-                    'url' => '#',
-                    'is_external' => true,
-                    'nofollow' => true,
-                ],
-                'condition' => ['package_style' => 'one'],
-            ]
-        );
-        /*-----------------------------------------package styling 1------------------------------------*/
-        $repeater = new Repeater();
-
-        $repeater->add_control(
-            'image',
-            [
-                'label' => __('Thumbnail Image', 'bizino'),
-                'type' => Controls_Manager::MEDIA,
-                'dynamic' => [
-                    'active' => true,
-                ],
-                'default' => [
-                    'url' => Utils::get_placeholder_image_src(),
-                ],
-            ]
-        );
-
-        $repeater->add_control(
-            'title', [
-                'label' => __('Pricing Title', 'bizino'),
-                'type' => Controls_Manager::TEXTAREA,
-                'default' => __('Safe Cleaning Supplies', 'bizino'),
-                'rows' => 2,
-                'label_block' => true,
-            ]
-        );
-        $repeater->add_control(
-            'price', [
-                'label' => __('Price Plan', 'bizino'),
-                'type' => Controls_Manager::TEXTAREA,
-                'default' => __('Safe Cleaning Supplies', 'bizino'),
-                'rows' => 2,
-                'label_block' => true,
+                'label' => esc_html__('Monthly Section', 'bizino'),
+                'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
 
         $this->add_control(
-            'packages',
+            'mTabTitle',
             [
-                'label' => __('Packages', 'bizino'),
-                'type' => Controls_Manager::REPEATER,
-                'fields' => $repeater->get_controls(),
-                'default' => [
-                    [
-                        'title' => __('Safe Cleaning Supplies', 'bizino'),
-                    ],
-                ],
-                'title_field' => '{{{ title }}}',
-                'condition' => ['package_style' => 'one'],
-            ]
-        );
-
-        /*-----------------------------------------package styling 2------------------------------------*/
-        $repeater = new Repeater();
-
-        $repeater->add_control(
-            'image',
-            [
-                'label' => __('Thumbnail Image', 'bizino'),
-                'type' => Controls_Manager::MEDIA,
-                'dynamic' => [
-                    'active' => true,
-                ],
-                'default' => [
-                    'url' => Utils::get_placeholder_image_src(),
-                ],
-            ]
-        );
-
-        $repeater->add_control(
-            'title', [
                 'label' => __('Title', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
-                'default' => __('Safe Cleaning Supplies', 'bizino'),
                 'rows' => 2,
-                'label_block' => true,
+                'default' => __('Monthly Plan', 'bizino')
             ]
         );
+
+        $repeater = new Repeater();
         $repeater->add_control(
-            'content', [
-                'label' => __('Content List', 'bizino'),
-                'type' => Controls_Manager::WYSIWYG,
-                'default' => __('Safe Cleaning Supplies', 'bizino'),
-                'label_block' => true,
-            ]
-        );
-        $repeater->add_control(
-            'price', [
-                'label' => __('Price Plan', 'bizino'),
+            'mPrice_save', [
+                'label' => esc_html__('Monthly Price Save', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
-                'default' => __('Safe Cleaning Supplies', 'bizino'),
-                'rows' => 2,
-                'label_block' => true,
+                'default' => esc_html__("Save 20%", 'bizino'),
+                'description' => esc_html__('enter price save', 'bizino')
+            ]
+        );
+        $repeater->add_control(
+            'mPrice_title', [
+                'label' => esc_html__('Monthly Price Title', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("Standard", 'bizino'),
+                'description' => esc_html__('enter price title', 'bizino')
+            ]
+        );
+        $repeater->add_control(
+            'mPackage_price_currency', [
+                'label' => esc_html__('Package Price Currency', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("$", 'bizino'),
+                'description' => esc_html__('enter package price currency', 'bizino')
+            ]
+        );
+        $repeater->add_control(
+            'mPackage_price', [
+                'label' => esc_html__('Package Price', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("54", 'bizino'),
+                'description' => esc_html__('enter package price', 'bizino')
+            ]
+        );
+        $repeater->add_control(
+            'mPackage_price_duration', [
+                'label' => esc_html__('Package Price Duration', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("/ Month", 'bizino'),
+                'description' => esc_html__('enter package price duration', 'bizino')
+            ]
+        );
+        $repeater->add_control(
+            'mPackage_offer', [
+                'label' => esc_html__('Package Offer', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("Full Business Services", 'bizino'),
+                'description' => esc_html__('enter package price Offer', 'bizino')
+            ]
+        );
+        $repeater->add_control(
+            'mbtn_status', [
+                'label' => esc_html__('Button Show/Hide', 'bizino'),
+                'type' => Controls_Manager::SWITCHER,
+                'default' => 'yes',
+                'description' => esc_html__('show/hide button', 'bizino')
+            ]
+        );
+        $repeater->add_control(
+            'mbtn_text', [
+                'label' => esc_html__('Button Text', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("Purchase Plan", 'bizino'),
+                'description' => esc_html__('enter button text', 'bizino')
+            ]
+        );
+        $repeater->add_control(
+            'mbtn_link', [
+                'label' => esc_html__('Button URL', 'bizino'),
+                'type' => Controls_Manager::URL,
+                'default' => [
+                    'url' => '#'
+                ],
+                'description' => esc_html__('enter button url', 'bizino'),
+                'condition' => ['mbtn_status' => 'yes']
+            ]
+        );
+
+        $this->add_control('mPrice_list', [
+            'label' => esc_html__('Take 2 Price Item', 'bizino'),
+            'type' => Controls_Manager::REPEATER,
+            'fields' => $repeater->get_controls(),
+            'default' => [
+                [
+                    'mPrice_title' => esc_html__('Standard', 'plugin-name'),
+                ],
+                [
+                    'mPrice_title' => esc_html__('Popular', 'plugin-name'),
+                ],
+            ],
+            'title_field' => '{{{ mPrice_title }}}',
+        ]);
+        $this->end_controls_section();
+
+        //      Yearly Tab Loop
+        $this->start_controls_section(
+            'yearly_section',
+            [
+                'label' => esc_html__('Yearly Section', 'softim-core'),
+                'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
 
         $this->add_control(
-            'packages_v2',
+            'yTabTitle',
             [
-                'label' => __('Packages', 'bizino'),
-                'type' => Controls_Manager::REPEATER,
-                'fields' => $repeater->get_controls(),
-                'default' => [
-                    [
-                        'title' => __('Safe Cleaning Supplies', 'bizino'),
-                    ],
-                ],
-                'title_field' => '{{{ title }}}',
-                'condition' => ['package_style!' => 'one'],
+                'label' => __('Title', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'rows' => 2,
+                'default' => __('Yearly Plan', 'bizino')
             ]
         );
 
+        $repeater2 = new Repeater();
+        $repeater2->add_control(
+            'yPrice_save', [
+                'label' => esc_html__('Yearly Price Save', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("Save 18%", 'bizino'),
+                'description' => esc_html__('enter price save', 'bizino')
+            ]
+        );
+        $repeater2->add_control(
+            'yPrice_title', [
+                'label' => esc_html__('Yearly Price Title', 'softim-core'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("Bronze", 'softim-core'),
+                'description' => esc_html__('enter price title', 'softim-core')
+            ]
+        );
+        $repeater2->add_control(
+            'yPackage_price_currency', [
+                'label' => esc_html__('Package Price Currency', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("$", 'bizino'),
+                'description' => esc_html__('enter package price currency', 'bizino')
+            ]
+        );
+        $repeater2->add_control(
+            'yPackage_price', [
+                'label' => esc_html__('Package Price', 'softim-core'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("199", 'softim-core'),
+                'description' => esc_html__('enter package price', 'softim-core')
+            ]
+        );
+        $repeater2->add_control(
+            'yPackage_price_duration', [
+                'label' => esc_html__('Package Price Duration', 'softim-core'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("/ Year", 'softim-core'),
+                'description' => esc_html__('enter package price duration', 'softim-core')
+            ]
+        );
+        $repeater2->add_control(
+            'yPackage_offer', [
+                'label' => esc_html__('Package Offer', 'softim-core'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("Full Business Services", 'softim-core'),
+                'description' => esc_html__('enter package price duration', 'softim-core')
+            ]
+        );
+        $repeater2->add_control(
+            'ybtn_status', [
+                'label' => esc_html__('Button Show/Hide', 'softim-core'),
+                'type' => Controls_Manager::SWITCHER,
+                'default' => 'yes',
+                'description' => esc_html__('show/hide button', 'softim-core')
+            ]
+        );
+        $repeater2->add_control(
+            'ybtn_text', [
+                'label' => esc_html__('Button Text', 'softim-core'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("Purchase Plan", 'softim-core'),
+                'description' => esc_html__('enter button text', 'softim-core')
+            ]
+        );
+        $repeater2->add_control(
+            'ybtn_link', [
+            'label' => esc_html__('Button URL', 'softim-core'),
+            'type' => Controls_Manager::URL,
+            'default' => [
+                'url' => '#'
+            ],
+            'description' => esc_html__('enter button url', 'softim-core'),
+            'condition' => ['ybtn_status' => 'yes']
+        ]);
+
+        $this->add_control('yPrice_list', [
+            'label' => esc_html__('Take 2 Price Item', 'softim-core'),
+            'type' => Controls_Manager::REPEATER,
+            'fields' => $repeater2->get_controls(),
+            'default' => [
+                [
+                    'yPrice_title' => esc_html__('Bronze', 'plugin-name'),
+                ],
+                [
+                    'yPrice_title' => esc_html__('VIP Golder', 'plugin-name'),
+                ],
+            ],
+            'title_field' => '{{{ yPrice_title }}}',
+        ]);
         $this->end_controls_section();
 
         /*-----------------------------------------subtitle styling------------------------------------*/
@@ -548,11 +634,12 @@ class Bizino_Packages_Widget extends Widget_Base
                                 <div class="nav package-tab" id="priceTab" role="tablist">
                                     <button class="nav-link active" id="monthlyplan-tab" data-bs-toggle="tab"
                                             data-bs-target="#monthlyplan" type="button" role="tab"
-                                            aria-controls="monthlyplan" aria-selected="true">Monthly Plan
+                                            aria-controls="monthlyplan"
+                                            aria-selected="true"><?php echo esc_html($settings['mTabTitle']); ?>
                                     </button>
                                     <button class="nav-link" id="business-tab" data-bs-toggle="tab"
                                             data-bs-target="#business" type="button" role="tab" aria-controls="business"
-                                            aria-selected="false">Yearly Plan
+                                            aria-selected="false"><?php echo esc_html($settings['yTabTitle']); ?>
                                     </button>
                                 </div>
                             </div>
@@ -561,100 +648,64 @@ class Bizino_Packages_Widget extends Widget_Base
                             <div class="tab-content" id="priceTabContent">
                                 <div class="tab-pane fade show active" id="monthlyplan" role="tabpanel"
                                      aria-labelledby="monthlyplan-tab">
-                                    <div class="package-style1">
-                                        <div class="package-discount">Save 20%</div>
-                                        <div class="package-head">
-                                            <div class="package-label">Standard</div>
-                                            <div class="package-amount">
-                                                <span class="currency">$</span>
-                                                <span class="price">54</span>
-                                                <span class="duration">/ Month</span>
+                                    <?php
+                                    if ($settings['mPrice_list']) {
+                                        foreach ($settings['mPrice_list'] as $mList) {
+                                            ?>
+                                            <div class="package-style1">
+                                                <div class="package-discount"><?php echo esc_html($mList['mPrice_save']); ?></div>
+                                                <div class="package-head">
+                                                    <div class="package-label"><?php echo esc_html($mList['mPrice_title']); ?></div>
+                                                    <div class="package-amount">
+                                                        <span class="currency"><?php echo esc_html($mList['mPackage_price_currency']); ?></span>
+                                                        <span class="price"><?php echo esc_html($mList['mPackage_price']); ?></span>
+                                                        <span class="duration"><?php echo esc_html($mList['mPackage_price_duration']); ?></span>
+                                                    </div>
+                                                    <?php if ($mList['mbtn_status'] == 'yes'): ?>
+                                                        <a href="<?php echo esc_url($mList['mbtn_link']['url']); ?>"
+                                                           class="vs-btn style3"><?php echo esc_html($mList['mbtn_text']); ?></a>
+                                                    <?php endif; ?>
+                                                </div>
+                                                <div class="package-body">
+                                                    <div class="package-list">
+                                                        <ul>
+                                                            <?php echo wp_kses_post($mList['mPackage_offer']); ?>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <a href="contact.html" class="vs-btn style3">Purchase Plan</a>
-                                        </div>
-                                        <div class="package-body">
-                                            <div class="package-list">
-                                                <ul>
-                                                    <li><i class="far fa-check-circle"></i>Full Business Services</li>
-                                                    <li><i class="far fa-check-circle"></i>Monthly assesment report</li>
-                                                    <li><i class="far fa-times-circle"></i>Tax planning consultation
-                                                    </li>
-                                                    <li><i class="far fa-times-circle"></i>Problem Solution</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="package-style1">
-                                        <div class="package-discount">Save 35%</div>
-                                        <div class="package-head">
-                                            <div class="package-label">Popular</div>
-                                            <div class="package-amount">
-                                                <span class="currency">$</span>
-                                                <span class="price">82</span>
-                                                <span class="duration">/ Month</span>
-                                            </div>
-                                            <a href="contact.html" class="vs-btn style3">Purchase Plan</a>
-                                        </div>
-                                        <div class="package-body">
-                                            <div class="package-list">
-                                                <ul>
-                                                    <li><i class="far fa-check-circle"></i>Full Business Services</li>
-                                                    <li><i class="far fa-check-circle"></i>Monthly assesment report</li>
-                                                    <li><i class="far fa-check-circle"></i>Tax planning consultation
-                                                    </li>
-                                                    <li><i class="far fa-times-circle"></i>Problem Solution</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        <?php }
+                                    } ?>
                                 </div>
                                 <div class="tab-pane fade" id="business" role="tabpanel" aria-labelledby="business-tab">
-                                    <div class="package-style1">
-                                        <div class="package-discount">Save 18%</div>
-                                        <div class="package-head">
-                                            <div class="package-label">Bronze</div>
-                                            <div class="package-amount">
-                                                <span class="currency">$</span>
-                                                <span class="price">122</span>
-                                                <span class="duration">/ Year</span>
+                                    <?php
+                                    if ($settings['yPrice_list']) {
+                                        foreach ($settings['yPrice_list'] as $yList) {
+                                            ?>
+                                            <div class="package-style1">
+                                                <div class="package-discount"><?php echo esc_html($yList['yPrice_save']); ?></div>
+                                                <div class="package-head">
+                                                    <div class="package-label"><?php echo esc_html($yList['yPrice_title']); ?></div>
+                                                    <div class="package-amount">
+                                                        <span class="currency"><?php echo esc_html($yList['yPackage_price_currency']); ?></span>
+                                                        <span class="price"><?php echo esc_html($yList['yPackage_price']); ?></span>
+                                                        <span class="duration"><?php echo esc_html($yList['yPackage_price_duration']); ?></span>
+                                                    </div>
+                                                    <?php if ($yList['ybtn_status'] == 'yes'): ?>
+                                                        <a href="<?php echo esc_url($yList['ybtn_link']['url']); ?>"
+                                                           class="vs-btn style3"><?php echo esc_html($yList['ybtn_text']); ?></a>
+                                                    <?php endif; ?>
+                                                </div>
+                                                <div class="package-body">
+                                                    <div class="package-list">
+                                                        <ul>
+                                                            <?php echo wp_kses_post($yList['yPackage_offer']); ?>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <a href="contact.html" class="vs-btn style3">Purchase Plan</a>
-                                        </div>
-                                        <div class="package-body">
-                                            <div class="package-list">
-                                                <ul>
-                                                    <li><i class="far fa-check-circle"></i>Full Business Services</li>
-                                                    <li><i class="far fa-check-circle"></i>Yearly assesment report</li>
-                                                    <li><i class="far fa-times-circle"></i>Tax planning consultation
-                                                    </li>
-                                                    <li><i class="far fa-check-circle"></i>Problem Solution</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="package-style1">
-                                        <div class="package-discount">Save 45%</div>
-                                        <div class="package-head">
-                                            <div class="package-label">VIP Golder</div>
-                                            <div class="package-amount">
-                                                <span class="currency">$</span>
-                                                <span class="price">199</span>
-                                                <span class="duration">/ Year</span>
-                                            </div>
-                                            <a href="contact.html" class="vs-btn style3">Purchase Plan</a>
-                                        </div>
-                                        <div class="package-body">
-                                            <div class="package-list">
-                                                <ul>
-                                                    <li><i class="far fa-check-circle"></i>Full Business Services</li>
-                                                    <li><i class="far fa-check-circle"></i>Yearly assesment report</li>
-                                                    <li><i class="far fa-check-circle"></i>Tax planning consultation
-                                                    </li>
-                                                    <li><i class="far fa-check-circle"></i>Problem Solution</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        <?php }
+                                    } ?>
                                 </div>
                             </div>
                         </div>
