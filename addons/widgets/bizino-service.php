@@ -310,7 +310,7 @@ class Bizino_Service_Widget extends Widget_Base
                             </h3>
                             <p class="service-text"><?php echo esc_html($item['service2_info']); ?></p>
                             <a href="<?php echo esc_url($item['service2_link']['url']); ?>" class="icon-btn style2"><i
-                                        class="fas fa-long-arrow-right"></i></a>
+                                        class="fal fa-long-arrow-right"></i></a>
                         </div>
                     </div>
                 <?php } ?>

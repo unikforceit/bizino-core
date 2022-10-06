@@ -210,7 +210,7 @@ class Bizino_Gallery extends Widget_Base
             'gallery_2',
             [
                 'label' => __('Gallery Item', 'bizino'),
-                'tab' => Controls_Manager::TAB_STYLE,
+                'tab' => Controls_Manager::TAB_CONTENT,
                 'condition' => ['gallery_style' => ['two']]
             ]
         );
@@ -289,8 +289,8 @@ class Bizino_Gallery extends Widget_Base
             ]
         );
         $repeater3->add_control(
-            'image_title', [
-                'label' => __('Main Title', 'bizino'),
+            'tab_id', [
+                'label' => __('ID', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => __('Branding Marketing', 'bizino'),
                 'label_block' => true,
@@ -482,7 +482,7 @@ class Bizino_Gallery extends Widget_Base
                 Gallery Area
                 ==============================-->
                 <section class="gallery-cs">
-                    <?php if (!empty($settings['slides'])) {?>
+                    <?php if (!empty($settings['navs'])) {?>
                     <div class="filter-menu1 filter-menu-active">
                         <button data-filter="*" class="active">All</button>
                     <?php
@@ -493,22 +493,46 @@ class Bizino_Gallery extends Widget_Base
                     </div>
                     <?php } ?>
                     <div class="row filter-active gx-">
-                        <div class="col-md-6 col-lg-4 filter-item Business Finance">
+                        <?php
+                        foreach ($settings['items'] as $ite) {
+                            ?>
+                        <div class="col-md-6 col-lg-4 filter-item <?php echo esc_html($ite['tab_id'])?>">
                             <div class="gallery-style3">
                                 <div class="gallery-img">
                                     <div class="gallery-overlay "></div>
-                                    <img src="assets/img/gallery/gal-3-1.jpg" alt="image">
+                                    <?php
+                                    if (!empty($ite['item_image']['url'])) {
+                                        echo bizino_img_tag(array(
+                                            'url' => esc_url($ite['item_image']['url']),
+                                        ));
+                                    }
+                                    ?>
                                 </div>
                                 <div class="gallery-bottom">
                                     <div class="media-body">
-                                        <h3 class="gallery-title h5"><a href="gallery-details.html" class="text-inherit">Web Development</a></h3>
-                                        <div class="gallery-category">Expert Opinion</div>
+                                        <?php
+                                        if (!empty($ite['image_title'])) {
+                                            echo '<h3 class="gallery-title h5">
+                                                <a href="' . esc_url($ite['item_url']['url']) . '" class="text-inherit">' . htmlspecialchars_decode(esc_html($ite['item_title'])) . '</a>
+                                                </h3>';
+                                        }
+                                        ?>
+                                        <?php
+                                        if (!empty($ite['image_title'])) {
+                                            echo '<div class="gallery-category">' . htmlspecialchars_decode(esc_html($ite['item_category'])) . '</div>';
+                                        }
+                                        ?>
                                     </div>
-                                    <a href="gallery-details.html" class="icon-btn"><i class="fas fa-long-arrow-right"></i></a>
+                                    <?php
+                                    if (!empty($ite['item_url']['url'])) {
+                                        echo '<a href="' . esc_url($ite['item_url']['url']) . '" class="icon-btn"><i class="fas fa-long-arrow-right"></i></a>';
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
                     </div>
+                <?php } ?>
                 </section>
                 <?php
             }
@@ -516,4 +540,4 @@ class Bizino_Gallery extends Widget_Base
     }
 }
 
-Plugin::instance()->widgets_manager->register(new Bizino_Gallery());
+Plugin::instance()->widgets_manager->register(new \Bizino_Gallery());
