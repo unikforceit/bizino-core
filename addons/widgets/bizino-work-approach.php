@@ -14,17 +14,17 @@ use \Elementor\Group_Control_Background;
  * Counter Widget .
  *
  */
-class Bizino_Counter_Widget extends Widget_Base
+class Bizino_Work_Approach_Widget extends Widget_Base
 {
 
     public function get_name()
     {
-        return 'bizinocounter';
+        return 'bizinoworkapproach';
     }
 
     public function get_title()
     {
-        return __('Counter', 'bizino');
+        return __('Work Approach', 'bizino');
     }
 
     public function get_icon()
@@ -43,7 +43,7 @@ class Bizino_Counter_Widget extends Widget_Base
         $this->start_controls_section(
             'counter_section',
             [
-                'label' => __('Counter', 'bizino'),
+                'label' => __('Work Approach', 'bizino'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -62,26 +62,28 @@ class Bizino_Counter_Widget extends Widget_Base
         $repeater = new Repeater();
 
         $repeater->add_control(
-            'counter_number', [
-                'label' => __('Counter Number', 'bizino'),
+            'work_number', [
+                'label' => __('Work Step', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
-                'default' => __('259', 'bizino'),
+                'default' => __('01', 'bizino'),
                 'label_block' => true,
             ]
         );
         $repeater->add_control(
-            'counter_sub', [
-                'label' => __('Counter Number Subscript', 'bizino'),
-                'type' => Controls_Manager::TEXTAREA,
-                'default' => __('K', 'bizino'),
-                'label_block' => true,
+            'icon_image',
+            [
+                'label' => __('Icon image', 'bizino'),
+                'type' => Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => Utils::get_placeholder_image_src(),
+                ],
             ]
         );
         $repeater->add_control(
-            'counter_title', [
+            'work_title', [
                 'label' => __('Counter Title', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
-                'default' => __("Happy client's", 'bizino'),
+                'default' => __("Select For Your Service", 'bizino'),
                 'label_block' => true,
             ]
         );
@@ -94,27 +96,23 @@ class Bizino_Counter_Widget extends Widget_Base
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'counter_number' => __('259', 'bizino'),
-                        'counter_sub' => __('K', 'bizino'),
-                        'counter_title' => __("Happy client's", 'bizino'),
+                        'work_number' => __('01', 'bizino'),
+                        'work_title' => __("Select For Your Service", 'bizino'),
                     ],
                     [
-                        'counter_number' => __('958', 'bizino'),
-                        'counter_sub' => __('M', 'bizino'),
-                        'counter_title' => __("Project Complete", 'bizino'),
+                        'work_number' => __('02', 'bizino'),
+                        'work_title' => __("Started Your Service", 'bizino'),
                     ],
                     [
-                        'counter_number' => __('23', 'bizino'),
-                        'counter_sub' => __('+', 'bizino'),
-                        'counter_title' => __("Years Of Designing", 'bizino'),
+                        'work_number' => __('03', 'bizino'),
+                        'work_title' => __("Analysis Your Project", 'bizino'),
                     ],
                     [
-                        'counter_number' => __('32', 'bizino'),
-                        'counter_sub' => __('+', 'bizino'),
-                        'counter_title' => __("Loyal Employees", 'bizino'),
+                        'work_number' => __('04', 'bizino'),
+                        'work_title' => __("Get Final Results", 'bizino'),
                     ],
                 ],
-                'title_field' => '{{{ counter_title }}}',
+                'title_field' => '{{{ work_title }}}',
             ]
         );
 
@@ -130,7 +128,7 @@ class Bizino_Counter_Widget extends Widget_Base
         );
 
         $this->add_control(
-            'counter_title_color',
+            'work_title_color',
             [
                 'label' => __('Title Color', 'bizino'),
                 'type' => Controls_Manager::COLOR,
@@ -143,14 +141,14 @@ class Bizino_Counter_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'name' => 'counter_title_typography',
+                'name' => 'work_title_typography',
                 'label' => __('Title Typography', 'bizino'),
                 'selector' => '{{WRAPPER}} .vs-counter .counter-text'
             ]
         );
 
         $this->add_responsive_control(
-            'counter_title_margin',
+            'work_title_margin',
             [
                 'label' => __('Title Margin', 'bizino'),
                 'type' => Controls_Manager::DIMENSIONS,
@@ -162,7 +160,7 @@ class Bizino_Counter_Widget extends Widget_Base
         );
 
         $this->add_responsive_control(
-            'counter_title_padding',
+            'work_title_padding',
             [
                 'label' => __('Title Padding', 'bizino'),
                 'type' => Controls_Manager::DIMENSIONS,
@@ -183,7 +181,7 @@ class Bizino_Counter_Widget extends Widget_Base
         );
 
         $this->add_control(
-            'counter_number_color',
+            'work_number_color',
             [
                 'label' => __('Counter Number Color', 'bizino'),
                 'type' => Controls_Manager::COLOR,
@@ -196,14 +194,14 @@ class Bizino_Counter_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'name' => 'counter_number_typography',
+                'name' => 'work_number_typography',
                 'label' => __('Counter Number Typography', 'bizino'),
                 'selector' => '{{WRAPPER}} .vs-counter .counter-number'
             ]
         );
 
         $this->add_responsive_control(
-            'counter_number_margin',
+            'work_number_margin',
             [
                 'label' => __('Counter Number Margin', 'bizino'),
                 'type' => Controls_Manager::DIMENSIONS,
@@ -215,7 +213,7 @@ class Bizino_Counter_Widget extends Widget_Base
         );
 
         $this->add_responsive_control(
-            'counter_number_padding',
+            'work_number_padding',
             [
                 'label' => __('Counter Number Padding', 'bizino'),
                 'type' => Controls_Manager::DIMENSIONS,
@@ -239,24 +237,24 @@ class Bizino_Counter_Widget extends Widget_Base
 
         if (!empty($settings['slides'])) {
             ?>
-            <div data-bg-src="<?php echo esc_url($settings['bg_image']['url']); ?>">
-                <div class="row gx-0">
-                    <?php
-                    foreach ($settings['slides'] as $item) {
-                        ?>
-                        <div class="col-md-6 col-lg vs-counter">
-                            <div class="vs-counter__number">
-                                <span class="amount"><?php echo esc_html($item['counter_number']); ?></span>
-                                <span class="quora"><?php echo esc_html($item['counter_sub']); ?></span>
-                            </div>
-                            <p class="vs-counter__text"><?php echo esc_html($item['counter_title']); ?></p>
-                        </div>
-                    <?php } ?>
+            <div class="process-shape1 d-none d-lg-block"><img src="<?php echo esc_url($settings['bg_image']['url']); ?>" alt="shape"></div>
+            <div class="row justify-content-between">
+                <?php
+                foreach ($settings['slides'] as $item) {
+                    ?>
+                <div class="col-md-6 col-lg-auto process-style1">
+                    <div class="process-body">
+                        <div class="process-shape"></div>
+                        <div class="process-number"><?php echo esc_html($item['work_number']); ?></div>
+                        <div class="process-icon"><img src="<?php echo esc_url($item['icon_image']['url']); ?>" alt="icon"></div>
+                        <p class="process-text"><?php echo esc_html($item['work_title']); ?></p>
+                    </div>
                 </div>
+        <?php } ?>
             </div>
             <?php
         }
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_Counter_Widget());
+\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_Work_Approach_Widget());
