@@ -348,7 +348,6 @@ class Bizino_Gallery extends Widget_Base
             [
                 'label' => __('Title', 'bizino'),
                 'tab' => Controls_Manager::TAB_STYLE,
-                'condition' => ['gallery_style' => '1']
             ]
         );
 
@@ -406,8 +405,8 @@ class Bizino_Gallery extends Widget_Base
 
         $settings = $this->get_settings_for_display();
 
-        if (!empty($settings['slides'])) {
             if ($settings['gallery_style'] == 'one') {
+                if (!empty($settings['slides'])) {
             ?>
             <!--==============================
             Gallery Area
@@ -475,7 +474,7 @@ class Bizino_Gallery extends Widget_Base
                     </div>
                 </div>
             </section>
-            <?php
+            <?php }
                 } else{
                 ?>
                 <!--==============================
@@ -511,32 +510,31 @@ class Bizino_Gallery extends Widget_Base
                                 <div class="gallery-bottom">
                                     <div class="media-body">
                                         <?php
-                                        if (!empty($ite['image_title'])) {
+                                        if (!empty($ite['item_title'])) {
                                             echo '<h3 class="gallery-title h5">
                                                 <a href="' . esc_url($ite['item_url']['url']) . '" class="text-inherit">' . htmlspecialchars_decode(esc_html($ite['item_title'])) . '</a>
                                                 </h3>';
                                         }
                                         ?>
                                         <?php
-                                        if (!empty($ite['image_title'])) {
+                                        if (!empty($ite['item_category'])) {
                                             echo '<div class="gallery-category">' . htmlspecialchars_decode(esc_html($ite['item_category'])) . '</div>';
                                         }
                                         ?>
                                     </div>
                                     <?php
                                     if (!empty($ite['item_url']['url'])) {
-                                        echo '<a href="' . esc_url($ite['item_url']['url']) . '" class="icon-btn"><i class="fas fa-long-arrow-right"></i></a>';
+                                        echo '<a href="' . esc_url($ite['item_url']['url']) . '" class="icon-btn"><i class="fal fa-long-arrow-right"></i></a>';
                                     }
                                     ?>
                                 </div>
                             </div>
                         </div>
+                        <?php } ?>
                     </div>
-                <?php } ?>
                 </section>
                 <?php
             }
-        }
     }
 }
 

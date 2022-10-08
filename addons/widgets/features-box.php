@@ -730,7 +730,7 @@ class Bizino_Features_Widget extends Widget_Base
                             <?php
                             if (!empty($settings['feature2_all_link_text'])) {
                                 echo '<a class="view-big-btn" href="' . esc_url($settings['feature2_all_link']['url']) . '">
-                                        <i class="far fa-arrow-right"></i>
+                                        <i class="fal fa-arrow-right"></i>
                                         <span class="btn-text">' . htmlspecialchars_decode(esc_html($settings['feature2_all_link_text'])) . '</span>
                                     </a>';
                             }
