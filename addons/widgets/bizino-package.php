@@ -53,6 +53,7 @@ class Bizino_Packages_Widget extends Widget_Base
                 'default' => 'one',
                 'options' => [
                     'one' => __('Style One', 'bizino'),
+                    'two' => __('Style Two', 'bizino'),
                 ],
             ]
         );
@@ -68,6 +69,7 @@ class Bizino_Packages_Widget extends Widget_Base
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
                 ],
+                'condition' => ['package_style' => ['one']]
             ]
         );
 
@@ -77,7 +79,8 @@ class Bizino_Packages_Widget extends Widget_Base
                 'label' => __('Subtitle', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 2,
-                'default' => __('GET THE BEST SOLUTION FROM US', 'bizino')
+                'default' => __('GET THE BEST SOLUTION FROM US', 'bizino'),
+                'condition' => ['package_style' => ['one']]
             ]
         );
 
@@ -87,7 +90,8 @@ class Bizino_Packages_Widget extends Widget_Base
                 'label' => __('Title', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 2,
-                'default' => __('Package For Your New Services', 'bizino')
+                'default' => __('Package For Your New Services', 'bizino'),
+                'condition' => ['package_style' => ['one']]
             ]
         );
 
@@ -97,11 +101,116 @@ class Bizino_Packages_Widget extends Widget_Base
                 'label' => __('Content', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => __('Analyzing competing products or services can give you an idea of what already exists in your industry. This can help you find ways to improve your idea.', 'bizino'),
+                'condition' => ['package_style' => ['one']]
             ]
         );
 
         $this->end_controls_section();
 
+        //      Styling Second Tab
+        $this->start_controls_section(
+            'package_section',
+            [
+                'label' => esc_html__('Package Section', 'bizino'),
+                'tab' => Controls_Manager::TAB_CONTENT,
+                'condition' => ['package_style' => ['two']]
+            ]
+        );
+
+        $repeater3 = new Repeater();
+        $repeater3->add_control(
+            'price_save', [
+                'label' => esc_html__('Price Save', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("Save 20%", 'bizino'),
+                'description' => esc_html__('enter price save', 'bizino')
+            ]
+        );
+        $repeater3->add_control(
+            'price_title', [
+                'label' => esc_html__('Price Title', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("Intro", 'bizino'),
+                'description' => esc_html__('enter price title', 'bizino')
+            ]
+        );
+        $repeater3->add_control(
+            'package_price', [
+                'label' => esc_html__('Package Price', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("$56", 'bizino'),
+                'description' => esc_html__('enter package price', 'bizino')
+            ]
+        );
+        $repeater3->add_control(
+            'package_price_duration', [
+                'label' => esc_html__('Package Price Duration', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("/Month", 'bizino'),
+                'description' => esc_html__('enter package price duration', 'bizino')
+            ]
+        );
+        $repeater3->add_control(
+            'package_offer', [
+                'label' => esc_html__('Package Offer', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("Full Business Services", 'bizino'),
+                'description' => esc_html__('enter package price Offer', 'bizino')
+            ]
+        );
+        $repeater3->add_control(
+            'btn_text', [
+                'label' => esc_html__('Button Text', 'bizino'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__("Book Plan", 'bizino'),
+                'description' => esc_html__('enter button text', 'bizino')
+            ]
+        );
+        $repeater3->add_control(
+            'btn_link', [
+                'label' => esc_html__('Button URL', 'bizino'),
+                'type' => Controls_Manager::URL,
+                'default' => [
+                    'url' => '#'
+                ],
+                'description' => esc_html__('enter button url', 'bizino'),
+                'condition' => ['mbtn_status' => 'yes']
+            ]
+        );
+
+        $this->add_control('price_list', [
+            'label' => esc_html__('Take 4 Price Item', 'bizino'),
+            'type' => Controls_Manager::REPEATER,
+            'fields' => $repeater3->get_controls(),
+            'default' => [
+                [
+                    'price_save' => esc_html__('Save 20%', 'plugin-name'),
+                    'price_title' => esc_html__('Intro', 'plugin-name'),
+                    'package_price' => esc_html__('$56', 'plugin-name'),
+                    'package_price_duration' => esc_html__('/Month', 'plugin-name'),
+                ],
+                [
+                    'price_save' => esc_html__('Save 11%', 'plugin-name'),
+                    'price_title' => esc_html__('Base', 'plugin-name'),
+                    'package_price' => esc_html__('$99', 'plugin-name'),
+                    'package_price_duration' => esc_html__('/Month', 'plugin-name'),
+                ],
+                [
+                    'price_save' => esc_html__('Save 15%', 'plugin-name'),
+                    'price_title' => esc_html__('Popular', 'plugin-name'),
+                    'package_price' => esc_html__('$158', 'plugin-name'),
+                    'package_price_duration' => esc_html__('/Year', 'plugin-name'),
+                ],
+                [
+                    'price_save' => esc_html__('Save 75%', 'plugin-name'),
+                    'price_title' => esc_html__('Enterprise', 'plugin-name'),
+                    'package_price' => esc_html__('$199', 'plugin-name'),
+                    'package_price_duration' => esc_html__('/Year', 'plugin-name'),
+                ],
+            ],
+            'title_field' => '{{{ price_title }}}',
+        ]);
+        $this->end_controls_section();
 
 //      Monthly Tab Loop
         $this->start_controls_section(
@@ -109,6 +218,7 @@ class Bizino_Packages_Widget extends Widget_Base
             [
                 'label' => esc_html__('Monthly Section', 'bizino'),
                 'tab' => Controls_Manager::TAB_CONTENT,
+                'condition' => ['package_style' => ['one']]
             ]
         );
 
@@ -221,6 +331,7 @@ class Bizino_Packages_Widget extends Widget_Base
             [
                 'label' => esc_html__('Yearly Section', 'softim-core'),
                 'tab' => Controls_Manager::TAB_CONTENT,
+                'condition' => ['package_style' => ['one']]
             ]
         );
 
@@ -712,6 +823,69 @@ class Bizino_Packages_Widget extends Widget_Base
                     </div>
                 </div>
             </section>
+            <?php
+        } else {
+            ?>
+            <div class="row gx-40 flex-row-reverse">
+                <div class="col-lg-6">
+                    <div class="nav package-nav" id="nav-tab" role="tablist">
+                        <?php if ($settings['price_list']) {
+                            $tab_btn = 0;
+                            foreach ($settings['price_list'] as $tab2) {
+                                $tab_btn++;
+                                if ($tab_btn == 1) {
+                                    $btn_act = 'active';
+                                    $btn_true = 'true';
+                                } else {
+                                    $btn_act = '';
+                                    $btn_true = 'false';
+                                }
+                                ?>
+                                <button class="nav-link <?php echo esc_attr($btn_act); ?>"
+                                        id="<?php echo esc_attr($tab2['_id']); ?>-tab" data-bs-toggle="tab"
+                                        data-bs-target="#price<?php echo esc_attr($tab2['_id']); ?>" type="button"
+                                        role="tab" aria-controls="<?php echo esc_attr($tab2['_id']); ?>"
+                                        aria-selected="<?php echo esc_attr($btn_true); ?>">
+                                    <span class="btn-text"><?php echo esc_html($tab2['price_title']); ?></span>
+                                    <span class="price">
+                                        <span class="amount"><?php echo esc_html($tab2['package_price']); ?></span>
+                                        <span class="duration"><?php echo esc_html($tab2['package_price_duration']); ?></span>
+                                    </span>
+                                    <span class="discount"><?php echo esc_html($tab2['price_save']); ?></span>
+                                </button>
+                            <?php }
+                        } ?>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="tab-content" id="nav-tabContent">
+                        <?php if ($settings['price_list']) {
+                            $tabs = 0;
+                            foreach ($settings['price_list'] as $tab2) {
+                                $tabs++;
+                                if ($tabs == 1) {
+                                    $tab_act = 'show active';
+                                } else {
+                                    $tab_act = '';
+                                }
+                                ?>
+                                <div class="tab-pane fade <?php echo esc_attr($tab_act); ?>"
+                                     id="price<?php echo esc_attr($tab2['_id']); ?>" role="tabpanel"
+                                     aria-labelledby="<?php echo esc_attr($tab2['_id']); ?>">
+                                    <div class="package-box">
+                                        <div class="box-inner">
+                                            <h3 class="package-box-title"><?php echo esc_html($tab2['price_title']); ?></h3>
+                                            <ul>
+                                                <?php echo wp_kses_post($tab2['package_offer']); ?>
+                                            </ul>
+                                            <a href="contact.html" class="vs-btn book-plan-btn">Book Plan</a>                                        </div>
+                                    </div>
+                                </div>
+                            <?php }
+                        } ?>
+                    </div>
+                </div>
+            </div>
             <?php
         }
     }

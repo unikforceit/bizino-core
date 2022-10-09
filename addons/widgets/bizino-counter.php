@@ -49,6 +49,19 @@ class Bizino_Counter_Widget extends Widget_Base
         );
 
         $this->add_control(
+            'title_style',
+            [
+                'label' => __('Title Style', 'bizino'),
+                'type' => Controls_Manager::SELECT,
+                'default' => '1',
+                'options' => [
+                    '1' => __('Style One', 'bizino'),
+                    '2' => __('Style Two', 'bizino'),
+                ],
+            ]
+        );
+
+        $this->add_control(
             'bg_image',
             [
                 'label' => __('Background image', 'bizino'),
@@ -56,6 +69,7 @@ class Bizino_Counter_Widget extends Widget_Base
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
                 ],
+                'condition' => ['title_style' => ['1']]
             ]
         );
 
@@ -236,23 +250,44 @@ class Bizino_Counter_Widget extends Widget_Base
         $settings = $this->get_settings_for_display();
 
         $this->add_render_attribute('wrapper', 'class', 'row gx-0');
+        if ($settings['title_style'] == '1') {
 
-        if (!empty($settings['slides'])) {
-            ?>
-            <div data-bg-src="<?php echo esc_url($settings['bg_image']['url']); ?>">
-                <div class="row gx-0">
-                    <?php
-                    foreach ($settings['slides'] as $item) {
-                        ?>
-                        <div class="col-md-6 col-lg vs-counter">
-                            <div class="vs-counter__number">
-                                <span class="amount"><?php echo esc_html($item['counter_number']); ?></span>
-                                <span class="quora"><?php echo esc_html($item['counter_sub']); ?></span>
+            if (!empty($settings['slides'])) {
+                ?>
+                <div data-bg-src="<?php echo esc_url($settings['bg_image']['url']); ?>">
+                    <div class="row gx-0">
+                        <?php
+                        foreach ($settings['slides'] as $item) {
+                            ?>
+                            <div class="col-md-6 col-lg vs-counter">
+                                <div class="vs-counter__number">
+                                    <span class="amount"><?php echo esc_html($item['counter_number']); ?></span>
+                                    <span class="quora"><?php echo esc_html($item['counter_sub']); ?></span>
+                                </div>
+                                <p class="vs-counter__text"><?php echo esc_html($item['counter_title']); ?></p>
                             </div>
-                            <p class="vs-counter__text"><?php echo esc_html($item['counter_title']); ?></p>
-                        </div>
-                    <?php } ?>
+                        <?php } ?>
+                    </div>
                 </div>
+
+                <?php
+            }
+        } else {
+            ?>
+            <div class="row gx-3 gy-30">
+                <?php
+                foreach ($settings['slides'] as $item2) {
+                    ?>
+                    <div class="col-md-4">
+                        <div class="team-counter">
+                            <div class="team-counter__number">
+                                <span class="amount"><?php echo esc_html($item2['counter_number']); ?></span>
+                                <span class="quora"><?php echo esc_html($item2['counter_sub']); ?></span>
+                            </div>
+                            <p class="team-counter__text"><?php echo esc_html($item2['counter_title']); ?></p>
+                        </div>
+                    </div>
+                <?php } ?>
             </div>
             <?php
         }

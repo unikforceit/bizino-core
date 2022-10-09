@@ -242,6 +242,7 @@ final class Bizino_Extension {
 		require_once( BIZINO_ADDONS . '/widgets/bizino-working-process.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-counter.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-contact.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-single-team.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-work-approach.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-instagram-gallery.php' );
 		require_once( BIZINO_ADDONS . '/widgets/social-media.php' );
