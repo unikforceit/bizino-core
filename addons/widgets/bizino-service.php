@@ -53,6 +53,7 @@ class Bizino_Service_Widget extends Widget_Base
                 'options' => [
                     '1' => __('Style One', 'bizino'),
                     '2' => __('Style Two', 'bizino'),
+                    '3' => __('Style Three', 'bizino'),
                 ],
             ]
         );
@@ -65,7 +66,7 @@ class Bizino_Service_Widget extends Widget_Base
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
                 ],
-                'condition' => ['features_style' => ['1']]
+                'condition' => ['features_style' => ['1','3']]
             ]
         );
 
@@ -76,7 +77,7 @@ class Bizino_Service_Widget extends Widget_Base
                 'default' => __('Safe Cleaning Supplies', 'bizino'),
                 'rows' => 2,
                 'label_block' => true,
-                'condition' => ['features_style' => ['1']]
+                'condition' => ['features_style' => ['1','3']]
             ]
         );
         $this->add_control(
@@ -100,7 +101,7 @@ class Bizino_Service_Widget extends Widget_Base
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => __('Lorem ipm dolor amet, consectetur magm maiores.Ipsa dolor sit ilmesy magnam maores.', 'bizino'),
                 'label_block' => true,
-                'condition' => ['features_style' => ['1']]
+                'condition' => ['features_style' => ['1','3']]
             ]
         );
 
@@ -284,7 +285,7 @@ class Bizino_Service_Widget extends Widget_Base
             </div>
 
             <?php
-        } else {
+        } elseif ($settings['features_style'] == '2') {
             ?>
 
             <div class="row vs-carousel" data-slide-show="3" data-md-slide-show="2">
@@ -316,6 +317,26 @@ class Bizino_Service_Widget extends Widget_Base
                 <?php } ?>
             </div>
 
+            <?php
+        } else {
+            ?>
+            <div class="service-counter">
+                <div class="service-counter__icon">
+                    <?php
+                    if (!empty($settings['service4_item_image']['url'])) {
+                        echo bizino_img_tag(array(
+                            'url' => esc_url($settings['service4_item_image']['url']),
+                        ));
+                    }
+                    ?>
+                </div>
+                <span class="service-counter__number"><?php echo esc_html($settings['service4_title']); ?></span>
+                <?php
+                if (!empty($settings['service4_content'])) {
+                    echo '<p class="service-counter__text">' . htmlspecialchars_decode(esc_html($settings['service4_content'])) . '</p>';
+                }
+                ?>
+            </div>
             <?php
         }
     }

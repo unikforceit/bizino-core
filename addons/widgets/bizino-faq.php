@@ -50,6 +50,18 @@ class Bizino_Faq_Widget extends Widget_Base
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
+        $this->add_control(
+            'faq_style',
+            [
+                'label' => __('FAQ Style', 'bizino'),
+                'type' => Controls_Manager::SELECT,
+                'default' => '1',
+                'options' => [
+                    '1' => __('Style One', 'bizino'),
+                    '2' => __('Style Two', 'bizino'),
+                ],
+            ]
+        );
 
         $repeater = new Repeater();
 
@@ -173,54 +185,97 @@ class Bizino_Faq_Widget extends Widget_Base
         $settings = $this->get_settings_for_display();
         $uniq_id = uniqid('accordion');
         $uniq_item = uniqid();
-         ?>
+        if ($settings['faq_style'] == '1') {
+            ?>
             <!--==============================
             FAQ Area
             ==============================-->
             <section class="faq-cs">
-                      <div class="accordion accordion-style1" id="accordionStyle1">
-                                <?php if ($settings['faq_list']) {
-                                    $loop = 0;
-                                    foreach ($settings['faq_list'] as $faq) {
-                                        $loop++;
-                                        if ($loop == 1) {
-                                            $active = 'active';
-                                            $clps = '';
-                                            $show = 'show';
-                                            $exp = 'true';
-                                        } else {
-                                            $active = '';
-                                            $clps = 'collapsed';
-                                            $show = '';
-                                            $exp = 'false';
-                                        }
-                                        ?>
-                                        <div class="accordion-item <?php echo esc_attr($active); ?>">
-                                            <div class="accordion-header"
-                                                 id="faq<?php echo esc_attr($faq['_id'] . $uniq_item); ?>">
-                                                <button class="accordion-button <?php echo esc_attr($clps); ?>"
-                                                        type="button" data-bs-toggle="collapse"
-                                                        data-bs-target="#collapse<?php echo esc_attr($faq['_id'] . $uniq_item); ?>"
-                                                        aria-expanded="<?php echo esc_attr($exp); ?>"
-                                                        aria-controls="collapse<?php echo esc_attr($faq['_id'] . $uniq_item); ?>">
-                                                    <?php echo esc_html($faq['faq_title']); ?>
-                                                </button>
-                                            </div>
-                                            <div id="collapse<?php echo esc_attr($faq['_id'] . $uniq_item); ?>"
-                                                 class="accordion-collapse collapse <?php echo esc_attr($show); ?>"
-                                                 aria-labelledby="faq<?php echo esc_attr($faq['_id'] . $uniq_item); ?>"
-                                                 data-bs-parent="#<?php echo esc_attr($uniq_id); ?>">
-                                                <div class="accordion-body">
-                                                    <p><?php echo esc_html($faq['faq_text']); ?></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <?php }
-                                } ?>
-
+                <div class="accordion accordion-style1" id="accordionStyle1">
+                    <?php if ($settings['faq_list']) {
+                        $loop = 0;
+                        foreach ($settings['faq_list'] as $faq) {
+                            $loop++;
+                            if ($loop == 1) {
+                                $active = 'active';
+                                $clps = '';
+                                $show = 'show';
+                                $exp = 'true';
+                            } else {
+                                $active = '';
+                                $clps = 'collapsed';
+                                $show = '';
+                                $exp = 'false';
+                            }
+                            ?>
+                            <div class="accordion-item <?php echo esc_attr($active); ?>">
+                                <div class="accordion-header"
+                                     id="faq<?php echo esc_attr($faq['_id'] . $uniq_item); ?>">
+                                    <button class="accordion-button <?php echo esc_attr($clps); ?>"
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapse<?php echo esc_attr($faq['_id'] . $uniq_item); ?>"
+                                            aria-expanded="<?php echo esc_attr($exp); ?>"
+                                            aria-controls="collapse<?php echo esc_attr($faq['_id'] . $uniq_item); ?>">
+                                        <?php echo esc_html($faq['faq_title']); ?>
+                                    </button>
+                                </div>
+                                <div id="collapse<?php echo esc_attr($faq['_id'] . $uniq_item); ?>"
+                                     class="accordion-collapse collapse <?php echo esc_attr($show); ?>"
+                                     aria-labelledby="faq<?php echo esc_attr($faq['_id'] . $uniq_item); ?>"
+                                     data-bs-parent="#<?php echo esc_attr($uniq_id); ?>">
+                                    <div class="accordion-body">
+                                        <p><?php echo esc_html($faq['faq_text']); ?></p>
+                                    </div>
+                                </div>
                             </div>
+                        <?php }
+                    } ?>
+                </div>
             </section>
             <?php
+        } else {
+            ?>
+            <div class="accordion" id="accordionExample_01">
+                <?php if ($settings['faq_list']) {
+                    $loop = 0;
+                    foreach ($settings['faq_list'] as $faq) {
+                        $loop++;
+                        if ($loop == 1) {
+                            $active = 'active';
+                            $clps = '';
+                            $show = 'show';
+                            $exp = 'true';
+                        } else {
+                            $active = '';
+                            $clps = 'collapsed';
+                            $show = '';
+                            $exp = 'false';
+                        }
+                        ?>
+                        <div class="accordion-item <?php echo esc_attr($active); ?>">
+                            <p class="m-0 accordion-header" id="faq<?php echo esc_attr($faq['_id'] . $uniq_item); ?>">
+                                <button class="py-3 accordion-button fw-bold <?php echo esc_attr($clps); ?>"
+                                        type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse<?php echo esc_attr($faq['_id'] . $uniq_item); ?>"
+                                        aria-expanded="<?php echo esc_attr($exp); ?>"
+                                        aria-controls="collapse<?php echo esc_attr($faq['_id'] . $uniq_item); ?>">
+                                    <?php echo esc_html($faq['faq_title']); ?>
+                                </button>
+                            </p>
+                            <div id="collapse<?php echo esc_attr($faq['_id'] . $uniq_item); ?>"
+                                 class="accordion-collapse collapse <?php echo esc_attr($show); ?>"
+                                 aria-labelledby="faq<?php echo esc_attr($faq['_id'] . $uniq_item); ?>"
+                                 data-bs-parent="#<?php echo esc_attr($uniq_id); ?>">
+                                <div class="accordion-body">
+                                    <?php echo esc_html($faq['faq_text']); ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php }
+                } ?>
+            </div>
+            <?php
+        }
     }
 }
 
