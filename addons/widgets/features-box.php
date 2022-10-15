@@ -128,6 +128,19 @@ class Bizino_Features_Widget extends Widget_Base
                 'condition' => ['features_style' => ['2', '4']]
             ]
         );
+
+        $this->add_control(
+            'switcher3',
+            [
+                'label' => __('Link On/Off', 'bizino'),
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => __('Yes', 'bizino'),
+                'label_off' => __('No', 'bizino'),
+                'return_value' => 'yes',
+                'default' => 'yes',
+            ]
+        );
+
         $repeater2 = new Repeater();
 
         $repeater2->add_control(
@@ -726,16 +739,20 @@ class Bizino_Features_Widget extends Widget_Base
                                 </div>
                             </div>
                         <?php } ?>
-                        <div class="col-md-6 col-lg-4 d-flex align-items-center justify-content-center mt-30 mt-md-0">
-                            <?php
-                            if (!empty($settings['feature2_all_link_text'])) {
-                                echo '<a class="view-big-btn" href="' . esc_url($settings['feature2_all_link']['url']) . '">
+                        <?php
+                        if (!empty($settings['switcher3'] == 'yes')) {
+                            ?>
+                            <div class="col-md-6 col-lg-4 d-flex align-items-center justify-content-center mt-30 mt-md-0">
+                                <?php
+                                if (!empty($settings['feature2_all_link_text'])) {
+                                    echo '<a class="view-big-btn" href="' . esc_url($settings['feature2_all_link']['url']) . '">
                                         <i class="fal fa-arrow-right"></i>
                                         <span class="btn-text">' . htmlspecialchars_decode(esc_html($settings['feature2_all_link_text'])) . '</span>
                                     </a>';
-                            }
-                            ?>
-                        </div>
+                                }
+                                ?>
+                            </div>
+                        <?php } ?>
                     </div>
                 </section>
                 <?php
