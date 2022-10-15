@@ -458,7 +458,7 @@ class Bizino_Blog_Post extends Widget_Base
                             <div class="col-xl-4">
                                 <div class="vs-blog blog-style1">
                                     <div class="blog-img">
-                                        <a href="<?php echo esc_url(bizino_blog_date_permalink()); ?>"><?php the_post_thumbnail('home-slider-blog-image', array('class' => 'w-100')); ?></a>
+                                        <a href="<?php echo esc_url(bizino_blog_date_permalink()); ?>"><?php the_post_thumbnail([410, 279], array('class' => 'w-100')); ?></a>
                                     </div>
                                     <div class="blog-content">
                                         <div class="blog-category">
@@ -498,7 +498,7 @@ class Bizino_Blog_Post extends Widget_Base
                             <div class="col-xl-4">
                                 <div class="vs-blog blog-style2">
                                     <div class="blog-img">
-                                        <a href="<?php echo esc_url(get_the_permalink()); ?>"><?php the_post_thumbnail('home-slider-blog-image', array('class' => 'w-100')); ?></a>
+                                        <a href="<?php echo esc_url(get_the_permalink()); ?>"><?php the_post_thumbnail([410, 279], array('class' => 'w-100')); ?></a>
                                     </div>
                                     <div class="blog-body">
                                         <div class="blog-date">
@@ -541,7 +541,7 @@ class Bizino_Blog_Post extends Widget_Base
                                 <div class="vs-blog blog-style2 layout2">
                                     <div class="blog-img">
                                         <a href="<?php echo esc_url(get_permalink()); ?>">
-                                            <?php the_post_thumbnail('home-slider-blog-image', array('class' => 'w-100')); ?>
+                                            <?php the_post_thumbnail([410, 279], array('class' => 'w-100')); ?>
                                         </a>
                                     </div>
                                     <div class="blog-body">

@@ -1066,6 +1066,19 @@
 
         });
 
+        // According
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinofaq.default',function($scope) {
+
+            /*----------- 08. Global Slider ----------*/
+            $(".accordion-button").each(function () {
+                $(this).on("click", function () {
+                    var accordionWrapper = $(this).closest(".accordion-item");
+                    accordionWrapper.toggleClass("active").siblings().removeClass("active");
+                });
+            });
+
+        });
+
   });
 
 }(jQuery));
