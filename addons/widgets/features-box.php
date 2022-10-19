@@ -617,10 +617,7 @@ class Bizino_Features_Widget extends Widget_Base
                 Features Area
                 ==============================-->
                 <section class="features-cs">
-                    <div class="row gx-4 vs-carousel" data-slide-show="3" data-lg-slide-show="2"
-                         data-md-slide-show="2"
-                         data-center-mode="true" data-lg-center-mode="true" data-ml-center-mode="true"
-                         data-xl-center-mode="true">
+                    <div class="row gx-4 vs-carousel">
                         <?php
                         foreach ($settings['feature2_list'] as $feature) {
                             ?>
