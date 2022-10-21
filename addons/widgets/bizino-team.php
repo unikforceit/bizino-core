@@ -411,7 +411,7 @@ class Bizino_Team_Widget extends Widget_Base
             Team Area
             ==============================-->
             <section class="team-cs">
-                <div class="row team-wrap1 vs-carousel">
+                <div class="row team-wrap1 vs-carousel" data-slide-show="4" data-lg-slide-show="3" data-md-slide-show="2">
                     <?php
                     foreach ($settings['team_members'] as $data) {
                         $link = $data['profile_link']['url'] ? $data['profile_link']['url'] : '#';
@@ -476,7 +476,7 @@ class Bizino_Team_Widget extends Widget_Base
            Team Area
            ==============================-->
             <section class="team2-cs">
-                <div class="row vs-carousel">
+                <div class="row vs-carousel" data-slide-show="3" data-md-slide-show="2">
                     <?php
                     foreach ($settings['team_members'] as $data) {
                         $link = $data['profile_link']['url'] ? $data['profile_link']['url'] : '#';

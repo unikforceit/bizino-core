@@ -153,7 +153,6 @@
             });
 
         };
-        if (elementorFrontend.isEditMode()) {
             //Logo Slider
             elementorFrontend.hooks.addAction('frontend/element_ready/bizinologocarousel.default', GlobalSliders);
 
@@ -180,7 +179,6 @@
 
             // According
             elementorFrontend.hooks.addAction('frontend/element_ready/bizinofaq.default', Faq);
-        }
 
   });
 
