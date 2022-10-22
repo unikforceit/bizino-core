@@ -174,7 +174,7 @@ class Bizino_Image_Widget extends Widget_Base
                         'class' => ''
                     ));
                     if (!empty($settings['video_btn'] == 'yes' && !empty($settings['video_link']['url']))) {
-                        echo '<a href="' . esc_url($settings['video_link']['url']) . '" class="play-btn style2 popup-video"><i class="fas fa-play"></i></a>';
+                        echo '<a href="' . esc_url($settings['video_link']['url']) . '" class="play-btn style2 popup-video"><i class="fal fa-play"></i></a>';
                     }
                 }
                 ?>
