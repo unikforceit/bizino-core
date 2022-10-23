@@ -456,9 +456,9 @@ class Bizino_Testimonial_Slider extends Widget_Base
                 <?php if ($settings['slider_arrows'] == 'yes') { ?>
                     <div class="d-flex gap-2 d-none d-xl-block testimonial-nav-cs">
                         <button class="icon-btn style3" data-slick-prev="#testId"><i
-                                    class="far fa-long-arrow-left"></i></button>
+                                    class="fal fa-long-arrow-left"></i></button>
                         <button class="icon-btn style3" data-slick-next="#testId"><i
-                                    class="far fa-long-arrow-right"></i></button>
+                                    class="fal fa-long-arrow-right"></i></button>
                     </div>
                 <?php } ?>
                 <div class="testi-style1">
