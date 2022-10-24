@@ -220,7 +220,7 @@ class Bizino_Working_Process extends Widget_Base
                 'label' => __('Title Color', 'bizino'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .process-box .process-title a' => 'color: {{VALUE}}!important',
+                    '{{WRAPPER}} h2' => 'color: {{VALUE}}!important',
                 ],
             ]
         );
@@ -228,10 +228,10 @@ class Bizino_Working_Process extends Widget_Base
         $this->add_control(
             'post_title_color_hover',
             [
-                'label' => __('Title Color Hover', 'bizino'),
+                'label' => __('Sub Title Color Hover', 'bizino'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .process-box .process-title a:hover' => 'color: {{VALUE}}!important',
+                    '{{WRAPPER}} .sec-subtitle' => 'color: {{VALUE}}!important',
                 ],
             ]
         );
@@ -241,7 +241,7 @@ class Bizino_Working_Process extends Widget_Base
             [
                 'name' => 'post_title_typography',
                 'label' => __('Title Typography', 'bizino'),
-                'selector' => '{{WRAPPER}} .process-box .process-title',
+                'selector' => '{{WRAPPER}} h2',
             ]
         );
 
@@ -252,7 +252,7 @@ class Bizino_Working_Process extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .process-box .process-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} h2' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -264,7 +264,7 @@ class Bizino_Working_Process extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .process-box .process-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} h2' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ]
             ]
         );

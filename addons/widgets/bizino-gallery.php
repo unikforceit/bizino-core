@@ -349,7 +349,7 @@ class Bizino_Gallery extends Widget_Base
                 'label' => __('Overlay bg Color', 'bizino'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .vs-gallery-box .gallery-img:after,{{WRAPPER}} .vs-gallery-box .gallery-img:before,{{WRAPPER}} .gallery-thumb:after,{{WRAPPER}} .gallery-thumb:before' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .gallery-style3 .gallery-overlay' => 'background-color: {{VALUE}}', 
                 ],
             ]
         );
@@ -370,7 +370,7 @@ class Bizino_Gallery extends Widget_Base
                 'label' => __('Title Color', 'bizino'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .vs-gallery-box .gallery-title' => 'color: {{VALUE}}!important',
+                    '{{WRAPPER}} .gallery-style3 .gallery-title' => 'color: {{VALUE}}!important',
                 ],
             ]
         );
@@ -380,7 +380,7 @@ class Bizino_Gallery extends Widget_Base
             [
                 'name' => 'gallery_title_typography',
                 'label' => __('Title Typography', 'bizino'),
-                'selector' => '{{WRAPPER}} .vs-gallery-box .gallery-title',
+                'selector' => '{{WRAPPER}} .gallery-style3 .gallery-title',
             ]
         );
 
@@ -391,22 +391,30 @@ class Bizino_Gallery extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .vs-gallery-box .gallery-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .gallery-style3 .gallery-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'gallery_category_color',
+            [
+                'label' => __('Category Color', 'bizino'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .gallery-style3 .gallery-category' => 'color: {{VALUE}}!important',
                 ],
             ]
         );
 
-        $this->add_responsive_control(
-            'gallery_title_padding',
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
             [
-                'label' => __('Title Padding', 'bizino'),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', '%', 'em'],
-                'selectors' => [
-                    '{{WRAPPER}} .vs-gallery-box .gallery-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ]
+                'name' => 'gallery_category_typography',
+                'label' => __('Category Typography', 'bizino'),
+                'selector' => '{{WRAPPER}} .gallery-style3 .gallery-category',
             ]
         );
+
 
         $this->end_controls_section();
 

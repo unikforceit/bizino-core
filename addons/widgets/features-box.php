@@ -400,7 +400,7 @@ class Bizino_Features_Widget extends Widget_Base
                 'label' => __('Title Color', 'bizino'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .vs-banner-slide .banner-title' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .progress-style1 .progress-title' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -410,7 +410,7 @@ class Bizino_Features_Widget extends Widget_Base
             [
                 'name' => 'features_title_typography',
                 'label' => __('Title Typography', 'bizino'),
-                'selector' => '{{WRAPPER}} .vs-banner-slide .banner-title'
+                'selector' => '{{WRAPPER}} .progress-style1 .progress-title'
             ]
         );
 
@@ -421,7 +421,7 @@ class Bizino_Features_Widget extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .vs-banner-slide .banner-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .progress-style1 .progress-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -450,37 +450,41 @@ class Bizino_Features_Widget extends Widget_Base
         );
 
         $this->add_control(
-            'features_desc_color',
+            'features_subtitle_color',
             [
-                'label' => __('Content Color', 'bizino'),
+                'label' => __('SubTitle Color', 'bizino'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .vs-banner-slide p' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .event-content .event-label' => 'color: {{VALUE}}',
                 ],
             ]
+        ); 
+         $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'features_subtitle_typography',
+                'label' => __('Subtitle Typography', 'bizino'),
+                'selector' => '{{WRAPPER}} .event-style1 .event-label' 
+            ]
         );
-
+        $this->add_control(
+            'features_content_color',
+            [
+                'label' => __('Title Color', 'bizino'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .text-inherit' => 'color: {{VALUE}}',  
+                ],
+            ]
+        ); 
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'name' => 'features_desc_typography',
-                'label' => __('Content Typography', 'bizino'),
-                'selector' => '{{WRAPPER}} .vs-banner-slide p'
+                'name' => 'features_content_typography',
+                'label' => __('content Typography', 'bizino'),
+                'selector' => '{{WRAPPER}} .event-style1 .event-title'  
             ]
         );
-
-        $this->add_responsive_control(
-            'features_desc_margin',
-            [
-                'label' => __('Content Margin', 'bizino'),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', '%', 'em'],
-                'selectors' => [
-                    '{{WRAPPER}} .vs-banner-slide p' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
-
         $this->add_responsive_control(
             'features_desc_padding',
             [
@@ -488,10 +492,41 @@ class Bizino_Features_Widget extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .vs-banner-slide p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}}  h4' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
+        $this->add_control(
+            'features_desc_color',
+            [
+                'label' => __('Desc Color', 'bizino'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} p' => 'color: {{VALUE}}',   
+                ],
+            ]
+        ); 
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'features_desc_typography',
+                'label' => __('desc Typography', 'bizino'),
+                'selector' => '{{WRAPPER}} .event-style1 .event-text'   
+            ]
+        );
+        $this->add_responsive_control(
+            'features_desc_margin',
+            [
+                'label' => __('Content Margin', 'bizino'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%', 'em'],
+                'selectors' => [
+                    '{{WRAPPER}} .event-style1 .event-text' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+       
         $this->end_controls_section();
 
         /*-----------------------------------------Animation styling------------------------------------*/

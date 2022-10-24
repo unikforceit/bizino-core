@@ -196,7 +196,7 @@ class Bizino_Testimonial_Slider extends Widget_Base
                 'label' => __('Testimonial Background Color', 'bizino'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .vs-testimonial-box' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .testi-style1 .testi-shape' => 'background-color: {{VALUE}}',
                 ],
             ]
         );
@@ -206,7 +206,7 @@ class Bizino_Testimonial_Slider extends Widget_Base
             [
                 'name' => 'box_shadow',
                 'label' => __('Box Shadow', 'bizino'),
-                'selector' => '{{WRAPPER}} .vs-testimonial-box',
+                'selector' => '{{WRAPPER}} .testi-style1 .testi-shape:before',
             ]
         );
 
@@ -237,7 +237,7 @@ class Bizino_Testimonial_Slider extends Widget_Base
                 'label' => __('Client Name Color', 'bizino'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .vs-testimonial-box .author-name,{{WRAPPER}} .vs-testimonial .author-name' => 'color: {{VALUE}}!important',
+                    '{{WRAPPER}} .testi-style1 .testi-author' => 'color: {{VALUE}}!important',
                 ],
             ]
         );
@@ -247,7 +247,7 @@ class Bizino_Testimonial_Slider extends Widget_Base
             [
                 'name' => 'testimonial_slider_client_name_typography',
                 'label' => __('Client Name Typography', 'bizino'),
-                'selector' => '{{WRAPPER}} .vs-testimonial-box .author-name,{{WRAPPER}} .vs-testimonial .author-name',
+                'selector' => '{{WRAPPER}} .testi-style1 .testi-author',
             ]
         );
 
@@ -258,7 +258,7 @@ class Bizino_Testimonial_Slider extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .vs-testimonial-box .author-name,{{WRAPPER}} .vs-testimonial .author-name' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .testi-style1 .testi-author' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -270,7 +270,7 @@ class Bizino_Testimonial_Slider extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .vs-testimonial-box .author-name,{{WRAPPER}} .vs-testimonial .author-name' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .testi-style1 .testi-author' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ]
             ]
         );
@@ -291,7 +291,7 @@ class Bizino_Testimonial_Slider extends Widget_Base
                 'label' => __('Client Feedback Color', 'bizino'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .vs-testimonial .testimonial-desc p,{{WRAPPER}} .vs-testimonial-box .testimonial-text' => 'color: {{VALUE}} !important',
+                    '{{WRAPPER}} .testi-style1 .testi-rating' => 'color: {{VALUE}} !important',
                 ],
             ]
         );
@@ -301,7 +301,7 @@ class Bizino_Testimonial_Slider extends Widget_Base
             [
                 'name' => 'testimonial_slider_client_feedback_typography',
                 'label' => __('Client Feedback Typography', 'bizino'),
-                'selector' => '{{WRAPPER}} .vs-testimonial .testimonial-desc p,{{WRAPPER}} .vs-testimonial-box .testimonial-text',
+                'selector' => '{{WRAPPER}} .testi-style1 .testi-rating',
             ]
         );
 
@@ -312,7 +312,7 @@ class Bizino_Testimonial_Slider extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .vs-testimonial .testimonial-desc p,{{WRAPPER}} .vs-testimonial-box .testimonial-text' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .testi-style1 .testi-rating' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -324,7 +324,7 @@ class Bizino_Testimonial_Slider extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .vs-testimonial .testimonial-desc p,{{WRAPPER}} .vs-testimonial-box .testimonial-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .testi-style1 .testi-rating' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ]
             ]
         );
@@ -345,7 +345,7 @@ class Bizino_Testimonial_Slider extends Widget_Base
                 'label' => __('Client Designation Color', 'bizino'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .vs-testimonial .author-degi' => 'color: {{VALUE}}!important',
+                    '{{WRAPPER}} .testi-style1 .testi-degi' => 'color: {{VALUE}}!important',
                 ],
             ]
         );
@@ -355,7 +355,7 @@ class Bizino_Testimonial_Slider extends Widget_Base
             [
                 'name' => 'testimonial_slider_designation_typography',
                 'label' => __('Client Designation Typography', 'bizino'),
-                'selector' => '{{WRAPPER}} .vs-testimonial .author-degi',
+                'selector' => '{{WRAPPER}} .testi-style1 .testi-degi',
             ]
         );
 
@@ -366,7 +366,7 @@ class Bizino_Testimonial_Slider extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .vs-testimonial .author-degi' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .testi-style1 .testi-degi' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -378,7 +378,7 @@ class Bizino_Testimonial_Slider extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .vs-testimonial .author-degi' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .testi-style1 .testi-degi' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ]
             ]
         );
