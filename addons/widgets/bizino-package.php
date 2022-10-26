@@ -517,7 +517,7 @@ class Bizino_Packages_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'name' => 'title_typography',
+                'name' => 'title_typography2',
                 'label' => __('Title Typography', 'bizino'),
                 'selector' => '{{WRAPPER}} .vs-packages-wrapper .sec-title'
             ]

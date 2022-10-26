@@ -55,7 +55,7 @@ class bizino_recent_posts_widget extends WP_Widget {
 
             //before and after widget arguments are defined by themes
 
-            echo $args['before_widget'];
+            //echo $args['before_widget'];
 
                 if( !empty( $title  ) ){
                     echo $args['before_title'];
@@ -104,7 +104,7 @@ class bizino_recent_posts_widget extends WP_Widget {
                         echo '<!-- End of Widget Content -->';
                     echo '</div>';
                 }
-            echo $args['after_widget'];
+            //echo $args['after_widget'];
         }
 
         // Widget Backend
