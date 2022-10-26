@@ -325,7 +325,7 @@ class Bizino_Section_Title_Widget extends Widget_Base
                 'label' => __('Section Description Color', 'bizino'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .section-title .desc' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .mb-xl-4.pb-xl-3.pe-xxl-4' => 'color: {{VALUE}}',
                 ],
                 'condition' => [
                     'section_description!' => ''
@@ -338,7 +338,7 @@ class Bizino_Section_Title_Widget extends Widget_Base
             [
                 'name' => 'section_description_typography',
                 'label' => __('Section Description Typography', 'bizino'),
-                'selector' => '{{WRAPPER}} .section-title .desc',
+                'selector' => '{{WRAPPER}} .mb-xl-4.pb-xl-3.pe-xxl-4',
                 'condition' => [
                     'section_description!' => ''
                 ],
@@ -352,7 +352,7 @@ class Bizino_Section_Title_Widget extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .section-title .desc' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .mb-xl-4.pb-xl-3.pe-xxl-4' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
                 'condition' => [
                     'section_description!' => ''

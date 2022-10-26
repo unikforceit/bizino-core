@@ -208,7 +208,7 @@ class Bizino_Service_Widget extends Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .service p' => 'color: {{VALUE}}!important;',
-                    '{{WRAPPER}} h4' => 'color: {{VALUE}}!important;',
+                    '{{WRAPPER}} .h5' => 'color: {{VALUE}}!important;',
                 ],
             ]
         );
@@ -216,11 +216,10 @@ class Bizino_Service_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'name' => 'features_title_typography',
+                'name' => 'service_title_typography',
                 'label' => __('Title Typography', 'bizino'),
                 'selectors' => [
-                    '{{WRAPPER}} .service p',
-                    '{{WRAPPER}} .h4'
+                    '{{WRAPPER}} .h5',
                 ]
             ]
         );
@@ -232,19 +231,40 @@ class Bizino_Service_Widget extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .service p' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .h5' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
+            ]
+        );
+        $this->add_control(
+            'features_desc_color',
+            [
+                'label' => __('Desc Color', 'bizino'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .service-style3 .service-text' => 'color: {{VALUE}}!important;',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'features_title_typography',
+                'label' => __('Desc Typography', 'bizino'),
+                'selectors' => [
+                    '{{WRAPPER}} .service-style3 .service-text',
+                ]
             ]
         );
 
         $this->add_responsive_control(
             'features_title_padding',
             [
-                'label' => __('Title Padding', 'bizino'),
+                'label' => __('Desc Padding', 'bizino'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .service p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .service-style3 .service-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );

@@ -143,7 +143,7 @@ class Bizino_Blog_Post extends Widget_Base
                 'options' => $this->bizino_post_id(),
             ]
         );
-
+      
         $this->end_controls_section();
 
         $this->start_controls_section(
@@ -238,7 +238,8 @@ class Bizino_Blog_Post extends Widget_Base
         );
 
         $this->end_controls_section();
-
+       
+       
         $this->start_controls_section(
             'meta_style',
             [
@@ -253,7 +254,7 @@ class Bizino_Blog_Post extends Widget_Base
                 'label' => __('Meta Color', 'bizino'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .meta-box a,{{WRAPPER}} .blog-steped .blog-date' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .blog-style1 .blog-date' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -263,7 +264,7 @@ class Bizino_Blog_Post extends Widget_Base
             [
                 'name' => 'meta_typography',
                 'label' => __('Meta Typography', 'bizino'),
-                'selector' => '{{WRAPPER}} .meta-box a,{{WRAPPER}} .blog-steped .blog-date',
+                'selector' => '{{WRAPPER}} .blog-style1 .blog-date',
             ]
         );
         $this->end_controls_section();
@@ -282,7 +283,7 @@ class Bizino_Blog_Post extends Widget_Base
                 'label' => __('Excerpt Color', 'bizino'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .blog-content .blog-text' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .blog-style1 .blog-writter' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -292,7 +293,7 @@ class Bizino_Blog_Post extends Widget_Base
             [
                 'name' => 'excerpt_typography',
                 'label' => __('Excerpt Typography', 'bizino'),
-                'selector' => '{{WRAPPER}} .blog-content .blog-text',
+                'selector' => '{{WRAPPER}} .blog-style1 .blog-writter',
             ]
         );
         $this->end_controls_section();
