@@ -189,7 +189,16 @@ class Bizino_Testimonial_Slider extends Widget_Base
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
-
+        $this->add_control(
+            'testimonial_shape1',
+            [
+                'label' => __('Testimonial Image Icon', 'bizino'),
+                'type' => Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => 'http://russellazim.com/wp-content/uploads/2022/10/testi-bg-1-1.jpg',
+                ],
+            ]
+        );
         $this->add_control(
             'testimonial_bg_color',
             [
@@ -484,7 +493,7 @@ class Bizino_Testimonial_Slider extends Widget_Base
                             </button>
                         <?php } ?>
                     </div>
-                    <div class="testi-shape" data-bg-src="assets/img/bg/testi-bg-1-1.jpg"></div>
+                    <div class="testi-shape" data-bg-src="<?php echo esc_url($settings['testimonial_shape1']['url'])?>"></div>
                     <div class="vs-carousel" id="testId" data-slide-show="1" data-fade="true">
                         <?php foreach ($settings['slides'] as $singleslide) { ?>
                             <div>
