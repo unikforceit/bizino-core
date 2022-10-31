@@ -104,6 +104,19 @@ class Bizino_Service_Widget extends Widget_Base
                 'condition' => ['features_style' => ['1','3']]
             ]
         );
+        $this->add_control(
+            'active_service',
+            [
+                'label' => __('Services Active', 'bizino'),
+                'type' => Controls_Manager::SELECT,
+                'default' => 'deactivate',
+                'options' => [
+                    'deactivate' => __('Deactivate', 'bizino'),
+                    'active' => __('Active', 'bizino'),
+                ],
+                'condition' => ['features_style' => ['3']]
+            ]
+        );
 
         $repeater2 = new Repeater();
 
@@ -340,7 +353,7 @@ class Bizino_Service_Widget extends Widget_Base
             <?php
         } else {
             ?>
-            <div class="service-counter">
+            <div class="service-counter <?php echo esc_attr($settings['active_service']);?>">
                 <div class="service-counter__icon">
                     <?php
                     if (!empty($settings['service4_item_image']['url'])) {
