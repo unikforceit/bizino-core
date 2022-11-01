@@ -878,7 +878,7 @@ class Bizino_Packages_Widget extends Widget_Base
                                             <ul>
                                                 <?php echo wp_kses_post($tab2['package_offer']); ?>
                                             </ul>
-                                            <a href="contact.html" class="vs-btn book-plan-btn">Book Plan</a>                                        </div>
+                                            <a href="/contact-us/" class="vs-btn book-plan-btn">Book Plan</a>                                        </div>
                                     </div>
                                 </div>
                             <?php }
