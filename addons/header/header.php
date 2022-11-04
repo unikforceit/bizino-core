@@ -543,7 +543,7 @@ class Bizino_Header extends Widget_Base
             <!--==============================
                 Header Area
             ==============================-->
-            <header class="vs-header header-layout2">
+            <section class="vs-header header-layout2">
                 <div class="header-top">
                     <div class="container">
                         <div class="row justify-content-between align-items-center">
@@ -655,14 +655,14 @@ class Bizino_Header extends Widget_Base
                         </div>
                     </div>
                 </div>
-            </header>
+            </section>
             <?php
         } elseif ($settings['header_style'] == '2') {
             ?>
             <!--==============================
             Header Area
             ==============================-->
-            <header class="vs-header header-layout3">
+            <section class="vs-header header-layout3">
                 <div class="header-top">
                     <div class="container">
                         <div class="row justify-content-between align-items-center">
@@ -776,7 +776,7 @@ class Bizino_Header extends Widget_Base
                         </div>
                     </div>
                 </div>
-            </header>
+            </section>
             <?php
         } else {
             ?>
