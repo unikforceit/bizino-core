@@ -298,7 +298,7 @@ class Bizino_Working_Process extends Widget_Base
                     <button class="nav-link <?php echo esc_attr($btn_act); ?>"
                             id="<?php echo esc_attr($tab['_id']); ?>-tab" data-bs-toggle="tab"
                             data-bs-target="#work<?php echo esc_attr($tab['_id']); ?>"
-                            type="button" role="tab" aria-controls="<?php echo esc_attr($tab['_id']); ?>"
+                            type="button" role="tab" aria-controls="work<?php echo esc_attr($tab['_id']); ?>"
                             aria-selected="<?php echo esc_attr($btn_true); ?>">
                         <?php echo esc_html($tab['tab_title']); ?>
                     </button>

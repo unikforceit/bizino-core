@@ -610,7 +610,7 @@ class Bizino_AboutUs_Widget extends Widget_Base
                                         id="<?php echo esc_attr($tab2['_id']); ?>-tab"
                                         data-bs-toggle="tab" data-bs-target="#about<?php echo esc_attr($tab2['_id']); ?>"
                                         type="button" role="tab"
-                                        aria-controls="<?php echo esc_attr($tab2['_id']); ?>"
+                                        aria-controls="about<?php echo esc_attr($tab2['_id']); ?>"
                                         aria-selected="<?php echo esc_attr($btn_true); ?>">
                                     <?php echo esc_html($tab2['tab_title']); ?>
                                 </button>

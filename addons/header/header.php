@@ -783,7 +783,7 @@ class Bizino_Header extends Widget_Base
             <!--==============================
                 Header Area
             ==============================-->
-            <header class="vs-header header-layout4">
+            <section class="vs-header header-layout4">
                 <div class="header-top">
                     <div class="container">
                         <div class="row justify-content-between justify-content-xl-end align-items-center">
@@ -882,7 +882,7 @@ class Bizino_Header extends Widget_Base
                         </div>
                     </div>
                 </div>
-            </header>
+            </section>
         <?php }
     }
 }
