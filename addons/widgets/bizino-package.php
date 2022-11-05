@@ -844,7 +844,7 @@ class Bizino_Packages_Widget extends Widget_Base
                                 <button class="nav-link <?php echo esc_attr($btn_act); ?>"
                                         id="<?php echo esc_attr($tab2['_id']); ?>-tab" data-bs-toggle="tab"
                                         data-bs-target="#price<?php echo esc_attr($tab2['_id']); ?>" type="button"
-                                        role="tab" aria-controls="<?php echo esc_attr($tab2['_id']); ?>"
+                                        role="tab" aria-controls="price<?php echo esc_attr($tab2['_id']); ?>"
                                         aria-selected="<?php echo esc_attr($btn_true); ?>">
                                     <span class="btn-text"><?php echo esc_html($tab2['price_title']); ?></span>
                                     <span class="price">
@@ -871,7 +871,7 @@ class Bizino_Packages_Widget extends Widget_Base
                                 ?>
                                 <div class="tab-pane fade <?php echo esc_attr($tab_act); ?>"
                                      id="price<?php echo esc_attr($tab2['_id']); ?>" role="tabpanel"
-                                     aria-labelledby="<?php echo esc_attr($tab2['_id']); ?>">
+                                     aria-labelledby="price<?php echo esc_attr($tab2['_id']); ?>">
                                     <div class="package-box">
                                         <div class="box-inner">
                                             <h3 class="package-box-title"><?php echo esc_html($tab2['price_title']); ?></h3>
