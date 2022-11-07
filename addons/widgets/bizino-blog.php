@@ -463,7 +463,7 @@ class Bizino_Blog_Post extends Widget_Base
                                     </div>
                                     <div class="blog-content">
                                         <div class="blog-category">
-                                            <a href="blog.html">Business</a>
+                                            <?php echo bizino_blog_category()?>
                                         </div>
                                         <?php
                                         if (get_the_title()) {
