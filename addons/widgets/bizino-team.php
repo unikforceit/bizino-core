@@ -170,6 +170,72 @@ class Bizino_Team_Widget extends Widget_Base
 
         $this->end_controls_section();
 
+        $this->start_controls_section(
+            'slider_control_section',
+            [
+                'label' => __('Slider Control', 'bizino'),
+                'tab' => Controls_Manager::TAB_CONTENT,
+            ]
+        );
+        $this->add_control(
+            'slide_to_show',
+            [
+                'label' => __('Slide To Show', 'bizino'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 10,
+                        'step' => 1,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 4,
+                ],
+            ]
+        );
+        $this->add_control(
+            'slide_lg_to_show',
+            [
+                'label' => __('Slide Md To Show', 'bizino'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 10,
+                        'step' => 1,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 3,
+                ],
+            ]
+        );
+        $this->add_control(
+            'slide_md_to_show',
+            [
+                'label' => __('Slide Sm To Show', 'bizino'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 10,
+                        'step' => 1,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 2,
+                ],
+            ]
+        );
+        $this->end_controls_section();
+
         /*-----------------------------------------general styling------------------------------------*/
 
         $this->start_controls_section(
@@ -406,12 +472,23 @@ class Bizino_Team_Widget extends Widget_Base
 
         $settings = $this->get_settings_for_display();
         if ($settings['team_style'] == '1') {
+            $this->add_render_attribute('wrapper', 'class', 'row team-wrap1 vs-carousel');
+        } else {
+            $this->add_render_attribute('wrapper', 'class', 'row vs-carousel');
+        }
+
+        $this->add_render_attribute('wrapper', 'data-slide-show', $settings['slide_to_show']['size']);
+        if ($settings['team_style'] == '1') {
+            $this->add_render_attribute('wrapper', 'data-lg-slide-show', $settings['slide_lg_to_show']['size']);
+        }
+        $this->add_render_attribute('wrapper', 'data-md-slide-show', $settings['slide_md_to_show']['size']);
+        if ($settings['team_style'] == '1') {
             ?>
             <!--==============================
             Team Area
             ==============================-->
             <section class="team-cs">
-                <div class="row team-wrap1 vs-carousel" data-slide-show="4" data-lg-slide-show="3" data-md-slide-show="2">
+                <?php echo '<div '.$this->get_render_attribute_string('wrapper').'>';?>
                     <?php
                     foreach ($settings['team_members'] as $data) {
                         $link = $data['profile_link']['url'] ? $data['profile_link']['url'] : '#';
@@ -476,7 +553,7 @@ class Bizino_Team_Widget extends Widget_Base
            Team Area
            ==============================-->
             <section class="team2-cs">
-                <div class="row vs-carousel" data-slide-show="3" data-md-slide-show="2">
+                <?php echo '<div '.$this->get_render_attribute_string('wrapper').'>';?>
                     <?php
                     foreach ($settings['team_members'] as $data) {
                         $link = $data['profile_link']['url'] ? $data['profile_link']['url'] : '#';

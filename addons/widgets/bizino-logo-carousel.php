@@ -121,6 +121,44 @@ class Bizino_Logo_Carousel extends Widget_Base
                 ],
             ]
         );
+        $this->add_control(
+            'slide_md_to_show',
+            [
+                'label' => __('Slide Md To Show', 'bizino'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 10,
+                        'step' => 1,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 3,
+                ],
+            ]
+        );
+        $this->add_control(
+            'slide_sm_to_show',
+            [
+                'label' => __('Slide Sm To Show', 'bizino'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 10,
+                        'step' => 1,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 2,
+                ],
+            ]
+        );
         $this->end_controls_section();
 
 
@@ -133,13 +171,13 @@ class Bizino_Logo_Carousel extends Widget_Base
 
         $this->add_render_attribute('wrapper', 'class', 'row vs-carousel text-center');
 
-        $this->add_render_attribute('wrapper', 'data-slide-to-show', $settings['slide_to_show']['size']);
-        $this->add_render_attribute('wrapper', 'data-slick-arrows', 'false');
+        $this->add_render_attribute('wrapper', 'data-slide-show', $settings['slide_to_show']['size']);
+        $this->add_render_attribute('wrapper', 'data-md-slide-show', $settings['slide_md_to_show']['size']);
+        $this->add_render_attribute('wrapper', 'data-sm-slide-show', $settings['slide_sm_to_show']['size']);
             if (!empty($settings['slides'])) {
                 ?>
                 <div class="logo-coursel-cs">
-                    <div class="row vs-carousel text-center" data-slide-show="5" data-md-slide-show="3"
-                         data-sm-slide-show="2">
+                        <?php echo '<div '.$this->get_render_attribute_string('wrapper').'>';?>
                         <?php
                         foreach ($settings['slides'] as $single_data) {
                             ?>

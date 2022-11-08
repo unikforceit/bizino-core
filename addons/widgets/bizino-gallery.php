@@ -336,6 +336,65 @@ class Bizino_Gallery extends Widget_Base
         $this->end_controls_section();
 
         $this->start_controls_section(
+            'slider_control_section',
+            [
+                'label' => __('Slider Control', 'bizino'),
+                'tab' => Controls_Manager::TAB_CONTENT,
+                'condition' => ['gallery_style' => ['one']]
+            ]
+        );
+        $this->add_control(
+            'dot_off',
+            [
+                'label' => __('Dot On', 'bizino'),
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => __('Yes', 'bizino'),
+                'label_off' => __('No', 'bizino'),
+                'return_value' => 'true',
+                'default' => 'true',
+            ]
+        );
+        $this->add_control(
+            'slide_to_show',
+            [
+                'label' => __('Slide To Show', 'bizino'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 10,
+                        'step' => 1,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 3,
+                ],
+            ]
+        );
+        $this->add_control(
+            'slide_xs_to_show',
+            [
+                'label' => __('Slide XS To Show', 'bizino'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 10,
+                        'step' => 1,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 2,
+                ],
+            ]
+        );
+        $this->end_controls_section();
+
+        $this->start_controls_section(
             'gallery_general',
             [
                 'label' => __('General', 'bizino'),
@@ -427,6 +486,16 @@ class Bizino_Gallery extends Widget_Base
         $settings = $this->get_settings_for_display();
 
         if ($settings['gallery_style'] == 'one') {
+            $this->add_render_attribute('wrapper', 'class', 'row gx-70 vs-carousel gallery-zigzag');
+            $this->add_render_attribute('wrapper', 'id', 'galslide1');
+
+            $this->add_render_attribute('wrapper', 'data-slide-show', $settings['slide_to_show']['size']);
+            $this->add_render_attribute('wrapper', 'data-xs-slide-show', $settings['slide_xs_to_show']['size']);
+            $this->add_render_attribute('wrapper', 'data-dots', $settings['dot_off']);
+            $this->add_render_attribute('wrapper', 'data-variable-width', 'true');
+        }
+
+        if ($settings['gallery_style'] == 'one') {
             if (!empty($settings['slides'])) {
                 ?>
                 <!--==============================
@@ -456,8 +525,7 @@ class Bizino_Gallery extends Widget_Base
                         </div>
                     <?php } ?>
                     <div class="container container-style1">
-                        <div class="row gx-70 vs-carousel gallery-zigzag" id="galslide1" data-slide-show="3"
-                             data-xs-slide-show="2" data-dots="true" data-variable-width="true">
+                        <?php echo '<div '.$this->get_render_attribute_string('wrapper').'>';?>
                             <?php
                             foreach ($settings['slides'] as $item) {
                                 ?>
