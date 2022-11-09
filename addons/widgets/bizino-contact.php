@@ -1,13 +1,11 @@
 <?php
 
-use \Elementor\Widget_Base;
-use \Elementor\Controls_Manager;
-use \Elementor\Group_Control_Typography;
-use \Elementor\Utils;
-use \Elementor\Repeater;
-use \Elementor\Group_Control_Image_Size;
-use \Elementor\Group_Control_Box_Shadow;
-use \Elementor\Group_Control_Background;
+use Elementor\Controls_Manager;
+use Elementor\Group_Control_Typography;
+use Elementor\Plugin;
+use Elementor\Repeater;
+use Elementor\Utils;
+use Elementor\Widget_Base;
 
 /**
  *
@@ -240,4 +238,4 @@ class Bizino_Contact_Widget extends Widget_Base
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_Contact_Widget());
+Plugin::instance()->widgets_manager->register(new Bizino_Contact_Widget());

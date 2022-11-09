@@ -1,11 +1,12 @@
 <?php
 
-use \Elementor\Widget_Base;
-use \Elementor\Controls_Manager;
-use \Elementor\Group_Control_Typography;
-use \Elementor\Utils;
-use \Elementor\Repeater;
-use \Elementor\Group_Control_Image_Size;
+use Elementor\Controls_Manager;
+use Elementor\Group_Control_Border;
+use Elementor\Group_Control_Typography;
+use Elementor\Plugin;
+use Elementor\Repeater;
+use Elementor\Utils;
+use Elementor\Widget_Base;
 
 /**
  *
@@ -637,7 +638,7 @@ class Bizino_Packages_Widget extends Widget_Base
         );
 
         $this->add_group_control(
-            \Elementor\Group_Control_Border::get_type(),
+            Group_Control_Border::get_type(),
             [
                 'name' => 'border',
                 'label' => __('Border', 'bizino'),
@@ -878,7 +879,7 @@ class Bizino_Packages_Widget extends Widget_Base
                                             <ul>
                                                 <?php echo wp_kses_post($tab2['package_offer']); ?>
                                             </ul>
-                                            <a href="/contact-us/" class="vs-btn book-plan-btn">Book Plan</a>                                        </div>
+                                            <a href="/contact-us/" class="vs-btn book-plan-btn">Book Plan</a></div>
                                     </div>
                                 </div>
                             <?php }
@@ -891,4 +892,4 @@ class Bizino_Packages_Widget extends Widget_Base
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_Packages_Widget());
+Plugin::instance()->widgets_manager->register(new Bizino_Packages_Widget());

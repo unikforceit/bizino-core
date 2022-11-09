@@ -1,14 +1,11 @@
 <?php
 
-use Elementor\Plugin;
-use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Utils;
+use Elementor\Plugin;
 use Elementor\Repeater;
-use Elementor\Group_Control_Image_Size;
-use Elementor\Group_Control_Box_Shadow;
-use Elementor\Group_Control_Background;
+use Elementor\Utils;
+use Elementor\Widget_Base;
 
 /**
  *
@@ -408,7 +405,7 @@ class Bizino_Gallery extends Widget_Base
                 'label' => __('Overlay bg Color', 'bizino'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .gallery-style3 .gallery-overlay' => 'background-color: {{VALUE}}', 
+                    '{{WRAPPER}} .gallery-style3 .gallery-overlay' => 'background-color: {{VALUE}}',
                 ],
             ]
         );
@@ -525,46 +522,46 @@ class Bizino_Gallery extends Widget_Base
                         </div>
                     <?php } ?>
                     <div class="container container-style1">
-                        <?php echo '<div '.$this->get_render_attribute_string('wrapper').'>';?>
-                            <?php
-                            foreach ($settings['slides'] as $item) {
-                                ?>
-                                <div class="col-auto">
-                                    <div class="gallery-style1">
-                                        <div class="gallery-img">
-                                            <a href="<?php echo esc_url($item['gallery_image_url']['url']); ?>">
-                                                <?php
-                                                if (!empty($item['gallery_image']['url'])) {
-                                                    echo bizino_img_tag(array(
-                                                        'url' => esc_url($item['gallery_image']['url']),
-                                                    ));
-                                                }
-                                                ?>
-                                            </a>
-                                        </div>
-                                        <?php
-                                        if (!empty($item['image_title'])) {
-                                            echo '<h3 class="gallery-title h5">
+                        <?php echo '<div ' . $this->get_render_attribute_string('wrapper') . '>'; ?>
+                        <?php
+                        foreach ($settings['slides'] as $item) {
+                            ?>
+                            <div class="col-auto">
+                                <div class="gallery-style1">
+                                    <div class="gallery-img">
+                                        <a href="<?php echo esc_url($item['gallery_image_url']['url']); ?>">
+                                            <?php
+                                            if (!empty($item['gallery_image']['url'])) {
+                                                echo bizino_img_tag(array(
+                                                    'url' => esc_url($item['gallery_image']['url']),
+                                                ));
+                                            }
+                                            ?>
+                                        </a>
+                                    </div>
+                                    <?php
+                                    if (!empty($item['image_title'])) {
+                                        echo '<h3 class="gallery-title h5">
                                                 <a href="' . esc_url($item['image_url']['url']) . '" class="text-inherit">' . htmlspecialchars_decode(esc_html($item['image_title'])) . '</a>
                                                 </h3>';
+                                    }
+                                    ?>
+                                    <div class="gallery-category">
+                                        <?php
+                                        if (!empty($item['image_url2']['url'])) {
+                                            echo '<a href="' . esc_url($item['image_url2']['url']) . '">' . htmlspecialchars_decode(esc_html($item['image_title2'])) . '</a>';
                                         }
                                         ?>
-                                        <div class="gallery-category">
-                                            <?php
-                                            if (!empty($item['image_url2']['url'])) {
-                                                echo '<a href="' . esc_url($item['image_url2']['url']) . '">' . htmlspecialchars_decode(esc_html($item['image_title2'])) . '</a>';
-                                            }
-                                            ?>
-                                            <?php
-                                            if (!empty($item['image_url3']['url'])) {
-                                                echo '<a href="' . esc_url($item['image_url3']['url']) . '">' . htmlspecialchars_decode(esc_html($item['image_title3'])) . '</a>';
-                                            }
-                                            ?>
-                                        </div>
+                                        <?php
+                                        if (!empty($item['image_url3']['url'])) {
+                                            echo '<a href="' . esc_url($item['image_url3']['url']) . '">' . htmlspecialchars_decode(esc_html($item['image_title3'])) . '</a>';
+                                        }
+                                        ?>
                                     </div>
                                 </div>
-                            <?php } ?>
-                        </div>
+                            </div>
+                        <?php } ?>
+                    </div>
                     </div>
                 </section>
             <?php }
@@ -631,4 +628,4 @@ class Bizino_Gallery extends Widget_Base
     }
 }
 
-Plugin::instance()->widgets_manager->register(new \Bizino_Gallery());
+Plugin::instance()->widgets_manager->register(new Bizino_Gallery());

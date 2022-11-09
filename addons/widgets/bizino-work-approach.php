@@ -1,13 +1,11 @@
 <?php
 
-use \Elementor\Widget_Base;
-use \Elementor\Controls_Manager;
-use \Elementor\Group_Control_Typography;
-use \Elementor\Utils;
-use \Elementor\Repeater;
-use \Elementor\Group_Control_Image_Size;
-use \Elementor\Group_Control_Box_Shadow;
-use \Elementor\Group_Control_Background;
+use Elementor\Controls_Manager;
+use Elementor\Group_Control_Typography;
+use Elementor\Plugin;
+use Elementor\Repeater;
+use Elementor\Utils;
+use Elementor\Widget_Base;
 
 /**
  *
@@ -237,24 +235,26 @@ class Bizino_Work_Approach_Widget extends Widget_Base
 
         if (!empty($settings['slides'])) {
             ?>
-            <div class="process-shape1 d-none d-lg-block"><img src="<?php echo esc_url($settings['bg_image']['url']); ?>" alt="shape"></div>
+            <div class="process-shape1 d-none d-lg-block"><img
+                        src="<?php echo esc_url($settings['bg_image']['url']); ?>" alt="shape"></div>
             <div class="row justify-content-between">
                 <?php
                 foreach ($settings['slides'] as $item) {
                     ?>
-                <div class="col-md-6 col-lg-auto process-style1">
-                    <div class="process-body">
-                        <div class="process-shape"></div>
-                        <div class="process-number"><?php echo esc_html($item['work_number']); ?></div>
-                        <div class="process-icon"><img src="<?php echo esc_url($item['icon_image']['url']); ?>" alt="icon"></div>
-                        <p class="process-text"><?php echo esc_html($item['work_title']); ?></p>
+                    <div class="col-md-6 col-lg-auto process-style1">
+                        <div class="process-body">
+                            <div class="process-shape"></div>
+                            <div class="process-number"><?php echo esc_html($item['work_number']); ?></div>
+                            <div class="process-icon"><img src="<?php echo esc_url($item['icon_image']['url']); ?>"
+                                                           alt="icon"></div>
+                            <p class="process-text"><?php echo esc_html($item['work_title']); ?></p>
+                        </div>
                     </div>
-                </div>
-        <?php } ?>
+                <?php } ?>
             </div>
             <?php
         }
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_Work_Approach_Widget());
+Plugin::instance()->widgets_manager->register(new Bizino_Work_Approach_Widget());

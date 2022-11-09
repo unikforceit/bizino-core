@@ -1,11 +1,10 @@
 <?php
 
-use \Elementor\Widget_Base;
-use \Elementor\Controls_Manager;
-use \Elementor\Group_Control_Typography;
-use \Elementor\Utils;
-use \Elementor\Repeater;
-use \Elementor\Group_Control_Image_Size;
+use Elementor\Controls_Manager;
+use Elementor\Group_Control_Box_Shadow;
+use Elementor\Group_Control_Typography;
+use Elementor\Plugin;
+use Elementor\Widget_Base;
 
 /**
  *
@@ -123,7 +122,7 @@ class Bizino_Button_Widget extends Widget_Base
         );
 
         $this->add_group_control(
-            \Elementor\Group_Control_Box_Shadow::get_type(),
+            Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'btn_shadow',
                 'label' => __('Button Shadow', 'bizino'),
@@ -231,4 +230,4 @@ class Bizino_Button_Widget extends Widget_Base
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_Button_Widget());
+Plugin::instance()->widgets_manager->register(new Bizino_Button_Widget());

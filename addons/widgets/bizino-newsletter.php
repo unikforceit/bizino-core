@@ -2,6 +2,7 @@
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
+use Elementor\Plugin;
 use Elementor\Widget_Base;
 
 /**
@@ -349,7 +350,8 @@ class Bizino_Newsletter extends Widget_Base
         } else {
             ?>
             <form action="#" class="subscribe-us">
-                <div class="newsletter-form"><input type="email" placeholder="<?php echo esc_attr($settings['newsletter_placeholder']); ?>">
+                <div class="newsletter-form"><input type="email"
+                                                    placeholder="<?php echo esc_attr($settings['newsletter_placeholder']); ?>">
                     <button type="submit" class="vs-btn"><?php echo esc_html($settings['subscribe_btn']); ?></button>
                 </div>
             </form>
@@ -358,4 +360,4 @@ class Bizino_Newsletter extends Widget_Base
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_Newsletter());
+Plugin::instance()->widgets_manager->register(new Bizino_Newsletter());

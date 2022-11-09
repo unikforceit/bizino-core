@@ -1,11 +1,10 @@
 <?php
 
-use \Elementor\Widget_Base;
-use \Elementor\Controls_Manager;
-use \Elementor\Group_Control_Typography;
-use \Elementor\Utils;
-use \Elementor\Repeater;
-use \Elementor\Group_Control_Image_Size;
+use Elementor\Controls_Manager;
+use Elementor\Group_Control_Typography;
+use Elementor\Plugin;
+use Elementor\Utils;
+use Elementor\Widget_Base;
 
 /**
  *
@@ -406,4 +405,4 @@ class Bizino_Single_Team_Widget extends Widget_Base
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_Single_Team_Widget());
+Plugin::instance()->widgets_manager->register(new Bizino_Single_Team_Widget());

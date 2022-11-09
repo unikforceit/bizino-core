@@ -2,6 +2,7 @@
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
+use Elementor\Plugin;
 use Elementor\Repeater;
 use Elementor\Utils;
 use Elementor\Widget_Base;
@@ -523,13 +524,13 @@ class Bizino_Features_Widget extends Widget_Base
                     '{{WRAPPER}} .event-content .event-label' => 'color: {{VALUE}}',
                 ],
             ]
-        ); 
-         $this->add_group_control(
+        );
+        $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
                 'name' => 'features_subtitle_typography',
                 'label' => __('Subtitle Typography', 'bizino'),
-                'selector' => '{{WRAPPER}} .event-style1 .event-label' 
+                'selector' => '{{WRAPPER}} .event-style1 .event-label'
             ]
         );
         $this->add_control(
@@ -538,16 +539,16 @@ class Bizino_Features_Widget extends Widget_Base
                 'label' => __('Title Color', 'bizino'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .text-inherit' => 'color: {{VALUE}}',  
+                    '{{WRAPPER}} .text-inherit' => 'color: {{VALUE}}',
                 ],
             ]
-        ); 
+        );
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
                 'name' => 'features_content_typography',
                 'label' => __('content Typography', 'bizino'),
-                'selector' => '{{WRAPPER}} .event-style1 .event-title'  
+                'selector' => '{{WRAPPER}} .event-style1 .event-title'
             ]
         );
         $this->add_responsive_control(
@@ -567,16 +568,16 @@ class Bizino_Features_Widget extends Widget_Base
                 'label' => __('Desc Color', 'bizino'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} p' => 'color: {{VALUE}}',   
+                    '{{WRAPPER}} p' => 'color: {{VALUE}}',
                 ],
             ]
-        ); 
+        );
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
                 'name' => 'features_desc_typography',
                 'label' => __('desc Typography', 'bizino'),
-                'selector' => '{{WRAPPER}} .event-style1 .event-text'   
+                'selector' => '{{WRAPPER}} .event-style1 .event-text'
             ]
         );
         $this->add_responsive_control(
@@ -591,7 +592,7 @@ class Bizino_Features_Widget extends Widget_Base
             ]
         );
 
-       
+
         $this->end_controls_section();
 
         /*-----------------------------------------Animation styling------------------------------------*/
@@ -618,7 +619,7 @@ class Bizino_Features_Widget extends Widget_Base
             'shape_delay',
             [
                 'label' => __('Shape Delay', 'bizino'),
-                'type' => \Elementor\Controls_Manager::NUMBER,
+                'type' => Controls_Manager::NUMBER,
                 'min' => 5,
                 'max' => 100,
                 'step' => 1,
@@ -727,50 +728,50 @@ class Bizino_Features_Widget extends Widget_Base
                 Features Area
                 ==============================-->
                 <section class="features-cs">
-                    <?php echo '<div '.$this->get_render_attribute_string('wrapper').'>';?>
+                    <?php echo '<div ' . $this->get_render_attribute_string('wrapper') . '>'; ?>
                     <?php
-                        foreach ($settings['feature2_list'] as $feature) {
-                            ?>
-                            <div class="col-xl-4 feature-multi">
-                                <div class="feature-style1">
-                                    <div class="feature-img">
+                    foreach ($settings['feature2_list'] as $feature) {
+                        ?>
+                        <div class="col-xl-4 feature-multi">
+                            <div class="feature-style1">
+                                <div class="feature-img">
+                                    <?php
+                                    if (!empty($feature['feature2_image']['url'])) {
+                                        echo bizino_img_tag(array(
+                                            'url' => esc_url($feature['feature2_image']['url']),
+                                        ));
+                                    }
+                                    ?>
+                                </div>
+                                <div class="feature-content">
+                                    <div class="feature-icon">
                                         <?php
-                                        if (!empty($feature['feature2_image']['url'])) {
+                                        if (!empty($feature['feature2_image2']['url'])) {
                                             echo bizino_img_tag(array(
-                                                'url' => esc_url($feature['feature2_image']['url']),
+                                                'url' => esc_url($feature['feature2_image2']['url']),
                                             ));
                                         }
                                         ?>
                                     </div>
-                                    <div class="feature-content">
-                                        <div class="feature-icon">
-                                            <?php
-                                            if (!empty($feature['feature2_image2']['url'])) {
-                                                echo bizino_img_tag(array(
-                                                    'url' => esc_url($feature['feature2_image2']['url']),
-                                                ));
-                                            }
-                                            ?>
-                                        </div>
-                                        <h3 class="feature-title h5">
-                                            <a class="text-inherit"
-                                               href="<?php echo esc_url($feature['feature2_link']['url']); ?>">
-                                                <?php echo esc_html($feature['feature2_title']); ?>
-                                            </a>
-                                        </h3>
-                                        <?php
-                                        if (!empty($feature['feature2_desc'])) {
-                                            echo '<p class="feature">' . htmlspecialchars_decode(esc_html($feature['feature2_desc'])) . '</p>';
-                                        }
-                                        ?>
-                                        <a href="<?php echo esc_url($feature['feature2_link2']['url']); ?>"
-                                           class="icon-btn style2">
-                                            <i class="far fa-long-arrow-right"></i>
+                                    <h3 class="feature-title h5">
+                                        <a class="text-inherit"
+                                           href="<?php echo esc_url($feature['feature2_link']['url']); ?>">
+                                            <?php echo esc_html($feature['feature2_title']); ?>
                                         </a>
-                                    </div>
+                                    </h3>
+                                    <?php
+                                    if (!empty($feature['feature2_desc'])) {
+                                        echo '<p class="feature">' . htmlspecialchars_decode(esc_html($feature['feature2_desc'])) . '</p>';
+                                    }
+                                    ?>
+                                    <a href="<?php echo esc_url($feature['feature2_link2']['url']); ?>"
+                                       class="icon-btn style2">
+                                        <i class="far fa-long-arrow-right"></i>
+                                    </a>
                                 </div>
                             </div>
-                        <?php } ?>
+                        </div>
+                    <?php } ?>
                     </div>
                 </section>
                 <?php
@@ -868,4 +869,4 @@ class Bizino_Features_Widget extends Widget_Base
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_Features_Widget());
+Plugin::instance()->widgets_manager->register(new Bizino_Features_Widget());

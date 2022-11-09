@@ -2,6 +2,7 @@
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
+use Elementor\Plugin;
 use Elementor\Widget_Base;
 
 /**
@@ -143,7 +144,7 @@ class Bizino_Blog_Post extends Widget_Base
                 'options' => $this->bizino_post_id(),
             ]
         );
-      
+
         $this->end_controls_section();
 
         $this->start_controls_section(
@@ -276,8 +277,8 @@ class Bizino_Blog_Post extends Widget_Base
         );
 
         $this->end_controls_section();
-       
-       
+
+
         $this->start_controls_section(
             'meta_style',
             [
@@ -488,37 +489,37 @@ class Bizino_Blog_Post extends Widget_Base
                 Blog Area
                 ==============================-->
                 <section class="blog-cs">
-                    <?php echo '<div '.$this->get_render_attribute_string('wrapper').'>';?>
-                        <?php
-                        while ($blogpost->have_posts()) {
-                            $blogpost->the_post();
-                            ?>
-                            <div class="col-xl-4">
-                                <div class="vs-blog blog-style1">
-                                    <div class="blog-img">
-                                        <a href="<?php echo esc_url(bizino_blog_date_permalink()); ?>"><?php the_post_thumbnail('bizino-blog-content', array('class' => 'w-100')); ?></a>
+                    <?php echo '<div ' . $this->get_render_attribute_string('wrapper') . '>'; ?>
+                    <?php
+                    while ($blogpost->have_posts()) {
+                        $blogpost->the_post();
+                        ?>
+                        <div class="col-xl-4">
+                            <div class="vs-blog blog-style1">
+                                <div class="blog-img">
+                                    <a href="<?php echo esc_url(bizino_blog_date_permalink()); ?>"><?php the_post_thumbnail('bizino-blog-content', array('class' => 'w-100')); ?></a>
+                                </div>
+                                <div class="blog-content">
+                                    <div class="blog-category">
+                                        <?php echo bizino_blog_category() ?>
                                     </div>
-                                    <div class="blog-content">
-                                        <div class="blog-category">
-                                            <?php echo bizino_blog_category()?>
-                                        </div>
-                                        <?php
-                                        if (get_the_title()) {
-                                            echo '<h3 class="blog-title h5"><a href="' . esc_url(get_permalink()) . '">' . esc_html(wp_trim_words(get_the_title(), $settings['title_count'], '')) . '</a></h3>';
-                                        }
-                                        ?>
-                                        <div class="blog-bottom">
-                                            <?php echo '<div class="blog-avater">' . get_avatar(get_the_author_meta('ID'), 60) . '</div>'; ?>
-                                            <div class="media-body">
-                                                <?php echo '<a href="' . esc_url(bizino_blog_date_permalink()) . '" class="blog-date">' . esc_html(get_the_date('d M, Y')) . '</a>'; ?>
-                                                <?php echo '<p class="blog-writter">' . esc_html(get_the_author()) . '</p>'; ?>
-                                            </div>
+                                    <?php
+                                    if (get_the_title()) {
+                                        echo '<h3 class="blog-title h5"><a href="' . esc_url(get_permalink()) . '">' . esc_html(wp_trim_words(get_the_title(), $settings['title_count'], '')) . '</a></h3>';
+                                    }
+                                    ?>
+                                    <div class="blog-bottom">
+                                        <?php echo '<div class="blog-avater">' . get_avatar(get_the_author_meta('ID'), 60) . '</div>'; ?>
+                                        <div class="media-body">
+                                            <?php echo '<a href="' . esc_url(bizino_blog_date_permalink()) . '" class="blog-date">' . esc_html(get_the_date('d M, Y')) . '</a>'; ?>
+                                            <?php echo '<p class="blog-writter">' . esc_html(get_the_author()) . '</p>'; ?>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        <?php }
-                        wp_reset_postdata(); ?>
+                        </div>
+                    <?php }
+                    wp_reset_postdata(); ?>
                     </div>
                 </section>
                 <?php
@@ -528,39 +529,39 @@ class Bizino_Blog_Post extends Widget_Base
                    Blog Area
                    ==============================-->
                 <section class="blog2-cs">
-                    <?php echo '<div '.$this->get_render_attribute_string('wrapper').'>';?>
-                        <?php
-                        while ($blogpost->have_posts()) {
-                            $blogpost->the_post();
-                            ?>
-                            <div class="col-xl-4">
-                                <div class="vs-blog blog-style2">
-                                    <div class="blog-img">
-                                        <a href="<?php echo esc_url(get_the_permalink()); ?>"><?php the_post_thumbnail('bizino-blog-content', array('class' => 'w-100')); ?></a>
+                    <?php echo '<div ' . $this->get_render_attribute_string('wrapper') . '>'; ?>
+                    <?php
+                    while ($blogpost->have_posts()) {
+                        $blogpost->the_post();
+                        ?>
+                        <div class="col-xl-4">
+                            <div class="vs-blog blog-style2">
+                                <div class="blog-img">
+                                    <a href="<?php echo esc_url(get_the_permalink()); ?>"><?php the_post_thumbnail('bizino-blog-content', array('class' => 'w-100')); ?></a>
+                                </div>
+                                <div class="blog-body">
+                                    <div class="blog-date">
+                                        <?php echo '<a href="' . esc_url(bizino_blog_date_permalink()) . '">' . esc_html(get_the_date('d M, Y')) . '</a>'; ?>
                                     </div>
-                                    <div class="blog-body">
-                                        <div class="blog-date">
-                                            <?php echo '<a href="' . esc_url(bizino_blog_date_permalink()) . '">' . esc_html(get_the_date('d M, Y')) . '</a>'; ?>
+                                    <div class="blog-content">
+                                        <div class="blog-meta">
+                                            <?php echo '<a href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '"><i class="fas fa-user"></i>' . esc_html(get_the_author()) . '</a>'; ?>
+                                            <a href="<?php echo esc_url(get_permalink() . '#respond'); ?>"><i
+                                                        class="fad fa-comment-alt-lines"></i><?php echo esc_html(get_comments_number()); ?>
+                                                Comments</a>
                                         </div>
-                                        <div class="blog-content">
-                                            <div class="blog-meta">
-                                                <?php echo '<a href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '"><i class="fas fa-user"></i>' . esc_html(get_the_author()) . '</a>'; ?>
-                                                <a href="<?php echo esc_url(get_permalink() . '#respond'); ?>"><i
-                                                            class="fad fa-comment-alt-lines"></i><?php echo esc_html(get_comments_number()); ?>
-                                                    Comments</a>
-                                            </div>
-                                            <?php
-                                            if (get_the_title()) {
-                                                echo '<h3 class="blog-title h5"><a href="' . esc_url(get_permalink()) . '">' . esc_html(wp_trim_words(get_the_title(), $settings['title_count'], '')) . '</a></h3>';
-                                            }
-                                            ?>
-                                            <?php echo '<a href="' . esc_url(get_the_permalink()) . '" class="icon-btn style4"><i class="fal fa-long-arrow-right"></i></a>'; ?>
-                                        </div>
+                                        <?php
+                                        if (get_the_title()) {
+                                            echo '<h3 class="blog-title h5"><a href="' . esc_url(get_permalink()) . '">' . esc_html(wp_trim_words(get_the_title(), $settings['title_count'], '')) . '</a></h3>';
+                                        }
+                                        ?>
+                                        <?php echo '<a href="' . esc_url(get_the_permalink()) . '" class="icon-btn style4"><i class="fal fa-long-arrow-right"></i></a>'; ?>
                                     </div>
                                 </div>
                             </div>
-                        <?php }
-                        wp_reset_postdata(); ?>
+                        </div>
+                    <?php }
+                    wp_reset_postdata(); ?>
                     </div>
                 </section>
                 <?php
@@ -570,45 +571,45 @@ class Bizino_Blog_Post extends Widget_Base
                 Blog Area
                 ==============================-->
                 <section class="blog3-cs">
-                    <?php echo '<div '.$this->get_render_attribute_string('wrapper').'>';?>
-                        <?php
-                        while ($blogpost->have_posts()) {
-                            $blogpost->the_post();
-                            ?>
-                            <div class="col-xl-4">
-                                <div class="vs-blog blog-style2 layout2">
-                                    <div class="blog-img">
-                                        <a href="<?php echo esc_url(get_permalink()); ?>">
-                                            <?php the_post_thumbnail('bizino-blog-content', array('class' => 'w-100')); ?>
-                                        </a>
+                    <?php echo '<div ' . $this->get_render_attribute_string('wrapper') . '>'; ?>
+                    <?php
+                    while ($blogpost->have_posts()) {
+                        $blogpost->the_post();
+                        ?>
+                        <div class="col-xl-4">
+                            <div class="vs-blog blog-style2 layout2">
+                                <div class="blog-img">
+                                    <a href="<?php echo esc_url(get_permalink()); ?>">
+                                        <?php the_post_thumbnail('bizino-blog-content', array('class' => 'w-100')); ?>
+                                    </a>
+                                </div>
+                                <div class="blog-body">
+                                    <div class="blog-date">
+                                        <?php echo '<a href="' . esc_url(bizino_blog_date_permalink()) . '">' . esc_html(get_the_date('d M, Y')) . '</a>'; ?>
                                     </div>
-                                    <div class="blog-body">
-                                        <div class="blog-date">
-                                            <?php echo '<a href="' . esc_url(bizino_blog_date_permalink()) . '">' . esc_html(get_the_date('d M, Y')) . '</a>'; ?>
-                                        </div>
-                                        <div class="blog-content">
-                                            <div class="blog-meta">
-                                                <?php echo '
+                                    <div class="blog-content">
+                                        <div class="blog-meta">
+                                            <?php echo '
                                                     <a href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">
                                                         <i class="fas fa-user"></i>
                                                         ' . esc_html(get_the_author()) . '</a>'; ?>
-                                                <a href="<?php echo esc_url(get_permalink() . '#respond'); ?>"><i
-                                                            class="fad fa-comment-alt-lines"></i><?php echo esc_html(get_comments_number()); ?>
-                                                    Comments</a>
-                                            </div>
-                                            <?php
-                                            if (get_the_title()) {
-                                                echo '<h3 class="blog-title h5"><a href="' . esc_url(get_permalink()) . '">' . esc_html(wp_trim_words(get_the_title(), $settings['title_count'], '')) . '</a></h3>';
-                                            }
-                                            ?>
-                                            <a href="<?php echo esc_url(get_permalink()); ?>" class="icon-btn style4"><i
-                                                        class="fal fa-long-arrow-right"></i></a>
+                                            <a href="<?php echo esc_url(get_permalink() . '#respond'); ?>"><i
+                                                        class="fad fa-comment-alt-lines"></i><?php echo esc_html(get_comments_number()); ?>
+                                                Comments</a>
                                         </div>
+                                        <?php
+                                        if (get_the_title()) {
+                                            echo '<h3 class="blog-title h5"><a href="' . esc_url(get_permalink()) . '">' . esc_html(wp_trim_words(get_the_title(), $settings['title_count'], '')) . '</a></h3>';
+                                        }
+                                        ?>
+                                        <a href="<?php echo esc_url(get_permalink()); ?>" class="icon-btn style4"><i
+                                                    class="fal fa-long-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
-                        <?php }
-                        wp_reset_postdata(); ?>
+                        </div>
+                    <?php }
+                    wp_reset_postdata(); ?>
                     </div>
                 </section>
                 <?php
@@ -621,4 +622,4 @@ class Bizino_Blog_Post extends Widget_Base
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_Blog_Post());
+Plugin::instance()->widgets_manager->register(new Bizino_Blog_Post());

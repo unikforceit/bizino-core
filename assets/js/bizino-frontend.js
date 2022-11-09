@@ -1,6 +1,6 @@
-!(function($) {
+!(function ($) {
     'use strict';
-    $(window).on( 'elementor/frontend/init', function() {
+    $(window).on('elementor/frontend/init', function () {
 
 
         var GlobalSliders = function ($scope, $) {
@@ -350,34 +350,34 @@
             });
 
         };
-            //Logo Slider
-            elementorFrontend.hooks.addAction('frontend/element_ready/bizinologocarousel.default', GlobalSliders);
+        //Logo Slider
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinologocarousel.default', GlobalSliders);
 
-            // Testimonial
-            elementorFrontend.hooks.addAction('frontend/element_ready/bizinotestimonialslider.default', TestimoniallSliders);
+        // Testimonial
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinotestimonialslider.default', TestimoniallSliders);
 
-            // Blog
-            elementorFrontend.hooks.addAction('frontend/element_ready/bizinoblogpost.default', GlobalSliders);
+        // Blog
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinoblogpost.default', GlobalSliders);
 
-            // Features
-            elementorFrontend.hooks.addAction('frontend/element_ready/bizinofeatures.default', GlobalSliders);
+        // Features
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinofeatures.default', GlobalSliders);
 
-            // Team
-            elementorFrontend.hooks.addAction('frontend/element_ready/bizinoteammember.default', GlobalSliders);
+        // Team
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinoteammember.default', GlobalSliders);
 
-            // Instagram
-            elementorFrontend.hooks.addAction('frontend/element_ready/bizinoinstagramgallery.default', GlobalSliders);
+        // Instagram
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinoinstagramgallery.default', GlobalSliders);
 
-            // Gallery
-            elementorFrontend.hooks.addAction('frontend/element_ready/bizinogallery.default', GlobalSliders);
+        // Gallery
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinogallery.default', GlobalSliders);
 
-            // Service
-            elementorFrontend.hooks.addAction('frontend/element_ready/bizinoservices.default', GlobalSliders);
+        // Service
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinoservices.default', GlobalSliders);
 
-            // According
-            elementorFrontend.hooks.addAction('frontend/element_ready/bizinofaq.default', Faq);
+        // According
+        elementorFrontend.hooks.addAction('frontend/element_ready/bizinofaq.default', Faq);
 
-  });
+    });
 
 }(jQuery));
 
