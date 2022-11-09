@@ -564,18 +564,10 @@ class Bizino_Header extends Widget_Base
                             </div>
                             <div class="col-auto">
                                 <div class="header-dropdown">
-                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1"
-                                       data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i>English</a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                        <li>
-                                            <a href="#">German</a>
-                                            <a href="#">French</a>
-                                            <a href="#">Italian</a>
-                                            <a href="#">Latvian</a>
-                                            <a href="#">Spanish</a>
-                                            <a href="#">Greek</a>
-                                        </li>
-                                    </ul>
+									<div class="bizino-translate">
+										<i class="fas fa-globe"></i>
+                                        <?php echo do_shortcode('[google-translator]'); ?>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-auto">

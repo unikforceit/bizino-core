@@ -155,28 +155,23 @@ class Bizino_Testimonial_Slider extends Widget_Base
                 'default' => 'yes',
             ]
         );
-
         $this->add_control(
-            'slider_autoplay',
+            'slide_to_show',
             [
-                'label' => __('Autoplay', 'bizino'),
-                'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'bizino'),
-                'label_off' => __('No', 'bizino'),
-                'return_value' => 'yes',
-                'default' => 'yes',
-            ]
-        );
-
-        $this->add_control(
-            'slider_dots',
-            [
-                'label' => __('Dots', 'bizino'),
-                'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'bizino'),
-                'label_off' => __('No', 'bizino'),
-                'return_value' => 'yes',
-                'default' => 'yes',
+                'label' => __('Slide To Show', 'bizino'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 10,
+                        'step' => 1,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 1,
+                ],
             ]
         );
 
@@ -436,26 +431,11 @@ class Bizino_Testimonial_Slider extends Widget_Base
         $settings = $this->get_settings_for_display();
 
 
-        $this->add_render_attribute('wrapper', 'id', 'testimonialslide1');
-        $this->add_render_attribute('wrapper', 'class', 'testimonial-one vs-carousel');
+        $this->add_render_attribute('wrapper', 'id', 'testId');
+        $this->add_render_attribute('wrapper', 'class', 'vs-carousel');
+        $this->add_render_attribute('wrapper', 'data-fade', 'true');
+        $this->add_render_attribute('wrapper', 'data-slide-show', $settings['slide_to_show']['size']);
 
-
-        $this->add_render_attribute('wrapper', 'class', 'row slider-two vs-carousel');
-        if ($settings['slider_dots'] == 'yes') {
-            $this->add_render_attribute('wrapper', 'data-slick-dots', 'true');
-        } else {
-            $this->add_render_attribute('wrapper', 'data-slick-dots', 'false');
-        }
-        if ($settings['slider_arrows'] == 'yes') {
-            $this->add_render_attribute('wrapper', 'data-slick-arrows', 'true');
-        } else {
-            $this->add_render_attribute('wrapper', 'data-slick-arrows', 'false');
-        }
-        if ($settings['slider_autoplay'] == 'yes') {
-            $this->add_render_attribute('wrapper', 'data-slick-autoplay', 'true');
-        } else {
-            $this->add_render_attribute('wrapper', 'data-slick-autoplay', 'false');
-        }
         if (!empty($settings['slides'])) {
             ?>
             <!--==============================
@@ -494,7 +474,7 @@ class Bizino_Testimonial_Slider extends Widget_Base
                         <?php } ?>
                     </div>
                     <div class="testi-shape" data-bg-src="<?php echo esc_url($settings['testimonial_shape1']['url'])?>"></div>
-                    <div class="vs-carousel" id="testId" data-slide-show="1" data-fade="true">
+                    <?php echo '<div '.$this->get_render_attribute_string('wrapper').'>';?>
                         <?php foreach ($settings['slides'] as $singleslide) { ?>
                             <div>
                                 <div class="testi-quote">
