@@ -12,41 +12,38 @@
 /**************************************
  * Creating Recent Post Widget
  ***************************************/
-class bizino_recent_posts_widget extends WP_Widget
-{
+// Adds widget: Bizino :: Recent Posts
+class bizino_recent_posts_widget extends WP_Widget {
 
-    function __construct()
-    {
-
+    function __construct() {
         parent::__construct(
-
-        // Base ID of your widget
-
             'bizino_recent_posts_widget',
-
-            // Widget name will appear in UI
-
-            esc_html__('Bizino :: Recent Posts', 'bizino'),
-
-            // Widget description
-
-            array(
-                'classname' => 'widget_recent_entries',
-                'customize_selective_refresh' => true,
-                'description' => esc_html__('Add Recent Posts Widget', 'bizino'),
-            )
+            esc_html__( 'Bizino :: Recent Posts', 'bizino' ),
+            array( 'description' => esc_html__( 'Add Recent Posts Widget', 'bizino' ), ) // Args
         );
     }
 
+    private $widget_fields = array(
+        array(
+            'label' => 'Number Of Post',
+            'id' => 'post_count',
+            'default' => '4',
+            'type' => 'number',
+        ),
+        array(
+            'label' => 'Show Date',
+            'id' => 'show_date',
+            'default' => true,
+            'type' => 'checkbox',
+        ),
+    );
 
-    // This is where the action happens
+    public function widget( $args, $instance ) {
+        //echo $args['before_widget'];
 
-    public function widget($args, $instance)
-    {
-
-        $title = apply_filters('widget_title', $instance['title']);
-        $show_date = isset($instance['show_date']) ? $instance['show_date'] : false;
-
+        if ( ! empty( $instance['title'] ) ) {
+            echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+        }
 
         //Post Count
         if (isset($instance['post_count'])) {
@@ -54,11 +51,6 @@ class bizino_recent_posts_widget extends WP_Widget
         } else {
             $post_count = '4';
         }
-
-        //before and after widget arguments are defined by themes
-
-        //echo $args['before_widget'];
-
         if (!empty($title)) {
             echo $args['before_title'];
             echo esc_html($title);
@@ -71,7 +63,6 @@ class bizino_recent_posts_widget extends WP_Widget
             "post_status" => "publish",
             "ignore_sticky_posts" => true
         );
-
 
         $recentposts = new WP_Query($query_args);
 
@@ -93,7 +84,7 @@ class bizino_recent_posts_widget extends WP_Widget
                 }
                 echo '<div class="media-body">';
                 echo '<h4 class="post-title"><a class="text-inherit" href="' . esc_url(get_the_permalink()) . '">' . wp_trim_words(wp_kses_post(get_the_title()), '4', '') . '</a></h4>';
-                if ($show_date) {
+                if ($instance['show_date'] == '1') {
                     echo '<div class="recent-post-meta">';
                     echo '<a href="' . esc_url(get_the_permalink()) . '">' . esc_html(get_the_time('d M Y')) . '</a>';
                     echo '</div>';
@@ -105,76 +96,60 @@ class bizino_recent_posts_widget extends WP_Widget
             echo '<!-- End of Widget Content -->';
             echo '</div>';
         }
+
         //echo $args['after_widget'];
     }
 
-    // Widget Backend
-    public function form($instance)
-    {
-
-        //Title
-        if (isset($instance['title'])) {
-            $title = $instance['title'];
-        } else {
-            $title = '';
+    public function field_generator( $instance ) {
+        $output = '';
+        foreach ( $this->widget_fields as $widget_field ) {
+            $default = '';
+            if ( isset($widget_field['default']) ) {
+                $default = $widget_field['default'];
+            }
+            $widget_value = ! empty( $instance[$widget_field['id']] ) ? $instance[$widget_field['id']] : esc_html__( $default, 'bizino' );
+            switch ( $widget_field['type'] ) {
+                case 'checkbox':
+                    $output .= '<p>';
+                    $output .= '<input class="checkbox" type="checkbox" '.checked( $widget_value, true, false ).' id="'.esc_attr( $this->get_field_id( $widget_field['id'] ) ).'" name="'.esc_attr( $this->get_field_name( $widget_field['id'] ) ).'" value="1">';
+                    $output .= '<label for="'.esc_attr( $this->get_field_id( $widget_field['id'] ) ).'">'.esc_attr( $widget_field['label'], 'bizino' ).'</label>';
+                    $output .= '</p>';
+                    break;
+                default:
+                    $output .= '<p>';
+                    $output .= '<label for="'.esc_attr( $this->get_field_id( $widget_field['id'] ) ).'">'.esc_attr( $widget_field['label'], 'bizino' ).':</label> ';
+                    $output .= '<input class="widefat" id="'.esc_attr( $this->get_field_id( $widget_field['id'] ) ).'" name="'.esc_attr( $this->get_field_name( $widget_field['id'] ) ).'" type="'.$widget_field['type'].'" value="'.esc_attr( $widget_value ).'">';
+                    $output .= '</p>';
+            }
         }
+        echo $output;
+    }
 
-        //Post Count
-        if (isset($instance['post_count'])) {
-            $post_count = $instance['post_count'];
-        } else {
-            $post_count = '4';
-        }
-
-        // Show Date
-
-        $show_date = isset($instance['show_date']) ? (bool)$instance['show_date'] : false;
-
-
-        // Widget admin form
-
+    public function form( $instance ) {
+        $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( '', 'bizino' );
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'bizino'); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
-                   name="<?php echo $this->get_field_name('title'); ?>" type="text"
-                   value="<?php echo esc_attr($title); ?>"/>
-        </p>
-        <p>
-            <label for="<?php echo $this->get_field_id('post_count'); ?>"><?php _e('Number of Posts to show:', 'bizino'); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id('post_count'); ?>"
-                   name="<?php echo $this->get_field_name('post_count'); ?>" type="text"
-                   value="<?php echo esc_attr($post_count); ?>"/>
-        </p>
-        <p>
-            <input class="checkbox" type="checkbox"<?php checked($show_date); ?>
-                   id="<?php echo $this->get_field_id('show_date'); ?>"
-                   name="<?php echo $this->get_field_name('show_date'); ?>"/>
-            <label for="<?php echo $this->get_field_id('show_date'); ?>"><?php _e('Display post date?'); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'bizino' ); ?></label>
+            <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
         </p>
         <?php
+        $this->field_generator( $instance );
     }
 
-
-    // Updating widget replacing old instances with new
-
-    public function update($new_instance, $old_instance)
-    {
-
+    public function update( $new_instance, $old_instance ) {
         $instance = array();
-        $instance['title'] = (!empty($new_instance['title'])) ? strip_tags($new_instance['title']) : '';
-        $instance['post_count'] = (!empty($new_instance['post_count'])) ? strip_tags($new_instance['post_count']) : '4';
-        $instance['show_date'] = isset($new_instance['show_date']) ? (bool)$new_instance['show_date'] : false;
-
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        foreach ( $this->widget_fields as $widget_field ) {
+            switch ( $widget_field['type'] ) {
+                default:
+                    $instance[$widget_field['id']] = ( ! empty( $new_instance[$widget_field['id']] ) ) ? strip_tags( $new_instance[$widget_field['id']] ) : '';
+            }
+        }
         return $instance;
     }
-} // Class bizino_recent_posts_widget ends here
-
-
-// Register and load the widget
-function bizino_recent_posts_load_widget()
-{
-    register_widget('bizino_recent_posts_widget');
 }
 
-add_action('widgets_init', 'bizino_recent_posts_load_widget');
+function bizino_recent_posts_load_widget() {
+    register_widget( 'bizino_recent_posts_widget' );
+}
+add_action( 'widgets_init', 'bizino_recent_posts_load_widget' );

@@ -566,16 +566,20 @@ class Bizino_Header extends Widget_Base
                                 </div>
                             </div>
                             <div class="col-auto">
-                                <div class="header-dropdown">
-                                    <div class="bizino-translate">
-                                        <i class="fas fa-globe"></i>
-                                        <?php echo do_shortcode('[gtranslate]'); ?>
+                                <?php if (class_exists('GTranslate')){ ?>
+                                    <div class="header-dropdown">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i>English</a>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                                            <li>
+                                                <?php echo do_shortcode('[gtranslate]'); ?>
+                                            </li>
+                                        </ul>
                                     </div>
-                                </div>
-                            </div>
+                                <?php } ?>
+                        </div>
                             <div class="col-auto">
                                 <div class="header-social">
-                                    <span class="social-label">Get In Touch:</span>
+                                    <span class="social-label"><?php esc_attr_e('Get In Touch:', 'bizino');?></span>
                                     <?php
                                     foreach ($settings['social_icon_list'] as $social_icon) {
 
@@ -676,17 +680,21 @@ class Bizino_Header extends Widget_Base
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-auto">
-                                <div class="header-dropdown">
-                                    <div class="bizino-translate">
-                                        <i class="fas fa-globe"></i>
-                                        <?php echo do_shortcode('[gtranslate]'); ?>
-                                    </div>
-                                </div>
-                            </div>
+                             <div class="col-auto">
+                                 <?php if (class_exists('GTranslate')){ ?>
+                                     <div class="header-dropdown">
+                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i>English</a>
+                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                                             <li>
+                                                 <?php echo do_shortcode('[gtranslate]'); ?>
+                                             </li>
+                                         </ul>
+                                     </div>
+                                 <?php } ?>
+                        </div>
                             <div class="col-auto">
                                 <div class="header-social">
-                                    <span class="social-label">Get In Touch:</span>
+                                    <span class="social-label"><?php esc_attr_e('Get In Touch:', 'bizino');?></span>
                                     <?php
                                     foreach ($settings['social_icon_list'] as $social_icon) {
 
@@ -774,17 +782,21 @@ class Bizino_Header extends Widget_Base
                 <div class="header-top">
                     <div class="container">
                         <div class="row justify-content-between justify-content-xl-end align-items-center">
-                            <div class="col-auto">
-                                <div class="header-dropdown">
-                                    <div class="bizino-translate">
-                                        <i class="fas fa-globe"></i>
-                                        <?php echo do_shortcode('[gtranslate]'); ?>
-                                    </div>
-                                </div>
-                            </div>
+                           <div class="col-auto">
+                               <?php if (class_exists('GTranslate')){ ?>
+                                   <div class="header-dropdown">
+                                       <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i>English</a>
+                                       <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                                           <li>
+                                               <?php echo do_shortcode('[gtranslate]'); ?>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               <?php } ?>
+                        </div>
                             <div class="col-auto">
                                 <div class="header-social">
-                                    <span class="social-label">Get In Touch:</span>
+                                    <span class="social-label"><?php esc_attr_e('Get In Touch:', 'bizino');?></span>
                                     <?php
                                     foreach ($settings['social_icon_list'] as $social_icon) {
 
