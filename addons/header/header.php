@@ -569,7 +569,7 @@ class Bizino_Header extends Widget_Base
                                 <div class="header-dropdown">
                                     <div class="bizino-translate">
                                         <i class="fas fa-globe"></i>
-                                        <?php echo do_shortcode('[google-translator]'); ?>
+                                        <?php echo do_shortcode('[gtranslate]'); ?>
                                     </div>
                                 </div>
                             </div>
@@ -680,7 +680,7 @@ class Bizino_Header extends Widget_Base
                                 <div class="header-dropdown">
                                     <div class="bizino-translate">
                                         <i class="fas fa-globe"></i>
-                                        <?php echo do_shortcode('[google-translator]'); ?>
+                                        <?php echo do_shortcode('[gtranslate]'); ?>
                                     </div>
                                 </div>
                             </div>
@@ -778,7 +778,7 @@ class Bizino_Header extends Widget_Base
                                 <div class="header-dropdown">
                                     <div class="bizino-translate">
                                         <i class="fas fa-globe"></i>
-                                        <?php echo do_shortcode('[google-translator]'); ?>
+                                        <?php echo do_shortcode('[gtranslate]'); ?>
                                     </div>
                                 </div>
                             </div>
