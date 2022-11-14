@@ -413,6 +413,25 @@ class Bizino_Features_Widget extends Widget_Base
             ]
         );
         $this->add_control(
+            'slide_lg_to_show',
+            [
+                'label' => __('Slide Lg To Show', 'bizino'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 10,
+                        'step' => 1,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 2,
+                ],
+            ]
+        );
+        $this->add_control(
             'slide_md_to_show',
             [
                 'label' => __('Slide Md To Show', 'bizino'),
@@ -640,6 +659,7 @@ class Bizino_Features_Widget extends Widget_Base
             $this->add_render_attribute('wrapper', 'class', 'row gx-4 vs-carousel');
             $this->add_render_attribute('wrapper', 'data-slide-show', $settings['slide_to_show']['size']);
             $this->add_render_attribute('wrapper', 'data-md-slide-show', $settings['slide_md_to_show']['size']);
+            $this->add_render_attribute('wrapper', 'data-lg-slide-show', $settings['slide_lg_to_show']['size']);
             $this->add_render_attribute('wrapper', 'data-sm-slide-show', $settings['slide_sm_to_show']['size']);
             $this->add_render_attribute('wrapper', 'data-center-mode', 'true');
             $this->add_render_attribute('wrapper', 'data-lg-center-mode', 'true');
