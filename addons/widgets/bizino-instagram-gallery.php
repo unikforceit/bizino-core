@@ -167,7 +167,7 @@ class Bizino_Instagram_Gallery extends Widget_Base
         if ($settings['instagram_style'] == 'one') {
             if (!empty($settings['slides'])) {
                 ?>
-                <div class="instagram-cs" data-sec-pos="bottom-half" data-pos-for=".copyright-wrap">
+                <div class="instagram-cs">
                     <div class="row vs-carousel" data-slide-show="6" data-lg-slide-show="5" data-md-slide-show="4">
                         <?php foreach ($settings['slides'] as $single_data) { ?>
                             <div class="col-xl-2">

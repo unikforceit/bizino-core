@@ -174,7 +174,7 @@ class Bizino_Blog_Post extends Widget_Base
             ]
         );
         $this->add_control(
-            'slide_md_to_show',
+            'slide_lg_to_show',
             [
                 'label' => __('Slide Md To Show', 'bizino'),
                 'type' => Controls_Manager::SLIDER,
@@ -188,14 +188,14 @@ class Bizino_Blog_Post extends Widget_Base
                 ],
                 'default' => [
                     'unit' => 'px',
-                    'size' => 3,
+                    'size' => 2,
                 ],
             ]
         );
         $this->add_control(
-            'slide_sm_to_show',
+            'slide_md_to_show',
             [
-                'label' => __('Slide Sm To Show', 'bizino'),
+                'label' => __('Slide Md To Show', 'bizino'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -477,8 +477,8 @@ class Bizino_Blog_Post extends Widget_Base
         $this->add_render_attribute('wrapper', 'class', 'row vs-carousel');
 
         $this->add_render_attribute('wrapper', 'data-slide-show', $settings['slide_to_show']['size']);
+        $this->add_render_attribute('wrapper', 'data-lg-slide-show', $settings['slide_lg_to_show']['size']);
         $this->add_render_attribute('wrapper', 'data-md-slide-show', $settings['slide_md_to_show']['size']);
-        $this->add_render_attribute('wrapper', 'data-sm-slide-show', $settings['slide_sm_to_show']['size']);
 
         $blogpost = new WP_Query($args);
 
