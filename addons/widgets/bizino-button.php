@@ -189,14 +189,9 @@ class Bizino_Button_Widget extends Widget_Base
     {
 
         $settings = $this->get_settings_for_display();
-//		$this->add_render_attribute( 'wrapper', 'class', 'btn-align' );
-//		echo '<!-----------------------Start Button Area----------------------->';
-//				echo '<div '.$this->get_render_attribute_string( 'wrapper' ).' >';
-//					if( ! empty( $settings['button_text'] ) ){
-//	                    echo '<a href="'.esc_url($settings['button_link']['url']).'" class="vs-btn">'.esc_html($settings['button_text']).'</a>';
-//	                }
-//	            echo '</div>';
-//		echo '<!-----------------------End Button Area----------------------->';
+		$this->add_render_attribute( 'wrapper', 'class', 'btn-align' );
+		echo '<!-----------------------Start Button Area----------------------->';
+        echo '<div '.$this->get_render_attribute_string( 'wrapper' ).' >';
         if ($settings['button_style'] == '1') {
             ?>
             <!--    Button Style 1        -->
@@ -227,6 +222,8 @@ class Bizino_Button_Widget extends Widget_Base
 
             <?php
         }
+	            echo '</div>';
+		echo '<!-----------------------End Button Area----------------------->';
     }
 }
 
