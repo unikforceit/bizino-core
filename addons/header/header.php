@@ -1,7 +1,10 @@
 <?php
 
 use Elementor\Controls_Manager;
+use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
+use Elementor\Icons_Manager;
+use Elementor\Plugin;
 use Elementor\Repeater;
 use Elementor\Utils;
 use Elementor\Widget_Base;
@@ -62,7 +65,7 @@ class Bizino_Header extends Widget_Base
             'topbar_options',
             [
                 'label' => __('Topbar Informations', 'bizino'),
-                'type' => \Elementor\Controls_Manager::HEADING,
+                'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
         );
@@ -158,7 +161,7 @@ class Bizino_Header extends Widget_Base
         $this->add_control(
             'hr',
             [
-                'type' => \Elementor\Controls_Manager::DIVIDER,
+                'type' => Controls_Manager::DIVIDER,
             ]
         );
 
@@ -177,7 +180,7 @@ class Bizino_Header extends Widget_Base
         $this->add_control(
             'hr1',
             [
-                'type' => \Elementor\Controls_Manager::DIVIDER,
+                'type' => Controls_Manager::DIVIDER,
             ]
         );
 
@@ -431,7 +434,7 @@ class Bizino_Header extends Widget_Base
         );
 
         $this->add_group_control(
-            \Elementor\Group_Control_Box_Shadow::get_type(),
+            Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'btn_shadow',
                 'label' => __('Button Shadow', 'bizino'),
@@ -563,24 +566,20 @@ class Bizino_Header extends Widget_Base
                                 </div>
                             </div>
                             <div class="col-auto">
-                                <div class="header-dropdown">
-                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1"
-                                       data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i>English</a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                        <li>
-                                            <a href="#">German</a>
-                                            <a href="#">French</a>
-                                            <a href="#">Italian</a>
-                                            <a href="#">Latvian</a>
-                                            <a href="#">Spanish</a>
-                                            <a href="#">Greek</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                                <?php if (class_exists('GTranslate')){ ?>
+                                    <div class="header-dropdown">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i>English</a>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                                            <li>
+                                                <?php echo do_shortcode('[gtranslate]'); ?>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                <?php } ?>
+                        </div>
                             <div class="col-auto">
                                 <div class="header-social">
-                                    <span class="social-label">Get In Touch:</span>
+                                    <span class="social-label"><?php esc_attr_e('Get In Touch:', 'bizino');?></span>
                                     <?php
                                     foreach ($settings['social_icon_list'] as $social_icon) {
 
@@ -590,7 +589,7 @@ class Bizino_Header extends Widget_Base
 
                                         echo '<a ' . wp_kses_post($social_target . $social_nofollow) . ' href="' . esc_url($social_icon['icon_link']['url']) . '">';
 
-                                        \Elementor\Icons_Manager::render_icon($social_icon['social_icon'], ['aria-hidden' => 'true']);
+                                        Icons_Manager::render_icon($social_icon['social_icon'], ['aria-hidden' => 'true']);
 
                                         echo '</a>';
                                     }
@@ -637,10 +636,10 @@ class Bizino_Header extends Widget_Base
                                 <?php
                                 if (!empty($mobile)) {
                                     echo '<div class="col-auto d-none d-xxl-block">
-                                           <a class="header-number" href="' . esc_attr('tel:' . $mobileurl) . '">'.bizino_img_tag(array(
+                                           <a class="header-number" href="' . esc_attr('tel:' . $mobileurl) . '">' . bizino_img_tag(array(
                                             'url' => esc_url($settings['contact_phone_img']['url']),
                                             'class' => '',
-                                        )).' ' . esc_html($mobile) . '</a>
+                                        )) . ' ' . esc_html($mobile) . '</a>
                                         </div>';
                                 }
                                 ?>
@@ -681,25 +680,21 @@ class Bizino_Header extends Widget_Base
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-auto">
-                                <div class="header-dropdown">
-                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1"
-                                       data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i>English</a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                        <li>
-                                            <a href="#">German</a>
-                                            <a href="#">French</a>
-                                            <a href="#">Italian</a>
-                                            <a href="#">Latvian</a>
-                                            <a href="#">Spanish</a>
-                                            <a href="#">Greek</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                             <div class="col-auto">
+                                 <?php if (class_exists('GTranslate')){ ?>
+                                     <div class="header-dropdown">
+                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i>English</a>
+                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                                             <li>
+                                                 <?php echo do_shortcode('[gtranslate]'); ?>
+                                             </li>
+                                         </ul>
+                                     </div>
+                                 <?php } ?>
+                        </div>
                             <div class="col-auto">
                                 <div class="header-social">
-                                    <span class="social-label">Get In Touch:</span>
+                                    <span class="social-label"><?php esc_attr_e('Get In Touch:', 'bizino');?></span>
                                     <?php
                                     foreach ($settings['social_icon_list'] as $social_icon) {
 
@@ -709,7 +704,7 @@ class Bizino_Header extends Widget_Base
 
                                         echo '<a ' . wp_kses_post($social_target . $social_nofollow) . ' href="' . esc_url($social_icon['icon_link']['url']) . '">';
 
-                                        \Elementor\Icons_Manager::render_icon($social_icon['social_icon'], ['aria-hidden' => 'true']);
+                                        Icons_Manager::render_icon($social_icon['social_icon'], ['aria-hidden' => 'true']);
 
                                         echo '</a>';
                                     }
@@ -757,10 +752,10 @@ class Bizino_Header extends Widget_Base
                                     <?php
                                     if (!empty($mobile)) {
                                         echo '<div class="col-auto d-none d-xxl-block">
-                                           <a class="header-number" href="' . esc_attr('tel:' . $mobileurl) . '">'.bizino_img_tag(array(
+                                           <a class="header-number" href="' . esc_attr('tel:' . $mobileurl) . '">' . bizino_img_tag(array(
                                                 'url' => esc_url($settings['contact_phone_img']['url']),
                                                 'class' => '',
-                                            )).' ' . esc_html($mobile) . '</a>
+                                            )) . ' ' . esc_html($mobile) . '</a>
                                         </div>';
                                     }
                                     ?>
@@ -787,25 +782,21 @@ class Bizino_Header extends Widget_Base
                 <div class="header-top">
                     <div class="container">
                         <div class="row justify-content-between justify-content-xl-end align-items-center">
-                            <div class="col-auto">
-                                <div class="header-dropdown">
-                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1"
-                                       data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i>English</a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                        <li>
-                                            <a href="#">German</a>
-                                            <a href="#">French</a>
-                                            <a href="#">Italian</a>
-                                            <a href="#">Latvian</a>
-                                            <a href="#">Spanish</a>
-                                            <a href="#">Greek</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                           <div class="col-auto">
+                               <?php if (class_exists('GTranslate')){ ?>
+                                   <div class="header-dropdown">
+                                       <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i>English</a>
+                                       <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                                           <li>
+                                               <?php echo do_shortcode('[gtranslate]'); ?>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               <?php } ?>
+                        </div>
                             <div class="col-auto">
                                 <div class="header-social">
-                                    <span class="social-label">Get In Touch:</span>
+                                    <span class="social-label"><?php esc_attr_e('Get In Touch:', 'bizino');?></span>
                                     <?php
                                     foreach ($settings['social_icon_list'] as $social_icon) {
 
@@ -815,7 +806,7 @@ class Bizino_Header extends Widget_Base
 
                                         echo '<a ' . wp_kses_post($social_target . $social_nofollow) . ' href="' . esc_url($social_icon['icon_link']['url']) . '">';
 
-                                        \Elementor\Icons_Manager::render_icon($social_icon['social_icon'], ['aria-hidden' => 'true']);
+                                        Icons_Manager::render_icon($social_icon['social_icon'], ['aria-hidden' => 'true']);
 
                                         echo '</a>';
                                     }
@@ -863,10 +854,10 @@ class Bizino_Header extends Widget_Base
                                     <?php
                                     if (!empty($mobile)) {
                                         echo '<div class="col-auto d-none d-xxl-block">
-                                           <a class="header-number" href="' . esc_attr('tel:' . $mobileurl) . '">'.bizino_img_tag(array(
+                                           <a class="header-number" href="' . esc_attr('tel:' . $mobileurl) . '">' . bizino_img_tag(array(
                                                 'url' => esc_url($settings['contact_phone_img']['url']),
                                                 'class' => '',
-                                            )).'' . esc_html($mobile) . '</a>
+                                            )) . '' . esc_html($mobile) . '</a>
                                         </div>';
                                     }
                                     ?>
@@ -887,4 +878,4 @@ class Bizino_Header extends Widget_Base
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_Header());
+Plugin::instance()->widgets_manager->register(new Bizino_Header());
