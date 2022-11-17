@@ -250,6 +250,7 @@ final class Bizino_Extension {
 		require_once( BIZINO_ADDONS . '/widgets/bizino-button.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-about-us.php' );
 		require_once( BIZINO_ADDONS . '/widgets/bizino-history.php' );
+		require_once( BIZINO_ADDONS . '/widgets/bizino-cta.php' );
 
 
 		// Header Elements
