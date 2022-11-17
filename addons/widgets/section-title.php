@@ -1,11 +1,10 @@
 <?php
 
-use \Elementor\Widget_Base;
-use \Elementor\Controls_Manager;
-use \Elementor\Group_Control_Typography;
-use \Elementor\Group_Control_Border;
-use \Elementor\Utils;
-use \Elementor\Repeater;
+use Elementor\Controls_Manager;
+use Elementor\Group_Control_Border;
+use Elementor\Group_Control_Typography;
+use Elementor\Plugin;
+use Elementor\Widget_Base;
 
 /**
  *
@@ -446,4 +445,4 @@ class Bizino_Section_Title_Widget extends Widget_Base
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_Section_Title_Widget());
+Plugin::instance()->widgets_manager->register(new Bizino_Section_Title_Widget());

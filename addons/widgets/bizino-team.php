@@ -1,11 +1,11 @@
 <?php
 
-use \Elementor\Widget_Base;
-use \Elementor\Controls_Manager;
-use \Elementor\Group_Control_Typography;
-use \Elementor\Utils;
-use \Elementor\Repeater;
-use \Elementor\Group_Control_Image_Size;
+use Elementor\Controls_Manager;
+use Elementor\Group_Control_Typography;
+use Elementor\Plugin;
+use Elementor\Repeater;
+use Elementor\Utils;
+use Elementor\Widget_Base;
 
 /**
  *
@@ -488,62 +488,62 @@ class Bizino_Team_Widget extends Widget_Base
             Team Area
             ==============================-->
             <section class="team-cs">
-                <?php echo '<div '.$this->get_render_attribute_string('wrapper').'>';?>
-                    <?php
-                    foreach ($settings['team_members'] as $data) {
-                        $link = $data['profile_link']['url'] ? $data['profile_link']['url'] : '#';
-                        $mobile = $data['phone'];
+                <?php echo '<div ' . $this->get_render_attribute_string('wrapper') . '>'; ?>
+                <?php
+                foreach ($settings['team_members'] as $data) {
+                    $link = $data['profile_link']['url'] ? $data['profile_link']['url'] : '#';
+                    $mobile = $data['phone'];
 
-                        $replace = array(' ', '-', ' - ');
-                        $with = array('', '', '');
-                        $mobileurl = str_replace($replace, $with, $mobile);
-                        ?>
-                        <div class="col-xl-3 team-zigzag">
-                            <div class="team-style1">
-                                <?php
-                                if (!empty($data['team_image']['url'])) {
-                                    echo '<div class="team-img">
+                    $replace = array(' ', '-', ' - ');
+                    $with = array('', '', '');
+                    $mobileurl = str_replace($replace, $with, $mobile);
+                    ?>
+                    <div class="col-xl-3 team-zigzag">
+                        <div class="team-style1">
+                            <?php
+                            if (!empty($data['team_image']['url'])) {
+                                echo '<div class="team-img">
                                                 <a class="text-inherit" href="' . esc_url($link) . '">';
-                                    echo bizino_img_tag(array(
-                                        'url' => esc_url($data['team_image']['url']),
-                                        'class' => '',
-                                    ));
-                                    echo '</a>
+                                echo bizino_img_tag(array(
+                                    'url' => esc_url($data['team_image']['url']),
+                                    'class' => '',
+                                ));
+                                echo '</a>
                                             </div>';
+                            }
+                            ?>
+                            <div class="team-content">
+                                <?php
+                                if (!empty($data['name'])) {
+                                    echo '<h3 class="team-name h5"><a class="text-inherit" href="' . esc_url($link) . '">' . esc_html($data['name']) . '</a></h3>';
+                                }
+                                if (!empty($data['designation'])) {
+                                    echo '<p class="team-degi">' . esc_html($data['designation']) . '</p>';
+                                }
+                                if (!empty($mobile)) {
+                                    echo '<a href="' . esc_attr('tel:' . $mobileurl) . '" class="team-number">' . bizino_img_tag(array(
+                                            'url' => esc_url($settings['contact_phone_img']['url']),
+                                            'class' => '',
+                                        )) . '' . esc_html($mobile) . '</a>';
                                 }
                                 ?>
-                                <div class="team-content">
-                                    <?php
-                                    if (!empty($data['name'])) {
-                                        echo '<h3 class="team-name h5"><a class="text-inherit" href="' . esc_url($link) . '">' . esc_html($data['name']) . '</a></h3>';
-                                    }
-                                    if (!empty($data['designation'])) {
-                                        echo '<p class="team-degi">' . esc_html($data['designation']) . '</p>';
-                                    }
-                                    if (!empty($mobile)) {
-                                        echo '<a href="' . esc_attr('tel:' . $mobileurl) . '" class="team-number">' . bizino_img_tag(array(
-                                                'url' => esc_url($settings['contact_phone_img']['url']),
-                                                'class' => '',
-                                            )) . '' . esc_html($mobile) . '</a>';
-                                    }
-                                    ?>
-                                </div>
-                                <div class="team-social">
-                                    <?php
-                                    if (!empty($data['twitter_link']['url'])) {
-                                        echo '<a href="' . esc_url($data['twitter_link']['url']) . '"><i class="fab fa-twitter"></i></a>';
-                                    }
-                                    if (!empty($data['google_link']['url'])) {
-                                        echo '<a href="' . esc_url($data['google_link']['url']) . '"><i class="fab fa-google"></i></a>';
-                                    }
-                                    if (!empty($data['fb_link']['url'])) {
-                                        echo '<a href="' . esc_url($data['fb_link']['url']) . '"><i class="fab fa-facebook-f"></i></a>';
-                                    }
-                                    ?>
-                                </div>
+                            </div>
+                            <div class="team-social">
+                                <?php
+                                if (!empty($data['twitter_link']['url'])) {
+                                    echo '<a href="' . esc_url($data['twitter_link']['url']) . '"><i class="fab fa-twitter"></i></a>';
+                                }
+                                if (!empty($data['google_link']['url'])) {
+                                    echo '<a href="' . esc_url($data['google_link']['url']) . '"><i class="fab fa-google"></i></a>';
+                                }
+                                if (!empty($data['fb_link']['url'])) {
+                                    echo '<a href="' . esc_url($data['fb_link']['url']) . '"><i class="fab fa-facebook-f"></i></a>';
+                                }
+                                ?>
                             </div>
                         </div>
-                    <?php } ?>
+                    </div>
+                <?php } ?>
                 </div>
             </section>
             <?php
@@ -553,49 +553,49 @@ class Bizino_Team_Widget extends Widget_Base
            Team Area
            ==============================-->
             <section class="team2-cs">
-                <?php echo '<div '.$this->get_render_attribute_string('wrapper').'>';?>
-                    <?php
-                    foreach ($settings['team_members'] as $data) {
-                        $link = $data['profile_link']['url'] ? $data['profile_link']['url'] : '#';
-                        $mobile = $data['phone'];
+                <?php echo '<div ' . $this->get_render_attribute_string('wrapper') . '>'; ?>
+                <?php
+                foreach ($settings['team_members'] as $data) {
+                    $link = $data['profile_link']['url'] ? $data['profile_link']['url'] : '#';
+                    $mobile = $data['phone'];
 
-                        $replace = array(' ', '-', ' - ');
-                        $with = array('', '', '');
-                        $mobileurl = str_replace($replace, $with, $mobile);
-                        ?>
-                        <div class="col-xl-4">
-                            <div class="team-style2">
-                                <?php
-                                if (!empty($data['team_image']['url'])) {
-                                    echo '<div class="team-img">
+                    $replace = array(' ', '-', ' - ');
+                    $with = array('', '', '');
+                    $mobileurl = str_replace($replace, $with, $mobile);
+                    ?>
+                    <div class="col-xl-4">
+                        <div class="team-style2">
+                            <?php
+                            if (!empty($data['team_image']['url'])) {
+                                echo '<div class="team-img">
                                                 <a href="' . esc_url($link) . '">';
-                                    echo bizino_img_tag(array(
-                                        'url' => esc_url($data['team_image']['url']),
-                                        'class' => '',
-                                    ));
-                                    echo '</a>
+                                echo bizino_img_tag(array(
+                                    'url' => esc_url($data['team_image']['url']),
+                                    'class' => '',
+                                ));
+                                echo '</a>
                                             </div>';
+                            }
+                            ?>
+                            <div class="team-content">
+                                <?php
+                                if (!empty($data['designation'])) {
+                                    echo '<p class="team-degi">' . esc_html($data['designation']) . '</p>';
+                                }
+                                if (!empty($data['name'])) {
+                                    echo '<h3 class="team-name"><a class="text-inherit" href="' . esc_url($link) . '">' . esc_html($data['name']) . '</a></h3>';
+                                }
+                                if (!empty($mobile)) {
+                                    echo '<div class="team-number"><a href="' . esc_attr('tel:' . $mobileurl) . '">' . bizino_img_tag(array(
+                                            'url' => esc_url($settings['contact_phone_img']['url']),
+                                            'class' => '',
+                                        )) . '' . esc_html($mobile) . '</a></div>';
                                 }
                                 ?>
-                                <div class="team-content">
-                                    <?php
-                                    if (!empty($data['designation'])) {
-                                        echo '<p class="team-degi">' . esc_html($data['designation']) . '</p>';
-                                    }
-                                    if (!empty($data['name'])) {
-                                        echo '<h3 class="team-name"><a class="text-inherit" href="' . esc_url($link) . '">' . esc_html($data['name']) . '</a></h3>';
-                                    }
-                                    if (!empty($mobile)) {
-                                        echo '<div class="team-number"><a href="' . esc_attr('tel:' . $mobileurl) . '">' . bizino_img_tag(array(
-                                                'url' => esc_url($settings['contact_phone_img']['url']),
-                                                'class' => '',
-                                            )) . '' . esc_html($mobile) . '</a></div>';
-                                    }
-                                    ?>
-                                </div>
                             </div>
                         </div>
-                    <?php } ?>
+                    </div>
+                <?php } ?>
                 </div>
             </section>
             <?php
@@ -603,4 +603,4 @@ class Bizino_Team_Widget extends Widget_Base
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_Team_Widget());
+Plugin::instance()->widgets_manager->register(new Bizino_Team_Widget());

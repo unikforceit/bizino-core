@@ -1,12 +1,9 @@
 <?php
 
-use \Elementor\Widget_Base;
-use \Elementor\Controls_Manager;
-use \Elementor\Group_Control_Typography;
-use \Elementor\Utils;
-use \Elementor\Group_Control_Image_Size;
-use \Elementor\Group_Control_Box_Shadow;
-use \Elementor\Group_Control_Border;
+use Elementor\Controls_Manager;
+use Elementor\Plugin;
+use Elementor\Utils;
+use Elementor\Widget_Base;
 
 /**
  *
@@ -165,23 +162,23 @@ class Bizino_Image_Widget extends Widget_Base
     {
 
         $settings = $this->get_settings_for_display();
-            ?>
-            <div class="cta-video">
-                <?php
-                if (!empty($settings['image']['url'])) {
-                    echo bizino_img_tag(array(
-                        'url' => esc_url($settings['image']['url']),
-                        'class' => ''
-                    ));
-                    if (!empty($settings['video_btn'] == 'yes' && !empty($settings['video_link']['url']))) {
-                        echo '<a href="' . esc_url($settings['video_link']['url']) . '" class="play-btn style2 popup-video"><i class="fal fa-play"></i></a>';
-                    }
-                }
-                ?>
-            </div>
+        ?>
+        <div class="cta-video">
             <?php
+            if (!empty($settings['image']['url'])) {
+                echo bizino_img_tag(array(
+                    'url' => esc_url($settings['image']['url']),
+                    'class' => ''
+                ));
+                if (!empty($settings['video_btn'] == 'yes' && !empty($settings['video_link']['url']))) {
+                    echo '<a href="' . esc_url($settings['video_link']['url']) . '" class="play-btn style2 popup-video"><i class="fal fa-play"></i></a>';
+                }
+            }
+            ?>
+        </div>
+        <?php
 
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_Image_Widget());
+Plugin::instance()->widgets_manager->register(new Bizino_Image_Widget());

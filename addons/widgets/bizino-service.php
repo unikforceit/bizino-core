@@ -2,6 +2,7 @@
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
+use Elementor\Plugin;
 use Elementor\Repeater;
 use Elementor\Utils;
 use Elementor\Widget_Base;
@@ -66,7 +67,7 @@ class Bizino_Service_Widget extends Widget_Base
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
                 ],
-                'condition' => ['features_style' => ['1','3']]
+                'condition' => ['features_style' => ['1', '3']]
             ]
         );
 
@@ -77,7 +78,7 @@ class Bizino_Service_Widget extends Widget_Base
                 'default' => __('Safe Cleaning Supplies', 'bizino'),
                 'rows' => 2,
                 'label_block' => true,
-                'condition' => ['features_style' => ['1','3']]
+                'condition' => ['features_style' => ['1', '3']]
             ]
         );
         $this->add_control(
@@ -101,7 +102,7 @@ class Bizino_Service_Widget extends Widget_Base
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => __('Lorem ipm dolor amet, consectetur magm maiores.Ipsa dolor sit ilmesy magnam maores.', 'bizino'),
                 'label_block' => true,
-                'condition' => ['features_style' => ['1','3']]
+                'condition' => ['features_style' => ['1', '3']]
             ]
         );
         $this->add_control(
@@ -374,39 +375,39 @@ class Bizino_Service_Widget extends Widget_Base
         } elseif ($settings['features_style'] == '2') {
             ?>
 
-            <?php echo '<div '.$this->get_render_attribute_string('wrapper').'>';?>
-                <?php
-                foreach ($settings['service2_list'] as $item) {
-                    ?>
-                    <div class="col-xl-4">
-                        <div class="service-style3">
-                            <div class="service-icon">
-                                <div class="icon-shape"></div>
-                                <div class="icon-bg"></div>
-                                <?php
-                                if (!empty($item['service2_image']['url'])) {
-                                    echo bizino_img_tag(array(
-                                        'url' => esc_url($item['service2_image']['url']),
-                                    ));
-                                }
-                                ?>
-                            </div>
-                            <h3 class="service-title h5">
-                                <a class="text-inherit"
-                                   href="<?php echo esc_url($item['service2_title_link']['url']); ?>"><?php echo esc_html($item['service2_title']); ?></a>
-                            </h3>
-                            <p class="service-text"><?php echo esc_html($item['service2_info']); ?></p>
-                            <a href="<?php echo esc_url($item['service2_link']['url']); ?>" class="icon-btn style2"><i
-                                        class="fal fa-long-arrow-right"></i></a>
+            <?php echo '<div ' . $this->get_render_attribute_string('wrapper') . '>'; ?>
+            <?php
+            foreach ($settings['service2_list'] as $item) {
+                ?>
+                <div class="col-xl-4">
+                    <div class="service-style3">
+                        <div class="service-icon">
+                            <div class="icon-shape"></div>
+                            <div class="icon-bg"></div>
+                            <?php
+                            if (!empty($item['service2_image']['url'])) {
+                                echo bizino_img_tag(array(
+                                    'url' => esc_url($item['service2_image']['url']),
+                                ));
+                            }
+                            ?>
                         </div>
+                        <h3 class="service-title h5">
+                            <a class="text-inherit"
+                               href="<?php echo esc_url($item['service2_title_link']['url']); ?>"><?php echo esc_html($item['service2_title']); ?></a>
+                        </h3>
+                        <p class="service-text"><?php echo esc_html($item['service2_info']); ?></p>
+                        <a href="<?php echo esc_url($item['service2_link']['url']); ?>" class="icon-btn style2"><i
+                                    class="fal fa-long-arrow-right"></i></a>
                     </div>
-                <?php } ?>
+                </div>
+            <?php } ?>
             </div>
 
             <?php
         } else {
             ?>
-            <div class="service-counter <?php echo esc_attr($settings['active_service']);?>">
+            <div class="service-counter <?php echo esc_attr($settings['active_service']); ?>">
                 <div class="service-counter__icon">
                     <?php
                     if (!empty($settings['service4_item_image']['url'])) {
@@ -428,4 +429,4 @@ class Bizino_Service_Widget extends Widget_Base
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_Service_Widget());
+Plugin::instance()->widgets_manager->register(new Bizino_Service_Widget());

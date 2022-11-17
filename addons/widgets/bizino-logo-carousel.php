@@ -1,6 +1,7 @@
 <?php
 
 use Elementor\Controls_Manager;
+use Elementor\Plugin;
 use Elementor\Repeater;
 use Elementor\Utils;
 use Elementor\Widget_Base;
@@ -174,24 +175,24 @@ class Bizino_Logo_Carousel extends Widget_Base
         $this->add_render_attribute('wrapper', 'data-slide-show', $settings['slide_to_show']['size']);
         $this->add_render_attribute('wrapper', 'data-md-slide-show', $settings['slide_md_to_show']['size']);
         $this->add_render_attribute('wrapper', 'data-sm-slide-show', $settings['slide_sm_to_show']['size']);
-            if (!empty($settings['slides'])) {
-                ?>
-                <div class="logo-coursel-cs">
-                        <?php echo '<div '.$this->get_render_attribute_string('wrapper').'>';?>
-                        <?php
-                        foreach ($settings['slides'] as $single_data) {
-                            ?>
-                            <div class="col">
-                                <?php echo bizino_img_tag(array(
-                                    'url' => esc_url($single_data['logocarousel_image']['url']),
-                                )); ?>
-                            </div>
-                        <?php } ?>
-                    </div>
-                </div>
+        if (!empty($settings['slides'])) {
+            ?>
+            <div class="logo-coursel-cs">
+                <?php echo '<div ' . $this->get_render_attribute_string('wrapper') . '>'; ?>
                 <?php
-            }
+                foreach ($settings['slides'] as $single_data) {
+                    ?>
+                    <div class="col">
+                        <?php echo bizino_img_tag(array(
+                            'url' => esc_url($single_data['logocarousel_image']['url']),
+                        )); ?>
+                    </div>
+                <?php } ?>
+            </div>
+            </div>
+            <?php
+        }
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_Logo_Carousel());
+Plugin::instance()->widgets_manager->register(new Bizino_Logo_Carousel());

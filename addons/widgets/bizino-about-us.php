@@ -1,10 +1,13 @@
 <?php
 
 use Elementor\Controls_Manager;
+use Elementor\Group_Control_Border;
+use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
+use Elementor\Plugin;
+use Elementor\Repeater;
 use Elementor\Utils;
 use Elementor\Widget_Base;
-use \Elementor\Repeater;
 
 /**
  *
@@ -170,7 +173,7 @@ class Bizino_AboutUs_Widget extends Widget_Base
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                            'about_list' => __('Research your niche and competitors', 'bizino'),
+                        'about_list' => __('Research your niche and competitors', 'bizino'),
                     ],
                     [
                         'about_list' => __('Create content that gets your business', 'bizino'),
@@ -414,7 +417,7 @@ class Bizino_AboutUs_Widget extends Widget_Base
         );
 
         $this->add_group_control(
-            \Elementor\Group_Control_Border::get_type(),
+            Group_Control_Border::get_type(),
             [
                 'name' => 'border',
                 'label' => __('Border', 'bizino'),
@@ -434,7 +437,7 @@ class Bizino_AboutUs_Widget extends Widget_Base
         );
 
         $this->add_group_control(
-            \Elementor\Group_Control_Box_Shadow::get_type(),
+            Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'btn_shadow',
                 'label' => __('Button Shadow', 'bizino'),
@@ -608,7 +611,8 @@ class Bizino_AboutUs_Widget extends Widget_Base
                                 ?>
                                 <button class="nav-link <?php echo esc_attr($btn_act); ?>"
                                         id="<?php echo esc_attr($tab2['_id']); ?>-tab"
-                                        data-bs-toggle="tab" data-bs-target="#about<?php echo esc_attr($tab2['_id']); ?>"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#about<?php echo esc_attr($tab2['_id']); ?>"
                                         type="button" role="tab"
                                         aria-controls="about<?php echo esc_attr($tab2['_id']); ?>"
                                         aria-selected="<?php echo esc_attr($btn_true); ?>">
@@ -687,4 +691,4 @@ class Bizino_AboutUs_Widget extends Widget_Base
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_AboutUs_Widget());
+Plugin::instance()->widgets_manager->register(new Bizino_AboutUs_Widget());

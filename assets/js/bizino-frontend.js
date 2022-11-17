@@ -2,28 +2,7 @@
     'use strict';
     $(window).on( 'elementor/frontend/init', function() {
 
-        var GlobalJs = function ($scope, $) {
-            if ($("[data-bg-src]").length > 0) {
-                $("[data-bg-src]").each(function () {
-                    var src = $(this).attr("data-bg-src");
-                    $(this).css("background-image", "url(" + src + ")");
-                    $(this).removeAttr("data-bg-src").addClass("background-image");
-                });
-            }
-            /*----------- 10. Magnific Popup ----------*/
-            /* magnificPopup img view */
-            $(".popup-image").magnificPopup({
-                type: "image",
-                gallery: {
-                    enabled: true,
-                },
-            });
 
-            /* magnificPopup video view */
-            $(".popup-video").magnificPopup({
-                type: "iframe",
-            });
-        };
         var GlobalSliders = function ($scope, $) {
 
             $scope.find('.vs-carousel').each(function () {
@@ -372,8 +351,6 @@
 
         };
             //Logo Slider
-            elementorFrontend.hooks.addAction('frontend/element_ready/global', GlobalJs);
-
             elementorFrontend.hooks.addAction('frontend/element_ready/bizinologocarousel.default', GlobalSliders);
 
             // Testimonial

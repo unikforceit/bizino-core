@@ -1,10 +1,11 @@
 <?php
 
-use \Elementor\Widget_Base;
-use \Elementor\Controls_Manager;
-use \Elementor\Group_Control_Typography;
-use \Elementor\Utils;
-use \Elementor\Repeater;
+use Elementor\Controls_Manager;
+use Elementor\Group_Control_Typography;
+use Elementor\Plugin;
+use Elementor\Repeater;
+use Elementor\Utils;
+use Elementor\Widget_Base;
 
 /**
  *
@@ -355,4 +356,4 @@ class Bizino_Working_Process extends Widget_Base
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register(new \Bizino_Working_Process());
+Plugin::instance()->widgets_manager->register(new Bizino_Working_Process());
