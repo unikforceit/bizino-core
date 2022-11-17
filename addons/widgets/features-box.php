@@ -92,7 +92,13 @@ class Bizino_Features_Widget extends Widget_Base
                 'default' => __('60', 'bizino')
             ]
         );
-
+        $repeater3->add_control(
+            'skill_bg',
+            [
+                'label' => __('Background Color', 'bizino'),
+                'type' => Controls_Manager::COLOR,
+            ]
+        );
         $this->add_control(
             'skill_list',
             [
@@ -815,9 +821,11 @@ class Bizino_Features_Widget extends Widget_Base
                                 ?>
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar"
-                                         style="width: <?php echo esc_attr($sList['skill_item_value']); ?>%"
+                                         style="width: <?php echo esc_attr($sList['skill_item_value']); ?>%;
+                                                 background-color: <?php echo esc_attr($sList['skill_bg']); ?>"
                                          aria-valuenow="<?php echo esc_attr($sList['skill_item_value']); ?>"
-                                         aria-valuemin="0" aria-valuemax="100"></div>
+                                         aria-valuemin="0"
+                                         aria-valuemax="100"></div>
                                 </div>
                                 <?php
                                 if (!empty($sList['skill_item_value'])) {

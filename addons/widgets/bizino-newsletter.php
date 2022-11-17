@@ -396,16 +396,12 @@ class Bizino_Newsletter extends Widget_Base
                                 <h2 class="sec-title text-white mb-2 pb-1"><?php echo esc_html($settings['section_title']); ?></h2>
                                 <p class="fs-md text-white mb-4 pb-3"><?php echo esc_html($settings['section_info']); ?></p>
                                 <form action="#" class="subscribe-us newsletter-style2">
-                                    <div class="newsletter-inner1 text-lg-center">
-                                        <div class="newsletter-style2">
-                                            <div class="form-group">
-                                                <input type="email" class="form-control"
-                                                       placeholder="<?php echo esc_attr($settings['newsletter_placeholder']); ?>">
-                                                <button class="vs-btn style2"><i
-                                                            class="fal fa-envelope-open-text"></i><?php echo esc_html($settings['subscribe_btn']); ?>
-                                                </button>
-                                            </div>
-                                        </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control"
+                                               placeholder="<?php echo esc_attr($settings['newsletter_placeholder']); ?>">
+                                        <button class="vs-btn style2"><i
+                                                    class="fal fa-envelope-open-text"></i><?php echo esc_html($settings['subscribe_btn']); ?>
+                                        </button>
                                     </div>
                                 </form>
                             </div>
