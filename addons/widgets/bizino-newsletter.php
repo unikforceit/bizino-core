@@ -367,7 +367,7 @@ class Bizino_Newsletter extends Widget_Base
             <?php
         } elseif ($settings['newsletter_style'] == 'two') {
             ?>
-            <section class="position-relative " data-sec-pos="bottom" data-pos-amount="218px" data-pos-for="#blog2">
+            <section class="position-relative ">
                 <div class="newsletter-bg1" data-bg-src="<?php echo esc_url($settings['newsletter_2_bg']['url']);?>"></div>
                 <div class="container">
                     <div class="row flex-row-reverse text-center text-lg-start">
@@ -396,7 +396,7 @@ class Bizino_Newsletter extends Widget_Base
                                 <h2 class="sec-title text-white mb-2 pb-1"><?php echo esc_html($settings['section_title']); ?></h2>
                                 <p class="fs-md text-white mb-4 pb-3"><?php echo esc_html($settings['section_info']); ?></p>
                                 <form action="#" class="subscribe-us newsletter-style2">
-                                    <div class="newsletter-inner1 text-center">
+                                    <div class="newsletter-inner1 text-lg-center">
                                         <div class="newsletter-style2">
                                             <div class="form-group">
                                                 <input type="email" class="form-control"
