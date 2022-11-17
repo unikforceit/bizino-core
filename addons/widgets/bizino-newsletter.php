@@ -3,6 +3,7 @@
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
+use Elementor\Utils;
 
 /**
  *
@@ -63,7 +64,7 @@ class Bizino_Newsletter extends Widget_Base
                 'label' => __('Section Title', 'bizino'),
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 2,
-                'default' => __('SUBSCRIBE TO NEWSLETTER', 'bizino'),
+                'default' => __('Subscribe To Newsletter', 'bizino'),
             ]
         );
         $this->add_control(
@@ -91,6 +92,39 @@ class Bizino_Newsletter extends Widget_Base
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 2,
                 'default' => __('Enter Your Email', 'bizino'),
+            ]
+        );
+        $this->add_control(
+            'newsletter_2_image',
+            [
+                'label' => __('Upload Newsletter Image', 'bizino'),
+                'type' => Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => Utils::get_placeholder_image_src(),
+                ],
+                'condition' => ['newsletter_style' => 'two']
+            ]
+        );
+        $this->add_control(
+            'newsletter_2_shape',
+            [
+                'label' => __('Upload Newsletter Shape', 'bizino'),
+                'type' => Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => Utils::get_placeholder_image_src(),
+                ],
+                'condition' => ['newsletter_style' => 'two']
+            ]
+        );
+        $this->add_control(
+            'newsletter_2_bg',
+            [
+                'label' => __('Upload Newsletter BG', 'bizino'),
+                'type' => Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => Utils::get_placeholder_image_src(),
+                ],
+                'condition' => ['newsletter_style' => 'two']
             ]
         );
         $this->end_controls_section();
@@ -332,19 +366,52 @@ class Bizino_Newsletter extends Widget_Base
             <?php
         } elseif ($settings['newsletter_style'] == 'two') {
             ?>
-            <form action="#" class="subscribe-us">
-                <div class="newsletter-inner1 text-center">
-                    <div class="newsletter-style2">
-                        <div class="form-group">
-                            <input type="email" class="form-control"
-                                   placeholder="<?php echo esc_attr($settings['newsletter_placeholder']); ?>">
-                            <button class="vs-btn style2"><i
-                                        class="fal fa-envelope-open-text"></i><?php echo esc_html($settings['subscribe_btn']); ?>
-                            </button>
+            <section class="position-relative " data-sec-pos="bottom" data-pos-amount="218px" data-pos-for="#blog2">
+                <div class="newsletter-bg1" data-bg-src="<?php echo esc_url($settings['newsletter_2_bg']['url']);?>"></div>
+                <div class="container">
+                    <div class="row flex-row-reverse text-center text-lg-start">
+                        <div class="col-lg-6 col-xl-auto">
+                            <div class="img-box2">
+                                <?php
+                                if (!empty($settings['newsletter_2_image']['url'])) {
+                                    echo bizino_img_tag(array(
+                                        'url' => esc_url($settings['newsletter_2_image']['url']),
+                                    ));
+                                }
+                                ?>
+                                <div class="img-2">
+                                    <?php
+                                    if (!empty($settings['newsletter_2_shape']['url'])) {
+                                        echo bizino_img_tag(array(
+                                            'url' => esc_url($settings['newsletter_2_shape']['url']),
+                                        ));
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xl z-index-common align-self-center">
+                            <div class="newsletter-inner1">
+                                <h2 class="sec-title text-white mb-2 pb-1"><?php echo esc_html($settings['section_title']); ?></h2>
+                                <p class="fs-md text-white mb-4 pb-3"><?php echo esc_html($settings['section_info']); ?></p>
+                                <form action="#" class="subscribe-us newsletter-style2">
+                                    <div class="newsletter-inner1 text-center">
+                                        <div class="newsletter-style2">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control"
+                                                       placeholder="<?php echo esc_attr($settings['newsletter_placeholder']); ?>">
+                                                <button class="vs-btn style2"><i
+                                                            class="fal fa-envelope-open-text"></i><?php echo esc_html($settings['subscribe_btn']); ?>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </form>
+            </section>
             <?php
         } else {
             ?>
