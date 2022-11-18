@@ -289,7 +289,7 @@ class Bizino_Features_Widget extends Widget_Base
                 'type' => Controls_Manager::SWITCHER,
                 'label_on' => __('Show', 'bizino'),
                 'label_off' => __('Hide', 'bizino'),
-                'return_value' => 'event-style2',
+                'return_value' => 'event-layout2',
                 'default' => '',
             ]
         );
