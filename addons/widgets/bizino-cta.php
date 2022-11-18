@@ -50,6 +50,18 @@ class Bizino_Cta_Widget extends Widget_Base
             ]
         );
         $this->add_control(
+            'layout_styles',
+            [
+                'label' => __('Layout Styles', 'bizino'),
+                'type' => Controls_Manager::SELECT,
+                'default' => '1',
+                'options' => [
+                    '1' => __('Style One', 'bizino'),
+                    '2' => __('Style Two', 'bizino'),
+                ],
+            ]
+        );
+        $this->add_control(
             'section_title',
             [
                 'label' => __('Section Title', 'bizino'),
@@ -84,7 +96,6 @@ class Bizino_Cta_Widget extends Widget_Base
                 'default' => [
                     'url' => '/contact',
                 ],
-                'condition' => ['video_btn' => 'yes']
             ]
         );
         $this->add_control(
@@ -111,6 +122,7 @@ class Bizino_Cta_Widget extends Widget_Base
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
                 ],
+                'condition' => ['layout_styles' => '1']
             ]
         );
         $this->add_control(
@@ -124,6 +136,7 @@ class Bizino_Cta_Widget extends Widget_Base
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
                 ],
+                'condition' => ['layout_styles' => '1']
             ]
         );
         $this->add_control(
@@ -137,6 +150,7 @@ class Bizino_Cta_Widget extends Widget_Base
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
                 ],
+                'condition' => ['layout_styles' => '1']
             ]
         );
 
@@ -150,6 +164,7 @@ class Bizino_Cta_Widget extends Widget_Base
                 'label_off' => __('No', 'bizino'),
                 'return_value' => 'yes',
                 'default' => 'no',
+                'condition' => ['layout_styles' => '1']
             ]
         );
 
@@ -162,7 +177,10 @@ class Bizino_Cta_Widget extends Widget_Base
                 'default' => [
                     'url' => 'https://www.youtube.com/watch?v=_sI_Ps7JSEk',
                 ],
-                'condition' => ['video_btn' => 'yes']
+                'condition' => [
+                        'video_btn' => 'yes',
+                        'layout_styles' => '1'
+                ]
             ]
         );
 
@@ -241,49 +259,69 @@ class Bizino_Cta_Widget extends Widget_Base
     {
 
         $settings = $this->get_settings_for_display();
+
+        if ($settings['layout_styles'] == '1') {
             ?>
-        <!--==============================
-        Call To Action
-        ==============================-->
-                <section class="position-relative space">
-                    <div class="cta-bg2" data-bg-src="<?php echo esc_url($settings['video_bg_1']['url']);?>"></div>
-                    <div class="cta-bg1" data-bg-src="<?php echo esc_url($settings['video_bg_2']['url']);?>"></div>
-                    <div class="cta-shape1 d-none d-xxl-block">
+        <section class="position-relative space">
+                <div class="cta-bg2" data-bg-src="<?php echo esc_url($settings['video_bg_1']['url']); ?>"></div>
+                <div class="cta-bg1" data-bg-src="<?php echo esc_url($settings['video_bg_2']['url']); ?>"></div>
+                <div class="cta-shape1 d-none d-xxl-block">
+                    <?php
+                    if (!empty($settings['video_shape']['url'])) {
+                        echo bizino_img_tag(array(
+                            'url' => esc_url($settings['video_shape']['url'])
+                        ));
+                    }
+                    ?>
+                </div>
+                <div class="container ">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-md-10 col-lg-8 z-index-common">
+                            <span class="sec-subtitle text-white"><?php echo esc_html($settings['section_title']); ?></span>
+                            <h2 class="sec-title text-white"><?php echo esc_html($settings['section_sub_title']); ?></h2>
+                            <?php if (!empty($settings['section_btn_url']['url'])) { ?>
+                                <a href="<?php echo esc_url($settings['section_btn_url']['url']); ?>"
+                                   class="vs-btn"><?php echo esc_html($settings['section_btn']); ?></a>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div class="cta-video">
                         <?php
-                        if (!empty($settings['video_shape']['url'])) {
+                        if (!empty($settings['image']['url'])) {
                             echo bizino_img_tag(array(
-                                'url' => esc_url($settings['video_shape']['url'])
+                                'url' => esc_url($settings['image']['url']),
+                                'class' => ''
                             ));
+                            if (!empty($settings['video_btn'] == 'yes' && !empty($settings['video_link']['url']))) {
+                                echo '<a href="' . esc_url($settings['video_link']['url']) . '" class="play-btn style2 popup-video"><i class="fal fa-play"></i></a>';
+                            }
                         }
                         ?>
                     </div>
-                    <div class="container ">
-                        <div class="row justify-content-center text-center">
-                            <div class="col-md-10 col-lg-8 z-index-common">
-                                <span class="sec-subtitle text-white"><?php echo esc_html($settings['section_title']);?></span>
-                                <h2 class="sec-title text-white"><?php echo esc_html($settings['section_sub_title']);?></h2>
-                                <?php if (!empty($settings['section_btn_url']['url'])){?>
-                                    <a href="<?php echo esc_url($settings['section_btn_url']['url']);?>" class="vs-btn"><?php echo esc_html($settings['section_btn']);?></a>
-                                <?php } ?>
-                            </div>
-                        </div>
-                        <div class="cta-video">
-                            <?php
-                            if (!empty($settings['image']['url'])) {
-                                echo bizino_img_tag(array(
-                                    'url' => esc_url($settings['image']['url']),
-                                    'class' => ''
-                                ));
-                                if (!empty($settings['video_btn'] == 'yes' && !empty($settings['video_link']['url']))) {
-                                    echo '<a href="' . esc_url($settings['video_link']['url']) . '" class="play-btn style2 popup-video"><i class="fal fa-play"></i></a>';
-                                }
-                            }
-                            ?>
+                </div>
+            </section>
+        <?php } else {?>
+        <section class="position-relative space-top space-bottom">
+            <div class="cta-shape2" data-bg-src="<?php echo esc_url($settings['video_bg_1']['url']); ?>"></div>
+            <div class="container z-index-common">
+                <div class="row align-items-center justify-content-between text-center text-lg-start">
+                    <div class="col-lg-8 col-xl-7 mb-30 mb-lg-0">
+                        <div class="ps-xxl-5">
+                            <span class="sec-subtitle2 text-white"><?php echo esc_html($settings['section_title']); ?></span>
+                            <h2 class="sec-title mb-n4 text-white"><?php echo esc_html($settings['section_sub_title']); ?></h2>
                         </div>
                     </div>
-                </section>
-            <?php
-
+                    <div class="col-lg-auto col-xl-4">
+                        <?php if (!empty($settings['section_btn_url']['url'])) { ?>
+                            <a href="<?php echo esc_url($settings['section_btn_url']['url']); ?>"
+                               class="vs-btn style2 ms-xl-4"><?php echo esc_html($settings['section_btn']); ?></a>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <?php
+        }
     }
 }
 

@@ -46,11 +46,35 @@ class Bizino_Image_Widget extends Widget_Base
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
-
+        $this->add_control(
+            'layout_styles',
+            [
+                'label' => __('Layout Styles', 'bizino'),
+                'type' => Controls_Manager::SELECT,
+                'default' => '1',
+                'options' => [
+                    '1' => __('Style One', 'bizino'),
+                    '2' => __('Style Two', 'bizino'),
+                ],
+            ]
+        );
         $this->add_control(
             'image',
             [
                 'label' => __('Choose Image', 'bizino'),
+                'type' => Controls_Manager::MEDIA,
+                'dynamic' => [
+                    'active' => true,
+                ],
+                'default' => [
+                    'url' => Utils::get_placeholder_image_src(),
+                ],
+            ]
+        );
+        $this->add_control(
+            'image2',
+            [
+                'label' => __('Choose Image 2', 'bizino'),
                 'type' => Controls_Manager::MEDIA,
                 'dynamic' => [
                     'active' => true,
@@ -162,6 +186,7 @@ class Bizino_Image_Widget extends Widget_Base
     {
 
         $settings = $this->get_settings_for_display();
+        if ($settings['layout_styles'] == '1') {
         ?>
         <div class="cta-video">
             <?php
@@ -176,8 +201,34 @@ class Bizino_Image_Widget extends Widget_Base
             }
             ?>
         </div>
+            <?php } else {?>
+            <div class="img-box3">
+                <div class="img-1">
+                    <?php
+                    if (!empty($settings['image2']['url'])) {
+                        echo bizino_img_tag(array(
+                            'url' => esc_url($settings['image2']['url']),
+                            'class' => ''
+                        ));
+                    }
+                    ?>
+                </div>
+                <div class="img-2">
+                    <?php
+                    if (!empty($settings['image']['url'])) {
+                        echo bizino_img_tag(array(
+                            'url' => esc_url($settings['image']['url']),
+                            'class' => ''
+                        ));
+                        if (!empty($settings['video_btn'] == 'yes' && !empty($settings['video_link']['url']))) {
+                            echo '<a href="' . esc_url($settings['video_link']['url']) . '" class="play-btn style2 popup-video position-center"><i class="fal fa-play"></i></a>';
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
         <?php
-
+        }
     }
 }
 
