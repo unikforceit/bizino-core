@@ -371,13 +371,13 @@ class Bizino_Service_Widget extends Widget_Base
                         ?>
                     </div>
                 </div>
-                <div class="row justify-content-between">
+                <div class="service-row1">
                     <?php
                     $index = 0;
                     foreach ($settings['service2_list'] as $item) {
                         $index++;
                         ?>
-                        <div class="col-md-6 col-lg-4">
+                        <div class="service-column col-md-6 col-lg-4">
                             <div class="service-style1">
                                 <div class="service-icon">
                                     <div class="vs-shape1"></div>

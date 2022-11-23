@@ -110,19 +110,19 @@ class Bizino_Faq_Widget extends Widget_Base
         $this->start_controls_section(
             'video_btn_style_section',
             [
-                'label' => __('Video Button Style', 'bizino'),
+                'label' => __('Title', 'bizino'),
                 'tab' => Controls_Manager::TAB_STYLE,
-                'condition' => ['video_btn' => 'yes']
             ]
         );
 
         $this->add_control(
             'video_btn_color',
             [
-                'label' => __('Video Button Color', 'bizino'),
+                'label' => __('Title Color Active', 'bizino'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .play-btn i' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .accordion-style1 .accordion-button:hover, 
+                    .accordion-style1 .accordion-button:not(.collapsed)' => 'background-color: {{VALUE}}',
                 ]
             ]
         );

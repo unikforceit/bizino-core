@@ -58,7 +58,6 @@ class Bizino_AboutUs_Widget extends Widget_Base
                 'options' => [
                     '1' => __('Style One', 'bizino'),
                     '2' => __('Style Two', 'bizino'),
-                    '3' => __('Style Three', 'bizino'),
                 ],
             ]
         );
