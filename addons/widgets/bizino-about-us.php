@@ -183,6 +183,7 @@ class Bizino_AboutUs_Widget extends Widget_Base
                     ],
                 ],
                 'title_field' => '{{{ about_list }}}',
+                'condition' => ['layout_styles' => ['1']]
             ]
         );
 
@@ -280,6 +281,7 @@ class Bizino_AboutUs_Widget extends Widget_Base
                     ],
                 ],
                 'title_field' => '{{{ tab_title }}}',
+                'condition' => ['layout_styles' => ['2']]
             ]
         );
 
@@ -509,85 +511,39 @@ class Bizino_AboutUs_Widget extends Widget_Base
             <!--==============================
             About Us
             ==============================-->
-            <section class=" space">
-                <div class="container">
-                    <div class="row">
-                        <div class=" col-lg-6 mb-40 mb-lg-0">
-                            <div class="img-box1">
-                                <div class="img-1">
-                                    <?php
-                                    if (!empty($settings['about_image']['url'])) {
-                                        echo bizino_img_tag(array(
-                                            'url' => esc_url($settings['about_image']['url']),
-                                        ));
-                                    }
-                                    ?>
-                                </div>
-                                <div class="img-2">
-                                    <?php
-                                    if (!empty($settings['about_image2']['url'])) {
-                                        echo bizino_img_tag(array(
-                                            'url' => esc_url($settings['about_image2']['url']),
-                                        ));
-                                    }
-                                    ?>
-                                </div>
-                                <div class="list-box1">
-                                    <ul>
-                                        <?php
-                                        foreach ($settings['tab_list'] as $list) {
-                                            ?>
-                                            <?php
-                                            if (!empty($list['about_list'])) {
-                                                echo '<li>' . htmlspecialchars_decode(esc_html($list['about_list'])) . '</li>';
-                                            }
-                                            ?>
-                                        <?php } ?>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6  col-xl-5 offset-xl-1 align-self-center">
-                            <div class="sec-line"></div>
-                            <?php
-                            if (!empty($settings['about_subtitle'])) {
-                                echo '<span class="sec-subtitle">' . htmlspecialchars_decode(esc_html($settings['about_subtitle'])) . '</span>';
-                            }
-                            ?>
-                            <?php
-                            if (!empty($settings['about_title'])) {
-                                echo '<h2 class="sec-title">' . htmlspecialchars_decode(esc_html($settings['about_title'])) . '</h2>';
-                            }
-                            ?>
-                            <?php
-                            if (!empty($settings['about_description'])) {
-                                echo '<p class="mb-xl-4 pb-xl-3 pe-xxl-4">' . htmlspecialchars_decode(esc_html($settings['about_description'])) . '</p>';
-                            }
-                            ?>
-                            <?php
-                            if (!empty($settings['author_name'])) {
-                                echo '<h3 class="h5 mb-0">' . htmlspecialchars_decode(esc_html($settings['author_name'])) . '</h3>';
-                            }
-                            ?>
-                            <?php
-                            if (!empty($settings['author_designation'])) {
-                                echo '<span class="d-block mb-3">' . htmlspecialchars_decode(esc_html($settings['author_designation'])) . '</span>';
-                            }
-                            ?>
-                            <div>
-                                <?php
-                                if (!empty($settings['about_sign']['url'])) {
-                                    echo bizino_img_tag(array(
-                                        'url' => esc_url($settings['about_sign']['url']),
-                                    ));
-                                }
-                                ?>
-                            </div>
-                        </div>
-
-                    </div>
+            <div class="img-box1">
+                <div class="img-1">
+                    <?php
+                    if (!empty($settings['about_image']['url'])) {
+                        echo bizino_img_tag(array(
+                            'url' => esc_url($settings['about_image']['url']),
+                        ));
+                    }
+                    ?>
                 </div>
-            </section>
+                <div class="img-2">
+                    <?php
+                    if (!empty($settings['about_image2']['url'])) {
+                        echo bizino_img_tag(array(
+                            'url' => esc_url($settings['about_image2']['url']),
+                        ));
+                    }
+                    ?>
+                </div>
+                <div class="list-box1">
+                    <ul>
+                        <?php
+                        foreach ($settings['tab_list'] as $list) {
+                            ?>
+                            <?php
+                            if (!empty($list['about_list'])) {
+                                echo '<li>' . htmlspecialchars_decode(esc_html($list['about_list'])) . '</li>';
+                            }
+                            ?>
+                        <?php } ?>
+                    </ul>
+                </div>
+            </div>
             <?php
         } else {
             ?>

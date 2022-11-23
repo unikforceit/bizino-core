@@ -55,6 +55,7 @@ class Bizino_Service_Widget extends Widget_Base
                     '1' => __('Style One', 'bizino'),
                     '2' => __('Style Two', 'bizino'),
                     '3' => __('Style Three', 'bizino'),
+                    '4' => __('Style Four', 'bizino'),
                 ],
             ]
         );
@@ -199,10 +200,19 @@ class Bizino_Service_Widget extends Widget_Base
                     ],
                 ],
                 'title_field' => '{{{ service2_title }}}',
-                'condition' => ['features_style' => ['2']]
+                'condition' => ['features_style' => ['2', '4']]
             ]
         );
-
+        $this->add_control(
+            'service2_shape',
+            [
+                'label' => __('Upload Image', 'bizino'),
+                'type' => Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => Utils::get_placeholder_image_src(),
+                ],
+            ]
+        );
         $this->end_controls_section();
 
         $this->start_controls_section(
@@ -344,7 +354,52 @@ class Bizino_Service_Widget extends Widget_Base
             $this->add_render_attribute('wrapper', 'data-slide-show', $settings['slide_to_show']['size']);
             $this->add_render_attribute('wrapper', 'data-md-slide-show', $settings['slide_md_to_show']['size']);
         }
-        if ($settings['features_style'] == '1') {
+        if ($settings['features_style'] == '4'){
+            ?>
+            <!--==============================
+            Service Area
+            ==============================-->
+            <div class="service-wrap1">
+                <div class="service-shape1">
+                    <div class="shape-img">
+                        <?php
+                        if (!empty($settings['service2_shape']['url'])) {
+                            echo bizino_img_tag(array(
+                                'url' => esc_url($settings['service2_shape']['url']),
+                            ));
+                        }
+                        ?>
+                    </div>
+                </div>
+                <div class="row justify-content-between">
+                    <?php
+                    $index = 0;
+                    foreach ($settings['service2_list'] as $item) {
+                        $index++;
+                        ?>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="service-style1">
+                                <div class="service-icon">
+                                    <div class="vs-shape1"></div>
+                                    <?php
+                                    if (!empty($item['service2_image']['url'])) {
+                                        echo bizino_img_tag(array(
+                                            'url' => esc_url($item['service2_image']['url']),
+                                        ));
+                                    }
+                                    ?>
+                                </div>
+                                <h3 class="service-title h5"><a class="text-inherit" href="<?php echo esc_url($item['service2_title_link']['url']); ?>"><?php echo esc_html($item['service2_title']); ?></a></h3>
+                                <p class="service-text"><?php echo esc_html($item['service2_info']); ?></p>
+                            </div>
+                        </div>
+                        <?if ($index == 2) {?>
+                            <div class="clearfix"></div>
+                        <?php } } ?>
+                </div>
+            </div>
+            <?php
+        } elseif ($settings['features_style'] == '1') {
             ?>
 
             <div class="service-style1">

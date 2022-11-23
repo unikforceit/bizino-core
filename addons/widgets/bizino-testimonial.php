@@ -156,26 +156,6 @@ class Bizino_Testimonial_Slider extends Widget_Base
                 'default' => 'yes',
             ]
         );
-        $this->add_control(
-            'slide_to_show',
-            [
-                'label' => __('Slide To Show', 'bizino'),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => ['px'],
-                'range' => [
-                    'px' => [
-                        'min' => 0,
-                        'max' => 10,
-                        'step' => 1,
-                    ],
-                ],
-                'default' => [
-                    'unit' => 'px',
-                    'size' => 1,
-                ],
-            ]
-        );
-
         $this->end_controls_section();
 
         $this->start_controls_section(
@@ -435,7 +415,7 @@ class Bizino_Testimonial_Slider extends Widget_Base
         $this->add_render_attribute('wrapper', 'id', 'testId');
         $this->add_render_attribute('wrapper', 'class', 'vs-carousel');
         $this->add_render_attribute('wrapper', 'data-fade', 'true');
-        $this->add_render_attribute('wrapper', 'data-slide-show', $settings['slide_to_show']['size']);
+        $this->add_render_attribute('wrapper', 'data-slide-show', '1');
 
         if (!empty($settings['slides'])) {
             ?>
