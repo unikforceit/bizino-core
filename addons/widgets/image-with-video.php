@@ -177,7 +177,17 @@ class Bizino_Image_Widget extends Widget_Base
                 ]
             ]
         );
-
+        $this->add_responsive_control(
+            'cta_video',
+            [
+                'label' => __('Margin', 'bizino'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%', 'em'],
+                'selectors' => [
+                    '{{WRAPPER}} .cta-video' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ]
+            ]
+        );
         $this->end_controls_section();
 
     }
