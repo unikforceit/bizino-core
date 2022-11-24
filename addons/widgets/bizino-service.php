@@ -373,9 +373,7 @@ class Bizino_Service_Widget extends Widget_Base
                 </div>
                 <div class="service-row1">
                     <?php
-                    $index = 0;
                     foreach ($settings['service2_list'] as $item) {
-                        $index++;
                         ?>
                         <div class="service-column col-md-6 col-lg-4">
                             <div class="service-style1">
@@ -393,9 +391,7 @@ class Bizino_Service_Widget extends Widget_Base
                                 <p class="service-text"><?php echo esc_html($item['service2_info']); ?></p>
                             </div>
                         </div>
-                        <?if ($index == 2) {?>
-                            <div class="clearfix"></div>
-                        <?php } } ?>
+                        <?php } ?>
                 </div>
             </div>
             <?php
